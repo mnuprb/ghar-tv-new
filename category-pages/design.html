@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Design - GHAR.tv</title>
+  <meta name="description" content="Where Indian homes find their design soul. Architecture, interiors, Vastu, home tours, and curated guides.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    media="print" onload="this.onload=null;this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  </noscript>
+
+  <link rel="stylesheet" href="design-listing.css">
+  <style>/* page-specific overrides if needed */</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="logo.svg" alt="GHAR.tv" class="nav-logo-img">
+      <span class="nav-logo-tag">Design</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/intelligence">Intelligence</a></li>
+      <li><a href="/design" class="active">Design</a></li>
+      <li><a href="/industry-voices">Industry Voices</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-dropdown" id="postDropdown">
+        <button class="nav-dropdown__toggle" aria-expanded="false">Post <svg class="nav-dropdown__arrow" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown__menu">
+          <a href="/post-property" class="nav-dropdown__item">Post Property<span class="nav-dropdown__item-sub">List your property for sale or rent</span></a>
+          <a href="/post-requirement" class="nav-dropdown__item">Post Requirement<span class="nav-dropdown__item-sub">Tell us what you're looking for</span></a>
+        </div>
+      </div>
+      <a href="/join" class="nav-btn-join">Join Now</a>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- SUB-NAV -->
+<nav class="subnav" aria-label="Design sections">
+  <div class="subnav-inner">
+    <a href="designers.html"       class="subnav-link">Designers</a>
+    <a href="architecture.html"    class="subnav-link">Architecture</a>
+    <a href="vastu.html"           class="subnav-link">Vastu</a>
+    <a href="home-tours.html"      class="subnav-link">Home Tours</a>
+    <a href="guides.html"          class="subnav-link">Guides</a>
+    <a href="interiors.html"       class="subnav-link">Interiors</a>
+    <a href="featured-homes.html"  class="subnav-link">Featured Homes</a>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <ul class="mob-links">
+    <li><a href="/intelligence">Intelligence</a></li>
+    <li><a href="/design" class="mob-accent">Design</a></li>
+    <li><a href="/industry-voices">Industry Voices</a></li>
+    <li><a href="/post-property">Post Property</a></li>
+    <li><a href="/post-requirement">Post Requirement</a></li>
+    <li><a href="/join" class="mob-accent">Join Now &rarr;</a></li>
+  </ul>
+</div>
+
+<div class="page-wrap">
+
+  <!-- Breadcrumb -->
+  <div class="cont">
+    <nav class="bc" aria-label="Breadcrumb">
+      <a href="/">GHAR.tv</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-cur">Design</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-v2" aria-label="Hero">
+    <div class="hero-v2__bg" aria-hidden="true"></div>
+    <div class="hero-v2__grid" aria-hidden="true"></div>
+    <div class="hero-v2__inner">
+      <div class="hero-v2__eyebrow">
+        Design
+      </div>
+      <h1 class="hero-v2__title">
+        Shaping Spaces,
+        <span>Inspiring Lives</span>
+      </h1>
+      <p class="hero-v2__desc">Architecture, interiors, Vastu, home tours, and curated design guides from the finest designers and architects shaping how India lives.</p>
+      <div class="hero-v2__ctas">
+        <a href="#designers" class="hero-v2__btn-primary">Explore &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTIONS -->
+  <div class="sections-wrap">
+
+      <!-- 1. DESIGNERS — Editorial Spotlight -->
+      <section class="sec sec--designers reveal" id="designers">
+        <div class="sec-header">
+          <div class="sec-header__left">
+            <span class="sec-header__num">01</span>
+            <h2 class="sec-header__title">Designers</h2>
+          </div>
+          <a href="designers.html" class="sec-header__link">View all &rarr;</a>
+        </div>
+        <div class="sec-grid">
+          <a href="#" class="sec-card2 sec-card2--featured">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=500&fit=crop&q=75" alt="Hafeez Contractor architecture" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Profile</span>
+              <h3 class="sec-card2__title">Hafeez Contractor &mdash; India's Most Prolific Architect</h3>
+              <p class="sec-card2__excerpt">With over 2,000 projects across India, Hafeez Contractor has shaped the skyline of every major metro. A profile of the architect who defined Indian commercial and residential design for decades.</p>
+              <span class="sec-card2__meta">Mar 20, 2026 &middot; 8 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+          <div class="sec-side2">
+            <a href="#" class="sec-card2 sec-card2--text">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">02</span>
+                <span class="sec-card2__cat">Profile</span>
+                <h3 class="sec-card2__title">Sanjay Puri Architects &mdash; Redefining Indian Modernism</h3>
+                <p class="sec-card2__excerpt">Known for climate-responsive design and bold geometric forms, Sanjay Puri Architects is redefining what modern Indian architecture looks and feels like on the global stage.</p>
+                <span class="sec-card2__meta">Mar 18, 2026 &middot; 7 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="#" class="sec-card2 sec-card2--text">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">03</span>
+                <span class="sec-card2__cat">Profile</span>
+                <h3 class="sec-card2__title">Studio Lotus &mdash; Where Craft Meets Contemporary</h3>
+                <p class="sec-card2__excerpt">Blending traditional Indian craftsmanship with contemporary sensibility, Studio Lotus has become one of the most influential architecture practices in the country.</p>
+                <span class="sec-card2__meta">Mar 15, 2026 &middot; 9 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ARCHITECTURE — Blueprint -->
+      <section class="sec sec--architecture reveal">
+        <div class="sec-header">
+          <div class="sec-header__left">
+            <span class="sec-header__num">02</span>
+            <h2 class="sec-header__title">Architecture</h2>
+          </div>
+          <a href="architecture.html" class="sec-header__link">View all &rarr;</a>
+        </div>
+        <div class="sec-grid">
+          <a href="#" class="sec-card2 sec-card2--featured">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1518005068251-37900150dfca?w=800&h=500&fit=crop&q=75" alt="Biophilic architecture in India" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Architecture</span>
+              <h3 class="sec-card2__title">Biophilic Architecture India: Homes That Breathe</h3>
+              <p class="sec-card2__excerpt">Living walls, courtyards, and cross-ventilation are making a comeback in Indian residential design &mdash; not as luxury add-ons but as essential building philosophy.</p>
+              <span class="sec-card2__meta">Mar 22, 2026 &middot; 12 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+          <div class="sec-side2">
+            <a href="#" class="sec-card2 sec-card2--text">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">02</span>
+                <span class="sec-card2__cat">Architecture</span>
+                <h3 class="sec-card2__title">The Courtyard House Returns to Modern India</h3>
+                <p class="sec-card2__excerpt">Once dismissed as old-fashioned, the courtyard typology is making a dramatic return in contemporary Indian residential architecture, adapted for urban density.</p>
+                <span class="sec-card2__meta">Mar 19, 2026 &middot; 10 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="#" class="sec-card2 sec-card2--text">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">03</span>
+                <span class="sec-card2__cat">Sustainable</span>
+                <h3 class="sec-card2__title">Sustainable Homes in India: A Builder's Guide</h3>
+                <p class="sec-card2__excerpt">From rainwater harvesting to passive cooling and recycled materials &mdash; a practical guide for builders and homeowners committed to sustainable construction in India.</p>
+                <span class="sec-card2__meta">Mar 16, 2026 &middot; 9 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. VASTU — Warm & Centered (3-col equal) -->
+      <section class="sec sec--vastu reveal">
+        <div class="sec-header">
+          <div class="sec-header__left">
+            <span class="sec-header__num">03</span>
+            <h2 class="sec-header__title">Vastu</h2>
+          </div>
+          <a href="vastu.html" class="sec-header__link">View all &rarr;</a>
+        </div>
+        <div class="sec-grid sec-grid--trio">
+          <a href="#" class="sec-card2 sec-card2--featured">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&q=75" alt="Vastu floor plan 2BHK" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Vastu Guide</span>
+              <h3 class="sec-card2__title">East-Facing 2BHK: Vastu-Perfect Floor Plans</h3>
+              <p class="sec-card2__excerpt">Detailed Vastu-compliant floor plans for east-facing 2BHK apartments, covering room placement, kitchen direction, and entrance positioning.</p>
+              <span class="sec-card2__meta">Mar 21, 2026 &middot; 8 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+          <a href="#" class="sec-card2 sec-card2--featured">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop&q=75" alt="Kitchen Vastu guide" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Vastu Guide</span>
+              <h3 class="sec-card2__title">Kitchen Placement Guide: Direction &amp; Zone</h3>
+              <p class="sec-card2__excerpt">The kitchen is the fire element of your home. Ideal directions, stove placement, sink positioning, and storage zones according to Vastu Shastra.</p>
+              <span class="sec-card2__meta">Mar 17, 2026 &middot; 6 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+          <a href="#" class="sec-card2 sec-card2--featured">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop&q=75" alt="Main door Vastu directions" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Vastu Guide</span>
+              <h3 class="sec-card2__title">Main Door Vastu: All 8 Directions Explained</h3>
+              <p class="sec-card2__excerpt">Your main door is the mouth of your home. Vastu recommendations for all eight cardinal and inter-cardinal directions.</p>
+              <span class="sec-card2__meta">Mar 14, 2026 &middot; 7 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 4. HOME TOURS — Immersive Gallery (hidden) -->
+      <section class="sec sec--tours reveal" style="display:none">
+        <div class="sec-header">
+          <div class="sec-header__left">
+            <span class="sec-header__num">04</span>
+            <h2 class="sec-header__title">Home Tours</h2>
+          </div>
+          <a href="home-tours.html" class="sec-header__link">View all &rarr;</a>
+        </div>
+        <div class="sec-grid">
+          <a href="#" class="sec-card2 sec-card2--featured">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=500&fit=crop&q=75" alt="Sea-facing penthouse Worli" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Home Tour</span>
+              <h3 class="sec-card2__title">Sea-Facing Penthouse, Worli &mdash; Designed for the Horizon</h3>
+              <p class="sec-card2__excerpt">A 6,000 sq ft penthouse on Worli Sea Face with floor-to-ceiling glass, curated art, and interiors designed to frame the Arabian Sea at every turn.</p>
+              <span class="sec-card2__meta">Mar 20, 2026 &middot; 8 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+          <div class="sec-side2">
+            <a href="#" class="sec-card2 sec-card2--text">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">02</span>
+                <span class="sec-card2__cat">Heritage Tour</span>
+                <h3 class="sec-card2__title">A 200-Year Haveli in Jodhpur, Lovingly Restored</h3>
+                <p class="sec-card2__excerpt">Stone jaalis, lime-washed walls, and a central courtyard &mdash; a painstaking restoration that preserves Rajasthani heritage while introducing modern comforts.</p>
+                <span class="sec-card2__meta">Mar 17, 2026 &middot; 10 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="#" class="sec-card2 sec-card2--text">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">03</span>
+                <span class="sec-card2__cat">Compact Tour</span>
+                <h3 class="sec-card2__title">Compact 1BHK in Bandra: Punching Above Its Weight</h3>
+                <p class="sec-card2__excerpt">At just 450 sq ft, this Bandra apartment uses every square inch with intention &mdash; multifunctional furniture, hidden storage, and clever zoning.</p>
+                <span class="sec-card2__meta">Mar 14, 2026 &middot; 6 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4b. HOME TOURS — Video -->
+      <section class="sec sec--video-tours reveal">
+        <div class="sec-header">
+          <div class="sec-header__left">
+            <span class="sec-header__num">04</span>
+            <h2 class="sec-header__title">Home Tours</h2>
+          </div>
+          <a href="home-tours.html" class="sec-header__link">View all &rarr;</a>
+        </div>
+        <div class="sec-grid">
+          <!-- Featured: YouTube embed -->
+          <div class="sec-card2 sec-card2--featured">
+            <div class="sec-card2__video-wrap" data-youtube="dQw4w9WgXcQ">
+              <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Sea-facing penthouse Worli video tour" class="sec-card2__video-poster" loading="lazy">
+              <button class="sec-card2__play" aria-label="Play video"><span></span></button>
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Video Tour</span>
+              <h3 class="sec-card2__title">Sea-Facing Penthouse, Worli &mdash; Full Walkthrough</h3>
+              <p class="sec-card2__excerpt">A cinematic walkthrough of this 6,000 sq ft penthouse on Worli Sea Face &mdash; floor-to-ceiling glass, curated art, and interiors designed to frame the Arabian Sea.</p>
+              <span class="sec-card2__meta">Mar 20, 2026 &middot; 12 min</span>
+            </div>
+          </div>
+          <!-- Side: 2 text cards with video icon -->
+          <div class="sec-side2">
+            <a href="#" class="sec-card2 sec-card2--text sec-card2--has-video" data-youtube="ScMzIvxBSi4">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">02</span>
+                <div class="sec-card2__video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="sec-card2__cat">Heritage Tour</span>
+                <h3 class="sec-card2__title">A 200-Year Haveli in Jodhpur, Lovingly Restored</h3>
+                <p class="sec-card2__excerpt">Stone jaalis, lime-washed walls, and a central courtyard &mdash; a painstaking restoration that preserves Rajasthani heritage.</p>
+                <span class="sec-card2__meta">Mar 17, 2026 &middot; 8 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="#" class="sec-card2 sec-card2--text sec-card2--has-video" data-video="mp4">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">03</span>
+                <div class="sec-card2__video-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="sec-card2__cat">Compact Tour</span>
+                <h3 class="sec-card2__title">Compact 1BHK in Bandra: Punching Above Its Weight</h3>
+                <p class="sec-card2__excerpt">At just 450 sq ft, this Bandra apartment uses every square inch with intention &mdash; multifunctional furniture, hidden storage, and clever zoning.</p>
+                <span class="sec-card2__meta">Mar 14, 2026 &middot; 6 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. GUIDES — Clean Index (row layout, no images) -->
+      <section class="sec sec--guides reveal">
+        <div class="sec-header">
+          <div class="sec-header__left">
+            <span class="sec-header__num">05</span>
+            <h2 class="sec-header__title">Guides</h2>
+          </div>
+          <a href="guides.html" class="sec-header__link">View all &rarr;</a>
+        </div>
+        <div class="guide-list">
+          <a href="#" class="guide-row">
+            <span class="guide-row__num">01</span>
+            <div class="guide-row__body">
+              <span class="guide-row__cat">Buyer's Guide</span>
+              <h3 class="guide-row__title">Italian Marble vs Indian Granite: The Definitive Guide</h3>
+              <p class="guide-row__excerpt">Cost, durability, maintenance, aesthetics &mdash; a side-by-side comparison to help you choose the right flooring material for your Indian home.</p>
+            </div>
+            <div class="guide-row__right">
+              <span class="guide-row__meta">Mar 22, 2026 &middot; 7 min</span>
+              <span class="guide-row__arrow">&rarr;</span>
+            </div>
+          </a>
+          <a href="#" class="guide-row">
+            <span class="guide-row__num">02</span>
+            <div class="guide-row__body">
+              <span class="guide-row__cat">Tech Guide</span>
+              <h3 class="guide-row__title">Smart Home Setup India: What It Costs in 2025</h3>
+              <p class="guide-row__excerpt">From basic voice-controlled lighting to full home automation &mdash; a realistic cost breakdown for setting up a smart home in India across three budget tiers.</p>
+            </div>
+            <div class="guide-row__right">
+              <span class="guide-row__meta">Mar 19, 2026 &middot; 8 min</span>
+              <span class="guide-row__arrow">&rarr;</span>
+            </div>
+          </a>
+          <a href="#" class="guide-row">
+            <span class="guide-row__num">03</span>
+            <div class="guide-row__body">
+              <span class="guide-row__cat">Buyer's Guide</span>
+              <h3 class="guide-row__title">False Ceiling Types, Materials &amp; Cost Guide</h3>
+              <p class="guide-row__excerpt">POP, gypsum, PVC, wooden &mdash; an exhaustive comparison of false ceiling types with material costs, installation charges, and pros and cons for Indian homes.</p>
+            </div>
+            <div class="guide-row__right">
+              <span class="guide-row__meta">Mar 16, 2026 &middot; 6 min</span>
+              <span class="guide-row__arrow">&rarr;</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 6. INTERIORS — Mood Board (3 image cards, staggered) -->
+      <section class="sec sec--interiors reveal">
+        <div class="sec-header">
+          <div class="sec-header__left">
+            <span class="sec-header__num">06</span>
+            <h2 class="sec-header__title">Interiors</h2>
+          </div>
+          <a href="interiors.html" class="sec-header__link">View all &rarr;</a>
+        </div>
+        <div class="sec-grid sec-grid--mood">
+          <a href="interiors/living-room-design-trends.html" class="sec-card2 sec-card2--featured mood-tall">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=800&fit=crop&q=75" alt="Living room design trends India" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Trends</span>
+              <h3 class="sec-card2__title">Living Room Design Trends Dominating Indian Homes</h3>
+              <span class="sec-card2__meta">Mar 20, 2026 &middot; 10 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+          <a href="#" class="sec-card2 sec-card2--featured mood-wide">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&h=450&fit=crop&q=75" alt="Small bedroom space saving ideas" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Space Planning</span>
+              <h3 class="sec-card2__title">Small Bedroom Space-Saving: 15 Ideas That Work</h3>
+              <span class="sec-card2__meta">Mar 17, 2026 &middot; 8 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+          <a href="#" class="sec-card2 sec-card2--featured mood-square">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&h=600&fit=crop&q=75" alt="Open kitchen design Indian homes" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Kitchen</span>
+              <h3 class="sec-card2__title">Open Kitchen Designs for Indian Homes</h3>
+              <span class="sec-card2__meta">Mar 14, 2026 &middot; 7 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 7. FEATURED HOMES — Luxury Showcase -->
+      <section class="sec sec--featured reveal">
+        <div class="sec-header">
+          <div class="sec-header__left">
+            <span class="sec-header__num">07</span>
+            <h2 class="sec-header__title">Featured Homes</h2>
+          </div>
+          <a href="featured-homes.html" class="sec-header__link">View all &rarr;</a>
+        </div>
+        <div class="sec-grid">
+          <a href="#" class="sec-card2 sec-card2--featured sec-card2--fullspan">
+            <div class="sec-card2__img-wrap">
+              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&h=500&fit=crop&q=75" alt="Top penthouses India" class="sec-card2__img" loading="lazy">
+            </div>
+            <div class="sec-card2__body">
+              <span class="sec-card2__cat">Featured List</span>
+              <h3 class="sec-card2__title">Top Penthouses in India: Sky-High Living</h3>
+              <p class="sec-card2__excerpt">From Lodha World One in Mumbai to DLF Camellias in Gurgaon &mdash; the most spectacular penthouses redefining luxury living at India's highest addresses.</p>
+              <span class="sec-card2__meta">Mar 21, 2026 &middot; 12 min</span>
+              <span class="sec-card2__arrow">&rarr;</span>
+            </div>
+          </a>
+          <div class="sec-side2">
+            <a href="#" class="sec-card2 sec-card2--text">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">02</span>
+                <span class="sec-card2__cat">Featured List</span>
+                <h3 class="sec-card2__title">Top Celebrity Homes in Mumbai</h3>
+                <p class="sec-card2__excerpt">A curated look at Mumbai's most iconic celebrity residences &mdash; the architecture, interiors, and design stories behind the homes of India's most prominent personalities.</p>
+                <span class="sec-card2__meta">Mar 18, 2026 &middot; 10 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+            <a href="#" class="sec-card2 sec-card2--text">
+              <div class="sec-card2__body">
+                <span class="sec-card2__num">03</span>
+                <span class="sec-card2__cat">Featured List</span>
+                <h3 class="sec-card2__title">Top Eco-Friendly Homes in India</h3>
+                <p class="sec-card2__excerpt">Solar-powered, zero-waste, and built with earth &mdash; India's most inspiring eco-friendly homes proving that sustainable living and beautiful design go hand in hand.</p>
+                <span class="sec-card2__meta">Mar 15, 2026 &middot; 9 min</span>
+                <span class="sec-card2__arrow">&rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- CTA — Newsletter -->
+<section class="nl-sec reveal">
+  <div class="nl-sec__inner">
+    <div class="nl-sec__left">
+      <span class="nl-sec__eyebrow">Design Studio Brief</span>
+      <h2 class="nl-sec__title">Get Design Inspiration<br>Delivered to Your Inbox</h2>
+      <p class="nl-sec__body">Fortnightly editorial digest &mdash; architecture, interiors, Vastu, home tours, and curated design guides for Indian homes.</p>
+      <ul class="nl-sec__bullets">
+        <li><span class="nl-sec__dot">&middot;</span> Architecture &amp; design trends</li>
+        <li><span class="nl-sec__dot">&middot;</span> Vastu guides &amp; floor plans</li>
+        <li><span class="nl-sec__dot">&middot;</span> Home tours &amp; featured homes</li>
+        <li><span class="nl-sec__dot">&middot;</span> Material &amp; cost guides</li>
+      </ul>
+    </div>
+    <div class="nl-sec__right">
+      <form class="nl-sec__form" id="nlForm" novalidate>
+        <input type="text"  class="nl-sec__inp" placeholder="Your name" autocomplete="name" required>
+        <input type="email" class="nl-sec__inp" placeholder="Your email address" autocomplete="email" required id="nlEmail">
+        <button type="submit" class="nl-sec__btn" id="nlBtn">Subscribe to Design Brief</button>
+        <p class="nl-sec__note">No spam. Unsubscribe anytime.</p>
+      </form>
+      <div class="nl-sec__ok" id="nlOk" hidden>
+        <div class="nl-sec__ok-icon">&check;</div>
+        <p>You're subscribed. Welcome to the design community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <img src="logo.svg" alt="GHAR.tv" class="ft-logo-img">
+        <p class="ft-tagline">India's AI-Native Real Estate Intelligence</p>
+      </div>
+      <nav class="ft-nav">
+        <a href="/intelligence">Intelligence</a>
+        <a href="/design">Design</a>
+        <a href="/industry-voices">Industry Voices</a>
+      </nav>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
+      <div class="ft-bot-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var hBtn = document.getElementById('hamburgerBtn');
+  var mMenu = document.getElementById('mobMenu');
+  hBtn.addEventListener('click', function(){
+    var open = mMenu.classList.toggle('open');
+    hBtn.classList.toggle('open', open);
+    hBtn.setAttribute('aria-expanded', String(open));
+    mMenu.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mMenu.classList.remove('open'); hBtn.classList.remove('open');
+      hBtn.setAttribute('aria-expanded','false'); mMenu.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    });
+  });
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); } });
+    },{threshold:0.06, rootMargin:'0px 0px -20px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('revealed'); }); }
+  /* Newsletter */
+  var nlForm = document.getElementById('nlForm');
+  var nlBtn  = document.getElementById('nlBtn');
+  var nlOk   = document.getElementById('nlOk');
+  if(nlForm){ nlForm.addEventListener('submit', function(e){
+    e.preventDefault(); nlBtn.textContent = '...'; nlBtn.disabled = true;
+    setTimeout(function(){ nlForm.hidden = true; nlOk.hidden = false; }, 800);
+  }); }
+
+  /* Video play handlers */
+  document.querySelectorAll('.sec-card2__play').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var wrap = btn.closest('.sec-card2__video-wrap');
+      var ytId = wrap.getAttribute('data-youtube');
+      if(ytId){
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0';
+        iframe.allow = 'autoplay; encrypted-media';
+        iframe.allowFullscreen = true;
+        wrap.appendChild(iframe);
+        wrap.classList.add('is-playing');
+      } else if(wrap.getAttribute('data-video') === 'mp4'){
+        var video = wrap.querySelector('video');
+        if(!video){
+          video = document.createElement('video');
+          video.src = 'https://www.w3schools.com/html/mov_bbb.mp4';
+          video.controls = true;
+          video.autoplay = true;
+          video.playsInline = true;
+          wrap.appendChild(video);
+        }
+        wrap.classList.add('is-playing');
+        video.play();
+      }
+    });
+  });
+  /* Post dropdown */
+  var dd = document.getElementById('postDropdown');
+  if(dd){
+    var ddToggle = dd.querySelector('.nav-dropdown__toggle');
+    ddToggle.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = dd.classList.toggle('open');
+      ddToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    dd.addEventListener('click', function(e){ e.stopPropagation(); });
+    document.addEventListener('click', function(){
+      dd.classList.remove('open');
+      ddToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+})();
+</script>
+</body>
+</html>

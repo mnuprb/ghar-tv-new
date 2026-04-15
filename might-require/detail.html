@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- ═══ SEO: Populate per article ═══ -->
+  <title>{{Article Title}} - GHAR.tv Intelligence</title>
+  <meta name="description" content="{{Article meta description - 150-160 chars}}">
+  <meta property="og:title" content="{{Article Title}} - GHAR.tv">
+  <meta property="og:description" content="{{OG description - 100 chars}}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ghar.tv/intelligence/og/{{slug}}.jpg">
+  <meta property="article:published_time" content="{{2026-03-15T00:00:00+05:30}}">
+  <meta property="article:section" content="{{Rankings|Reports|Analysis|Market|Infrastructure|Investment|Legal}}">
+  <link rel="canonical" href="https://ghar.tv/intelligence/{{section}}/{{slug}}">
+
+  <!-- ═══ Schema.org - Article ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"{{Article Title}}",
+    "description":"{{Article meta description}}",
+    "datePublished":"{{2026-03-15}}",
+    "dateModified":"{{2026-03-15}}",
+    "author":{"@type":"Organization","name":"GHAR.tv Intelligence","url":"https://ghar.tv"},
+    "publisher":{"@type":"Organization","name":"GHAR.tv","url":"https://ghar.tv","logo":{"@type":"ImageObject","url":"https://ghar.tv/logo.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://ghar.tv/intelligence/{{section}}/{{slug}}"},
+    "articleSection":"{{Rankings|Reports|Analysis|Market|Infrastructure|Investment|Legal}}",
+    "keywords":"{{comma-separated keywords}}"
+  }
+  </script>
+
+  <!-- ═══ Schema.org - FAQ (if applicable) ═══ -->
+  <!--
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"{{Question 1}}","acceptedAnswer":{"@type":"Answer","text":"{{Answer 1}}"}},
+    {"@type":"Question","name":"{{Question 2}}","acceptedAnswer":{"@type":"Answer","text":"{{Answer 2}}"}}
+  ]}
+  </script>
+  -->
+
+  <!-- ═══ Schema.org - ItemList (for Rankings only) ═══ -->
+  <!--
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","name":"{{Ranking Title}}","numberOfItems":{{N}},"itemListElement":[
+    {"@type":"ListItem","position":1,"name":"{{Item 1 Name}}","url":"{{Item 1 URL}}"},
+    {"@type":"ListItem","position":2,"name":"{{Item 2 Name}}","url":"{{Item 2 URL}}"}
+  ]}
+  </script>
+  -->
+
+  <!-- Fonts: Gazpacho Bold (local) + Inter (Google) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+
+  <!-- Below-fold CSS: non-blocking -->
+  <link rel="stylesheet" href="detail.css">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  </noscript>
+
+  <!-- ═══════════════════════════════════════════
+       CRITICAL CSS - INLINED
+       Covers: variables, reset, nav (both levels),
+       breadcrumb, article hero, hero image, reading progress
+  ═══════════════════════════════════════════ -->
+  <style>
+    /* ─── Gazpacho Bold @font-face ─── */
+    @font-face {
+      font-family: 'Gazpacho';
+      src: url('fonts/Gazpacho-Bold.woff2') format('woff2'),
+           url('fonts/Gazpacho-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ─── Design System Variables ─── */
+    :root {
+      /* Colors */
+      --bg:         #ffffff;
+      --ink:        #111111;
+      --ink2:       #4b5563;
+      --faint:      #9ca3af;
+      --rule:       #e8e8e8;
+      --accent:     #ee324b;
+
+      /* Legacy aliases (for detail.css compatibility) */
+      --primary:    #111111;
+      --secondary:  #ee324b;
+      --success:    #28a745;
+      --light:      #f7f7f7;
+      --light-b:    #f0f1f3;
+      --dark:       #000;
+      --med-dark:   #2e2e2e;
+      --white:      #fff;
+      --border:     #e8e8e8;
+      --border-md:  rgba(17,17,17,.15);
+      --text-body:  #4b5563;
+      --text-muted: #4b5563;
+      --text-faint: #9ca3af;
+
+      /* Typography */
+      --ff-display: 'Gazpacho', Georgia, serif;
+      --ff-serif:   'Gazpacho', Georgia, serif;
+      --ff-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      /* Layout */
+      --ease:       cubic-bezier(.4,0,.2,1);
+      --ease-out:   cubic-bezier(0,0,.2,1);
+      --maxw:       1280px;
+      --article-w:  720px;
+      --sh-sm:      0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.04);
+      --sh-md:      0 4px 20px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
+      --sh-lg:      0 20px 60px rgba(0,0,0,.10),0 6px 20px rgba(0,0,0,.05);
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; font-size: 16px; overflow-x: clip; }
+    body {
+      font-family: var(--ff-sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.8;
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ─── READING PROGRESS BAR ─── */
+    .reading-progress {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      height: 3px; background: transparent;
+    }
+    .reading-progress-fill {
+      height: 100%; width: 0%; background: var(--accent);
+      transition: width .1s linear;
+    }
+
+    /* ─── MAIN NAV ─── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--rule);
+      box-shadow: var(--sh-sm);
+      contain: layout style;
+    }
+    .nav-inner {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: 0 32px; height: 62px;
+      display: flex; align-items: center; justify-content: space-between; gap: 40px;
+    }
+    .nav-logo { display: flex; align-items: baseline; flex-shrink: 0; gap: 0; }
+    .nav-logo-w {
+      font-family: var(--ff-display); font-size: 20px; font-weight: 700;
+      color: var(--ink); letter-spacing: -.5px; line-height: 1;
+    }
+    .nav-logo-tld { color: var(--secondary); }
+    .nav-logo-tag {
+      font-size: 9.5px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--text-faint);
+      margin-left: 10px; padding-bottom: 2px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; flex: 1; }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500;
+      color: var(--text-muted); padding: 6px 11px; border-radius: 7px;
+      transition: background .18s, color .18s;
+    }
+    .nav-links a:hover   { background: var(--light); color: var(--primary); }
+    .nav-links a.active  { background: var(--light); color: var(--primary); font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-btn-ghost {
+      font-size: 13px; font-weight: 500; color: var(--text-muted);
+      padding: 7px 14px; border-radius: 7px;
+      border: 1.5px solid var(--border-md);
+      transition: border-color .18s, color .18s;
+    }
+    .nav-btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+    .nav-btn-solid {
+      font-size: 13px; font-weight: 600; color: var(--white);
+      padding: 8px 18px; border-radius: 7px;
+      background: var(--primary);
+      transition: background .18s, transform .18s;
+    }
+    .nav-btn-solid:hover { background: var(--secondary); transform: translateY(-1px); }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 6px; background: none; border: none; z-index: 901;
+    }
+    .nav-hamburger span {
+      display: block; width: 20px; height: 1.5px; background: var(--primary);
+      transition: transform .3s var(--ease), opacity .3s var(--ease);
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* ─── INTELLIGENCE SUB-NAV ─── */
+    .subnav {
+      position: fixed; top: 62px; left: 0; right: 0; z-index: 890;
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      contain: layout style;
+    }
+    .subnav-inner {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: 0 32px; height: 46px;
+      display: flex; align-items: center; gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .subnav-inner::-webkit-scrollbar { display: none; }
+    .subnav-link {
+      font-size: 12.5px; font-weight: 500; color: var(--text-muted);
+      padding: 6px 13px; border-radius: 6px; white-space: nowrap;
+      transition: background .16s, color .16s;
+    }
+    .subnav-link:hover  { background: var(--light); color: var(--primary); }
+    .subnav-link.active {
+      background: var(--primary); color: var(--white);
+      font-weight: 600;
+    }
+
+    /* ─── MOBILE MENU ─── */
+    .mob-menu {
+      position: fixed; inset: 0; background: var(--white); z-index: 895;
+      transform: translateX(100%); transition: transform .4s var(--ease);
+      padding: 80px 28px 40px; overflow-y: auto;
+    }
+    .mob-menu.open { transform: none; }
+    .mob-links { list-style: none; }
+    .mob-links a {
+      display: block; padding: 15px 0;
+      font-family: var(--ff-serif); font-size: 24px; font-weight: 700;
+      color: var(--primary); border-bottom: 1px solid var(--rule);
+      transition: color .2s;
+    }
+    .mob-links a:hover, .mob-links .mob-accent { color: var(--secondary); }
+
+    /* ─── PAGE LAYOUT ─── */
+    .page-wrap { padding-top: 108px; }
+
+    /* ─── BREADCRUMB ─── */
+    .breadcrumb {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: 18px 32px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .bc-link {
+      font-size: 12px; color: var(--text-faint); font-weight: 500;
+      transition: color .16s;
+    }
+    .bc-link:hover { color: var(--primary); }
+    .bc-sep { font-size: 11px; color: var(--text-faint); }
+    .bc-cur { font-size: 12px; color: var(--primary); font-weight: 600; }
+
+    /* ─── ARTICLE HERO ─── */
+    .article-hero {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: 40px 32px 0;
+    }
+    .ah-inner {
+      max-width: 100%;
+    }
+    .ah-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-bottom: 20px;
+    }
+    .ah-section-tag {
+      font-size: 10px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--faint);
+    }
+    .ah-divider { width: 1px; height: 12px; background: var(--border-md); }
+    .ah-category {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 4px;
+    }
+    /* Category color variants */
+    .ah-cat-rankings   { background: rgba(17,17,17,.06); color: var(--primary); }
+    .ah-cat-reports    { background: rgba(17,17,17,.06); color: var(--primary); }
+    .ah-cat-analysis   { background: rgba(17,17,17,.06); color: var(--primary); }
+    .ah-cat-market     { background: rgba(17,17,17,.06); color: var(--primary); }
+    .ah-cat-infra      { background: rgba(17,17,17,.06); color: var(--primary); }
+    .ah-cat-investment  { background: rgba(17,17,17,.06); color: var(--primary); }
+    .ah-cat-legal      { background: rgba(17,17,17,.06); color: var(--primary); }
+
+    .ah-title {
+      font-family: var(--ff-display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700; line-height: 1.08;
+      letter-spacing: -.025em; color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .ah-subtitle {
+      font-size: 17px; line-height: 1.82;
+      color: var(--ink2); max-width: 100%;
+      margin-bottom: 28px;
+    }
+
+    /* Article meta row */
+    .ah-meta {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .ah-meta-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--text-muted); font-weight: 500;
+    }
+    .ah-meta-icon {
+      width: 16px; height: 16px; color: var(--text-faint);
+    }
+    .ah-meta-divider { width: 1px; height: 14px; background: var(--border-md); }
+    .ah-update-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--success);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .ah-update-dot {
+      width: 5px; height: 5px; background: var(--success);
+      border-radius: 50%; animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(40,167,69,.4); }
+      50%     { opacity:.6; box-shadow: 0 0 0 5px rgba(40,167,69,0); }
+    }
+
+    /* ─── HERO IMAGE ─── */
+    .ah-hero-img {
+      max-width: var(--maxw);
+      margin: 32px auto 0;
+      padding: 0 32px;
+    }
+    .ah-hero-img img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2.14 / 1;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: var(--sh-md);
+    }
+    .ah-hero-caption {
+      font-size: 12px;
+      color: var(--text-faint);
+      margin-top: 10px;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .ah-hero-caption::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--text-faint);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    /* ─── RESPONSIVE (critical only) ─── */
+    @media (max-width: 768px) {
+      .nav-inner { padding: 0 20px; }
+      .nav-links, .nav-right { display: none; }
+      .nav-hamburger { display: flex; }
+      .subnav-inner { padding: 0 16px; }
+      .breadcrumb { padding: 14px 20px 0; gap: 6px; }
+      .bc-cur { font-size: 11px; }
+      .article-hero { padding: 28px 20px 0; }
+      .ah-hero-img { margin-top: 24px; padding: 0 20px; }
+      .ah-hero-img img { border-radius: 10px; }
+      .ah-title { font-size: clamp(24px, 6vw, 32px); }
+      .ah-subtitle { font-size: 15px; line-height: 1.65; }
+      .ah-meta { gap: 10px; }
+      .ah-meta-item { font-size: 11px; }
+      .ah-meta-divider { height: 12px; }
+    }
+    @media (max-width: 480px) {
+      .nav-inner { padding: 0 16px; height: 56px; }
+      .nav-logo-w { font-size: 18px; }
+      .nav-logo-tag { font-size: 8.5px; margin-left: 8px; }
+      .subnav { top: 56px; }
+      .subnav-inner { padding: 0 12px; height: 42px; }
+      .subnav-link { font-size: 11.5px; padding: 5px 10px; }
+      .page-wrap { padding-top: 98px; }
+      .breadcrumb { padding: 12px 16px 0; gap: 5px; }
+      .bc-link, .bc-cur { font-size: 10.5px; }
+      .article-hero { padding: 22px 16px 0; }
+      .ah-hero-img { margin-top: 20px; padding: 0 16px; }
+      .ah-hero-img img { border-radius: 8px; }
+      .ah-hero-caption { font-size: 11px; }
+      .ah-title { font-size: clamp(22px, 5.5vw, 28px); }
+      .ah-subtitle { font-size: 14px; line-height: 1.6; margin-bottom: 22px; }
+      .ah-eyebrow { margin-bottom: 14px; }
+      .ah-section-tag { font-size: 9px; }
+      .ah-category { font-size: 9px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══ Reading Progress Bar ═══ -->
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-fill" id="readingProgress"></div>
+</div>
+
+<!-- ══════════════ MAIN NAV ══════════════ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="GHAR.tv">
+      <span class="nav-logo-w">GHAR<span class="nav-logo-tld">.tv</span></span>
+      <span class="nav-logo-tag">Intelligence</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/intelligence" class="active">Intelligence</a></li>
+      <li><a href="/rankings">Rankings</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/developers">Developers</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/nri" class="nav-btn-ghost">NRI Desk</a>
+      <a href="/list-property" class="nav-btn-solid">List Property</a>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════ INTEL SUB-NAV ══════════════ -->
+<nav class="subnav" aria-label="Intelligence sections">
+  <div class="subnav-inner">
+    <a href="/intelligence/rankings"       class="subnav-link">Rankings</a>
+    <a href="/intelligence/reports"        class="subnav-link">Reports</a>
+    <a href="/intelligence/analysis"       class="subnav-link">Analysis</a>
+    <a href="/intelligence/market"         class="subnav-link">Market</a>
+    <a href="/intelligence/infrastructure" class="subnav-link">Infrastructure</a>
+    <a href="/intelligence/investment"     class="subnav-link">Investment</a>
+    <a href="/intelligence/legal"          class="subnav-link">Legal Guides</a>
+  </div>
+</nav>
+
+<!-- ══════════════ MOBILE MENU ══════════════ -->
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <ul class="mob-links">
+    <li><a href="/intelligence" class="mob-accent">Intelligence</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/developers">Developers</a></li>
+    <li><a href="/nri">NRI Desk</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/list-property" class="mob-accent">List Property &#8594;</a></li>
+  </ul>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE CONTENT
+══════════════════════════════════════════════════════ -->
+<div class="page-wrap">
+
+  <!-- ═══ Breadcrumb ═══ -->
+  <div class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/" class="bc-link">GHAR.tv</a>
+    <span class="bc-sep" aria-hidden="true">&#8250;</span>
+    <a href="/intelligence" class="bc-link">Intelligence</a>
+    <span class="bc-sep" aria-hidden="true">&#8250;</span>
+    <a href="/intelligence/{{section}}" class="bc-link">{{Section Name}}</a>
+    <span class="bc-sep" aria-hidden="true">&#8250;</span>
+    <span class="bc-cur">{{Short Title}}</span>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       ARTICLE HERO
+  ══════════════════════════════════════ -->
+  <header class="article-hero">
+    <div class="ah-inner">
+
+      <!-- Eyebrow: Section + Category -->
+      <div class="ah-eyebrow">
+        <span class="ah-section-tag">{{Section}}</span>
+        <span class="ah-divider"></span>
+        <span class="ah-category ah-cat-{{section}}">{{Category Tag}}</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="ah-title">{{Article Title}}</h1>
+
+      <!-- Subtitle / Lead -->
+      <p class="ah-subtitle">{{Article subtitle - 1-2 sentences describing the article, 150-200 chars max}}</p>
+
+      <!-- Meta row -->
+      <div class="ah-meta">
+        <span class="ah-meta-item">
+          <svg class="ah-meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33v13.34M1.33 8h13.34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          {{Month DD, YYYY}}
+        </span>
+        <span class="ah-meta-divider"></span>
+        <span class="ah-meta-item">
+          <svg class="ah-meta-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M8 4.67V8l2.33 2.33" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          {{NN}} min read
+        </span>
+        <span class="ah-meta-divider"></span>
+        <span class="ah-update-badge">
+          <span class="ah-update-dot"></span>
+          Updated {{Q1 2026}}
+        </span>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════
+       HERO IMAGE (optional)
+  ══════════════════════════════════════ -->
+  <figure class="ah-hero-img reveal">
+    <img
+      src="{{hero-image-url - 1200x560 recommended}}"
+      alt="{{Descriptive alt text}}"
+      width="1200" height="560"
+      loading="eager"
+      decoding="async">
+    <figcaption class="ah-hero-caption">{{Image caption - 1 line describing the image}}</figcaption>
+  </figure>
+
+
+  <!-- ══════════════════════════════════════
+       KEY STATS (optional)
+  ══════════════════════════════════════ -->
+  <div class="key-stats reveal" aria-label="Key statistics">
+    <div class="ks-grid">
+      <div class="ks-card"><span class="ks-label">{{Stat 1 Label}}</span><span class="ks-value">{{Value}}</span></div>
+      <div class="ks-card"><span class="ks-label">{{Stat 2 Label}}</span><span class="ks-value">{{Value}}</span></div>
+      <div class="ks-card"><span class="ks-label">{{Stat 3 Label}}</span><span class="ks-value">{{Value}}</span></div>
+      <div class="ks-card"><span class="ks-label">{{Stat 4 Label}}</span><span class="ks-value">{{Value}}</span></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       DETAIL BODY - Main + Sidebar
+  ══════════════════════════════════════ -->
+  <div class="detail-body">
+    <div class="db-grid cont">
+
+
+      <!-- ════ MAIN CONTENT COLUMN ════ -->
+      <div class="db-main" id="articleContent">
+
+        <!-- ── Key Takeaways ── -->
+        <div class="takeaways reveal">
+          <h2 class="tk-title">Key Takeaways</h2>
+          <ul class="tk-list">
+            <li>{{Takeaway 1}}</li>
+            <li>{{Takeaway 2}}</li>
+            <li>{{Takeaway 3}}</li>
+            <li>{{Takeaway 4}}</li>
+            <li>{{Takeaway 5}}</li>
+          </ul>
+        </div>
+
+        <!-- ── Table of Contents ── -->
+        <nav class="toc reveal" aria-label="Table of contents">
+          <h2 class="toc-title">In This {{Report|Ranking|Article}}</h2>
+          <ol class="toc-list">
+            <li><a href="#section-1" class="toc-link"><span class="toc-num">01</span><span>{{Section 1 Title}}</span></a></li>
+            <li><a href="#section-2" class="toc-link"><span class="toc-num">02</span><span>{{Section 2 Title}}</span></a></li>
+            <li><a href="#section-3" class="toc-link"><span class="toc-num">03</span><span>{{Section 3 Title}}</span></a></li>
+            <!-- Add more as needed -->
+          </ol>
+        </nav>
+
+        <!-- ══════ ARTICLE BODY ══════ -->
+        <article class="prose">
+
+          <!-- ── SECTION: Paragraph with Inline Stat ── -->
+          <section id="section-1" class="reveal">
+            <h2>{{Section 1 Heading}}</h2>
+
+            <p>{{Paragraph text. Use <a href="#" class="prose-link">inline links</a> as needed.}}</p>
+
+            <!-- Inline Stat (optional) -->
+            <div class="inline-stat">
+              <span class="is-value">{{&#8377;42,000 Cr}}</span>
+              <span class="is-label">{{Stat description - one line explaining the number}}</span>
+            </div>
+
+            <p>{{Another paragraph...}}</p>
+          </section>
+
+
+          <!-- ── SECTION: With Image ── -->
+          <section id="section-2" class="reveal">
+            <h2>{{Section 2 Heading}}</h2>
+
+            <p>{{Paragraph text...}}</p>
+
+            <!-- Inline Image -->
+            <figure class="art-img">
+              <img src="{{image-url}}" alt="{{Alt text}}" loading="lazy" width="720" height="480">
+              <figcaption>{{Image caption}}</figcaption>
+            </figure>
+
+            <p>{{Paragraph text...}}</p>
+
+            <!-- Sub-heading -->
+            <h3>{{Sub-heading}}</h3>
+            <p>{{Paragraph text...}}</p>
+          </section>
+
+
+          <!-- ── SECTION: With Data Table ── -->
+          <section id="section-3" class="reveal">
+            <h2>{{Section 3 Heading}}</h2>
+
+            <p>{{Paragraph text...}}</p>
+
+            <!-- Data Table -->
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>{{Column 1}}</th>
+                    <th>{{Column 2}}</th>
+                    <th>{{Column 3}}</th>
+                    <th>{{Column 4}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>{{Data}}</td><td>{{Data}}</td><td>{{Data}}</td><td>{{Data}}</td></tr>
+                  <tr><td>{{Data}}</td><td>{{Data}}</td><td>{{Data}}</td><td>{{Data}}</td></tr>
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+
+          <!-- ── SECTION: With YouTube Embed ── -->
+          <section id="section-4" class="reveal">
+            <h2>{{Section 4 Heading}}</h2>
+
+            <p>{{Paragraph text...}}</p>
+
+            <!-- YouTube Video -->
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/{{VIDEO_ID}}"
+                title="{{Video title}}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </section>
+
+
+          <!-- ── SECTION: With Blockquote & Callout ── -->
+          <section id="section-5" class="reveal">
+            <h2>{{Section 5 Heading}}</h2>
+
+            <p>{{Paragraph text...}}</p>
+
+            <!-- Blockquote -->
+            <blockquote class="art-quote">
+              <p>{{Quote text - keep short}}</p>
+              <cite>{{Attribution - Name, Title}}</cite>
+            </blockquote>
+
+            <!-- Info Callout -->
+            <div class="callout callout-info">
+              <div class="callout-icon">&#9432;</div>
+              <div class="callout-body">
+                <p class="callout-title">{{Callout Title}}</p>
+                <p>{{Callout body text}}</p>
+              </div>
+            </div>
+
+            <!-- Warning Callout -->
+            <!--
+            <div class="callout callout-warn">
+              <div class="callout-icon">&#9888;</div>
+              <div class="callout-body">
+                <p class="callout-title">{{Warning Title}}</p>
+                <p>{{Warning body text}}</p>
+              </div>
+            </div>
+            -->
+          </section>
+
+
+          <!-- ── SECTION: Ordered & Unordered Lists ── -->
+          <section id="section-6" class="reveal">
+            <h2>{{Section 6 Heading}}</h2>
+
+            <p>{{Paragraph text...}}</p>
+
+            <!-- Unordered list -->
+            <ul>
+              <li>{{Item 1}}</li>
+              <li>{{Item 2}}</li>
+              <li>{{Item 3}}</li>
+            </ul>
+
+            <!-- Ordered list -->
+            <ol>
+              <li>{{Step 1}}</li>
+              <li>{{Step 2}}</li>
+              <li>{{Step 3}}</li>
+            </ol>
+          </section>
+
+
+          <!-- ── SECTION: City Spotlight / Corridor Cards ── -->
+          <!--
+          <section id="section-7" class="reveal">
+            <h2>{{Corridor Analysis}}</h2>
+            <div class="city-spotlight cs-dark">
+              <div class="cs-header">
+                <h3 class="cs-city">{{City Name}}</h3>
+                <div class="cs-badges">
+                  <span class="cs-badge">{{Badge 1}}</span>
+                  <span class="cs-badge">{{Badge 2}}</span>
+                </div>
+              </div>
+              <div class="cs-grid">
+                <div class="cs-stat"><span class="cs-stat-val">{{Value}}</span><span class="cs-stat-label">{{Label}}</span></div>
+                <div class="cs-stat"><span class="cs-stat-val">{{Value}}</span><span class="cs-stat-label">{{Label}}</span></div>
+                <div class="cs-stat"><span class="cs-stat-val">{{Value}}</span><span class="cs-stat-label">{{Label}}</span></div>
+              </div>
+              <p class="cs-note">{{One-line editorial note}}</p>
+            </div>
+          </section>
+          -->
+
+
+          <!-- ── FAQ SECTION ── -->
+          <section id="faq" class="faq-section reveal">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary class="faq-q">{{Question 1?}}</summary>
+                <div class="faq-a"><p>{{Answer 1}}</p></div>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-q">{{Question 2?}}</summary>
+                <div class="faq-a"><p>{{Answer 2}}</p></div>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-q">{{Question 3?}}</summary>
+                <div class="faq-a"><p>{{Answer 3}}</p></div>
+              </details>
+              <!-- Add more as needed -->
+            </div>
+          </section>
+
+
+          <!-- ── METHODOLOGY (optional) ── -->
+          <!--
+          <section class="methodology reveal">
+            <h2>Methodology</h2>
+            <p>{{Description of data sources, scoring criteria, update frequency, etc.}}</p>
+            <ul>
+              <li>{{Source / Criterion 1}}</li>
+              <li>{{Source / Criterion 2}}</li>
+              <li>{{Source / Criterion 3}}</li>
+            </ul>
+          </section>
+          -->
+
+
+        </article>
+
+        <!-- ── Article Footer: Tags + Share ── -->
+        <div class="article-footer reveal">
+          <div class="af-tags">
+            <span class="af-tags-label">Tags</span>
+            <a href="#" class="af-tag">{{Tag 1}}</a>
+            <a href="#" class="af-tag">{{Tag 2}}</a>
+            <a href="#" class="af-tag">{{Tag 3}}</a>
+          </div>
+          <div class="af-share">
+            <span class="af-share-label">Share</span>
+            <button class="af-share-btn" data-share="twitter" aria-label="Share on Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </button>
+            <button class="af-share-btn" data-share="linkedin" aria-label="Share on LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </button>
+            <button class="af-share-btn" data-share="whatsapp" aria-label="Share on WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </button>
+            <button class="af-share-btn" data-share="copy" aria-label="Copy link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6.354 11.354a.5.5 0 0 1-.708 0l-1-1a3.5 3.5 0 0 1 4.95-4.95l1 1a.5.5 0 1 1-.708.708l-1-1a2.5 2.5 0 0 0-3.536 3.536l1 1a.5.5 0 0 1 0 .706Zm3.292-6.708a.5.5 0 0 1 .708 0l1 1a3.5 3.5 0 0 1-4.95 4.95l-1-1a.5.5 0 0 1 .708-.708l1 1a2.5 2.5 0 0 0 3.536-3.536l-1-1a.5.5 0 0 1 0-.706Z" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /db-main -->
+
+
+      <!-- ════ SIDEBAR ════ -->
+      <aside class="db-sidebar">
+        <div class="sidebar-sticky">
+
+          <!-- Sidebar: TOC (tracks scroll) -->
+          <div class="sb-card reveal">
+            <div class="sb-card-title">Contents</div>
+            <nav class="sb-toc">
+              <a href="#section-1" class="sb-toc-link active">{{Section 1}}</a>
+              <a href="#section-2" class="sb-toc-link">{{Section 2}}</a>
+              <a href="#section-3" class="sb-toc-link">{{Section 3}}</a>
+              <a href="#faq" class="sb-toc-link">FAQ</a>
+            </nav>
+          </div>
+
+          <!-- Sidebar: Newsletter -->
+          <div class="sb-card sb-nl reveal">
+            <div class="sb-card-title">Intelligence Weekly</div>
+            <p class="sb-nl-desc">Get our top research picks every Friday.</p>
+            <form class="sb-nl-form" id="sbNlForm">
+              <input type="email" placeholder="Your email" required class="sb-nl-input">
+              <button type="submit" class="sb-nl-btn">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Sidebar: Related (optional) -->
+          <!--
+          <div class="sb-card reveal">
+            <div class="sb-card-title">Related</div>
+            <div class="sb-related">
+              <a href="#" class="sbr-item">
+                <span class="sbr-cat">{{Section}}</span>
+                <span class="sbr-title">{{Related Article Title}}</span>
+              </a>
+            </div>
+          </div>
+          -->
+
+          <!-- Sidebar: Download CTA (for Reports) -->
+          <!--
+          <a href="/downloads/{{slug}}.pdf" target="_blank" class="sb-download">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.33v9.34M4.67 7.33 8 10.67l3.33-3.34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.33 12v1.33c0 .74.6 1.34 1.34 1.34h10.66c.74 0 1.34-.6 1.34-1.34V12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download Report (PDF)
+          </a>
+          -->
+
+        </div>
+      </aside>
+
+
+    </div><!-- /db-grid -->
+  </div><!-- /detail-body -->
+
+
+  <!-- ══════════════════════════════════════
+       NEWSLETTER (full-width)
+  ══════════════════════════════════════ -->
+  <section class="nl cont reveal">
+    <div class="nl-wrap">
+      <div class="nl-left">
+        <span class="nl-eyebrow">GHAR.tv Intelligence</span>
+        <h2 class="nl-title">Rankings, reports &amp; analysis - delivered weekly.</h2>
+      </div>
+      <div class="nl-right">
+        <form class="nl-form" id="nlForm">
+          <div class="nl-row">
+            <input type="email" class="nl-inp" placeholder="your@email.com" required>
+            <button type="submit" class="nl-btn" id="nlBtn">Subscribe</button>
+          </div>
+          <p class="nl-note">Free. No spam. Unsubscribe anytime.</p>
+        </form>
+        <p class="nl-ok" id="nlSuccess" hidden>&#10003; You're in! Check your inbox.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer cont">
+    <div class="ft-inner">
+      <div class="ft-main">
+        <div class="ft-brand">
+          <div class="ft-logo">GHAR<span class="ft-logo-tld">.tv</span></div>
+          <p class="ft-tag">India's Real Estate Intelligence Platform</p>
+        </div>
+        <nav class="ft-nav">
+          <a href="/intelligence">Intelligence</a>
+          <a href="/rankings">Rankings</a>
+          <a href="/projects">Projects</a>
+          <a href="/developers">Developers</a>
+          <a href="/about">About</a>
+        </nav>
+      </div>
+      <div class="ft-bot">
+        <span>&copy; 2026 GHAR.tv. All rights reserved.</span>
+        <div class="ft-bot-links">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+
+<!-- ══════════════ JS ══════════════ -->
+<script>
+(function(){
+  'use strict';
+
+  /* ── Nav: hamburger toggle ── */
+  var hBtn = document.getElementById('hamburgerBtn');
+  var mMenu = document.getElementById('mobMenu');
+  hBtn.addEventListener('click', function(){
+    var open = mMenu.classList.toggle('open');
+    hBtn.classList.toggle('open', open);
+    hBtn.setAttribute('aria-expanded', String(open));
+    mMenu.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mMenu.classList.remove('open');
+      hBtn.classList.remove('open');
+      hBtn.setAttribute('aria-expanded','false');
+      mMenu.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ── Sub-nav: highlight active section ── */
+  var path = location.pathname;
+  document.querySelectorAll('.subnav-link').forEach(function(a){
+    if(path.indexOf(a.getAttribute('href')) === 0) a.classList.add('active');
+  });
+
+  /* ── Reading progress bar ── */
+  var progressBar = document.getElementById('readingProgress');
+  var article = document.getElementById('articleContent');
+  if(progressBar && article){
+    window.addEventListener('scroll', function(){
+      var rect = article.getBoundingClientRect();
+      var total = article.offsetHeight - window.innerHeight;
+      var scrolled = -rect.top;
+      var pct = Math.min(Math.max(scrolled / total * 100, 0), 100);
+      progressBar.style.width = pct + '%';
+    }, {passive:true});
+  }
+
+  /* ── Smooth scroll for anchor links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      var t  = id.length > 1 && document.querySelector(id);
+      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+
+  /* ── Sidebar TOC: active state tracking ── */
+  var tocLinks = document.querySelectorAll('.sb-toc-link');
+  var sections = [];
+  tocLinks.forEach(function(a){
+    var t = document.querySelector(a.getAttribute('href'));
+    if(t) sections.push({el: t, link: a});
+  });
+  if(sections.length && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          tocLinks.forEach(function(l){ l.classList.remove('active'); });
+          sections.forEach(function(s){
+            if(s.el === e.target) s.link.classList.add('active');
+          });
+        }
+      });
+    }, {rootMargin: '-120px 0px -60% 0px', threshold: 0});
+    sections.forEach(function(s){ io.observe(s.el); });
+  }
+
+  /* ── Intersection Observer reveals ── */
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('revealed');
+          revealIO.unobserve(e.target);
+        }
+      });
+    },{threshold: 0.07, rootMargin:'0px 0px -24px 0px'});
+    els.forEach(function(el){ revealIO.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('revealed'); });
+  }
+
+  /* ── Share buttons ── */
+  var url = encodeURIComponent(location.href);
+  var title = encodeURIComponent(document.title);
+  document.querySelectorAll('.af-share-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var t = btn.getAttribute('data-share');
+      var w;
+      if(t === 'twitter')   w = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+      if(t === 'linkedin')  w = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if(t === 'whatsapp')  w = 'https://wa.me/?text=' + title + '%20' + url;
+      if(t === 'copy'){
+        navigator.clipboard.writeText(location.href);
+        btn.innerHTML = '<span style="font-size:12px;font-weight:600">Copied!</span>';
+        setTimeout(function(){ btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6.354 11.354a.5.5 0 0 1-.708 0l-1-1a3.5 3.5 0 0 1 4.95-4.95l1 1a.5.5 0 1 1-.708.708l-1-1a2.5 2.5 0 0 0-3.536 3.536l1 1a.5.5 0 0 1 0 .706Zm3.292-6.708a.5.5 0 0 1 .708 0l1 1a3.5 3.5 0 0 1-4.95 4.95l-1-1a.5.5 0 0 1 .708-.708l1 1a2.5 2.5 0 0 0 3.536-3.536l-1-1a.5.5 0 0 1 0-.706Z" fill="currentColor"/></svg>'; }, 2000);
+        return;
+      }
+      if(w) window.open(w, '_blank', 'width=600,height=400');
+    });
+  });
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-item').forEach(function(d){
+    d.querySelector('summary').addEventListener('click', function(){
+      document.querySelectorAll('.faq-item[open]').forEach(function(other){
+        if(other !== d) other.removeAttribute('open');
+      });
+    });
+  });
+
+  /* ── Newsletter submit ── */
+  var nlForm = document.getElementById('nlForm');
+  var nlBtn  = document.getElementById('nlBtn');
+  var nlOk   = document.getElementById('nlSuccess');
+  if(nlForm){
+    nlForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      nlBtn.textContent = '...'; nlBtn.disabled = true;
+      setTimeout(function(){ nlForm.hidden = true; nlOk.hidden = false; }, 800);
+    });
+  }
+  var sbForm = document.getElementById('sbNlForm');
+  if(sbForm){
+    sbForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = sbForm.querySelector('button');
+      btn.textContent = '...'; btn.disabled = true;
+      setTimeout(function(){ sbForm.innerHTML = '<p class="sb-nl-ok"><span class="nl-check">\u2713</span> You\'re in!</p>'; }, 800);
+    });
+  }
+
+  /* ── Font swap CLS prevention ── */
+  if('fonts' in document){
+    document.fonts.ready.then(function(){ document.documentElement.classList.add('fonts-ready'); });
+  }
+})();
+</script>
+
+</body>
+</html>

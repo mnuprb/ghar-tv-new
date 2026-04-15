@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file /d/ghar.tv-new/intelligence/*.html)",
+      "Bash(wc -l /d/ghar.tv-new/intelligence/*.html)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npx:*)",
+      "Bash(where node:*)",
+      "Bash(where python:*)",
+      "Bash(where python3:*)",
+      "Bash(cp \"C:/Users/ADMIN/Desktop/Ranking Topics/Ranking Topics/top-integrated-townships-india.html\" \"D:/ghar.tv-new/intelligence/rankings/\")",
+      "Bash(cp \"C:/Users/ADMIN/Desktop/Ranking Topics/Ranking Topics/top-luxury-villas-bangalore.html\" \"D:/ghar.tv-new/intelligence/rankings/\")",
+      "Bash(cp \"C:/Users/ADMIN/Desktop/Ranking Topics/Ranking Topics/top-rental-yield-localities-india.html\" \"D:/ghar.tv-new/intelligence/rankings/\")",
+      "Bash(cp \"C:/Users/ADMIN/Desktop/Ranking Topics/Ranking Topics/top-developers-bangalore.html\" \"D:/ghar.tv-new/intelligence/rankings/\")",
+      "Bash(cp \"C:/Users/ADMIN/Desktop/Ranking Topics/Ranking Topics/top-instagram-influencers-mumbai.html\" \"D:/ghar.tv-new/intelligence/rankings/\")",
+      "Bash(node -e \":*)",
+      "Bash(grep -ohP '.{0,3}—.{0,3}' analysis.html)",
+      "Bash(unzip -l 'C:/Users/ADMIN/Documents/Received Files/Gazpacho-Font-Family.zip')",
+      "Bash(unzip -o \"C:/Users/ADMIN/Documents/Received Files/Gazpacho-Font-Family.zip\" \"Gazpacho-Font-Family/Gazpacho-Bold.woff2\" \"Gazpacho-Font-Family/Gazpacho-Bold.otf\" -d \"D:/ghar.tv-new/intelligence/fonts/\")",
+      "Bash(sed -i 's|font-family: var\\(--ff-serif\\); font-size: 24px; font-weight: 700;|font-family: var\\(--ff-display\\); font-size: 24px; font-weight: 700;|' analysis.html)",
+      "Bash(sed -i 's|font-family: var\\(--ff-serif\\); font-size: 26px; font-weight: 700;|font-family: var\\(--ff-display\\); font-size: 26px; font-weight: 700;|' analysis.html)",
+      "Bash(xargs -I{} echo \"  $f: {}\" done)"
+    ]
+  }
+}

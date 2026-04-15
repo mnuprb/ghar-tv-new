@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Industry Voices - GHAR.tv Intelligence</title>
+  <meta name="description" content="Op-eds, market commentary and expert perspectives from developers, economists, architects and investors shaping Indian real estate.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    media="print" onload="this.onload=null;this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  </noscript>
+
+  <link rel="stylesheet" href="intelligence/listing.css">
+  <style>
+    /* ═══ HERO — intelligence style ═══ */
+    .hero {
+      padding-top: 0; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background: var(--white);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .hero-grid::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(17,17,17,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,17,.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+    }
+    .hero-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 56px 20px 48px;
+      width: 100%; position: relative; z-index: 1;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10px; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(40px, 7vw, 88px);
+      font-weight: 700; line-height: 1.02; color: var(--ink);
+      letter-spacing: -.035em; margin-bottom: 24px;
+    }
+    .hero-title span {
+      display: block; color: var(--ink);
+    }
+    .hero-sub {
+      font-size: clamp(15px, 1.4vw, 17px); line-height: 1.75;
+      color: var(--ink2); max-width: 580px; margin: 0 auto 40px;
+    }
+    .hero-ctas {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--ink); color: #fff;
+      padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 600;
+      text-decoration: none; letter-spacing: .01em; min-height: 44px;
+      transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(17,17,17,.18); }
+    @media (min-width: 744px) {
+      .hero-inner { padding: 56px 32px 44px; }
+    }
+    @media (min-width: 1024px) {
+      .hero-inner { padding: 64px 32px 48px; }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .btn-primary { width: 100%; justify-content: center; }
+    }
+
+    /* ═══ INDUSTRY VOICES — page-specific styles ═══ */
+
+    /* Featured voice — large quote card */
+    .voice-featured {
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: var(--r); overflow: hidden;
+      margin-bottom: 32px; text-decoration: none; display: block;
+      transition: box-shadow .35s var(--ease), transform .35s var(--ease);
+    }
+    .voice-featured:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,.08);
+      transform: translateY(-4px);
+    }
+    .voice-featured__img-wrap {
+      overflow: hidden; aspect-ratio: 16 / 8;
+    }
+    .voice-featured__img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s var(--ease);
+    }
+    .voice-featured:hover .voice-featured__img { transform: scale(1.05); }
+    .voice-featured__inner { padding: 28px 24px; }
+    .voice-featured__eyebrow {
+      font-size: 10px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--faint); margin-bottom: 24px;
+    }
+    .voice-featured__quote {
+      font-family: var(--ff-display); font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 700; color: var(--ink); line-height: 1.25;
+      letter-spacing: -.025em; margin-bottom: 20px;
+      position: relative; padding-left: 0;
+    }
+    .voice-featured__lede {
+      font-size: 15px; line-height: 1.75; color: var(--ink2);
+      margin-bottom: 12px; max-width: 720px;
+    }
+    .voice-featured__context {
+      font-size: 14px; line-height: 1.7; color: var(--faint);
+      margin-bottom: 32px; max-width: 720px;
+    }
+    .voice-featured__author {
+      display: flex; align-items: center; gap: 14px;
+      padding-top: 24px; border-top: 1px solid var(--rule);
+    }
+    .voice-featured__avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-display); font-size: 15px; font-weight: 700;
+      color: var(--ink); flex-shrink: 0;
+    }
+    .voice-featured__name {
+      font-size: 14px; font-weight: 600; color: var(--ink);
+    }
+    .voice-featured__role {
+      font-size: 12px; color: var(--faint); margin-top: 2px;
+    }
+    .voice-featured__cta {
+      margin-left: auto; font-size: 13px; font-weight: 600;
+      color: var(--ink); transition: color .2s, gap .2s;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .voice-featured:hover .voice-featured__cta { color: var(--ink2); gap: 8px; }
+
+    /* Voice list — smaller cards */
+    .voice-list { display: flex; flex-direction: column; gap: 0; }
+    .voice-card {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 28px 0; border-bottom: 1px solid var(--rule);
+      text-decoration: none; transition: background .2s;
+    }
+    .voice-card:first-child { border-top: 1px solid var(--rule); }
+    .voice-card:hover { background: var(--surface); margin: 0 -20px; padding: 28px 20px; }
+    .voice-card__img {
+      width: 100px; height: 100px; border-radius: 10px;
+      object-fit: cover; flex-shrink: 0;
+      border: 1px solid var(--rule);
+      transition: transform .3s var(--ease);
+    }
+    .voice-card:hover .voice-card__img { transform: scale(1.04); }
+    .voice-card__body { flex: 1; min-width: 0; }
+    .voice-card__eyebrow {
+      font-size: 10px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--faint); margin-bottom: 8px;
+    }
+    .voice-card__title {
+      font-family: var(--ff-display); font-size: 18px; font-weight: 700;
+      color: var(--ink); line-height: 1.3; letter-spacing: -.015em;
+      margin-bottom: 10px; transition: color .2s;
+    }
+    .voice-card:hover .voice-card__title { color: var(--ink2); }
+    .voice-card__meta {
+      font-size: 12.5px; color: var(--faint); font-weight: 500;
+    }
+    .voice-card__arrow {
+      font-size: 18px; color: var(--faint); flex-shrink: 0;
+      align-self: center; transition: color .2s, transform .2s;
+    }
+    .voice-card:hover .voice-card__arrow { color: var(--ink); transform: translateX(4px); }
+
+    /* Load more */
+    .voice-load-more {
+      text-align: center; padding: 40px 0 0;
+    }
+    .voice-load-more__btn {
+      font-size: 13px; font-weight: 600; color: var(--ink);
+      padding: 12px 32px; border-radius: 8px;
+      border: 1.5px solid var(--rule); background: var(--white);
+      min-height: 44px; cursor: pointer;
+      transition: border-color .18s, background .18s;
+    }
+    .voice-load-more__btn:hover { border-color: var(--ink); background: var(--surface); }
+
+    @media (min-width: 744px) {
+      .voice-featured__inner { padding: 36px 40px; }
+    }
+    @media (min-width: 1024px) {
+      .voice-featured { flex-direction: row; display: flex; }
+      .voice-featured__img-wrap { width: 45%; flex-shrink: 0; aspect-ratio: auto; }
+      .voice-featured__inner { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
+      .voice-featured__author { gap: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="intelligence/logo.svg" alt="GHAR.tv" class="nav-logo-img">
+      <span class="nav-logo-tag">Industry Voices</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/intelligence">Intelligence</a></li>
+      <li><a href="/design">Design</a></li>
+      <li><a href="/industry-voices" class="active">Industry Voices</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-dropdown" id="postDropdown">
+        <button class="nav-dropdown__toggle" aria-expanded="false">Post <svg class="nav-dropdown__arrow" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown__menu">
+          <a href="/post-property" class="nav-dropdown__item">Post Property<span class="nav-dropdown__item-sub">List your property for sale or rent</span></a>
+          <a href="/post-requirement" class="nav-dropdown__item">Post Requirement<span class="nav-dropdown__item-sub">Tell us what you're looking for</span></a>
+        </div>
+      </div>
+      <a href="/join" class="nav-btn-join">Join Now</a>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <ul class="mob-links">
+    <li><a href="/intelligence">Intelligence</a></li>
+    <li><a href="/design">Design</a></li>
+    <li><a href="/industry-voices" class="mob-accent">Industry Voices</a></li>
+    <li><a href="/post-property">Post Property</a></li>
+    <li><a href="/post-requirement">Post Requirement</a></li>
+    <li><a href="/join" class="mob-accent">Join Now &rarr;</a></li>
+  </ul>
+</div>
+
+<div class="page-wrap">
+  <div class="cont">
+
+    <!-- Breadcrumb -->
+    <nav class="bc" aria-label="Breadcrumb">
+      <a href="/">GHAR.tv</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-cur">Industry Voices</span>
+    </nav>
+
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        Industry Voices
+      </div>
+      <h1 class="hero-title">
+        The Sharpest Voices
+        <span>In Indian Real Estate</span>
+      </h1>
+      <p class="hero-sub">
+        Op-eds, market commentary and expert perspectives from developers, economists, architects and investors &mdash; the ones who have something worth saying and the clarity to say it.
+      </p>
+      <div class="hero-ctas">
+        <a href="#voices" class="btn-primary">Explore &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cont">
+
+    <!-- BODY GRID: Main + Sidebar -->
+    <div class="body-grid" id="voices">
+
+      <!-- MAIN -->
+      <main>
+
+        <!-- FEATURED VOICE -->
+        <a href="#" class="voice-featured reveal">
+          <div class="voice-featured__img-wrap">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop&q=75" alt="India housing policy" class="voice-featured__img" loading="eager">
+          </div>
+          <div class="voice-featured__inner">
+            <div class="voice-featured__eyebrow">Opinion &middot; Housing Policy</div>
+            <h2 class="voice-featured__quote">&ldquo;India&rsquo;s real estate doesn&rsquo;t have a supply problem. It has a trust problem.&rdquo;</h2>
+            <p class="voice-featured__lede">Why 60 million homes haven&rsquo;t solved the affordability question &mdash; and what actually needs to change</p>
+            <p class="voice-featured__context">How developers, regulators and buyers interact has to change before affordability improves. Rohit Kumar on what that actually looks like in practice.</p>
+            <div class="voice-featured__author">
+              <div class="voice-featured__avatar">RK</div>
+              <div>
+                <div class="voice-featured__name">Rohit Kumar</div>
+                <div class="voice-featured__role">Housing Economist &middot; Delhi</div>
+              </div>
+              <span class="voice-featured__cta">Read the piece &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- VOICE LIST -->
+        <div class="voice-list">
+
+          <a href="#" class="voice-card reveal">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&h=200&fit=crop&q=75" alt="Atul Chordia" class="voice-card__img" loading="lazy">
+            <div class="voice-card__body">
+              <div class="voice-card__eyebrow">Developer Perspective</div>
+              <h3 class="voice-card__title">Why we stopped building 3 BHKs in Pune &mdash; and what the data told us about our buyers</h3>
+              <div class="voice-card__meta">Atul Chordia &middot; Panchshil Realty, Pune</div>
+            </div>
+            <span class="voice-card__arrow">&rarr;</span>
+          </a>
+
+          <a href="#" class="voice-card reveal">
+            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=200&h=200&fit=crop&q=75" alt="Sanjay Mehta" class="voice-card__img" loading="lazy">
+            <div class="voice-card__body">
+              <div class="voice-card__eyebrow">Market Commentary</div>
+              <h3 class="voice-card__title">The luxury market in Mumbai isn&rsquo;t cooling. It&rsquo;s sorting &mdash; and here&rsquo;s what that means for buyers</h3>
+              <div class="voice-card__meta">Sanjay Mehta &middot; Real Estate Analyst, Mumbai</div>
+            </div>
+            <span class="voice-card__arrow">&rarr;</span>
+          </a>
+
+          <a href="#" class="voice-card reveal">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=200&h=200&fit=crop&q=75" alt="Ananya Kapoor" class="voice-card__img" loading="lazy">
+            <div class="voice-card__body">
+              <div class="voice-card__eyebrow">Architecture</div>
+              <h3 class="voice-card__title">We&rsquo;ve been designing homes for show. It&rsquo;s time we started designing them for living</h3>
+              <div class="voice-card__meta">Ananya Kapoor &middot; Studio AK, Mumbai</div>
+            </div>
+            <span class="voice-card__arrow">&rarr;</span>
+          </a>
+
+          <a href="#" class="voice-card reveal">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=200&h=200&fit=crop&q=75" alt="Vikram Desai" class="voice-card__img" loading="lazy">
+            <div class="voice-card__body">
+              <div class="voice-card__eyebrow">Investment</div>
+              <h3 class="voice-card__title">Fractional ownership is a retail product dressed as an investment. Let&rsquo;s stop pretending otherwise</h3>
+              <div class="voice-card__meta">Vikram Desai &middot; PropTech Investor, Bangalore</div>
+            </div>
+            <span class="voice-card__arrow">&rarr;</span>
+          </a>
+
+          <a href="#" class="voice-card reveal">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=200&h=200&fit=crop&q=75" alt="Nisha Rao" class="voice-card__img" loading="lazy">
+            <div class="voice-card__body">
+              <div class="voice-card__eyebrow">NRI Perspective</div>
+              <h3 class="voice-card__title">I bought a flat in Bangalore from San Francisco. Here&rsquo;s everything the portals didn&rsquo;t tell me</h3>
+              <div class="voice-card__meta">Nisha Rao &middot; NRI Buyer, San Francisco</div>
+            </div>
+            <span class="voice-card__arrow">&rarr;</span>
+          </a>
+
+          <a href="#" class="voice-card reveal">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=200&h=200&fit=crop&q=75" alt="Priya Joshi" class="voice-card__img" loading="lazy">
+            <div class="voice-card__body">
+              <div class="voice-card__eyebrow">Legal</div>
+              <h3 class="voice-card__title">RERA was supposed to fix Indian real estate. Five years on, here&rsquo;s what it actually changed</h3>
+              <div class="voice-card__meta">Priya Joshi &middot; Real Estate Attorney, Mumbai</div>
+            </div>
+            <span class="voice-card__arrow">&rarr;</span>
+          </a>
+
+        </div>
+
+        <div class="voice-load-more reveal">
+          <button class="voice-load-more__btn">Load more voices &darr;</button>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-cta reveal">
+          <div class="sidebar-cta__eyebrow">Intelligence Briefing</div>
+          <h3 class="sidebar-cta__title">Get expert perspectives delivered to your inbox</h3>
+          <p class="sidebar-cta__desc">Weekly digest of the sharpest thinking in Indian real estate &mdash; op-eds, market commentary, and expert analysis.</p>
+          <form id="sbNlForm" novalidate>
+            <input type="email" placeholder="your@email.com" autocomplete="email" required
+              style="width:100%;padding:10px 14px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.14);border-radius:8px;color:#fff;font-size:13px;font-family:var(--ff-sans);outline:none;margin-bottom:9px;">
+            <button type="submit" class="sidebar-cta__btn">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- CTA — Newsletter -->
+<section class="nl-sec reveal">
+  <div class="nl-sec__inner">
+    <div class="nl-sec__left">
+      <span class="nl-sec__eyebrow">Intelligence Briefing</span>
+      <h2 class="nl-sec__title">Stay Ahead of India's<br>Property Markets</h2>
+      <p class="nl-sec__body">Weekly briefings on luxury real estate, infrastructure corridors and investment opportunities &mdash; curated for serious buyers and investors.</p>
+      <ul class="nl-sec__bullets">
+        <li><span class="nl-sec__dot">&middot;</span> Weekly luxury market digest</li>
+        <li><span class="nl-sec__dot">&middot;</span> Exclusive ranking updates</li>
+        <li><span class="nl-sec__dot">&middot;</span> Infrastructure corridor alerts</li>
+        <li><span class="nl-sec__dot">&middot;</span> NRI investment insights</li>
+      </ul>
+    </div>
+    <div class="nl-sec__right">
+      <form class="nl-sec__form" id="nlForm" novalidate>
+        <input type="text" class="nl-sec__inp" placeholder="Your name" autocomplete="name" required>
+        <input type="email" class="nl-sec__inp" placeholder="Your email address" autocomplete="email" required id="nlEmail">
+        <button type="submit" class="nl-sec__btn" id="nlBtn">Subscribe to Intelligence Briefing</button>
+        <p class="nl-sec__note">No spam. Unsubscribe anytime.</p>
+      </form>
+      <div class="nl-sec__ok" id="nlOk" hidden>
+        <div class="nl-sec__ok-icon">&check;</div>
+        <p>You're subscribed. Welcome to the intelligence community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <img src="intelligence/logo.svg" alt="GHAR.tv" class="ft-logo-img">
+        <p class="ft-tagline">India's AI-Native Real Estate Intelligence</p>
+      </div>
+      <nav class="ft-nav">
+        <a href="/intelligence">Intelligence</a>
+        <a href="/design">Design</a>
+        <a href="/industry-voices">Industry Voices</a>
+      </nav>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
+      <div class="ft-bot-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var hBtn = document.getElementById('hamburgerBtn');
+  var mMenu = document.getElementById('mobMenu');
+  hBtn.addEventListener('click', function(){
+    var open = mMenu.classList.toggle('open');
+    hBtn.classList.toggle('open', open);
+    hBtn.setAttribute('aria-expanded', String(open));
+    mMenu.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mMenu.classList.remove('open'); hBtn.classList.remove('open');
+      hBtn.setAttribute('aria-expanded','false'); mMenu.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    });
+  });
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); } });
+    },{threshold:0.06, rootMargin:'0px 0px -20px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('revealed'); }); }
+  /* Newsletter */
+  var nlForm = document.getElementById('nlForm');
+  var nlBtn  = document.getElementById('nlBtn');
+  var nlOk   = document.getElementById('nlOk');
+  if(nlForm){ nlForm.addEventListener('submit', function(e){
+    e.preventDefault(); nlBtn.textContent = '...'; nlBtn.disabled = true;
+    setTimeout(function(){ nlForm.hidden = true; nlOk.hidden = false; }, 800);
+  }); }
+  /* Post dropdown */
+  var dd = document.getElementById('postDropdown');
+  if(dd){
+    var ddToggle = dd.querySelector('.nav-dropdown__toggle');
+    ddToggle.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = dd.classList.toggle('open');
+      ddToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    dd.addEventListener('click', function(e){ e.stopPropagation(); });
+    document.addEventListener('click', function(){
+      dd.classList.remove('open');
+      ddToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+})();
+</script>
+</body>
+</html>

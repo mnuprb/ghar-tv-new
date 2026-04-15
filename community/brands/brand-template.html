@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title id="pageTitle">Brand - GHAR.tv</title>
+  <meta name="description" id="pageMeta" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+  <style>
+    @font-face{font-family:'Gazpacho';src:url('../fonts/Gazpacho-Bold.woff2') format('woff2'),url('../fonts/Gazpacho-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+    :root{--bg:#fff;--ink:#111;--ink2:#4b5563;--faint:#9ca3af;--rule:#e8e8e8;--accent:#ee324b;--surface:#f7f7f7;--ff-d:'Gazpacho',Georgia,serif;--ff-s:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--mw:1600px;--ph:clamp(24px,3vw,80px);--sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.04)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:var(--ff-s);background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+    .c{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--rule);box-shadow:var(--sh)}
+    .nav-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav-logo{display:flex;align-items:baseline;flex-shrink:0}.nav-logo img{height:28px;width:auto}
+    .nav-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-left:10px}
+    .nav-l{display:none;align-items:center;justify-content:center;gap:2px;list-style:none;flex:1}
+    .nav-l a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:6px 11px;border-radius:7px;transition:background .16s,color .16s}
+    .nav-l a:hover{background:var(--surface);color:var(--ink)}.nav-l a.active{background:var(--surface);color:var(--ink);font-weight:600}
+    .nav-r{display:none;align-items:center;gap:8px;flex-shrink:0}
+    .nav-join{font-size:13px;font-weight:600;color:#fff;padding:8px 20px;border-radius:8px;background:var(--ink);display:inline-flex;align-items:center;transition:background .18s,transform .18s}
+    .nav-join:hover{background:var(--accent);transform:translateY(-1px)}
+    .ham{display:flex;flex-direction:column;gap:5px;padding:6px;background:none;border:none;z-index:901}
+    .ham span{display:block;width:20px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease),opacity .3s var(--ease)}
+    .ham.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    .mob{position:fixed;inset:0;background:var(--bg);z-index:850;transform:translateX(100%);transition:transform .42s var(--ease);padding:88px 28px 48px}
+    .mob.open{transform:translateX(0)}.mob ul{list-style:none}.mob li{border-bottom:1px solid var(--rule)}
+    .mob a{display:block;padding:15px 0;font-family:var(--ff-d);font-size:24px;font-weight:700;color:var(--ink)}.mob .ma{color:var(--accent)}
+
+    /* BREADCRUMB */
+    .bc{padding:14px 0 16px;display:flex;align-items:center;gap:8px}.bc a{font-size:12px;color:var(--faint);font-weight:500}.bc a:hover{color:var(--ink)}
+    .bc-s{font-size:11px;color:var(--faint)}.bc-c{font-size:12px;color:var(--ink);font-weight:600}
+
+    /* HERO */
+    .bh{padding:0 0 clamp(40px,5vw,64px)}
+    .bh-g{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+    @media(min-width:900px){.bh-g{grid-template-columns:1fr 1fr;gap:48px}}
+    .bh-l{display:flex;flex-direction:column;gap:16px}
+    .bh-logo{height:48px;display:flex;align-items:center}.bh-logo img{height:100%;width:auto;object-fit:contain}
+    .bh-badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:6px;line-height:1.2}
+    .badge-cat{background:rgba(238,50,75,.06);color:var(--accent);border:1px solid rgba(238,50,75,.12)}
+    .badge-loc{background:var(--surface);color:var(--ink2);border:1px solid var(--rule)}
+    .bh h1{font-family:var(--ff-d);font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--ink)}
+    .bh-tag{font-size:clamp(15px,1.3vw,18px);line-height:1.7;color:var(--ink2);max-width:500px}
+    .bh-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--faint);font-weight:500}
+    .bh-meta span{display:flex;align-items:center;gap:6px}
+    .bh-meta svg{width:14px;height:14px;flex-shrink:0}
+    .bh-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent);transition:gap .2s;width:fit-content}.bh-link:hover{gap:10px}
+    .bh-img{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--surface)}.bh-img img{width:100%;height:100%;object-fit:cover}
+
+    /* STATS */
+    .sr{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:clamp(32px,4vw,48px) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:clamp(48px,6vw,80px)}
+    @media(min-width:600px){.sr{grid-template-columns:repeat(4,1fr)}}
+    .sc{text-align:center;padding:20px 12px}
+    .sc-n{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:4px}
+    .sc-l{font-size:12px;font-weight:600;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+
+    /* SECTIONS */
+    .sec{padding:clamp(48px,6vw,80px) 0}.sec+.sec{border-top:1px solid var(--rule)}
+    .sec-e{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .sec-e::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+    .sec-t{font-family:var(--ff-d);font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:clamp(24px,3vw,40px)}
+
+    /* ABOUT */
+    .ab-g{display:grid;grid-template-columns:1fr;gap:40px}@media(min-width:900px){.ab-g{grid-template-columns:1.5fr 1fr;gap:56px}}
+    .ab-t{font-size:16px;line-height:1.85;color:var(--ink2)}.ab-t p+p{margin-top:20px}
+    .fc{background:var(--surface);border-radius:16px;padding:clamp(24px,3vw,32px);align-self:start}
+    .fc-h{font-family:var(--ff-d);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+    .fc-r{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.04);gap:12px}
+    .fc-r:last-child{border-bottom:none}.fc-k{font-size:13px;color:var(--faint);font-weight:500;flex-shrink:0}.fc-v{font-size:14px;font-weight:600;color:var(--ink);text-align:right}
+
+    /* PORTFOLIO CARDS */
+    .pg{display:grid;grid-template-columns:1fr;gap:20px}
+    @media(min-width:520px){.pg{grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.pg{grid-template-columns:repeat(4,1fr)}}
+    .pc{border:1px solid var(--rule);border-radius:16px;overflow:hidden;transition:border-color .22s,box-shadow .22s,transform .22s}
+    .pc:hover{border-color:rgba(17,17,17,.18);box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
+    .pc-i{aspect-ratio:16/10;overflow:hidden;background:var(--surface)}.pc-i img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
+    .pc:hover .pc-i img{transform:scale(1.04)}
+    .pc-b{padding:16px 18px}
+    .pc-s{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:8px;line-height:1.2}
+    .pc-n{font-family:var(--ff-d);font-size:16px;font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:4px}
+    .pc-sub{font-size:12px;color:var(--faint);font-weight:500}.pc-desc{font-size:11px;color:var(--ink2);font-weight:500;margin-top:2px}
+
+    /* LEADERS */
+    .lg{display:flex;gap:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+    .lg::-webkit-scrollbar{display:none}.lg>.lc{flex:0 0 220px;scroll-snap-align:start}
+    @media(min-width:768px){.lg{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}.lg>.lc{flex:none}}
+    .lc{text-align:center;padding:clamp(24px,3vw,36px) 20px;border:1px solid var(--rule);border-radius:16px;transition:border-color .22s,box-shadow .22s}
+    .lc:hover{border-color:rgba(17,17,17,.12);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .lc-i{width:88px;height:88px;border-radius:50%;overflow:hidden;margin:0 auto 16px;background:var(--surface);border:3px solid #fff;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+    .lc-i img{width:100%;height:100%;object-fit:cover}
+    .lc-n{font-family:var(--ff-d);font-size:17px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:4px}
+    .lc-r{font-size:13px;color:var(--ink2);font-weight:500;line-height:1.4}
+
+    /* TIMELINE */
+    .tl{display:flex;flex-direction:column;gap:0;position:relative;padding-left:28px}
+    .tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1.5px;background:var(--rule)}
+    .tl-m{position:relative;padding:0 0 32px 20px}.tl-m:last-child{padding-bottom:0}
+    .tl-d{position:absolute;left:-25px;top:7px;width:13px;height:13px;border-radius:50%;background:#fff;border:2px solid var(--accent);z-index:1}
+    .tl-y{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+    .tl-t{font-size:15px;line-height:1.6;color:var(--ink2)}
+
+    /* RELATED */
+    .rg{display:flex;gap:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+    .rg::-webkit-scrollbar{display:none}.rg>.rc{flex:0 0 280px;scroll-snap-align:start}
+    @media(min-width:900px){.rg{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible}.rg>.rc{flex:none}}
+    .rc{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:14px;overflow:hidden;transition:border-color .22s,box-shadow .22s,transform .22s}
+    .rc:hover{border-color:rgba(17,17,17,.15);box-shadow:0 8px 24px rgba(0,0,0,.07);transform:translateY(-2px)}
+    .rc-logo{width:100%;height:80px;background:var(--surface);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px 24px;border-bottom:1px solid var(--rule)}
+    .rc-logo img{max-width:100%;max-height:100%;object-fit:contain}
+    .rc-bot{display:flex;align-items:center;gap:12px;padding:16px 18px}
+    .rc-body{flex:1;min-width:0}
+    .rc-n{font-family:var(--ff-d);font-size:16px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:2px}
+    .rc-type{font-size:12px;color:var(--faint);font-weight:500}
+    .rc-arr{color:var(--rule);transition:color .2s,transform .2s;flex-shrink:0}.rc:hover .rc-arr{color:var(--ink);transform:translateX(3px)}
+
+    /* CTA */
+    .cta{position:relative;overflow:hidden;padding:clamp(64px,8vw,100px) 0;background:#111}
+    .cta-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 30% 50%,rgba(238,50,75,.08),transparent 70%),radial-gradient(ellipse 40% 40% at 80% 60%,rgba(59,130,246,.06),transparent 70%)}
+    .cta-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:1}
+    @media(min-width:900px){.cta-i{grid-template-columns:1fr 1fr;gap:64px;align-items:center}}
+    .cta-e{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ee324b;margin-bottom:20px}
+    .cta-e::before{content:'';width:6px;height:6px;border-radius:50%;background:#ee324b}
+    .cta h2{font-family:var(--ff-d);font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:16px}
+    .cta-d{font-size:15px;line-height:1.75;color:rgba(255,255,255,.55);margin-bottom:28px;max-width:480px}
+    .cta-f{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+    .cta-fi{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
+    .cta-fi svg{color:#ee324b;flex-shrink:0}
+    .cta-fw{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:clamp(28px,4vw,40px)}
+    .cta-form{display:flex;flex-direction:column;gap:14px}
+    .cta-ir{display:grid;grid-template-columns:1fr;gap:12px}@media(min-width:500px){.cta-ir{grid-template-columns:1fr 1fr}}
+    .cta-inp{font-family:var(--ff-s);font-size:14px;padding:14px 18px;border-radius:10px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#fff;transition:border-color .2s}
+    .cta-inp::placeholder{color:rgba(255,255,255,.3)}.cta-inp:focus{outline:none;border-color:rgba(255,255,255,.25)}
+    .cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ff-s);font-size:15px;font-weight:600;color:#111;background:#fff;padding:15px 28px;border-radius:10px;border:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+    .cta-btn:hover{background:#ee324b;color:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(238,50,75,.25)}
+    .cta-note{font-size:11.5px;color:rgba(255,255,255,.3);text-align:center}
+    .cta-ok{text-align:center;padding:20px 0}.cta-ok p{font-size:15px;color:rgba(255,255,255,.7)}
+
+    /* FOOTER */
+    .ft{background:#111;border-top:none;padding:36px 0}
+    .ft-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
+    .ft-top{display:flex;flex-direction:column;gap:24px;padding-bottom:32px;border-bottom:1px solid #1a1a1a;margin-bottom:24px}
+    @media(min-width:744px){.ft-top{flex-direction:row;align-items:flex-start;justify-content:space-between}}
+    .ft-logo{height:24px;width:auto;margin-bottom:8px;filter:brightness(0) invert(1)}
+    .ft-tag{font-size:12px;color:rgba(255,255,255,.3)}
+    .ft-nav{display:flex;gap:24px;flex-wrap:wrap}.ft-nav a{font-size:13px;font-weight:500;color:rgba(255,255,255,.45)}.ft-nav a:hover{color:#fff}
+    .ft-bot{display:flex;flex-direction:column;gap:8px;font-size:12px;color:rgba(255,255,255,.2)}
+    @media(min-width:744px){.ft-bot{flex-direction:row;justify-content:space-between}}
+    .ft-bl{display:flex;gap:16px}.ft-bl a{font-size:12px;color:rgba(255,255,255,.2)}.ft-bl a:hover{color:rgba(255,255,255,.6)}
+
+    /* REVEAL + HIDE */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.revealed{opacity:1;transform:none}
+    .sec[hidden]{display:none}
+
+    @media(min-width:1024px){.nav-i{padding:0 32px;height:62px;gap:32px}.nav-l{display:flex}.nav-r{display:flex}.ham{display:none}}
+  </style>
+
+  <!--
+    ╔══════════════════════════════════════════╗
+    ║  BRAND DATA — injected by PHP backend   ║
+    ║  Replace the sample below with:         ║
+    ║  window.__BRAND = <?php echo $json; ?>; ║
+    ╚══════════════════════════════════════════╝
+  -->
+  <script>
+  window.__BRAND = {
+    "n":"Kohler India",
+    "s":"kohler-india",
+    "logo":"kohler-logo.png",
+    "cat":"Bath & Kitchen",
+    "loc":"Pune, India",
+    "tag":"A global leader in kitchen and bath design for over 150 years. From luxury faucets and intelligent toilets to designer sinks and shower systems.",
+    "img":"https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop&q=80",
+    "url":"https://www.kohler.co.in",
+    "meta":["Founded 1873","India entry: 2006"],
+    "stats":[["150+","Years of Innovation"],["50+","Plants Worldwide"],["$8B+","Global Revenue"],["35K+","Team Worldwide"]],
+    "about":["Kohler Co., founded in 1873 in Kohler, Wisconsin, is one of the world's oldest and most respected names in kitchen and bath design. With a mission rooted in \"Gracious Living,\" Kohler has spent over 150 years crafting products that combine bold design with cutting-edge engineering.","In India, Kohler has rapidly grown since its 2006 entry, establishing a strong presence in the luxury and premium bathroom segments. The company operates a manufacturing facility in Jhagadia, Gujarat, and has over 1,000 retail touchpoints.","Kohler India serves the residential, hospitality, and commercial segments with a portfolio spanning bathroom fixtures, kitchen sinks and faucets, shower systems, and smart home products."],
+    "facts":[["Type","Private (Global)"],["Founded","1873"],["Global HQ","Kohler, Wisconsin, USA"],["India HQ","Pune, Maharashtra"],["Chairman","David Kohler"],["India Head","Salil Sadanandan"],["India Plant","Jhagadia, Gujarat"]],
+    "portfolio":{"t":"Key Product Lines","items":[{"n":"Intelligent Toilets","img":"https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&h=320&fit=crop&q=80","badge":["Flagship","red"],"sub":"Numi \u00b7 Veil \u00b7 Innate","desc":"Touchless \u00b7 Heated Seat \u00b7 Bidet"},{"n":"Faucets & Mixers","img":"https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?w=500&h=320&fit=crop&q=80","badge":["Premium","purple"],"sub":"Composed \u00b7 Purist \u00b7 July","desc":"Bathroom \u00b7 Kitchen \u00b7 Touchless"},{"n":"Shower Systems","img":"https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=500&h=320&fit=crop&q=80","badge":["Innovation","blue"],"sub":"DTV+ \u00b7 Real Rain \u00b7 Anthem","desc":"Digital Valve \u00b7 Multi-Head \u00b7 Steam"},{"n":"Kitchen Sinks","img":"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=320&fit=crop&q=80","badge":["Core","green"],"sub":"Whitehaven \u00b7 Stages \u00b7 Prolific","desc":"Farmhouse \u00b7 Under-mount \u00b7 Stainless"}]},
+    "leaders":[{"n":"David Kohler","r":"Chair & CEO, Kohler Co.","img":"https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face&q=80"},{"n":"Salil Sadanandan","r":"President, Kohler India & ME","img":"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&q=80"},{"n":"Laura Kohler","r":"Chief Sustainability Officer","img":"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face&q=80"}],
+    "timeline":[{"y":"1873","t":"John Michael Kohler founded the company in Wisconsin. Created the first enameled cast-iron bathtub."},{"y":"1967","t":"Introduced the Bold Look of Kohler campaign, redefining bathroom fixtures as design objects."},{"y":"2006","t":"Entered the Indian market. Opened first Kohler Experience Center in Mumbai."},{"y":"2015","t":"Launched the Kohler Numi intelligent toilet in India with touchless controls and ambient lighting."},{"y":"2024","t":"Expanded to 1,000+ retail touchpoints across India. Launched Kohler Konnect smart home ecosystem."}],
+    "related":[{"n":"Asian Paints","type":"Paints & Home Decor \u00b7 Mumbai","logo":"asian-paints-logo.avif","href":"asian-paints.html"},{"n":"Godrej Properties","type":"Developer \u00b7 Mumbai","logo":"godrej-properties-logo.png","href":"godrej-properties.html"},{"n":"Havells India","type":"Electrical & Lighting \u00b7 Delhi NCR","logo":"godrej-properties-logo.png","href":"#"},{"n":"Somany Ceramics","type":"Tiles & Sanitaryware \u00b7 Delhi NCR","logo":"godrej-properties-logo.png","href":"#"}]
+  };
+  </script>
+</head>
+
+<body>
+
+<!-- ════ NAV (static) ════ -->
+<nav class="nav"><div class="nav-i">
+  <a href="/" class="nav-logo"><img src="../logo.svg" alt="GHAR.tv"><span class="nav-tag">Brands</span></a>
+  <ul class="nav-l" role="list"><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community" class="active">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li></ul>
+  <div class="nav-r"><a href="/join" class="nav-join">Join Now</a></div>
+  <button class="ham" id="hBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mob" id="mob" aria-hidden="true"><ul><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community" class="ma">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li><li><a href="/join" class="ma">Join Now &rarr;</a></li></ul></div>
+
+<!-- ════ BREADCRUMB ════ -->
+<div class="c" style="padding-top:72px"><nav class="bc" aria-label="Breadcrumb">
+  <a href="/">GHAR.tv</a><span class="bc-s">&rsaquo;</span><a href="/community">Community</a><span class="bc-s">&rsaquo;</span><a href="/community/brands.html">Brands</a><span class="bc-s">&rsaquo;</span><span class="bc-c" id="J_bc"></span>
+</nav></div>
+
+<!-- ════ HERO ════ -->
+<section class="bh"><div class="c"><div class="bh-g">
+  <div class="bh-l">
+    <div class="bh-logo"><img id="J_logo" alt=""></div>
+    <div class="bh-badges"><span class="badge badge-cat" id="J_cat"></span><span class="badge badge-loc" id="J_loc"></span></div>
+    <h1 id="J_name"></h1>
+    <p class="bh-tag" id="J_tag"></p>
+    <div class="bh-meta" id="J_meta"></div>
+    <a id="J_link" class="bh-link" target="_blank" rel="noopener">Visit Website <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+  </div>
+  <div class="bh-img"><img id="J_img" alt="" loading="lazy"></div>
+</div></div></section>
+
+<!-- ════ STATS ════ -->
+<div class="c"><div class="sr reveal" id="J_stats"></div></div>
+
+<!-- ════ ABOUT ════ -->
+<section class="sec reveal" id="S_about"><div class="c">
+  <div class="sec-e">About</div><h2 class="sec-t">Company Overview</h2>
+  <div class="ab-g"><div class="ab-t" id="J_about"></div><div class="fc"><h3 class="fc-h">Quick Facts</h3><div id="J_facts"></div></div></div>
+</div></section>
+
+<!-- ════ PORTFOLIO ════ -->
+<section class="sec reveal" id="S_portfolio"><div class="c">
+  <div class="sec-e">Portfolio</div><h2 class="sec-t" id="J_ptitle"></h2>
+  <div class="pg" id="J_portfolio"></div>
+</div></section>
+
+<!-- ════ LEADERSHIP ════ -->
+<section class="sec reveal" id="S_leaders"><div class="c">
+  <div class="sec-e">Leadership</div><h2 class="sec-t">Key People</h2>
+  <div class="lg" id="J_leaders"></div>
+</div></section>
+
+<!-- ════ TIMELINE ════ -->
+<section class="sec reveal" id="S_timeline"><div class="c">
+  <div class="sec-e">Timeline</div><h2 class="sec-t">Key Milestones</h2>
+  <div class="tl" id="J_timeline"></div>
+</div></section>
+
+<!-- ════ RELATED ════ -->
+<section class="sec reveal" id="S_related"><div class="c">
+  <div class="sec-e">Explore More</div><h2 class="sec-t">Related Brands</h2>
+  <div class="rg" id="J_related"></div>
+</div></section>
+
+<!-- ════ CTA (static) ════ -->
+<section class="cta reveal"><div class="cta-bg"></div><div class="cta-i">
+  <div>
+    <span class="cta-e">Brand Intelligence</span>
+    <h2>Stay Ahead of India's Real Estate Ecosystem</h2>
+    <p class="cta-d">Weekly brand updates, new launches, partnerships, and market moves from India's top real estate companies.</p>
+    <div class="cta-f">
+      <span class="cta-fi"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Brand launches</span>
+      <span class="cta-fi"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Partnership news</span>
+      <span class="cta-fi"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Market moves</span>
+      <span class="cta-fi"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Industry rankings</span>
+    </div>
+  </div>
+  <div class="cta-fw"><form class="cta-form" id="nlF" novalidate>
+    <div class="cta-ir"><input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required><input type="email" class="cta-inp" placeholder="Your email address" autocomplete="email" required></div>
+    <button type="submit" class="cta-btn" id="nlB"><span>Subscribe to Brand Intelligence</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    <p class="cta-note">Free. No spam. Unsubscribe anytime.</p>
+  </form><div class="cta-ok" id="nlO" hidden><p style="font-size:36px;color:#22c55e;margin-bottom:12px">&check;</p><p>You're subscribed. Welcome to the ecosystem.</p></div></div>
+</div></section>
+
+<!-- ════ FOOTER (static) ════ -->
+<footer class="ft"><div class="ft-i">
+  <div class="ft-top"><div><img src="../logo.svg" alt="GHAR.tv" class="ft-logo"><p class="ft-tag">India's AI-Native Real Estate Intelligence</p></div>
+  <nav class="ft-nav"><a href="/intelligence">Intelligence</a><a href="/design">Design</a><a href="/community">Community</a><a href="/ghartalks">GharTalks</a><a href="/videoworks">VideoWorks</a><a href="/gharevents">GharEvents</a><a href="/industry-voices">Industry Voices</a></nav></div>
+  <div class="ft-bot"><p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p><div class="ft-bl"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+</div></footer>
+
+<!-- ════ RENDERER ════ -->
+<script>
+(function(){
+  'use strict';
+  var d=window.__BRAND;if(!d)return;
+
+  // SVG icons (reused)
+  var iCal='<svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M2 6h12" stroke="currentColor" stroke-width="1.2"/></svg>';
+  var iArr='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
+  var iLoc='<svg viewBox="0 0 16 16" fill="none" style="width:11px;height:11px;display:inline;vertical-align:-1px;margin-right:3px"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>';
+  var bc={red:'rgba(238,50,75,.08)',blue:'rgba(59,130,246,.08)',green:'rgba(22,163,74,.08)',purple:'rgba(139,92,246,.08)'};
+  var tc={red:'#ee324b',blue:'#3b82f6',green:'#16a34a',purple:'#8b5cf6'};
+
+  function $(id){return document.getElementById(id)}
+  function h(el,s){el.innerHTML=s}
+  function t(el,s){el.textContent=s}
+  function hide(id){var e=$(id);if(e)e.hidden=true}
+
+  // Page title
+  document.title=d.n+' - Brands - GHAR.tv';
+  var pm=$('pageMeta');if(pm)pm.content=d.n+' profile on GHAR.tv — '+d.tag;
+
+  // Breadcrumb + Hero simple fields
+  t($('J_bc'),d.n);
+  $('J_logo').src=d.logo;$('J_logo').alt=d.n+' logo';
+  t($('J_cat'),d.cat);
+  h($('J_loc'),iLoc+' '+d.loc);
+  t($('J_name'),d.n);
+  t($('J_tag'),d.tag);
+  $('J_link').href=d.url;
+  $('J_img').src=d.img;$('J_img').alt=d.n;
+
+  // Meta items
+  h($('J_meta'),(d.meta||[]).map(function(m){return '<span>'+iCal+' '+m+'</span>'}).join(''));
+
+  // Stats
+  h($('J_stats'),(d.stats||[]).map(function(s){return '<div class="sc"><div class="sc-n">'+s[0]+'</div><div class="sc-l">'+s[1]+'</div></div>'}).join(''));
+
+  // About
+  h($('J_about'),(d.about||[]).map(function(p){return '<p>'+p+'</p>'}).join(''));
+
+  // Facts
+  h($('J_facts'),(d.facts||[]).map(function(f){return '<div class="fc-r"><span class="fc-k">'+f[0]+'</span><span class="fc-v">'+f[1]+'</span></div>'}).join(''));
+
+  // Portfolio
+  var pf=d.portfolio;
+  if(pf&&pf.items&&pf.items.length){
+    t($('J_ptitle'),pf.t||'Portfolio');
+    h($('J_portfolio'),pf.items.map(function(p){
+      var c=p.badge?p.badge[1]||'red':'red';
+      return '<div class="pc"><div class="pc-i"><img src="'+p.img+'" alt="'+p.n+'" loading="lazy"></div><div class="pc-b"><span class="pc-s" style="background:'+bc[c]+';color:'+tc[c]+'">'+((p.badge&&p.badge[0])||'')+'</span><div class="pc-n">'+p.n+'</div><div class="pc-sub">'+p.sub+'</div><div class="pc-desc">'+p.desc+'</div></div></div>'
+    }).join(''));
+  }else hide('S_portfolio');
+
+  // Leaders
+  if(d.leaders&&d.leaders.length){
+    h($('J_leaders'),d.leaders.map(function(l){return '<div class="lc"><div class="lc-i"><img src="'+l.img+'" alt="'+l.n+'" loading="lazy"></div><div class="lc-n">'+l.n+'</div><div class="lc-r">'+l.r+'</div></div>'}).join(''));
+  }else hide('S_leaders');
+
+  // Timeline
+  if(d.timeline&&d.timeline.length){
+    h($('J_timeline'),d.timeline.map(function(m){return '<div class="tl-m"><div class="tl-d"></div><div class="tl-y">'+m.y+'</div><div class="tl-t">'+m.t+'</div></div>'}).join(''));
+  }else hide('S_timeline');
+
+  // Related
+  if(d.related&&d.related.length){
+    h($('J_related'),d.related.map(function(r){return '<a href="'+(r.href||'#')+'" class="rc"><div class="rc-logo"><img src="'+r.logo+'" alt="'+r.n+'"></div><div class="rc-bot"><div class="rc-body"><div class="rc-n">'+r.n+'</div><div class="rc-type">'+r.type+'</div></div>'+iArr+'</div></a>'}).join(''));
+  }else hide('S_related');
+
+  // ── Static JS: hamburger, reveal, newsletter ──
+  var btn=$('hBtn'),mob=$('mob');
+  btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('active',o);btn.setAttribute('aria-expanded',o);mob.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''});
+  mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');mob.setAttribute('aria-hidden','true');document.body.style.overflow=''})});
+
+  // Reveal
+  var rv=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('revealed');io.unobserve(en.target)}})},{threshold:.08,rootMargin:'0px 0px -32px 0px'});rv.forEach(function(el){if(!el.hidden)io.observe(el)})}else rv.forEach(function(el){el.classList.add('revealed')});
+
+  // Newsletter
+  var nf=$('nlF'),nb=$('nlB'),no=$('nlO');
+  if(nf)nf.addEventListener('submit',function(e){e.preventDefault();nb.disabled=true;nb.innerHTML='<span>Subscribing&hellip;</span>';setTimeout(function(){nf.style.display='none';no.hidden=false},800)});
+})();
+</script>
+</body>
+</html>

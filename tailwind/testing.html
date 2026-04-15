@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghar.tv - Discover Your Perfect Home</title>
+    
+    <style>
+        /* ============================================
+           RESET & BASE - FRESH START
+           ============================================ */
+        :root {
+            --red: #EE324B;
+            --navy: #1a1a2e;
+            --dark: #16213e;
+            --gold: #d4af37;
+            --off-white: #fafafa;
+            --text-dark: #0f172a;
+            --text-gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================
+           NEW HERO SECTION - SPLIT SCREEN DESIGN
+           ============================================ */
+
+        .new-hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            background: #fff;
+            position: relative;
+        }
+
+        @media(min-width: 1024px) {
+            .new-hero {
+                grid-template-columns: 55fr 45fr;
+            }
+        }
+
+        /* LEFT SIDE - CONTENT */
+        .new-hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(160deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media(min-width: 640px) {
+            .new-hero-left {
+                padding: 10rem 3rem 6rem;
+            }
+        }
+
+        @media(min-width: 1024px) {
+            .new-hero-left {
+                padding: 4rem 4rem 4rem 6rem;
+            }
+        }
+
+        @media(min-width: 1280px) {
+            .new-hero-left {
+                padding: 4rem 6rem 4rem 8rem;
+            }
+        }
+
+        /* Noise Texture Overlay */
+        .new-hero-left::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .new-hero-content {
+            max-width: 42rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Tag */
+        .new-hero-tag {
+            display: inline-block;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out 0.2s forwards;
+        }
+
+        /* Main Heading */
+        .new-hero-h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.05;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out 0.4s forwards;
+        }
+
+        @media(min-width: 640px) {
+            .new-hero-h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        @media(min-width: 1024px) {
+            .new-hero-h1 {
+                font-size: 5rem;
+            }
+        }
+
+        @media(min-width: 1280px) {
+            .new-hero-h1 {
+                font-size: 6rem;
+            }
+        }
+
+        .new-hero-h1 .highlight {
+            color: var(--red);
+            position: relative;
+            display: inline-block;
+        }
+
+        .new-hero-h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0.125rem;
+            left: 0;
+            right: 0;
+            height: 0.875rem;
+            background: linear-gradient(90deg, rgba(238, 50, 75, 0.15) 0%, rgba(238, 50, 75, 0.05) 100%);
+            z-index: -1;
+        }
+
+        /* Description */
+        .new-hero-desc {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            max-width: 36rem;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out 0.6s forwards;
+        }
+
+        @media(min-width: 1024px) {
+            .new-hero-desc {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Search Area */
+        .new-hero-search {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out 0.8s forwards;
+        }
+
+        @media(min-width: 640px) {
+            .new-hero-search {
+                flex-direction: row;
+            }
+        }
+
+        .new-search-input {
+            flex: 1;
+            height: 4rem;
+            padding: 0 1.5rem;
+            font-size: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            background: #fff;
+            color: var(--text-dark);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .new-search-input:hover {
+            border-color: var(--red);
+            box-shadow: 0 0 0 4px rgba(238, 50, 75, 0.05);
+        }
+
+        .new-search-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .new-search-btn {
+            height: 4rem;
+            padding: 0 2.5rem;
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--red);
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.625rem;
+            box-shadow: 0 4px 14px rgba(238, 50, 75, 0.3);
+        }
+
+        .new-search-btn:hover {
+            background: #d62940;
+            box-shadow: 0 6px 20px rgba(238, 50, 75, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .new-search-btn svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        /* Stats */
+        .new-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out 1s forwards;
+        }
+
+        @media(min-width: 640px) {
+            .new-hero-stats {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3rem;
+            }
+        }
+
+        .new-stat {
+            text-align: left;
+        }
+
+        .new-stat-number {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+            margin-bottom: 0.375rem;
+        }
+
+        @media(min-width: 1024px) {
+            .new-stat-number {
+                font-size: 2.75rem;
+            }
+        }
+
+        .new-stat-label {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* RIGHT SIDE - VISUAL */
+        .new-hero-right {
+            position: relative;
+            background: var(--navy);
+            display: none;
+        }
+
+        @media(min-width: 1024px) {
+            .new-hero-right {
+                display: block;
+            }
+        }
+
+        /* Image Grid */
+        .new-hero-visual {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            padding: 2rem;
+        }
+
+        .new-visual-card {
+            position: relative;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .new-visual-card-1 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+            margin-right: 1rem;
+            animation: slideInRight 0.8s ease-out 0.4s backwards;
+        }
+
+        .new-visual-card-2 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            margin-bottom: 1rem;
+            animation: slideInRight 0.8s ease-out 0.6s backwards;
+        }
+
+        .new-visual-card-3 {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            animation: slideInRight 0.8s ease-out 0.8s backwards;
+        }
+
+        .new-visual-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .new-visual-card:hover .new-visual-img {
+            transform: scale(1.05);
+        }
+
+        /* Card Overlay */
+        .new-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            color: #fff;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .new-visual-card:hover .new-card-overlay {
+            transform: translateY(0);
+        }
+
+        .new-card-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .new-card-subtitle {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Floating Badge */
+        .new-floating-badge {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            padding: 0.875rem 1.5rem;
+            color: #fff;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Mobile Hero Image */
+        .new-hero-mobile-img {
+            display: block;
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        @media(min-width: 1024px) {
+            .new-hero-mobile-img {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NEW HERO SECTION -->
+    <section class="new-hero">
+        
+        <!-- LEFT SIDE - CONTENT -->
+        <div class="new-hero-left">
+            <div class="new-hero-content">
+                
+                <!-- Tag -->
+                <div class="new-hero-tag">India's First AI-Powered Real Estate Platform</div>
+                
+                <!-- Heading -->
+                <h1 class="new-hero-h1">
+                    Discover Your<br>
+                    Perfect <span class="highlight">Home</span>
+                </h1>
+                
+                <!-- Description -->
+                <p class="new-hero-desc">
+                    Search from 50,000+ verified properties across India. Find apartments, villas, commercial spaces, and land with intelligent AI-powered search.
+                </p>
+                
+                <!-- Search Box -->
+                <div class="new-hero-search">
+                    <input 
+                        type="text" 
+                        class="new-search-input" 
+                        placeholder="Location, Project, or PIN code" 
+                        onclick="openSearchModal()"
+                        readonly
+                    >
+                    <button class="new-search-btn" onclick="openSearchModal()">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        Search
+                    </button>
+                </div>
+
+                <!-- Mobile Image (shown only on mobile/tablet) -->
+                <img 
+                    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=500&fit=crop" 
+                    alt="Modern apartment building" 
+                    class="new-hero-mobile-img"
+                >
+                
+                <!-- Stats -->
+                <div class="new-hero-stats">
+                    <div class="new-stat">
+                        <div class="new-stat-number">50K+</div>
+                        <div class="new-stat-label">Properties</div>
+                    </div>
+                    <div class="new-stat">
+                        <div class="new-stat-number">3L+</div>
+                        <div class="new-stat-label">Happy Users</div>
+                    </div>
+                    <div class="new-stat">
+                        <div class="new-stat-number">500+</div>
+                        <div class="new-stat-label">Developers</div>
+                    </div>
+                    <div class="new-stat">
+                        <div class="new-stat-number">10K+</div>
+                        <div class="new-stat-label">Brokers</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- RIGHT SIDE - VISUAL (Desktop only) -->
+        <div class="new-hero-right">
+            <!-- Floating Badge -->
+            <div class="new-floating-badge">
+                ✨ VERIFIED LISTINGS
+            </div>
+
+            <!-- Image Grid -->
+            <div class="new-hero-visual">
+                <!-- Large Card -->
+                <div class="new-visual-card new-visual-card-1">
+                    <img 
+                        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=900&fit=crop" 
+                        alt="Luxury apartment" 
+                        class="new-visual-img"
+                    >
+                    <div class="new-card-overlay">
+                        <div class="new-card-title">Premium Apartments</div>
+                        <div class="new-card-subtitle">Mumbai, Bangalore, Delhi</div>
+                    </div>
+                </div>
+
+                <!-- Top Right Card -->
+                <div class="new-visual-card new-visual-card-2">
+                    <img 
+                        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop" 
+                        alt="Modern villa" 
+                        class="new-visual-img"
+                    >
+                    <div class="new-card-overlay">
+                        <div class="new-card-title">Luxury Villas</div>
+                        <div class="new-card-subtitle">Gated Communities</div>
+                    </div>
+                </div>
+
+                <!-- Bottom Right Card -->
+                <div class="new-visual-card new-visual-card-3">
+                    <img 
+                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop" 
+                        alt="Commercial space" 
+                        class="new-visual-img"
+                    >
+                    <div class="new-card-overlay">
+                        <div class="new-card-title">Commercial Spaces</div>
+                        <div class="new-card-subtitle">Office & Retail</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <script>
+        // Placeholder function - replace with your actual modal function
+        function openSearchModal() {
+            alert('Search modal will open here. Connect this to your existing search modal.');
+            // Replace with: document.getElementById('searchModal').classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

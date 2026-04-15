@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghar.tv | AI-Powered Real Estate Search, Marketing & Sales</title>
+    <meta name="description" content="India's first AI- and media-powered real estate ecosystem for property search, marketing, sales, and services - built for buyers, brokers, developers, and brands.">
+    
+    <!-- Preconnect to critical domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font loaded async -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+    <style>
+        /* Reset & Base */
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fff;color:#1f2937;line-height:1.6;overflow-x:hidden}
+        a{color:inherit;text-decoration:none}
+        button{cursor:pointer;font-family:inherit;border:none;background:none}
+        img{max-width:100%;height:auto;display:block}
+        input{font-family:inherit}
+        
+        /* CSS Variables */
+        :root{
+            --red-500:#ee324b;--red-600:#d62940;--red-50:#fef2f2;--red-100:#fee2e2;
+            --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;
+            --gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;
+            --gray-800:#1f2937;--gray-900:#111827;
+            --shadow-sm:0 1px 2px 0 rgb(0 0 0/.05);
+            --shadow:0 1px 3px 0 rgb(0 0 0/.1),0 1px 2px -1px rgb(0 0 0/.1);
+            --shadow-md:0 4px 6px -1px rgb(0 0 0/.1),0 2px 4px -2px rgb(0 0 0/.1);
+            --shadow-lg:0 10px 15px -3px rgb(0 0 0/.1),0 4px 6px -4px rgb(0 0 0/.1);
+            --shadow-xl:0 20px 25px -5px rgb(0 0 0/.1),0 8px 10px -6px rgb(0 0 0/.1);
+            --shadow-2xl:0 25px 50px -12px rgb(0 0 0/.25);
+        }
+
+        /* Utility Classes */
+        .container{width:100%;max-width:80rem;margin:0 auto;padding:0 1rem}
+        @media(min-width:640px){.container{padding:0 1.5rem}}
+        @media(min-width:1024px){.container{padding:0 2rem}}
+
+        /* Glass Effect */
+        .glass{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+        /* Gradient Text */
+        .gradient-text{background:linear-gradient(135deg,var(--red-500) 0%,var(--red-600) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+        /* Navigation */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid var(--gray-200)}
+        .nav-inner{display:flex;justify-content:space-between;align-items:center;height:4rem}
+        .nav-logo{font-size:1.5rem;font-weight:800;color:var(--gray-900)}
+        .nav-logo span{color:var(--red-500)}
+        .nav-links{display:none;align-items:center;gap:1.5rem}
+        @media(min-width:1280px){.nav-links{display:flex}}
+        .nav-link{display:flex;align-items:center;gap:.25rem;padding:.5rem .75rem;font-size:.875rem;font-weight:500;color:var(--gray-700);border-radius:.5rem;transition:all .2s}
+        .nav-link:hover{color:var(--red-500);background:var(--red-50)}
+        .nav-link svg{width:1rem;height:1rem}
+        .nav-dropdown{position:relative}
+        .nav-dropdown-menu{position:absolute;top:100%;left:0;min-width:12rem;padding:.5rem 0;background:#fff;border-radius:.5rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(.5rem);transition:all .2s}
+        .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+        .nav-dropdown-item{display:block;padding:.75rem 1rem;font-size:.875rem;color:var(--gray-700);transition:all .15s}
+        .nav-dropdown-item:hover{background:var(--red-50);color:var(--red-500)}
+        .nav-divider{width:1px;height:1.5rem;background:var(--gray-300)}
+        .nav-actions{display:flex;align-items:center;gap:.5rem}
+        @media(min-width:640px){.nav-actions{gap:1rem}}
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:.5rem 1rem;font-size:.875rem;font-weight:500;border-radius:.5rem;transition:all .2s}
+        .btn-outline{color:var(--gray-700);border:1px solid var(--gray-300);background:#fff}
+        .btn-outline:hover{background:var(--gray-50)}
+        .btn-primary{color:#fff;background:var(--red-500)}
+        .btn-primary:hover{background:var(--red-600);transform:scale(1.02)}
+        .btn-lg{padding:.75rem 1.5rem}
+        .btn-xl{padding:.75rem 2rem;font-size:1rem}
+        .btn-mobile-menu{display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;color:var(--gray-700)}
+        @media(min-width:1280px){.btn-mobile-menu{display:none}}
+        .btn-signin{display:none}
+        @media(min-width:1280px){.btn-signin{display:inline-flex}}
+
+        /* Mobile Menu */
+        .mobile-menu{display:none;position:fixed;top:4rem;left:0;right:0;bottom:0;background:#fff;z-index:999;overflow-y:auto;padding:1rem}
+        .mobile-menu.active{display:block}
+        .mobile-menu a{display:block;padding:1rem;font-size:1rem;font-weight:500;color:var(--gray-700);border-bottom:1px solid var(--gray-100)}
+        .mobile-menu a:hover{color:var(--red-500)}
+
+        /* Hero Section */
+        .hero{padding-top:6rem;padding-bottom:5rem;background:linear-gradient(135deg,var(--gray-50) 0%,#fff 50%,var(--red-50) 100%)}
+        @media(min-width:768px){.hero{padding-top:8rem;padding-bottom:6rem}}
+        .hero-content{text-align:center;max-width:56rem;margin:0 auto}
+        .hero-title{font-size:2.5rem;font-weight:800;color:var(--gray-900);line-height:1.1;margin-bottom:1.5rem}
+        @media(min-width:768px){.hero-title{font-size:4rem}}
+        @media(min-width:1024px){.hero-title{font-size:4.5rem}}
+        .hero-subtitle{font-size:1.125rem;color:var(--gray-600);max-width:48rem;margin:0 auto 3rem;line-height:1.7}
+        @media(min-width:768px){.hero-subtitle{font-size:1.25rem}}
+
+        /* Search Box */
+        .search-box{background:#fff;border-radius:1rem;box-shadow:var(--shadow-2xl);padding:.5rem;border:1px solid var(--gray-100);max-width:56rem;margin:0 auto 2rem}
+        .search-inner{display:flex;flex-direction:column;gap:.5rem}
+        @media(min-width:768px){.search-inner{flex-direction:row;align-items:center}}
+        .search-input-wrap{flex:1;display:flex;align-items:center;padding:0 1rem}
+        .search-input-wrap svg{width:1.25rem;height:1.25rem;color:var(--gray-400);margin-right:.75rem;flex-shrink:0}
+        .search-input{padding:.875rem 0;font-size:1rem;border:none;outline:none;background:transparent;color:var(--gray-700)}
+        .search-input::placeholder{color:var(--gray-400)}
+        .search-btn{width:100%;padding:1rem;font-size:1rem;font-weight:600;color:#fff;background:var(--red-500);border-radius:.75rem;transition:all .2s}
+        .search-btn:hover{background:var(--red-600);transform:scale(1.02)}
+        @media(min-width:768px){.search-btn{width:auto;padding:.875rem 2rem}}
+
+        /* Category Pills */
+        .category-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+        .category-pill{padding:.5rem 1.5rem;font-size:.875rem;font-weight:500;border-radius:9999px;transition:all .2s}
+        .category-pill-active{background:var(--red-500);color:#fff}
+        .category-pill-inactive{background:#fff;color:var(--gray-700);border:1px solid var(--gray-300)}
+        .category-pill-inactive:hover{border-color:var(--red-500);color:var(--red-500)}
+
+        /* Section Styles */
+        .section{padding:5rem 0}
+        .section-gray{background:var(--gray-50)}
+        .section-header{text-align:center;margin-bottom:3rem}
+        .section-title{font-size:2rem;font-weight:700;color:var(--gray-900);margin-bottom:1rem}
+        @media(min-width:768px){.section-title{font-size:2.5rem}}
+        .section-subtitle{font-size:1.125rem;color:var(--gray-600)}
+
+        /* Scroll container for centering + horizontal scroll */
+        .tabs-scroll-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 0 1rem;
+        }
+        .tabs-scroll-container::-webkit-scrollbar { display: none }
+
+        /* On mobile, align left to hint scroll */
+        @media(max-width:639px) {
+            .tabs-scroll-container {
+                justify-content: flex-start;
+                margin-left: -.5rem;
+                margin-right: -.5rem;
+                padding: 0 .5rem;
+            }
+        }
+
+        /* Tabs with smaller padding on mobile */
+        .stakeholder-tab {
+            padding: .625rem .875rem;
+            font-size: .8125rem;  /* Smaller on mobile */
+            flex-shrink: 0;
+        }
+
+        /* Larger on tablets+ */
+        @media(min-width:480px) {
+            .stakeholder-tab { padding: .75rem 1.25rem; font-size: .875rem }
+        }
+
+        /* Grid System */
+        .grid{display:grid;gap:1.5rem}
+        .grid-2{grid-template-columns:1fr}
+        @media(min-width:768px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+        .grid-3{grid-template-columns:1fr}
+        @media(min-width:768px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+        .grid-4{grid-template-columns:repeat(2,1fr)}
+        @media(min-width:768px){.grid-4{grid-template-columns:repeat(4,1fr)}}
+        .grid-6{grid-template-columns:repeat(2,1fr)}
+        @media(min-width:768px){.grid-6{grid-template-columns:repeat(3,1fr)}}
+        @media(min-width:1024px){.grid-6{grid-template-columns:repeat(6,1fr)}}
+
+        /* City Cards */
+        .city-card{position:relative;height:20rem;border-radius:1rem;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1)}
+        .city-card:hover{transform:translateY(-.5rem);box-shadow:var(--shadow-2xl)}
+        .city-card-bg{position:absolute;inset:0;transition:transform .5s}
+        .city-card:hover .city-card-bg{transform:scale(1.1)}
+        .city-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 60%)}
+        .city-card-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;color:#fff}
+        .city-card-name{font-size:1.5rem;font-weight:700;margin-bottom:.25rem}
+        .city-card-count{font-size:.875rem;opacity:.9;margin-bottom:.75rem}
+        .city-card-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+        .city-tag{padding:.25rem .75rem;font-size:.75rem;font-weight:500;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);border-radius:9999px}
+
+        /* City Gradients */
+        .city-mumbai .city-card-bg{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
+        .city-pune .city-card-bg{background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%)}
+        .city-bangalore .city-card-bg{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}
+        .city-delhi .city-card-bg{background:linear-gradient(135deg,#43e97b 0%,#38f9d7 100%)}
+        .city-goa .city-card-bg{background:linear-gradient(135deg,#fa709a 0%,#fee140 100%)}
+        .city-hyderabad .city-card-bg{background:linear-gradient(135deg,#30cfd0 0%,#330867 100%)}
+
+        /* Project Tabs */
+        .tabs-container{display:flex;justify-content:center;margin-bottom:2rem;overflow-x:auto;-webkit-overflow-scrolling:touch}
+        .tabs-container::-webkit-scrollbar{display:none}
+        .tabs{display:inline-flex;background:#fff;padding:.25rem;border-radius:.5rem;box-shadow:var(--shadow-sm)}
+        .tab{padding:.625rem 1.25rem;font-size:.875rem;font-weight:500;color:var(--gray-600);border-radius:.375rem;white-space:nowrap;transition:all .2s}
+        .tab:hover{color:var(--gray-900)}
+        .tab-active{background:var(--red-500);color:#fff}
+        .tab-active:hover{color:#fff}
+
+        /* Project Cards */
+        .project-card{background:#fff;border-radius:.75rem;overflow:hidden;box-shadow:var(--shadow-lg);transition:all .3s}
+        .project-card:hover{transform:translateY(-.5rem);box-shadow:var(--shadow-2xl)}
+        .project-card-img{height:12rem;position:relative}
+        .project-card-badges{position:absolute;top:.75rem;left:.75rem;display:flex;gap:.5rem}
+        .project-badge{padding:.25rem .75rem;font-size:.75rem;font-weight:600;border-radius:9999px}
+        .badge-new{background:var(--red-100);color:var(--red-600)}
+        .badge-premium{background:#dcfce7;color:#16a34a}
+        .badge-luxury{background:#dbeafe;color:#2563eb}
+        .project-card-body{padding:1.5rem}
+        .project-card-title{font-size:1.25rem;font-weight:700;color:var(--gray-900);margin-bottom:.25rem}
+        .project-card-location{font-size:.875rem;color:var(--gray-600);margin-bottom:.75rem}
+        .project-card-price{font-size:1.5rem;font-weight:700;color:var(--gray-900);margin-bottom:.25rem}
+        .project-card-config{font-size:.875rem;color:var(--gray-500);margin-bottom:1rem}
+        .project-card-tags{display:flex;gap:.5rem;margin-bottom:1rem}
+        .project-tag{padding:.25rem .5rem;font-size:.75rem;background:var(--gray-100);border-radius:.25rem;color:var(--gray-600)}
+        .project-card-btn{width:100%;padding:.625rem;font-size:.875rem;font-weight:600;color:#fff;background:var(--red-500);border-radius:.5rem;transition:all .2s}
+        .project-card-btn:hover{background:var(--red-600)}
+
+        /* Tab Content */
+        .tab-content{display:none}
+        .tab-content.active{display:block}
+
+        /* Events Section */
+        .events-section{background:linear-gradient(135deg,#fff7ed 0%,#fff 50%,var(--red-50) 100%)}
+        .events-grid{display:grid;gap:2rem}
+        @media(min-width:1024px){.events-grid{grid-template-columns:1fr 1fr;align-items:center}}
+        .events-content h2{font-size:2rem;font-weight:700;color:var(--gray-900);margin-bottom:1rem}
+        @media(min-width:768px){.events-content h2{font-size:2.5rem}}
+        .events-content p{font-size:1.125rem;color:var(--gray-600);margin-bottom:1.5rem}
+        .event-feature{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem}
+        .event-feature-icon{width:1.5rem;height:1.5rem;background:#f97316;border-radius:9999px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.125rem}
+        .event-feature-icon svg{width:.75rem;height:.75rem;color:#fff}
+        .event-feature h4{font-weight:600;color:var(--gray-900);margin-bottom:.125rem}
+        .event-feature p{font-size:.875rem;color:var(--gray-600)}
+        .btn-orange{background:#f97316;color:#fff}
+        .btn-orange:hover{background:#ea580c;transform:scale(1.02)}
+
+        /* Event Cards Grid */
+        .event-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+        .event-card{background:#fff;padding:1.5rem;border-radius:.75rem;box-shadow:var(--shadow);transition:all .3s}
+        .event-card:hover{transform:translateY(-.25rem);box-shadow:var(--shadow-lg)}
+        .event-card-icon{width:2.5rem;height:2.5rem;border-radius:.5rem;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
+        .event-card-icon svg{width:1.25rem;height:1.25rem}
+        .event-card-icon.green{background:#dcfce7}.event-card-icon.green svg{color:#16a34a}
+        .event-card-icon.red{background:var(--red-100)}.event-card-icon.red svg{color:var(--red-500)}
+        .event-card-icon.orange{background:#ffedd5}.event-card-icon.orange svg{color:#f97316}
+        .event-card-icon.purple{background:#f3e8ff}.event-card-icon.purple svg{color:#9333ea}
+        .event-card h4{font-weight:700;color:var(--gray-900);margin-bottom:.5rem;font-size:.9375rem}
+        .event-card p{font-size:.875rem;color:var(--gray-600);margin-bottom:.75rem}
+        .event-card a{font-size:.875rem;font-weight:600}
+
+        /* VideoWorks Section */
+        .video-section{display:grid;gap:2rem;align-items:center}
+        @media(min-width:1024px){.video-section{grid-template-columns:1fr 1fr;gap:3rem}}
+        .video-card{position:relative}
+        .video-card-bg{position:absolute;inset:0;background:linear-gradient(135deg,#fbcfe8 0%,#e9d5ff 100%);border-radius:1.5rem;transform:rotate(-3deg)}
+        .video-card-inner{position:relative;background:#fff;border-radius:1.5rem;padding:1.5rem;box-shadow:var(--shadow-xl)}
+        .video-thumb{position:relative;border-radius:.75rem;overflow:hidden;cursor:pointer}
+        .video-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--gray-200)}
+        .video-thumb-overlay{position:absolute;inset:0;background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:background .3s}
+        .video-thumb:hover .video-thumb-overlay{background:rgba(0,0,0,.4)}
+        .video-play-btn{width:5rem;height:5rem;background:rgba(255,255,255,.9);border-radius:9999px;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+        .video-thumb:hover .video-play-btn{transform:scale(1.1)}
+        .video-play-btn svg{width:2rem;height:2rem;color:#ec4899;margin-left:.25rem}
+        .video-content .badge{display:inline-block;padding:.5rem 1rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;border-radius:9999px;margin-bottom:1.5rem}
+        .badge-pink{background:#fce7f3;color:#db2777}
+        .video-content h2{font-size:2rem;font-weight:700;color:var(--gray-900);margin-bottom:1.5rem}
+        @media(min-width:768px){.video-content h2{font-size:2.5rem}}
+        .video-content>p{font-size:1.125rem;color:var(--gray-600);margin-bottom:2rem}
+        .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:2rem}
+        .feature-item{display:flex;align-items:center;gap:.75rem}
+        .feature-item svg{width:1.25rem;height:1.25rem;color:#ec4899;flex-shrink:0}
+        .feature-item span{color:var(--gray-700)}
+        .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1rem;background:#fff;border-radius:.75rem;margin-bottom:2rem}
+        .stat{text-align:center}
+        .stat:not(:last-child){border-right:1px solid var(--gray-200)}
+        .stat-value{font-size:1.5rem;font-weight:700;color:#ec4899}
+        @media(min-width:768px){.stat-value{font-size:2rem}}
+        .stat-label{font-size:.75rem;color:var(--gray-600)}
+        @media(min-width:768px){.stat-label{font-size:.875rem}}
+        .btn-pink{background:#ec4899;color:#fff}
+        .btn-pink:hover{background:#db2777;transform:scale(1.02)}
+
+        /* Tools Section */
+        .tool-card{background:var(--gray-50);padding:1.5rem;border-radius:.75rem;text-align:center;transition:all .2s;cursor:pointer}
+        .tool-card:hover{background:var(--red-50)}
+        .tool-card:hover .tool-icon{background:var(--red-100)}
+        .tool-card:hover .tool-icon svg{color:var(--red-500)}
+        .tool-icon{width:3rem;height:3rem;background:#fff;border-radius:.5rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+        .tool-icon svg{width:1.5rem;height:1.5rem;color:var(--gray-600)}
+        .tool-card h4{font-weight:600;color:var(--gray-900);margin-bottom:.5rem}
+        .tool-card p{font-size:.875rem;color:var(--gray-600)}
+
+        /* Testimonials */
+        .testimonial-card{background:#fff;border-radius:1rem;padding:2rem;position:relative}
+        .testimonial-quote{font-size:4rem;color:var(--gray-200);position:absolute;top:1rem;left:1.5rem;line-height:1}
+        .testimonial-text{position:relative;z-index:1;color:var(--gray-700);margin-bottom:1.5rem;line-height:1.7}
+        .testimonial-author{display:flex;align-items:center;gap:1rem}
+        .testimonial-avatar{width:3rem;height:3rem;border-radius:9999px;flex-shrink:0}
+        .testimonial-name{font-weight:600;color:var(--gray-900)}
+        .testimonial-role{font-size:.875rem;color:var(--gray-500)}
+
+        /* Blog Section */
+        .blog-icon{width:3.5rem;height:3.5rem;background:#e0e7ff;border-radius:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+        .blog-icon svg{width:2rem;height:2rem;color:#6366f1}
+        .blog-grid{display:grid;gap:2rem}
+        @media(min-width:1024px){.blog-grid{grid-template-columns:2fr 1fr}}
+        .blog-card-featured{background:#fff;border-radius:1rem;overflow:hidden;box-shadow:var(--shadow-lg);transition:all .3s}
+        .blog-card-featured:hover{box-shadow:var(--shadow-2xl)}
+        .blog-card-img{position:relative;height:16rem;overflow:hidden}
+        @media(min-width:640px){.blog-card-img{height:20rem}}
+        @media(min-width:1024px){.blog-card-img{height:24rem}}
+        .blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+        .blog-card-featured:hover .blog-card-img img{transform:scale(1.05)}
+        .blog-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%)}
+        .blog-badge{position:absolute;top:1rem;left:1rem;padding:.25rem .75rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.025em;border-radius:9999px}
+        .blog-badge-red{background:var(--red-500);color:#fff}
+        .blog-badge-time{position:absolute;top:1rem;right:1rem;padding:.25rem .75rem;font-size:.75rem;font-weight:600;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);color:#fff;border-radius:9999px}
+        .blog-card-content{padding:1.5rem}
+        @media(min-width:640px){.blog-card-content{padding:2rem}}
+        .blog-meta{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--gray-500);margin-bottom:.75rem}
+        .blog-category{color:#6366f1;font-weight:700;text-transform:uppercase}
+        .blog-card-title{font-size:1.25rem;font-weight:700;color:var(--gray-900);margin-bottom:1rem;line-height:1.3}
+        @media(min-width:640px){.blog-card-title{font-size:1.5rem}}
+        .blog-card-featured:hover .blog-card-title{color:#6366f1}
+        .blog-author{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+        .blog-author img{width:2.5rem;height:2.5rem;border-radius:9999px;object-fit:cover}
+        .blog-author-name{font-weight:600;font-size:.875rem;color:var(--gray-900)}
+        .blog-author-role{font-size:.75rem;color:var(--gray-500)}
+        .blog-read-more{margin-left:auto;font-size:.875rem;font-weight:600;color:#6366f1}
+        .blog-read-more:hover{color:#4f46e5}
+        .blog-sidebar{display:flex;flex-direction:column;gap:1.5rem}
+        .blog-trending-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+        .blog-trending-header h3{display:flex;align-items:center;gap:.5rem;font-size:1.125rem;font-weight:700}
+        .blog-trending-header h3 svg{width:1.25rem;height:1.25rem;color:var(--red-500)}
+        .blog-trending-header button{font-size:.75rem;color:var(--gray-500)}
+        .blog-small{display:flex;gap:1rem;cursor:pointer}
+        .blog-small:hover h4{color:#6366f1}
+        .blog-small-img{width:6rem;height:6rem;border-radius:.75rem;overflow:hidden;flex-shrink:0}
+        .blog-small-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+        .blog-small:hover .blog-small-img img{transform:scale(1.1)}
+        .blog-small-content{flex:1}
+        .blog-category-small{font-size:.75rem;font-weight:700;text-transform:uppercase}
+        .blog-category-small.green{color:#16a34a}
+        .blog-category-small.purple{color:#9333ea}
+        .blog-category-small.blue{color:#2563eb}
+        .blog-small h4{font-size:.875rem;font-weight:700;color:var(--gray-900);margin:.25rem 0;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+        .blog-small-meta{font-size:.75rem;color:var(--gray-500)}
+        .newsletter-box{background:linear-gradient(135deg,#6366f1 0%,#9333ea 100%);border-radius:.75rem;padding:1.5rem;color:#fff}
+        .newsletter-box h4{font-weight:700;margin-bottom:.5rem}
+        .newsletter-box p{font-size:.875rem;opacity:.9;margin-bottom:1rem}
+        .newsletter-form{display:flex;flex-direction:column;gap:.5rem}
+        @media(min-width:640px){.newsletter-form{flex-direction:row}}
+        .newsletter-form input{flex:1;padding:.625rem .75rem;font-size:.875rem;background:rgba(255,255,255,.2);border:none;border-radius:.5rem;color:#fff;outline:none}
+        .newsletter-form input::placeholder{color:rgba(255,255,255,.7)}
+        .newsletter-form input:focus{background:rgba(255,255,255,.3)}
+        .newsletter-form button{padding:.625rem 1rem;font-size:.875rem;font-weight:600;background:#fff;color:#6366f1;border:none;border-radius:.5rem;white-space:nowrap;cursor:pointer}
+        .newsletter-form button:hover{background:var(--gray-100)}
+        .btn-indigo{background:#6366f1;color:#fff}
+        .btn-indigo:hover{background:#4f46e5;transform:scale(1.02)}
+
+        /* Creators Section */
+        .creators-section{position:relative;overflow:hidden;background:linear-gradient(135deg,#faf5ff 0%,#fdf2f8 50%,#fff7ed 100%)}
+        .creators-bg-1,.creators-bg-2{position:absolute;border-radius:9999px;filter:blur(60px);opacity:.3}
+        .creators-bg-1{top:5rem;left:2.5rem;width:18rem;height:18rem;background:#e9d5ff}
+        .creators-bg-2{bottom:2.5rem;right:2.5rem;width:24rem;height:24rem;background:#fed7aa}
+        .creators-grid{display:grid;gap:2rem;align-items:center}
+        @media(min-width:1024px){.creators-grid{grid-template-columns:1fr 1fr;gap:3rem}}
+        .creators-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:#f3e8ff;border-radius:9999px;margin-bottom:1.5rem}
+        .creators-badge svg{width:1.25rem;height:1.25rem;color:#9333ea}
+        .creators-badge span{font-size:.875rem;font-weight:600;color:#9333ea}
+        .creators-title{font-size:2rem;font-weight:700;color:var(--gray-900);margin-bottom:1.5rem;line-height:1.2}
+        @media(min-width:640px){.creators-title{font-size:2.5rem}}
+        @media(min-width:1024px){.creators-title{font-size:3rem}}
+        .creators-desc{font-size:1.125rem;color:var(--gray-600);margin-bottom:2rem;line-height:1.7}
+        .creators-benefits{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+        .benefit-item{display:flex;align-items:flex-start;gap:.75rem}
+        .benefit-icon{width:1.5rem;height:1.5rem;background:#22c55e;border-radius:9999px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.125rem}
+        .benefit-icon svg{width:.75rem;height:.75rem;color:#fff}
+        .benefit-item h4{font-weight:600;color:var(--gray-900);margin-bottom:.125rem}
+        .benefit-item p{font-size:.875rem;color:var(--gray-600)}
+        .creators-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
+        .creator-stat-value{font-size:1.5rem;font-weight:700;color:var(--gray-900)}
+        @media(min-width:640px){.creator-stat-value{font-size:2rem}}
+        .creator-stat-label{font-size:.75rem;color:var(--gray-600)}
+        @media(min-width:640px){.creator-stat-label{font-size:.875rem}}
+        .creators-cta{display:flex;flex-direction:column;gap:.75rem}
+        @media(min-width:640px){.creators-cta{flex-direction:row}}
+        .btn-purple{background:#9333ea;color:#fff}
+        .btn-purple:hover{background:#7e22ce;transform:scale(1.02)}
+        .btn-outline-purple{border:2px solid #9333ea;color:#9333ea;background:transparent}
+        .btn-outline-purple:hover{background:#faf5ff}
+        .creators-visual{position:relative}
+        .creator-dashboard{background:#fff;border-radius:1rem;padding:1.5rem;box-shadow:var(--shadow-2xl);transition:transform .3s}
+        .creator-dashboard:hover{transform:scale(1.02)}
+        .dashboard-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+        .dashboard-user{display:flex;align-items:center;gap:.75rem}
+        .dashboard-avatar{position:relative}
+        .dashboard-avatar img{width:3.5rem;height:3.5rem;border-radius:9999px;object-fit:cover;border:3px solid #fff;box-shadow:var(--shadow-lg)}
+        .dashboard-online{position:absolute;bottom:-.125rem;right:-.125rem;width:1.25rem;height:1.25rem;background:#22c55e;border:2px solid #fff;border-radius:9999px}
+        .dashboard-user h4{font-weight:700;color:var(--gray-900)}
+        .dashboard-user p{font-size:.875rem;color:var(--gray-600);display:flex;align-items:center;gap:.25rem}
+        .dashboard-user p svg{width:1rem;height:1rem;color:#9333ea}
+        .dashboard-pro{padding:.25rem .75rem;font-size:.75rem;font-weight:700;background:#f3e8ff;color:#9333ea;border-radius:9999px}
+        .dashboard-analytics{background:linear-gradient(135deg,#faf5ff 0%,#fdf2f8 100%);border-radius:.75rem;padding:1rem;margin-bottom:1rem}
+        .analytics-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+        .analytics-header span{font-size:.75rem;font-weight:600;color:var(--gray-600);text-transform:uppercase;letter-spacing:.05em}
+        .live-indicator{display:flex;align-items:center;gap:.25rem;font-size:.75rem;color:var(--gray-500)}
+        .live-dot{width:.5rem;height:.5rem;background:var(--red-500);border-radius:9999px;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+        .analytics-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+        .analytics-stat{text-align:center}
+        .analytics-stat.bordered{border-left:1px solid var(--gray-200);border-right:1px solid var(--gray-200)}
+        .analytics-value{font-size:1.5rem;font-weight:700}
+        .analytics-value.purple{color:#9333ea}
+        .analytics-value.pink{color:#ec4899}
+        .analytics-value.orange{color:#f97316}
+        .analytics-label{font-size:.75rem;color:var(--gray-600)}
+        .analytics-chart{display:flex;align-items:flex-end;justify-content:space-between;height:3rem;padding:0 .5rem;margin-top:.75rem}
+        .chart-bar{width:.5rem;background:linear-gradient(to top,#9333ea,#ec4899);border-radius:.25rem .25rem 0 0;animation:pulse 2s infinite}
+        .chart-bar:nth-child(1){animation-delay:0ms}
+        .chart-bar:nth-child(2){animation-delay:100ms}
+        .chart-bar:nth-child(3){animation-delay:200ms}
+        .chart-bar:nth-child(4){animation-delay:300ms}
+        .chart-bar:nth-child(5){animation-delay:400ms}
+        .chart-bar:nth-child(6){animation-delay:500ms}
+        .chart-bar:nth-child(7){animation-delay:600ms}
+        .dashboard-earnings{background:linear-gradient(135deg,#22c55e 0%,#10b981 100%);border-radius:.75rem;padding:1rem;color:#fff}
+        .earnings-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+        .earnings-header span{font-size:.75rem;font-weight:500;opacity:.9}
+        .earnings-header svg{width:1.25rem;height:1.25rem;opacity:.8}
+        .earnings-content{display:flex;align-items:flex-end;justify-content:space-between}
+        .earnings-amount{font-size:2rem;font-weight:700}
+        .earnings-change{font-size:.75rem;opacity:.9;margin-top:.25rem}
+        .earnings-payout{text-align:right}
+        .earnings-payout div:first-child{font-size:.75rem;opacity:.75}
+        .earnings-payout div:last-child{font-size:.875rem;font-weight:600}
+        .creators-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem;padding-top:3rem;border-top:1px solid var(--gray-200)}
+        @media(min-width:640px){.creators-features{grid-template-columns:repeat(4,1fr)}}
+        .creator-feature{text-align:center}
+        .creator-feature-icon{width:3rem;height:3rem;background:#f3e8ff;border-radius:.75rem;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem}
+        .creator-feature-icon svg{width:1.5rem;height:1.5rem;color:#9333ea}
+        .creator-feature h4{font-size:.875rem;font-weight:600;color:var(--gray-900);margin-bottom:.25rem}
+        .creator-feature p{font-size:.75rem;color:var(--gray-600)}
+
+        /* Footer */
+        .footer{background:var(--gray-900);color:#fff;padding:4rem 0 2rem}
+        .footer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-bottom:3rem}
+        @media(min-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr)}}
+        @media(min-width:1024px){.footer-grid{grid-template-columns:2fr repeat(4,1fr)}}
+        .footer-brand{grid-column:span 2}
+        @media(min-width:768px){.footer-brand{grid-column:span 1}}
+        .footer-logo{font-size:1.5rem;font-weight:800;margin-bottom:1rem}
+        .footer-logo span{color:var(--red-500)}
+        .footer-brand p{font-size:.875rem;color:var(--gray-400);line-height:1.6}
+        .footer-col h4{font-weight:600;margin-bottom:1rem;font-size:.9375rem}
+        .footer-links{display:flex;flex-direction:column;gap:.5rem}
+        .footer-link{font-size:.875rem;color:var(--gray-400);transition:color .2s}
+        .footer-link:hover{color:#fff}
+        .footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center}
+        @media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+        .footer-legal{display:flex;gap:1.5rem}
+        .footer-legal a,.footer-bottom p{font-size:.875rem;color:var(--gray-400)}
+        .footer-legal a:hover{color:#fff}
+
+        /* Animations */
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        .animate-fade-in{animation:fadeInUp .8s ease-out forwards}
+
+        /* Content Visibility for performance */
+        .content-visibility-auto{content-visibility:auto;contain-intrinsic-size:auto 500px}
+
+        /* Hide scrollbar utility */
+        .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+        .hide-scrollbar::-webkit-scrollbar{display:none}
+
+        /* Stakeholder Tabs */
+        .stakeholder-tabs{display:inline-flex;background:var(--gray-100);border-radius:.75rem;padding:.25rem}
+        .stakeholder-tab{padding:.5rem 1rem;font-size:.875rem;font-weight:600;color:var(--gray-600);border-radius:.5rem;white-space:nowrap;transition:all .2s}
+        @media(min-width:640px){.stakeholder-tab{padding:.75rem 1.5rem}}
+        @media(min-width:1024px){.stakeholder-tab{padding:.75rem 2rem}}
+        .stakeholder-tab.active{background:#fff;color:var(--gray-900);box-shadow:var(--shadow-sm)}
+        .stakeholder-tab:hover:not(.active){background:rgba(255,255,255,.5)}
+        .stakeholder-content{max-width:64rem;margin:0 auto}
+        .stakeholder-icon{width:4rem;height:4rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+        .stakeholder-icon svg{width:2rem;height:2rem}
+        .stakeholder-icon.red{background:var(--red-100)}.stakeholder-icon.red svg{color:var(--red-500)}
+        .stakeholder-icon.purple{background:#f3e8ff}.stakeholder-icon.purple svg{color:#9333ea}
+        .stakeholder-icon.blue{background:#dbeafe}.stakeholder-icon.blue svg{color:#3b82f6}
+        .stakeholder-icon.orange{background:#ffedd5}.stakeholder-icon.orange svg{color:#f97316}
+        .service-card{display:flex;align-items:center;padding:1rem;background:var(--gray-50);border-radius:.75rem;transition:all .2s;cursor:pointer}
+        .service-card:hover{background:var(--red-50)}
+        .service-card:hover .service-icon{background:var(--red-100)}
+        .service-card:hover .service-icon svg{color:var(--red-500)}
+        .service-icon{width:3.5rem;height:3.5rem;background:#fff;border-radius:.5rem;display:flex;align-items:center;justify-content:center;margin-right:.75rem;flex-shrink:0;transition:all .2s}
+        .service-icon svg{width:1.75rem;height:1.75rem;color:var(--gray-600);transition:color .2s}
+        .service-card h4{font-weight:700;color:var(--gray-900);margin-bottom:.125rem}
+        .service-card p{font-size:.875rem;color:var(--gray-600)}
+        .btn-blue{background:#3b82f6;color:#fff}
+        .btn-blue:hover{background:#2563eb;transform:scale(1.02)}
+
+        /* Ecosystem Cards */
+        .ecosystem-card{background:#fff;padding:1.5rem;border-radius:.75rem;text-align:center;transition:all .3s;cursor:pointer}
+        .ecosystem-card:hover{transform:translateY(-.25rem);box-shadow:var(--shadow-lg)}
+        .ecosystem-card:hover .ecosystem-icon{transform:scale(1.1)}
+        .ecosystem-icon{width:3.5rem;height:3.5rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;transition:transform .3s}
+        .ecosystem-icon svg{width:1.75rem;height:1.75rem}
+        .ecosystem-icon.red{background:var(--red-100)}.ecosystem-icon.red svg{color:var(--red-500)}
+        .ecosystem-icon.purple{background:#f3e8ff}.ecosystem-icon.purple svg{color:#9333ea}
+        .ecosystem-icon.blue{background:#dbeafe}.ecosystem-icon.blue svg{color:#3b82f6}
+        .ecosystem-icon.green{background:#dcfce7}.ecosystem-icon.green svg{color:#22c55e}
+        .ecosystem-icon.orange{background:#ffedd5}.ecosystem-icon.orange svg{color:#f97316}
+        .ecosystem-icon.pink{background:#fce7f3}.ecosystem-icon.pink svg{color:#ec4899}
+        .ecosystem-icon.indigo{background:#e0e7ff}.ecosystem-icon.indigo svg{color:#6366f1}
+        .ecosystem-icon.teal{background:#ccfbf1}.ecosystem-icon.teal svg{color:#14b8a6}
+        .ecosystem-card h4{font-weight:700;color:var(--gray-900);margin-bottom:.5rem}
+        .ecosystem-card p{font-size:.875rem;color:var(--gray-600);margin-bottom:.75rem}
+        .ecosystem-card .explore-link{font-size:.875rem;font-weight:600;opacity:0;transition:opacity .3s}
+        .ecosystem-card:hover .explore-link{opacity:1}
+
+        /* Media Cards */
+        .media-grid{display:grid;gap:1rem}
+        @media(min-width:768px){.media-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.media-grid{grid-template-columns:repeat(4,1fr)}}
+        .media-featured{grid-column:span 1}
+        @media(min-width:1024px){.media-featured{grid-column:span 2;grid-row:span 2}}
+        .media-card{background:#fff;border-radius:1rem;overflow:hidden;box-shadow:var(--shadow-lg);transition:all .3s;cursor:pointer}
+        .media-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-.25rem)}
+        .media-card-gradient{height:10rem;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+        .media-card-gradient svg{width:4rem;height:4rem;color:rgba(255,255,255,.2)}
+        .media-card-body{padding:1rem}
+        .media-card-category{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.025em}
+        .media-card-title{font-size:1rem;font-weight:700;color:var(--gray-900);margin-top:.5rem;line-height:1.4}
+        .media-card:hover .media-card-title{color:var(--red-500)}
+        .wave-bars{position:absolute;bottom:0;left:0;right:0;height:4rem;display:flex;align-items:flex-end;justify-content:center;gap:.25rem;padding-bottom:1rem}
+        .wave-bar{width:.25rem;background:rgba(255,255,255,.4);border-radius:9999px;animation:pulse 1.5s infinite}
+
+        /* Premium Services */
+        .premium-card{border-radius:1rem;padding:1.5rem;transition:all .3s}
+        .premium-card:hover{transform:translateY(-.25rem)}
+        .premium-card-dark{background:linear-gradient(135deg,var(--gray-900) 0%,var(--gray-700) 100%);color:#fff}
+        .premium-card-light{background:#fff;border:1px solid var(--gray-200)}
+        .premium-icon{width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+        .premium-icon svg{width:1.5rem;height:1.5rem}
+        .premium-card h3{font-size:1.25rem;font-weight:700;margin-bottom:.75rem}
+        .premium-card>p{font-size:.875rem;margin-bottom:1rem}
+        .premium-card ul{font-size:.875rem;display:flex;flex-direction:column;gap:.5rem;list-style:none}
+        .premium-card ul li{opacity:.8;padding-left:1rem;position:relative}
+        .premium-card ul li::before{content:"•";position:absolute;left:0}
+
+        /* Brand Connect & GharTalks */
+        .split-section{display:grid;gap:2rem;align-items:center}
+        @media(min-width:1024px){.split-section{grid-template-columns:1fr 1fr;gap:3rem}}
+        .split-badge{display:inline-block;padding:.5rem 1rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;border-radius:9999px;margin-bottom:1.5rem}
+        .split-title{font-size:2rem;font-weight:700;color:var(--gray-900);margin-bottom:1.5rem}
+        @media(min-width:768px){.split-title{font-size:2.5rem}}
+        .split-desc{font-size:1.125rem;color:var(--gray-600);margin-bottom:2rem;line-height:1.7}
+        .check-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:2rem}
+        .check-item{display:flex;align-items:center;gap:.75rem}
+        .check-item svg{width:1.25rem;height:1.25rem;flex-shrink:0}
+        .check-item span{color:var(--gray-700)}
+        .btn-teal{background:#14b8a6;color:#fff}
+        .btn-teal:hover{background:#0d9488;transform:scale(1.02)}
+        .split-visual{position:relative}
+        .split-visual-bg{position:absolute;inset:0;border-radius:1.5rem;transform:rotate(3deg)}
+        .split-visual-inner{position:relative;background:#fff;border-radius:1.5rem;padding:1rem;box-shadow:var(--shadow-xl);overflow:hidden}
+        @media(min-width:640px){.split-visual-inner{padding:2rem}}
+        .split-visual-inner img{width:100%;border-radius:.75rem}
+        .video-overlay{position:absolute;inset:0;background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;border-radius:.75rem;transition:background .3s}
+        .video-overlay:hover{background:rgba(0,0,0,.4)}
+        /* Modal Styles - Enhanced Modern Design */
+        .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}
+        .modal-overlay.active{display:flex}
+        .modal-box{background:#fff;border-radius:1.5rem;width:100%;max-width:28rem;max-height:90vh;overflow-y:auto;position:relative;animation:modalSlideIn .3s ease;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+        @keyframes modalSlideIn{from{opacity:0;transform:translateY(-20px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+        .modal-header{position:relative;padding:2rem 1.5rem 1.25rem;text-align:center;background:var(--primary);border-radius:1.5rem 1.5rem 0 0;color:#fff}
+        .modal-header h3{font-size:1.375rem;font-weight:700;margin-bottom:.25rem}
+        .modal-header p{font-size:.875rem;opacity:.9}
+        .modal-close{position:absolute;top:1rem;right:1rem;width:2.25rem;height:2.25rem;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;background:rgba(255,255,255,.2);transition:all .2s}
+        .modal-close:hover{background:rgba(255,255,255,.3);transform:scale(1.1)}
+        .modal-body{padding:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        .form-label{display:block;font-size:.75rem;font-weight:600;color:var(--gray-500);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em}
+        .form-input,.form-select{width:100%;padding:.875rem 1rem;font-size:.9375rem;border:2px solid var(--gray-200);border-radius:.75rem;background:var(--gray-50);color:var(--gray-900);transition:all .2s;outline:none}
+        .form-input:focus,.form-select:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 4px rgba(238,50,75,.1)}
+        .form-input::placeholder{color:var(--gray-400)}
+        .form-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:1.25rem}
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav glass">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="nav-logo">ghar<span>.tv</span></a>
+                
+                <div class="nav-links">
+                    <div class="nav-dropdown">
+                        <button class="nav-link">For Buyers <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="nav-dropdown-menu">
+                            <a href="#" class="nav-dropdown-item">Property Search</a>
+                            <a href="#" class="nav-dropdown-item">Home Loans</a>
+                            <a href="#" class="nav-dropdown-item">Interior Design</a>
+                            <a href="#" class="nav-dropdown-item">Legal Help</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <button class="nav-link">For Brokers <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="nav-dropdown-menu">
+                            <a href="#" class="nav-dropdown-item">Premium Membership</a>
+                            <a href="#" class="nav-dropdown-item">VideoWorks</a>
+                            <a href="#" class="nav-dropdown-item">Lead Generation</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <button class="nav-link">For Developers <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="nav-dropdown-menu">
+                            <a href="#" class="nav-dropdown-item">List Project</a>
+                            <a href="#" class="nav-dropdown-item">Marketing Solutions</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <button class="nav-link">For Brands <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="nav-dropdown-menu">
+                            <a href="#" class="nav-dropdown-item">Advertising</a>
+                            <a href="#" class="nav-dropdown-item">Brand Connect</a>
+                        </div>
+                    </div>
+                    <div class="nav-divider"></div>
+                    <a href="#media" class="nav-link">Media</a>
+                    <a href="#tools" class="nav-link">Tools</a>
+                    <a href="#events" class="nav-link">Events</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="btn btn-outline btn-signin">Sign In</button>
+                    <button class="btn btn-primary">List Property</button>
+                    <button class="btn-mobile-menu" onclick="toggleMobileMenu()" aria-label="Menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#">For Buyers</a>
+            <a href="#">For Brokers</a>
+            <a href="#">For Developers</a>
+            <a href="#">For Brands</a>
+            <a href="#media">Media</a>
+            <a href="#tools">Tools</a>
+            <a href="#events">Events</a>
+            <a href="#">Sign In</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-fade-in">
+                <h1 class="hero-title">Real Estate.<br>For You.</h1>
+                <p class="hero-subtitle">Ghar.tv is India's first AI- and media-powered real estate ecosystem - bringing search, marketing, sales, and services together for buyers, brokers, developers, and brands.</p>
+                
+                <div class="search-box" onclick="openSearchModal()" style="cursor:pointer">
+                    <div class="search-inner">
+                        <div class="search-input-wrap">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                            <div class="search-input" style="color:var(--gray-400)">Enter Location, Sub-location, Project, or PIN code</div>
+                        </div>
+                        <button class="search-btn" type="button">Search</button>
+                    </div>
+                </div>
+                
+                <div class="category-pills">
+                    <button class="category-pill category-pill-active">All Properties</button>
+                    <button class="category-pill category-pill-inactive">Senior Living</button>
+                    <button class="category-pill category-pill-inactive">Co-working</button>
+                    <button class="category-pill category-pill-inactive">Warehouse</button>
+                    <button class="category-pill category-pill-inactive">Hotels</button>
+                    <button class="category-pill category-pill-inactive">Auction</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Stakeholder Gateway Section -->
+    <section class="section content-visibility-auto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built for Every Stakeholder</h2>
+                <p class="section-subtitle">Tailored solutions for every role in real estate</p>
+            </div>
+            
+            <div class="tabs-scroll-container">
+                <div class="stakeholder-tabs">
+                    <button class="stakeholder-tab active" onclick="showStakeholder('buyers',this)">For Buyers</button>
+                    <button class="stakeholder-tab" onclick="showStakeholder('brokers',this)">For Brokers</button>
+                    <button class="stakeholder-tab" onclick="showStakeholder('developers',this)">For Developers</button>
+                    <button class="stakeholder-tab" onclick="showStakeholder('brands',this)">For Brands</button>
+                </div>
+            </div>
+            
+            <!-- Buyers Content -->
+            <div id="buyers-content" class="stakeholder-content tab-content active">
+                <div class="stakeholder-icon red">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                </div>
+                <div style="text-align:center;margin-bottom:2rem">
+                    <h3 style="font-size:1.875rem;font-weight:700;margin-bottom:.5rem">For Buyers & Owners</h3>
+                    <p style="color:var(--gray-600);max-width:40rem;margin:0 auto">Find your dream home with advanced search, virtual tours, and expert guidance</p>
+                </div>
+                <div class="grid grid-3" style="margin-bottom:2rem">
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+                        <div><h4>Property Search</h4><p>Advanced filters</p></div>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                        <div><h4>Home Loans</h4><p>EMI Calculator</p></div>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
+                        <div><h4>Interior Design</h4><p>3D visualization</p></div>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                        <div><h4>Legal Help</h4><p>Documentation</p></div>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+                        <div><h4>Moving Services</h4><p>Packers & Movers</p></div>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+                        <div><h4>Ready Reckoner</h4><p>Property rates</p></div>
+                    </a>
+                </div>
+                <div style="text-align:center"><button class="btn btn-primary btn-lg">Explore All Services →</button></div>
+            </div>
+            
+            <!-- Brokers Content -->
+            <div id="brokers-content" class="stakeholder-content tab-content">
+                <div class="stakeholder-icon purple">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                </div>
+                <div style="text-align:center;margin-bottom:2rem">
+                    <h3 style="font-size:1.875rem;font-weight:700;margin-bottom:.5rem">For Brokers</h3>
+                    <p style="color:var(--gray-600);max-width:40rem;margin:0 auto">Grow your business with premium tools and exclusive broker benefits</p>
+                </div>
+                <div class="grid grid-3" style="margin-bottom:2rem">
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div><div><h4>Premium Membership</h4><p>Exclusive benefits</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div><div><h4>VideoWorks</h4><p>Property videos</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div><div><h4>Lead Generation</h4><p>Quality leads</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><h4>Market Insights</h4><p>Analytics & data</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div><div><h4>Training Portal</h4><p>Skill development</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div><h4>Sell Faster</h4><p>Quick closures</p></div></a>
+                </div>
+                <div style="text-align:center"><button class="btn btn-purple btn-lg">Join as Premium Broker →</button></div>
+            </div>
+            
+            <!-- Developers Content -->
+            <div id="developers-content" class="stakeholder-content tab-content">
+                <div class="stakeholder-icon blue">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                </div>
+                <div style="text-align:center;margin-bottom:2rem">
+                    <h3 style="font-size:1.875rem;font-weight:700;margin-bottom:.5rem">For Developers</h3>
+                    <p style="color:var(--gray-600);max-width:40rem;margin:0 auto">Market your projects with cutting-edge digital solutions and reach qualified buyers</p>
+                </div>
+                <div class="grid grid-3" style="margin-bottom:2rem">
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><div><h4>List Project</h4><p>Premium visibility</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg></div><div><h4>Marketing Solutions</h4><p>Digital campaigns</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div><div><h4>Branding</h4><p>Brand building</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><h4>Analytics</h4><p>Performance metrics</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4>Developer Mandates</h4><p>End-to-end support</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><div><h4>Events</h4><p>Exhibitions & expos</p></div></a>
+                </div>
+                <div style="text-align:center"><button class="btn btn-blue btn-lg">Partner With Ghar.tv →</button></div>
+            </div>
+            
+            <!-- Brands Content -->
+            <div id="brands-content" class="stakeholder-content tab-content">
+                <div class="stakeholder-icon orange">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+                </div>
+                <div style="text-align:center;margin-bottom:2rem">
+                    <h3 style="font-size:1.875rem;font-weight:700;margin-bottom:.5rem">For Brands & Others</h3>
+                    <p style="color:var(--gray-600);max-width:40rem;margin:0 auto">Connect with India's premium real estate audience through targeted advertising</p>
+                </div>
+                <div class="grid grid-3" style="margin-bottom:2rem">
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg></div><div><h4>Advertising</h4><p>Display & native ads</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><div><h4>Brand Connect</h4><p>Strategic partnerships</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div><div><h4>Content Creation</h4><p>Branded content</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><div><h4>Event Sponsorships</h4><p>Summit & expos</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><h4>Media Solutions</h4><p>Integrated campaigns</p></div></a>
+                    <a href="#" class="service-card"><div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg></div><div><h4>GharTalks</h4><p>Podcast sponsorship</p></div></a>
+                </div>
+                <div style="text-align:center"><button class="btn btn-orange btn-lg">Advertise With Us →</button></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Complete Ecosystem Section -->
+    <section class="section section-gray content-visibility-auto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Complete Ghar Ecosystem</h2>
+                <p class="section-subtitle">Everything you need, all in one place</p>
+            </div>
+            
+            <div class="grid grid-4" style="gap:1.5rem">
+                <div class="ecosystem-card"><div class="ecosystem-icon red"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h4>Ghar Finance</h4><p>Home loans & calculators</p><span class="explore-link" style="color:var(--red-500)">Explore →</span></div>
+                <div class="ecosystem-card"><div class="ecosystem-icon purple"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div><h4>Ghar Design</h4><p>Interiors & renovations</p><span class="explore-link" style="color:#9333ea">Explore →</span></div>
+                <div class="ecosystem-card"><div class="ecosystem-icon blue"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div><h4>Ghar Move</h4><p>Relocation services</p><span class="explore-link" style="color:#3b82f6">Explore →</span></div>
+                <div class="ecosystem-card"><div class="ecosystem-icon green"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><h4>Ghar Data</h4><p>Market insights & reports</p><span class="explore-link" style="color:#22c55e">Explore →</span></div>
+                <div class="ecosystem-card"><div class="ecosystem-icon orange"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><h4>Ghar Events</h4><p>Summits & exhibitions</p><span class="explore-link" style="color:#f97316">Explore →</span></div>
+                <div class="ecosystem-card"><div class="ecosystem-icon pink"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div><h4>VideoWorks</h4><p>Property video production</p><span class="explore-link" style="color:#ec4899">Explore →</span></div>
+                <div class="ecosystem-card"><div class="ecosystem-icon indigo"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><h4>Brand Connect</h4><p>Advertising partnerships</p><span class="explore-link" style="color:#6366f1">Explore →</span></div>
+                <div class="ecosystem-card"><div class="ecosystem-icon teal"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg></div><h4>GharTalks</h4><p>Podcast & interviews</p><span class="explore-link" style="color:#14b8a6">Explore →</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section events-section content-visibility-auto">
+        <div class="container">
+            <div class="events-grid">
+                <div class="events-content">
+                    <div style="display:inline-flex;align-items:center;justify-content:center;width:3.5rem;height:3.5rem;background:#ffedd5;border-radius:1rem;margin-bottom:1.5rem">
+                        <svg style="width:2rem;height:2rem;color:#f97316" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h2>Ghar Events</h2>
+                    <p>India's premier real estate exhibitions connecting buyers, developers, and industry experts</p>
+                    
+                    <div class="event-feature">
+                        <div class="event-feature-icon">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                        <div>
+                            <h4>Premium Property Showcases</h4>
+                            <p>Exclusive launches and luxury projects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-feature">
+                        <div class="event-feature-icon">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                        <div>
+                            <h4>Expert Consultations</h4>
+                            <p>Free legal and financial advisory</p>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-orange btn-lg" style="margin-top:1rem">View All Events →</button>
+                </div>
+                
+                <div class="event-cards">
+                    <div class="event-card">
+                        <div class="event-card-icon green">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h4>The India Property Show</h4>
+                        <p>Coming Soon</p>
+                        <a href="https://www.theindiapropertyshow.com/online-edition" target="_blank" rel="noopener" style="color:#16a34a">Explore →</a>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-card-icon red">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h4>India Senior Living Show</h4>
+                        <p>Coming Soon</p>
+                        <a href="https://www.indiaseniorlivingshow.com/" target="_blank" rel="noopener" style="color:var(--red-500)">Explore →</a>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-card-icon orange">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h4>India Proptech Expo</h4>
+                        <p>Coming Soon</p>
+                        <a href="https://www.indiaproptechexpo.com/" target="_blank" rel="noopener" style="color:#f97316">Explore →</a>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-card-icon purple">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h4>India Luxury Property Show</h4>
+                        <p>Coming Soon</p>
+                        <a href="https://www.indialuxurypropertyshow.com/" target="_blank" rel="noopener" style="color:#9333ea">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VideoWorks Section -->
+    <section id="media" class="section section-gray content-visibility-auto">
+        <div class="container">
+            <div class="video-section">
+                <div class="video-card" style="order:2">
+                    <div class="video-card-bg"></div>
+                    <div class="video-card-inner">
+                        <a href="https://www.youtube.com/watch?v=UIeByAgxhCg" target="_blank" rel="noopener" class="video-thumb">
+                            <img src="https://img.youtube.com/vi/UIeByAgxhCg/mqdefault.jpg" alt="Property Video" width="320" height="180" loading="lazy" decoding="async">
+                            <div class="video-thumb-overlay">
+                                <div class="video-play-btn">
+                                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="video-content" style="order:1">
+                    <span class="badge badge-pink">Video Production</span>
+                    <h2>VideoWorks</h2>
+                    <p>Professional property video production that sells. From virtual tours to cinematic showcases.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span>360° Virtual Tours</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span>Drone Footage</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span>3D Walkthroughs</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span>Professional Editing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-row">
+                        <div class="stat">
+                            <div class="stat-value">500+</div>
+                            <div class="stat-label">Videos Created</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2M+</div>
+                            <div class="stat-label">Total Views</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">95%</div>
+                            <div class="stat-label">Satisfaction</div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-pink btn-lg">Get Started with VideoWorks →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media & Stories Section -->
+    <section class="section section-gray content-visibility-auto">
+        <div class="container">
+            <div style="margin-bottom:2rem">
+                <h2 class="section-title" style="text-align:left">Media & Stories</h2>
+                <p class="section-subtitle" style="text-align:left">Expert insights and market trends</p>
+            </div>
+            
+            <div class="media-grid">
+                <!-- Featured Video -->
+                <div class="media-featured">
+                    <div class="media-card" style="height:100%">
+                        <a href="https://www.youtube.com/watch?v=VS5heqbX1UU" target="_blank" rel="noopener" style="display:block;position:relative">
+                            <img src="https://img.youtube.com/vi/VS5heqbX1UU/mqdefault.jpg" alt="Featured Video" width="480" height="360" loading="lazy" decoding="async" style="width:100%;aspect-ratio:1/1;object-fit:cover">
+                            <div style="position:absolute;inset:0;background:rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center">
+                                <div class="video-play-btn"><svg fill="currentColor" viewBox="0 0 24 24" style="color:var(--red-500)"><path d="M8 5v14l11-7z"/></svg></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- GharTalks Podcast -->
+                <div class="media-card">
+                    <div class="media-card-gradient" style="background:linear-gradient(135deg,#9333ea 0%,#ec4899 100%)">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                        <div class="wave-bars">
+                            <div class="wave-bar" style="height:20px"></div>
+                            <div class="wave-bar" style="height:30px;animation-delay:100ms"></div>
+                            <div class="wave-bar" style="height:25px;animation-delay:200ms"></div>
+                            <div class="wave-bar" style="height:35px;animation-delay:300ms"></div>
+                            <div class="wave-bar" style="height:28px;animation-delay:400ms"></div>
+                        </div>
+                    </div>
+                    <div class="media-card-body">
+                        <span class="media-card-category" style="color:#9333ea">GharTalks Podcast</span>
+                        <h4 class="media-card-title">In Conversation with India's Top Developer</h4>
+                    </div>
+                </div>
+                
+                <!-- Legal Article -->
+                <div class="media-card">
+                    <div class="media-card-gradient" style="background:linear-gradient(135deg,#3b82f6 0%,#06b6d4 100%)">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                    </div>
+                    <div class="media-card-body">
+                        <span class="media-card-category" style="color:#3b82f6">Legal Guide</span>
+                        <h4 class="media-card-title">RERA Explained: Know Your Rights</h4>
+                    </div>
+                </div>
+                
+                <!-- Investment Report -->
+                <div class="media-card">
+                    <div class="media-card-gradient" style="background:linear-gradient(135deg,#22c55e 0%,#10b981 100%)">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                    </div>
+                    <div class="media-card-body">
+                        <span class="media-card-category" style="color:#22c55e">Market Report</span>
+                        <h4 class="media-card-title">Top 5 Micro-Markets in Mumbai</h4>
+                    </div>
+                </div>
+                
+                <!-- PropTech Innovation -->
+                <div class="media-card">
+                    <div class="media-card-gradient" style="background:linear-gradient(135deg,#6366f1 0%,#9333ea 100%)">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <div class="media-card-body">
+                        <span class="media-card-category" style="color:#6366f1">Technology</span>
+                        <h4 class="media-card-title">PropTech Revolution in India</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align:center;margin-top:2.5rem">
+                <button class="btn btn-primary btn-lg">View All Stories →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Services Section -->
+    <section class="section content-visibility-auto">
+        <div class="container">
+            <div class="section-header">
+                <div style="display:inline-block;padding:.5rem 1rem;background:linear-gradient(135deg,var(--red-500) 0%,#ec4899 100%);color:#fff;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem">Premium</div>
+                <h2 class="section-title">Exclusive Services</h2>
+                <p class="section-subtitle">Tailored solutions for discerning clients</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <!-- White Glove Service -->
+                <div class="premium-card premium-card-dark">
+                    <div class="premium-icon" style="background:rgba(255,255,255,.2)"><svg style="color:#fff" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div>
+                    <h3>White Glove Service</h3>
+                    <p style="opacity:.9">Personalized consultancy for HNIs</p>
+                    <ul><li>Dedicated RM</li><li>Priority Access</li><li>Bespoke Solutions</li></ul>
+                </div>
+                
+                <!-- Premium Broker -->
+                <div class="premium-card premium-card-light">
+                    <div class="premium-icon" style="background:#f3e8ff"><svg style="color:#9333ea" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <h3>Premium Broker</h3>
+                    <p style="color:var(--gray-600)">Advanced tools for top performers</p>
+                    <ul style="color:var(--gray-500)"><li>Premium Listings</li><li>Lead Priority</li><li>Analytics Dashboard</li></ul>
+                </div>
+                
+                <!-- Developer Mandates -->
+                <div class="premium-card premium-card-light">
+                    <div class="premium-icon" style="background:#dbeafe"><svg style="color:#3b82f6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+                    <h3>Developer Mandates</h3>
+                    <p style="color:var(--gray-600)">End-to-end project marketing</p>
+                    <ul style="color:var(--gray-500)"><li>Digital Marketing</li><li>Sales Strategy</li><li>Media Production</li></ul>
+                </div>
+                
+                <!-- Brand Collaborations -->
+                <div class="premium-card premium-card-light">
+                    <div class="premium-icon" style="background:#dcfce7"><svg style="color:#22c55e" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg></div>
+                    <h3>Brand Collaborations</h3>
+                    <p style="color:var(--gray-600)">Strategic partnerships</p>
+                    <ul style="color:var(--gray-500)"><li>Targeted Campaigns</li><li>Content Creation</li><li>Event Sponsorships</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Connect Section -->
+    <section class="section section-gray content-visibility-auto">
+        <div class="container">
+            <div class="split-section">
+                <div>
+                    <span class="split-badge" style="background:#e0e7ff;color:#6366f1">Partnerships</span>
+                    <h2 class="split-title">Brand Connect</h2>
+                    <p class="split-desc">Strategic partnerships that amplify your brand. Connect with India's most engaged real estate audience through targeted campaigns.</p>
+                    <div class="check-list">
+                        <div class="check-item"><svg style="color:#6366f1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Targeted Campaigns</span></div>
+                        <div class="check-item"><svg style="color:#6366f1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Content Integration</span></div>
+                        <div class="check-item"><svg style="color:#6366f1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Brand Amplification</span></div>
+                        <div class="check-item"><svg style="color:#6366f1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Performance Analytics</span></div>
+                    </div>
+                    <button class="btn btn-indigo btn-lg">Partner With Us →</button>
+                </div>
+                <div class="split-visual">
+                    <div class="split-visual-bg" style="background:linear-gradient(135deg,#e0e7ff 0%,#f3e8ff 100%)"></div>
+                    <div class="split-visual-inner">
+                        <div style="height:24rem;background:linear-gradient(135deg,#6366f1 0%,#9333ea 100%);border-radius:.75rem;display:flex;align-items:center;justify-content:center">
+                            <svg style="width:8rem;height:8rem;color:rgba(255,255,255,.3)" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GharTalks Section -->
+    <section class="section content-visibility-auto">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-visual" style="order:1">
+                    <div class="split-visual-bg" style="background:linear-gradient(135deg,#fce7f3 0%,#f3e8ff 100%);transform:rotate(-3deg)"></div>
+                    <div class="split-visual-inner">
+                        <a href="https://www.youtube.com/watch?v=VS5heqbX1UU" target="_blank" rel="noopener" style="display:block;position:relative">
+                            <img src="https://img.youtube.com/vi/VS5heqbX1UU/mqdefault.jpg" alt="GharTalks Video" width="480" height="360" loading="lazy" decoding="async" style="width:100%;border-radius:.75rem">
+                            <div class="video-overlay">
+                                <div class="video-play-btn"><svg fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899"><path d="M8 5v14l11-7z"/></svg></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div style="order:2">
+                    <span class="split-badge" style="background:#ccfbf1;color:#14b8a6">Podcast & Content</span>
+                    <h2 class="split-title">GharTalks</h2>
+                    <p class="split-desc">India's #1 real estate podcast. Conversations with industry leaders, market insights, and success stories that inspire.</p>
+                    <div class="check-list">
+                        <div class="check-item"><svg style="color:#14b8a6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Weekly Episodes</span></div>
+                        <div class="check-item"><svg style="color:#14b8a6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Expert Interviews</span></div>
+                        <div class="check-item"><svg style="color:#14b8a6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Market Analysis</span></div>
+                        <div class="check-item"><svg style="color:#14b8a6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Success Stories</span></div>
+                    </div>
+                    <button class="btn btn-teal btn-lg">Listen to GharTalks →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Blog Section -->
+    <section id="blog" class="section content-visibility-auto">
+        <div class="container">
+            <div class="section-header">
+                <div class="blog-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                </div>
+                <h2 class="section-title">Ghar Insights Blog</h2>
+                <p class="section-subtitle">Expert advice, market analysis, and insider tips for smart real estate decisions</p>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Main Featured Article -->
+                <div class="blog-featured">
+                    <article class="blog-card-featured">
+                        <div class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=70" alt="Mumbai Skyline" width="800" height="400" loading="lazy" decoding="async">
+                            <div class="blog-card-overlay"></div>
+                            <span class="blog-badge blog-badge-red">Featured Article</span>
+                            <span class="blog-badge-time">12 min read</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Market Analysis</span>
+                                <span>•</span>
+                                <span>December 15, 2024</span>
+                            </div>
+                            <h3 class="blog-card-title">The Complete Guide to Mumbai Real Estate in 2024: Opportunities and Challenges</h3>
+                            <div class="blog-author">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=70" alt="Author" width="40" height="40" loading="lazy" decoding="async">
+                                <div>
+                                    <p class="blog-author-name">Arjun Mehta</p>
+                                    <p class="blog-author-role">Senior Market Analyst</p>
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar Articles -->
+                <div class="blog-sidebar">
+                    <div class="blog-trending-header">
+                        <h3><svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg> Trending Now</h3>
+                        <button>View All</button>
+                    </div>
+
+                    <!-- Small Article 1 -->
+                    <article class="blog-small">
+                        <div class="blog-small-img">
+                            <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=200&q=70" alt="Home Interior" width="96" height="96" loading="lazy" decoding="async">
+                        </div>
+                        <div class="blog-small-content">
+                            <span class="blog-category-small green">Investment</span>
+                            <h4>5 Emerging Locations Under ₹50 Lakhs Worth Investing In</h4>
+                            <div class="blog-small-meta">5 min read • 2 days ago</div>
+                        </div>
+                    </article>
+
+                    <!-- Small Article 2 -->
+                    <article class="blog-small">
+                        <div class="blog-small-img">
+                            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=200&q=70" alt="Modern Kitchen" width="96" height="96" loading="lazy" decoding="async">
+                        </div>
+                        <div class="blog-small-content">
+                            <span class="blog-category-small purple">Home Decor</span>
+                            <h4>Transform Your Home: 2024's Top Interior Design Trends</h4>
+                            <div class="blog-small-meta">7 min read • 3 days ago</div>
+                        </div>
+                    </article>
+
+                    <!-- Small Article 3 -->
+                    <article class="blog-small">
+                        <div class="blog-small-img">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=200&q=70" alt="Legal Documents" width="96" height="96" loading="lazy" decoding="async">
+                        </div>
+                        <div class="blog-small-content">
+                            <span class="blog-category-small blue">Legal</span>
+                            <h4>RERA Act: Everything Home Buyers Must Know</h4>
+                            <div class="blog-small-meta">8 min read • 4 days ago</div>
+                        </div>
+                    </article>
+
+                    <!-- Newsletter -->
+                    <div class="newsletter-box">
+                        <h4>Get Weekly Insights</h4>
+                        <p>Subscribe to our newsletter for latest real estate tips and market updates</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:2.5rem">
+                <a href="#" class="btn btn-indigo btn-lg">View All Articles ↓</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Cities Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Cities</h2>
+                <p class="section-subtitle">Explore premium real estate across India's top destinations</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="city-card city-mumbai">
+                    <div class="city-card-bg"></div>
+                    <div class="city-card-overlay"></div>
+                    <div class="city-card-content">
+                        <h3 class="city-card-name">Mumbai</h3>
+                        <p class="city-card-count">12,450 Properties</p>
+                        <div class="city-card-tags">
+                            <span class="city-tag">Luxury</span>
+                            <span class="city-tag">Sea View</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="city-card city-pune">
+                    <div class="city-card-bg"></div>
+                    <div class="city-card-overlay"></div>
+                    <div class="city-card-content">
+                        <h3 class="city-card-name">Pune</h3>
+                        <p class="city-card-count">8,320 Properties</p>
+                        <div class="city-card-tags">
+                            <span class="city-tag">IT Hub</span>
+                            <span class="city-tag">Smart City</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="city-card city-bangalore">
+                    <div class="city-card-bg"></div>
+                    <div class="city-card-overlay"></div>
+                    <div class="city-card-content">
+                        <h3 class="city-card-name">Bangalore</h3>
+                        <p class="city-card-count">10,890 Properties</p>
+                        <div class="city-card-tags">
+                            <span class="city-tag">Tech Capital</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="city-card city-delhi">
+                    <div class="city-card-bg"></div>
+                    <div class="city-card-overlay"></div>
+                    <div class="city-card-content">
+                        <h3 class="city-card-name">Delhi NCR</h3>
+                        <p class="city-card-count">15,670 Properties</p>
+                        <div class="city-card-tags">
+                            <span class="city-tag">Capital</span>
+                            <span class="city-tag">Metro</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="city-card city-goa">
+                    <div class="city-card-bg"></div>
+                    <div class="city-card-overlay"></div>
+                    <div class="city-card-content">
+                        <h3 class="city-card-name">Goa</h3>
+                        <p class="city-card-count">5,230 Properties</p>
+                        <div class="city-card-tags">
+                            <span class="city-tag">Beach</span>
+                            <span class="city-tag">Villas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="city-card city-hyderabad">
+                    <div class="city-card-bg"></div>
+                    <div class="city-card-overlay"></div>
+                    <div class="city-card-content">
+                        <h3 class="city-card-name">Hyderabad</h3>
+                        <p class="city-card-count">7,890 Properties</p>
+                        <div class="city-card-tags">
+                            <span class="city-tag">Cyberabad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section section-gray content-visibility-auto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Handpicked properties from top developers</p>
+            </div>
+            
+            <div class="tabs-container hide-scrollbar">
+                <div class="tabs">
+                    <button class="tab tab-active" onclick="showProjects('mumbai',this)">Mumbai</button>
+                    <button class="tab" onclick="showProjects('pune',this)">Pune</button>
+                    <button class="tab" onclick="showProjects('bangalore',this)">Bangalore</button>
+                    <button class="tab" onclick="showProjects('delhi',this)">Delhi NCR</button>
+                    <button class="tab" onclick="showProjects('hyderabad',this)">Hyderabad</button>
+                </div>
+            </div>
+            
+            <!-- Mumbai Projects -->
+            <div id="mumbai-projects" class="tab-content active">
+                <div class="grid grid-3">
+                    <div class="project-card">
+                        <div class="project-card-img" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)">
+                            <div class="project-card-badges">
+                                <span class="project-badge badge-new">New Launch</span>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Lodha Palava</h3>
+                            <p class="project-card-location">Dombivli East, Mumbai</p>
+                            <p class="project-card-price">₹45L - 1.2Cr</p>
+                            <p class="project-card-config">1, 2, 3 BHK Apartments</p>
+                            <div class="project-card-tags">
+                                <span class="project-tag">Ready to Move</span>
+                                <span class="project-tag">RERA Approved</span>
+                            </div>
+                            <button class="project-card-btn">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-card-img" style="background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%)">
+                            <div class="project-card-badges">
+                                <span class="project-badge badge-premium">Premium</span>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Godrej Woods</h3>
+                            <p class="project-card-location">Powai, Mumbai</p>
+                            <p class="project-card-price">₹1.8Cr - 3.5Cr</p>
+                            <p class="project-card-config">2, 3, 4 BHK Apartments</p>
+                            <div class="project-card-tags">
+                                <span class="project-tag">Under Construction</span>
+                                <span class="project-tag">Lake View</span>
+                            </div>
+                            <button class="project-card-btn">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-card-img" style="background:linear-gradient(135deg,#ee0979 0%,#ff6a00 100%)">
+                            <div class="project-card-badges">
+                                <span class="project-badge badge-luxury">Luxury</span>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Oberoi Realty</h3>
+                            <p class="project-card-location">Worli, Mumbai</p>
+                            <p class="project-card-price">₹5Cr - 15Cr</p>
+                            <p class="project-card-config">3, 4, 5 BHK Apartments</p>
+                            <div class="project-card-tags">
+                                <span class="project-tag">Sea Facing</span>
+                                <span class="project-tag">Ultra Luxury</span>
+                            </div>
+                            <button class="project-card-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:2rem">
+                    <button class="btn btn-primary btn-xl">View All Mumbai Projects →</button>
+                </div>
+            </div>
+            
+            <!-- Pune Projects -->
+            <div id="pune-projects" class="tab-content">
+                <div class="grid grid-3">
+                    <div class="project-card">
+                        <div class="project-card-img" style="background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%)"></div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Kolte Patil Life Republic</h3>
+                            <p class="project-card-location">Hinjewadi, Pune</p>
+                            <p class="project-card-price">₹35L - 80L</p>
+                            <p class="project-card-config">1, 2, 3 BHK Apartments</p>
+                            <button class="project-card-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bangalore Projects -->
+            <div id="bangalore-projects" class="tab-content">
+                <div class="grid grid-3">
+                    <div class="project-card">
+                        <div class="project-card-img" style="background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)"></div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Prestige City</h3>
+                            <p class="project-card-location">Sarjapur, Bangalore</p>
+                            <p class="project-card-price">₹70L - 2Cr</p>
+                            <p class="project-card-config">1, 2, 3, 4 BHK Apartments</p>
+                            <button class="project-card-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Delhi Projects -->
+            <div id="delhi-projects" class="tab-content">
+                <div class="grid grid-3">
+                    <div class="project-card">
+                        <div class="project-card-img" style="background:linear-gradient(135deg,#43e97b 0%,#38f9d7 100%)"></div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">DLF Capital Greens</h3>
+                            <p class="project-card-location">Moti Nagar, Delhi</p>
+                            <p class="project-card-price">₹2.5Cr - 5Cr</p>
+                            <p class="project-card-config">3, 4 BHK Apartments</p>
+                            <button class="project-card-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hyderabad Projects -->
+            <div id="hyderabad-projects" class="tab-content">
+                <div class="grid grid-3">
+                    <div class="project-card">
+                        <div class="project-card-img" style="background:linear-gradient(135deg,#30cfd0 0%,#330867 100%)"></div>
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">Phoenix One</h3>
+                            <p class="project-card-location">Hitech City, Hyderabad</p>
+                            <p class="project-card-price">₹80L - 2Cr</p>
+                            <p class="project-card-config">2, 3 BHK Apartments</p>
+                            <button class="project-card-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section content-visibility-auto">
+        <div class="container">
+            <div class="section-header" style="text-align:left;margin-bottom:2rem">
+                <h2 class="section-title">Tools & Resources</h2>
+                <p class="section-subtitle">Everything you need to make informed decisions</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4>EMI Calculator</h4>
+                    <p>Calculate payments</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h4>Ready Reckoner</h4>
+                    <p>Official rates</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4>Stamp Duty</h4>
+                    <p>Calculate costs</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h4>Legal Templates</h4>
+                    <p>Download docs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community & Trust Section -->
+    <section class="section section-gray content-visibility-auto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Community & Trust</h2>
+                <p class="section-subtitle">Join thousands shaping India's real estate narrative</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Ghar.tv transformed how we market our projects. The video content and digital reach have been game-changing for our sales.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#a855f7 0%,#ec4899 100%)"></div>
+                        <div>
+                            <h5 class="testimonial-name">Rajesh Kumar</h5>
+                            <p class="testimonial-role">CEO, Kumar Developers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The premium broker membership doubled my leads. The tools and support are unmatched in the industry.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#3b82f6 0%,#22c55e 100%)"></div>
+                        <div>
+                            <h5 class="testimonial-name">Priya Sharma</h5>
+                            <p class="testimonial-role">Senior Broker, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Found my dream home through Ghar.tv. The virtual tours and detailed information made the decision easy.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background:linear-gradient(135deg,#f97316 0%,#ef4444 100%)"></div>
+                        <div>
+                            <h5 class="testimonial-name">Amit Patel</h5>
+                            <p class="testimonial-role">Home Buyer, Pune</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Ghar Creators Section -->
+    <section id="creators" class="section creators-section content-visibility-auto">
+        <div class="creators-bg-1"></div>
+        <div class="creators-bg-2"></div>
+        
+        <div class="container" style="position:relative">
+            <div class="creators-grid">
+                <!-- Left Content -->
+                <div class="creators-content">
+                    <div class="creators-badge">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span>Creator Program</span>
+                    </div>
+                    
+                    <h2 class="creators-title">Join Ghar <span class="gradient-text">Creators</span></h2>
+                    
+                    <p class="creators-desc">Become part of India's real estate content revolution. Share your expertise, grow your audience, and monetize your knowledge.</p>
+                    
+                    <!-- Benefits List -->
+                    <div class="creators-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <div>
+                                <h4>Monetize Your Content</h4>
+                                <p>Earn through sponsored content, affiliate commissions, and platform rewards</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <div>
+                                <h4>Reach Millions</h4>
+                                <p>Access our 3L+ active users looking for authentic real estate insights</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <div>
+                                <h4>Professional Support</h4>
+                                <p>Get training, tools, and dedicated support to grow your creator business</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="creators-stats">
+                        <div class="creator-stat">
+                            <div class="creator-stat-value">500+</div>
+                            <div class="creator-stat-label">Active Creators</div>
+                        </div>
+                        <div class="creator-stat">
+                            <div class="creator-stat-value">₹50L+</div>
+                            <div class="creator-stat-label">Paid to Creators</div>
+                        </div>
+                        <div class="creator-stat">
+                            <div class="creator-stat-value">10M+</div>
+                            <div class="creator-stat-label">Content Views</div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="creators-cta">
+                        <button class="btn btn-purple btn-lg">Apply Now →</button>
+                        <button class="btn btn-outline-purple btn-lg">Learn More</button>
+                    </div>
+                </div>
+                
+                <!-- Right Visual - Dashboard Card -->
+                <div class="creators-visual">
+                    <div class="creator-dashboard">
+                        <!-- Header -->
+                        <div class="dashboard-header">
+                            <div class="dashboard-user">
+                                <div class="dashboard-avatar">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=70" alt="Creator" width="56" height="56" loading="lazy" decoding="async">
+                                    <div class="dashboard-online"></div>
+                                </div>
+                                <div>
+                                    <h4>Priya Sharma</h4>
+                                    <p><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Verified Creator</p>
+                                </div>
+                            </div>
+                            <span class="dashboard-pro">PRO</span>
+                        </div>
+                        
+                        <!-- Analytics Card -->
+                        <div class="dashboard-analytics">
+                            <div class="analytics-header">
+                                <span>Live Analytics</span>
+                                <div class="live-indicator"><div class="live-dot"></div> Real-time</div>
+                            </div>
+                            <div class="analytics-stats">
+                                <div class="analytics-stat">
+                                    <div class="analytics-value purple">2.5K</div>
+                                    <div class="analytics-label">Watching</div>
+                                </div>
+                                <div class="analytics-stat bordered">
+                                    <div class="analytics-value pink">89%</div>
+                                    <div class="analytics-label">Engagement</div>
+                                </div>
+                                <div class="analytics-stat">
+                                    <div class="analytics-value orange">4.9★</div>
+                                    <div class="analytics-label">Rating</div>
+                                </div>
+                            </div>
+                            <div class="analytics-chart">
+                                <div class="chart-bar" style="height:40%"></div>
+                                <div class="chart-bar" style="height:60%"></div>
+                                <div class="chart-bar" style="height:45%"></div>
+                                <div class="chart-bar" style="height:80%"></div>
+                                <div class="chart-bar" style="height:95%"></div>
+                                <div class="chart-bar" style="height:70%"></div>
+                                <div class="chart-bar" style="height:85%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Earnings Card -->
+                        <div class="dashboard-earnings">
+                            <div class="earnings-header">
+                                <span>Monthly Earnings</span>
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <div class="earnings-content">
+                                <div>
+                                    <div class="earnings-amount">₹65,430</div>
+                                    <div class="earnings-change">↑ 32% from last month</div>
+                                </div>
+                                <div class="earnings-payout">
+                                    <div>Next Payout</div>
+                                    <div>5 Days</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Features -->
+            <div class="creators-features">
+                <div class="creator-feature">
+                    <div class="creator-feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4>Video Content</h4>
+                    <p>Property tours & reviews</p>
+                </div>
+                
+                <div class="creator-feature">
+                    <div class="creator-feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                    </div>
+                    <h4>Blog Articles</h4>
+                    <p>Market insights & guides</p>
+                </div>
+                
+                <div class="creator-feature">
+                    <div class="creator-feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                    </div>
+                    <h4>Podcasts</h4>
+                    <p>Expert interviews</p>
+                </div>
+                
+                <div class="creator-feature">
+                    <div class="creator-feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h4>Live Sessions</h4>
+                    <p>Q&A and workshops</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">ghar<span>.tv</span></div>
+                    <p>Made by Proptech People.<br>For Real Estate People.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>For Buyers</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Property Search</a>
+                        <a href="#" class="footer-link">Home Loans</a>
+                        <a href="#" class="footer-link">Interior Design</a>
+                        <a href="#" class="footer-link">Legal Help</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>For Brokers</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Premium Membership</a>
+                        <a href="#" class="footer-link">VideoWorks</a>
+                        <a href="#" class="footer-link">Lead Generation</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>For Developers</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">List Project</a>
+                        <a href="#" class="footer-link">Marketing Solutions</a>
+                        <a href="#" class="footer-link">Analytics</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">About Us</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Careers</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <p>© 2025 Ghar.tv. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JavaScript -->
+    <script>
+        function toggleMobileMenu(){
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+        
+        function showProjects(city,btn){
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(function(el){
+                el.classList.remove('active');
+            });
+            // Remove active from all tabs
+            document.querySelectorAll('.tab').forEach(function(el){
+                el.classList.remove('tab-active');
+            });
+            // Show selected tab content
+            document.getElementById(city+'-projects').classList.add('active');
+            // Activate clicked tab
+            btn.classList.add('tab-active');
+        }
+        
+        function showStakeholder(type,btn){
+            // Hide all stakeholder contents
+            document.querySelectorAll('.stakeholder-content').forEach(function(el){
+                el.classList.remove('active');
+            });
+            // Remove active from all stakeholder tabs
+            document.querySelectorAll('.stakeholder-tab').forEach(function(el){
+                el.classList.remove('active');
+            });
+            // Show selected content
+            document.getElementById(type+'-content').classList.add('active');
+            // Activate clicked tab
+            btn.classList.add('active');
+        }
+        
+        // ==========================================
+        // SEARCH MODAL
+        // ==========================================
+        function openSearchModal() {
+            var modal = document.getElementById('searchModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeSearchModal() {
+            var modal = document.getElementById('searchModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function setRadioActive(btn) {
+            var group = btn.parentElement;
+            group.querySelectorAll('.radio-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+        }
+        
+        function setToggleActive(btn) {
+            var group = btn.parentElement;
+            group.querySelectorAll('.toggle-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+        }
+        
+        function setQuickSearch(term) {
+            var input = document.getElementById('locationInput');
+            if (input) input.value = term;
+            document.querySelectorAll('.quick-pill').forEach(function(p) {
+                p.classList.remove('active');
+            });
+            if (event && event.target) event.target.classList.add('active');
+        }
+        
+        // Close modal on escape key
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape')closeSearchModal();
+        });
+    </script>
+    
+<!-- Search Modal - Enhanced Design -->
+    <div class="modal-overlay" id="searchModal" onclick="if(event.target===this)closeSearchModal()" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+        <div class="modal-box">
+            <!-- Gradient Header -->
+            <div class="modal-header">
+                <h3 id="searchModalTitle">Find Your Dream Property</h3>
+                <p>Search from 50,000+ verified listings</p>
+                <button class="modal-close" onclick="closeSearchModal()" aria-label="Close search">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="searchForm" action="https://www.ghar.tv/searchpropbo.php" method="get">
+                    <!-- Buy/Rent/Project Toggle -->
+                    <div class="form-group">
+                        <label class="form-label">I want to</label>
+                        <div class="toggle-group" id="saleTypeGroup">
+                            <label class="toggle-btn active" onclick="setToggleActive(this)">
+                                <input type="radio" name="propertysaleid" value="1" checked> Buy
+                            </label>
+                            <label class="toggle-btn" onclick="setToggleActive(this)">
+                                <input type="radio" name="propertysaleid" value="2"> Rent
+                            </label>
+                            <label class="toggle-btn" onclick="setToggleActive(this)">
+                                <input type="radio" name="propertysaleid" value="3"> Projects
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Residential/Commercial Toggle -->
+                    <div class="form-group">
+                        <label class="form-label">Property Type</label>
+                        <div class="toggle-group" id="propertyTypeGroup">
+                            <label class="toggle-btn active" onclick="setToggleActive(this)">
+                                <input type="radio" name="propertytypeid" value="1" checked> Residential
+                            </label>
+                            <label class="toggle-btn" onclick="setToggleActive(this)">
+                                <input type="radio" name="propertytypeid" value="2"> Commercial
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- City Selection -->
+                    <div class="form-group">
+                        <label class="form-label" for="citySelect">City</label>
+                        <select name="cityid" id="citySelect" class="form-select" data-dynamic="cities">
+                            <option value="21" selected>Mumbai</option>
+                            <option value="29">Pune</option>
+                            <option value="257">Bangalore</option>
+                            <option value="26">Navi Mumbai</option>
+                            <option value="450">Chennai</option>
+                            <option value="37">Thane</option>
+                            <option value="587">Hyderabad</option>
+                            <option value="22">Nagpur</option>
+                            <option value="25">Nashik</option>
+                            <option value="155">Ahmedabad</option>
+                            <option value="581">Kolkata</option>
+                            <option value="613">Palghar</option>
+                            <option value="189">Gurgaon</option>
+                            <option value="616">New Delhi</option>
+                            <option value="542">Noida</option>
+                            <option value="520">Greater Noida</option>
+                            <option value="153">North Goa</option>
+                            <option value="154">South Goa</option>
+                            <option value="429">Jaipur</option>
+                            <option value="290">Kochi</option>
+                            <option value="317">Indore</option>
+                            <option value="305">Bhopal</option>
+                            <option value="534">Lucknow</option>
+                            <option value="600">Dubai</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Location Input with Icon -->
+                    <div class="form-group">
+                        <label class="form-label" for="locationInput">Location / Project</label>
+                        <div class="input-with-icon">
+                            <svg class="input-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <input type="text" name="locationprojectname" id="locationInput" class="form-input" placeholder="e.g. Andheri, Bandra, Lodha Palava" autocomplete="off" data-autocomplete="locations">
+                        </div>
+                    </div>
+                    
+                    <!-- Search Button -->
+                    <div class="form-group" style="margin-bottom:0">
+                        <button type="submit" class="btn-search">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                            Search Properties
+                        </button>
+                    </div>
+                    
+                    <!-- Alternative Search Links -->
+                    <div class="search-alt">
+                        <a href="/search/agent" class="search-alt-link" data-modal="agentSearch">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            By Agent
+                        </a>
+                        <a href="/search/pincode" class="search-alt-link" data-modal="pincodeSearch">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                            By Pincode
+                        </a>
+                        <a href="/search/code" class="search-alt-link" data-modal="codeSearch">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+                            By Code
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Ghar.tv - India's Real Estate Intelligence Platform</title>
+  <meta name="description" content="India's first AI-native real estate intelligence platform. Rankings, research reports, market analysis and investment intelligence for discerning property buyers, investors and developers.">
+  <meta name="keywords" content="India real estate intelligence, luxury property rankings, NRI investment guide, Mumbai real estate, Bangalore villas, property research">
+  <meta property="og:title" content="Ghar.tv - India's Real Estate Intelligence Platform">
+  <meta property="og:description" content="Rankings, research reports, market analysis and investment intelligence for India's most discerning property buyers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ghar.tv">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ghar.tv">
+
+  <!-- Preconnect for fonts (DNS only - loaded non-blocking below) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ═══════════════════════════════════════════════
+       CRITICAL CSS - INLINE (Above the fold only)
+       Nav + Hero + Base resets
+       ═══════════════════════════════════════════════ -->
+  <style>
+    @font-face {
+      font-family: 'Gazpacho';
+      src: url('fonts/Gazpacho-Bold.woff2') format('woff2'),
+           url('fonts/Gazpacho-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ── Variables — matches listing.css ── */
+    :root {
+      --bg:        #ffffff;
+      --ink:       #111111;
+      --ink2:      #4b5563;
+      --faint:     #9ca3af;
+      --rule:      #e8e8e8;
+      --accent:    #ee324b;
+      --surface:   #f7f7f7;
+      --white:     #fff;
+      --border:    #e8e8e8;
+      --border-md: rgba(17,17,17,.15);
+      --success:   #16a34a;
+      --sh-sm:     0 1px 3px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.04);
+      --sh-md:     0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+      --sh-lg:     0 20px 48px rgba(0,0,0,.10), 0 8px 20px rgba(0,0,0,.06);
+      --ff-display:'Gazpacho', Georgia, serif;
+      --ff-sans:   'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --ease:      cubic-bezier(.4,0,.2,1);
+      --maxw:      1280px;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--ff-sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.8;
+      overflow-x: clip;           /* fix: sticky + overflow-x */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button { font-family: inherit; }
+
+    /* ══════════════════════════════════
+       MOBILE-FIRST — matches listing.css
+       Default = mobile (≤743px)
+    ══════════════════════════════════ */
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--rule); box-shadow: var(--sh-sm);
+      contain: layout style;
+    }
+    .nav-inner {
+      max-width: var(--maxw); margin: 0 auto; padding: 0 20px;
+      height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .nav-logo-img { height: 22px; width: auto; display: block; }
+    .nav-logo-tag {
+      font-size: 10px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--faint);
+    }
+    .nav-links { display: none; align-items: center; gap: 2px; list-style: none; flex: 1; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; color: var(--ink2);
+      text-decoration: none; padding: 6px 10px; border-radius: 7px;
+      transition: background .16s, color .16s;
+    }
+    .nav-links a:hover  { background: var(--surface); color: var(--ink); }
+    .nav-links a.active { background: var(--surface); color: var(--ink); font-weight: 600; }
+    .nav-right { display: none; align-items: center; gap: 8px; flex-shrink: 0; }
+    .nav-btn-ghost {
+      font-size: 13px; font-weight: 500; color: var(--ink2);
+      padding: 7px 14px; border-radius: 7px; border: 1.5px solid var(--border-md);
+      text-decoration: none; transition: border-color .16s, color .16s;
+    }
+    .nav-btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+    .nav-btn-solid {
+      font-size: 12.5px; font-weight: 600; letter-spacing: .01em; color: var(--white);
+      padding: 7px 16px; border-radius: 7px; text-decoration: none;
+      background: var(--ink); box-shadow: 0 2px 8px rgba(17,17,17,.18);
+      transition: transform .16s, box-shadow .16s;
+    }
+    .nav-btn-solid:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(17,17,17,.25); }
+    .nav-hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 6px; background: none; border: none; z-index: 901;
+    }
+    .nav-hamburger span {
+      display: block; width: 20px; height: 1.5px; background: var(--ink);
+      transition: transform .3s var(--ease), opacity .3s var(--ease);
+    }
+    .nav-hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* ── SUBNAV ── */
+    .subnav {
+      position: fixed; top: 56px; left: 0; right: 0; z-index: 890;
+      background: var(--white); border-bottom: 1px solid var(--rule);
+      contain: layout style;
+    }
+    .subnav-inner {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: 0 16px; height: 42px;
+      display: flex; align-items: center; gap: 2px;
+      overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .subnav-inner::-webkit-scrollbar { display: none; }
+    .subnav-link {
+      font-size: 12.5px; font-weight: 500; color: var(--ink2);
+      padding: 6px 13px; border-radius: 6px; white-space: nowrap;
+      text-decoration: none; transition: background .16s, color .16s;
+    }
+    .subnav-link:hover  { background: var(--surface); color: var(--ink); }
+    .subnav-link.active { background: var(--ink); color: var(--white); font-weight: 600; }
+
+    /* ── MOBILE MENU ── */
+    .mob-menu {
+      position: fixed; inset: 0; background: var(--white); z-index: 850;
+      transform: translateX(100%); transition: transform .42s var(--ease);
+      display: flex; flex-direction: column; padding: 88px 28px 48px; gap: 0;
+    }
+    .mob-menu.open { transform: translateX(0); }
+    .mob-links { list-style: none; }
+    .mob-links li { border-bottom: 1px solid var(--rule); }
+    .mob-links a {
+      display: block; padding: 15px 0; min-height: 44px;
+      font-family: var(--ff-display); font-size: 24px; font-weight: 700;
+      color: var(--ink); text-decoration: none; transition: color .2s var(--ease);
+    }
+    .mob-links a:hover, .mob-links .mob-accent { color: var(--accent); }
+
+    /* ── HERO — bold typography + animated counters ── */
+    .hero {
+      padding-top: 98px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 30%, rgba(17,17,17,.03) 0%, transparent 70%),
+        linear-gradient(165deg, #fff 0%, #fafafa 100%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .hero-grid::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(17,17,17,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,17,.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+    }
+    .hero-inner {
+      max-width: var(--maxw); margin: 0 auto; padding: 56px 20px 48px;
+      width: 100%; position: relative; z-index: 1;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10px; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--faint); margin-bottom: 28px;
+    }
+    .hero-eyebrow__dot {
+      width: 5px; height: 5px; background: var(--faint); border-radius: 50%;
+    }
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(40px, 7vw, 88px);
+      font-weight: 700; line-height: 1.02; color: var(--ink);
+      letter-spacing: -.035em; margin-bottom: 24px;
+    }
+    .hero-title span {
+      display: block; color: var(--accent);
+    }
+    .hero-sub {
+      font-size: clamp(15px, 1.4vw, 17px); line-height: 1.75;
+      color: var(--ink2); max-width: 580px; margin: 0 auto 40px;
+    }
+    .hero-ctas {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--ink); color: var(--white);
+      padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 600;
+      text-decoration: none; letter-spacing: .01em; min-height: 44px;
+      transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(17,17,17,.18); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--ink);
+      padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 500;
+      text-decoration: none; border: 1.5px solid var(--border-md); min-height: 44px;
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .btn-outline:hover { border-color: var(--ink); background: var(--surface); transform: translateY(-1px); }
+
+    /* counters CSS removed */
+
+    /* ── RESPONSIVE ── */
+    @media (min-width: 744px) {
+      .subnav-inner { padding: 0 32px; height: 46px; }
+      .hero-inner { padding: 80px 32px 56px; }
+      /* counters removed */
+    }
+    @media (min-width: 1024px) {
+      .nav-inner { padding: 0 32px; height: 62px; gap: 32px; }
+      .nav-links { display: flex; }
+      .nav-right { display: flex; }
+      .nav-hamburger { display: none; }
+      .subnav { top: 62px; }
+      .hero { padding-top: 108px; }
+      .hero-inner { padding: 96px 32px 64px; }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+    }
+
+    /* ══ SECTION COMPONENTS ══ */
+    .sec { padding: 80px 0; position: relative; }
+    .sec + .sec { border-top: none; }
+    .sec--alt { background: var(--surface); }
+    .cont { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+    /* ── Section header — modern watermark number ── */
+    .sec-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 40px; padding-bottom: 0; border-bottom: none;
+      position: relative;
+    }
+    .sec-header__left {
+      display: flex; align-items: flex-end; gap: 0; position: relative;
+    }
+    .sec-header__num {
+      font-family: var(--ff-display); font-size: 100px; font-weight: 700;
+      color: transparent; line-height: .8; letter-spacing: -.04em; user-select: none;
+      -webkit-text-stroke: 1.5px rgba(17,17,17,.07);
+      position: absolute; left: -8px; bottom: -10px;
+      z-index: 0;
+    }
+    .sec--alt .sec-header__num {
+      -webkit-text-stroke-color: rgba(17,17,17,.06);
+    }
+    .sec-header__title {
+      font-family: var(--ff-display); font-size: 26px; font-weight: 700;
+      color: var(--ink); letter-spacing: -.02em; position: relative; z-index: 1;
+      padding-left: 4px;
+    }
+    .sec-header__title::after {
+      content: ''; display: block; width: 32px; height: 3px;
+      background: var(--accent); border-radius: 2px; margin-top: 8px;
+    }
+    .sec-header__link {
+      font-size: 13px; font-weight: 600; color: var(--accent);
+      text-decoration: none; white-space: nowrap;
+      transition: color .16s, gap .2s;
+      display: inline-flex; align-items: center; gap: 4px;
+      position: relative; z-index: 1;
+    }
+    .sec-header__link:hover { color: #d52540; gap: 8px; }
+
+    /* ── Section grid: 3-column modern layout ── */
+    .sec-grid {
+      display: grid; grid-template-columns: 1fr; gap: 20px;
+    }
+
+    /* ── Featured cover card — glassmorphism style ── */
+    .sec-cover {
+      display: block; position: relative; border-radius: 20px;
+      overflow: hidden; text-decoration: none;
+      min-height: 340px;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+    .sec-cover:hover {
+      transform: translateY(-5px) scale(1.005);
+      box-shadow: 0 20px 50px rgba(0,0,0,.18), 0 8px 20px rgba(0,0,0,.08);
+    }
+    .sec-cover__img {
+      width: 100%; height: 100%; object-fit: cover;
+      position: absolute; inset: 0;
+      transition: transform .6s var(--ease);
+    }
+    .sec-cover:hover .sec-cover__img { transform: scale(1.05); }
+    .sec-cover__body {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 32px 28px; height: 100%;
+      background: linear-gradient(to top,
+        rgba(17,17,17,.78) 0%,
+        rgba(17,17,17,.38) 40%,
+        rgba(17,17,17,.08) 70%,
+        transparent 100%);
+    }
+    .sec-cover__cat {
+      font-size: 10px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: #fff;
+      background: var(--accent);
+      padding: 4px 10px; border-radius: 4px;
+      display: inline-block; width: fit-content; margin-bottom: 14px;
+    }
+    .sec-cover__title {
+      font-family: var(--ff-display); font-size: 24px; font-weight: 700;
+      color: #fff; line-height: 1.2; letter-spacing: -.02em; margin-bottom: 10px;
+    }
+    .sec-cover__excerpt {
+      font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.8);
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .sec-cover__meta {
+      font-size: 11px; font-weight: 500; color: rgba(255,255,255,.45);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .sec-cover__meta::before {
+      content: ''; width: 16px; height: 1px; background: var(--accent); display: inline-block;
+    }
+
+    /* ── Side cards — modern glass style ── */
+    .sec-side { display: flex; flex-direction: column; gap: 16px; }
+    .sec-card {
+      display: flex; flex-direction: column;
+      padding: 28px; border: 1px solid transparent;
+      border-radius: 18px; text-decoration: none;
+      background: var(--bg);
+      box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.03);
+      transition: all .3s var(--ease);
+      flex: 1; position: relative; overflow: hidden;
+    }
+    .sec--alt .sec-card { background: var(--white); }
+    .sec-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--accent); border-radius: 0 3px 3px 0;
+      opacity: 0; transform: scaleY(0);
+      transition: opacity .25s, transform .25s var(--ease);
+    }
+    .sec-card:hover {
+      border-color: rgba(238,50,75,.12);
+      box-shadow: 0 4px 20px rgba(238,50,75,.08), 0 8px 30px rgba(0,0,0,.06);
+      transform: translateY(-4px);
+    }
+    .sec-card:hover::before { opacity: 1; transform: scaleY(1); }
+    .sec-card__cat {
+      font-size: 10px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .sec-card__title {
+      font-family: var(--ff-display); font-size: 18px; font-weight: 700;
+      color: var(--ink); line-height: 1.3; letter-spacing: -.015em; margin-bottom: 10px;
+      transition: color .2s;
+    }
+    .sec-card:hover .sec-card__title { color: var(--accent); }
+    .sec-card__excerpt {
+      font-size: 13.5px; line-height: 1.65; color: var(--ink2);
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+      flex: 1;
+    }
+    .sec-card__meta {
+      font-size: 11px; font-weight: 500; color: var(--faint); margin-top: 16px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .sec-card__meta::before {
+      content: ''; width: 12px; height: 1px; background: var(--faint); display: inline-block;
+    }
+
+    /* ── V2 trial: featured image card + text-only side cards ── */
+    .sec-grid--v2 {
+      grid-template-columns: 1fr; gap: 24px;
+    }
+    .sec-side2 { display: flex; flex-direction: column; gap: 20px; }
+
+    /* Shared card base */
+    .sec-card2 {
+      display: flex; flex-direction: column;
+      border-radius: 20px; overflow: hidden;
+      text-decoration: none; position: relative;
+      transition: all .35s var(--ease);
+    }
+
+    /* ── Featured card (with image) ── */
+    .sec-card2--featured {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+    .sec--alt .sec-card2--featured { background: var(--white); }
+    .sec-card2--featured:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.04);
+      border-color: transparent;
+    }
+    .sec-card2__img-wrap {
+      position: relative; overflow: hidden;
+      aspect-ratio: 16 / 8;
+    }
+    .sec-card2__img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s var(--ease);
+    }
+    .sec-card2--featured:hover .sec-card2__img { transform: scale(1.05); }
+    .sec-card2--featured .sec-card2__body { padding: 28px 28px 24px; }
+    .sec-card2--featured .sec-card2__title { font-size: 22px; }
+
+    /* ── Text-only cards ── */
+    .sec-card2--text {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      flex: 1; position: relative; overflow: hidden;
+    }
+    .sec--alt .sec-card2--text { background: var(--white); }
+    .sec-card2--text::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(238,50,75,.03) 0%, transparent 60%);
+      pointer-events: none; opacity: 0;
+      transition: opacity .3s;
+    }
+    .sec-card2--text:hover::after { opacity: 1; }
+    .sec-card2--text:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.03);
+      border-color: rgba(238,50,75,.15);
+    }
+    .sec-card2--text .sec-card2__body {
+      padding: 28px; position: relative; z-index: 1;
+    }
+
+    /* Decorative large number watermark on text cards */
+    .sec-card2__num {
+      font-family: var(--ff-display); font-size: 80px; font-weight: 700;
+      color: transparent; -webkit-text-stroke: 1.2px rgba(238,50,75,.08);
+      position: absolute; top: -12px; right: 16px;
+      line-height: 1; user-select: none; pointer-events: none;
+      transition: -webkit-text-stroke-color .3s;
+    }
+    .sec-card2--text:hover .sec-card2__num {
+      -webkit-text-stroke-color: rgba(238,50,75,.14);
+    }
+
+    /* Shared card inner elements */
+    .sec-card2__body {
+      display: flex; flex-direction: column; flex: 1;
+    }
+    .sec-card2__cat {
+      font-size: 10px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+    }
+    .sec-card2__title {
+      font-family: var(--ff-display); font-size: 19px; font-weight: 700;
+      color: var(--ink); line-height: 1.25; letter-spacing: -.02em; margin-bottom: 10px;
+      transition: color .2s;
+    }
+    .sec-card2:hover .sec-card2__title { color: var(--accent); }
+    .sec-card2__excerpt {
+      font-size: 13.5px; line-height: 1.65; color: var(--ink2);
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+      flex: 1;
+    }
+    .sec-card2__meta {
+      font-size: 11px; font-weight: 500; color: var(--faint); margin-top: 14px;
+    }
+    .sec-card2__arrow {
+      position: absolute; bottom: 20px; right: 24px;
+      font-size: 18px; color: var(--faint);
+      transition: color .2s, transform .2s;
+    }
+    .sec-card2:hover .sec-card2__arrow {
+      color: var(--accent); transform: translateX(4px);
+    }
+
+    /* ── Tablet (≥744px) — section components ── */
+    @media (min-width: 744px) {
+      .cont { padding: 0 32px; }
+      .sec-grid { grid-template-columns: 3fr 2fr; gap: 24px; }
+      .sec-grid--v2 { grid-template-columns: 3fr 2fr; gap: 28px; }
+      .sec-cover { min-height: 400px; }
+      .sec-cover__title { font-size: 28px; }
+      .sec-cover__body { padding: 40px 36px; }
+      .sec-header__num { font-size: 120px; }
+    }
+
+    /* ── Desktop (≥1024px) — section components ── */
+    @media (min-width: 1024px) {
+      .sec { padding: 96px 0; }
+      .sec-cover { min-height: 450px; }
+      .sec-cover__title { font-size: 30px; }
+      .sec-header__num { font-size: 140px; left: -12px; }
+      .sec-header__title { font-size: 28px; }
+    }
+
+    /* ══ NEWSLETTER & FOOTER OVERRIDES ══ */
+    /* Fix: nl-btn needs explicit styles since styles.css uses --secondary */
+    .nl-btn {
+      background: var(--accent) !important; color: var(--white) !important;
+      border: none; border-radius: 9px; font-size: 14px; font-weight: 600;
+      letter-spacing: .01em; min-height: 44px; cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .nl-btn:hover { background: #d52540 !important; transform: translateY(-1px); }
+
+    /* Fix: footer — override styles.css grid footer with simple inline layout */
+    .footer {
+      background: var(--ink) !important; padding: 36px 0 !important;
+    }
+    .footer .ft-inner {
+      max-width: var(--maxw); margin: 0 auto; padding: 0 32px;
+    }
+    .footer .ft-top {
+      display: flex !important; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+      grid-template-columns: unset !important;
+      padding-bottom: 22px; margin-bottom: 22px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer .ft-logo {
+      font-family: var(--ff-display); font-size: 22px; font-weight: 700;
+      color: var(--white); letter-spacing: -.5px;
+    }
+    .footer .ft-logo-tld { color: var(--accent); }
+    .footer .ft-tagline {
+      font-size: 12px; color: rgba(255,255,255,.35); margin-top: 4px;
+    }
+    .footer .ft-nav {
+      display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
+    }
+    .footer .ft-nav a {
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,.5);
+      padding: 6px 12px; border-radius: 6px;
+    }
+    .footer .ft-nav a:hover { color: var(--white); background: rgba(255,255,255,.06); }
+    .footer .ft-bot {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer .ft-bot p { font-size: 11px; color: rgba(255,255,255,.22); }
+    .footer .ft-bot-links { display: flex; gap: 18px; }
+    .footer .ft-bot-links a {
+      font-size: 11.5px; color: rgba(255,255,255,.25); text-decoration: none;
+    }
+    .footer .ft-bot-links a:hover { color: rgba(255,255,255,.5); }
+    @media (max-width: 768px) {
+      .footer .ft-top { flex-direction: column; align-items: flex-start; }
+      .footer .ft-bot { flex-direction: column; align-items: flex-start; }
+      .footer .ft-inner { padding: 0 20px; }
+    }
+  </style>
+
+  <!-- Below-fold CSS - non-blocking (print trick → switches to all on load) -->
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+  <!-- Google Fonts - non-blocking -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        media="print" onload="this.onload=null;this.media='all'">
+</head>
+
+<body>
+
+<!-- ════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="logo.svg" alt="GHAR.tv" class="nav-logo-img">
+      <span class="nav-logo-tag">Intelligence</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="intelligence.html" class="active">Intelligence</a></li>
+      <li><a href="/rankings">Rankings</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/developers">Developers</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/signin" class="nav-btn-ghost">Sign In</a>
+      <a href="/pro" class="nav-btn-solid">PRO Access</a>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- SUB-NAV -->
+<nav class="subnav" aria-label="Intelligence sections">
+  <div class="subnav-inner">
+    <a href="ranking.html"         class="subnav-link">Rankings</a>
+    <a href="reports.html"         class="subnav-link">Reports</a>
+    <a href="analysis.html"        class="subnav-link">Analysis</a>
+    <a href="market.html"          class="subnav-link">Market</a>
+    <a href="infrastructure.html"  class="subnav-link">Infrastructure</a>
+    <a href="investment.html"      class="subnav-link">Investment</a>
+    <a href="legal.html"           class="subnav-link">Legal</a>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <ul class="mob-links">
+    <li><a href="intelligence.html" class="mob-accent">Intelligence</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/developers">Developers</a></li>
+    <li><a href="/signin">Sign In</a></li>
+    <li><a href="/pro" class="mob-accent">PRO Access &rarr;</a></li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow__dot" aria-hidden="true"></span>
+      India's Real Estate Intelligence Platform
+    </div>
+    <h1 class="hero-title">
+      Where Data Becomes
+      <span>Conviction</span>
+    </h1>
+    <p class="hero-sub">
+      Rankings, research reports, market analysis and investment intelligence &mdash; curated for India's most discerning property buyers, investors and developers.
+    </p>
+    <div class="hero-ctas">
+      <a href="#rankings" class="btn-primary">Explore Intelligence &rarr;</a>
+      <a href="reports.html" class="btn-outline">View All Reports</a>
+    </div>
+    <!-- counters removed -->
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     ALL BELOW-FOLD SECTIONS
+════════════════════════════════════ -->
+
+
+<!-- ════════ 01 - RANKINGS ════════ -->
+<section class="sec" id="rankings">
+  <div class="cont">
+    <div class="sec-header reveal">
+      <div class="sec-header__left">
+        <span class="sec-header__num">01</span>
+        <h2 class="sec-header__title">Rankings</h2>
+      </div>
+      <a href="ranking.html" class="sec-header__link">View all &rarr;</a>
+    </div>
+    <div class="sec-grid sec-grid--v2">
+      <a href="ranking.html" class="sec-card2 sec-card2--featured reveal">
+        <div class="sec-card2__img-wrap">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=500&fit=crop&q=75" alt="Luxury real estate project in India" class="sec-card2__img">
+        </div>
+        <div class="sec-card2__body">
+          <span class="sec-card2__cat">RANKING</span>
+          <h3 class="sec-card2__title">Top Luxury Real Estate Projects in India</h3>
+          <p class="sec-card2__excerpt">A comprehensive ranking of India's most prestigious residential developments, evaluated across architecture, amenities, location premium and developer reputation.</p>
+          <span class="sec-card2__meta">Mar 2026 &middot; 12 min read</span>
+          <span class="sec-card2__arrow">&rarr;</span>
+        </div>
+      </a>
+      <div class="sec-side2">
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">02</span>
+            <span class="sec-card2__cat">BANGALORE</span>
+            <h3 class="sec-card2__title">Top Luxury Villas in Bangalore</h3>
+            <p class="sec-card2__excerpt">North corridor villa market rankings based on architecture, amenities, location premium and developer track record.</p>
+            <span class="sec-card2__meta">Mar 2026 &middot; 8 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">03</span>
+            <span class="sec-card2__cat">RENTAL YIELD</span>
+            <h3 class="sec-card2__title">Top Rental Yield Localities in India</h3>
+            <p class="sec-card2__excerpt">Data-driven locality rankings by rental yield across India's top residential markets.</p>
+            <span class="sec-card2__meta">Feb 2026 &middot; 6 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 02 - REPORTS ════════ -->
+<section class="sec sec--alt" id="reports">
+  <div class="cont">
+    <div class="sec-header reveal">
+      <div class="sec-header__left">
+        <span class="sec-header__num">02</span>
+        <h2 class="sec-header__title">Reports</h2>
+      </div>
+      <a href="reports.html" class="sec-header__link">View all &rarr;</a>
+    </div>
+    <div class="sec-grid sec-grid--v2">
+      <a href="reports.html" class="sec-card2 sec-card2--featured reveal">
+        <div class="sec-card2__img-wrap">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop&q=75" alt="India luxury real estate market" class="sec-card2__img">
+        </div>
+        <div class="sec-card2__body">
+          <span class="sec-card2__cat">RESEARCH REPORT</span>
+          <h3 class="sec-card2__title">India Luxury Real Estate Market Report</h3>
+          <p class="sec-card2__excerpt">Comprehensive demand and supply analysis for India's top luxury residential markets in the 10 Cr+ segment. Primary data from developer conversations and field analysis.</p>
+          <span class="sec-card2__meta">Mar 2026 &middot; 18 min read</span>
+          <span class="sec-card2__arrow">&rarr;</span>
+        </div>
+      </a>
+      <div class="sec-side2">
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">02</span>
+            <span class="sec-card2__cat">BANGALORE</span>
+            <h3 class="sec-card2__title">Bangalore Villa Market Report</h3>
+            <p class="sec-card2__excerpt">North corridor infrastructure-led appreciation, developer pipeline and buyer demand analysis.</p>
+            <span class="sec-card2__meta">Feb 2026 &middot; 14 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">03</span>
+            <span class="sec-card2__cat">BRANDED RESIDENCES</span>
+            <h3 class="sec-card2__title">India Branded Residences Market Report</h3>
+            <p class="sec-card2__excerpt">Hotel-branded residential growth across India's top cities, with pricing premiums and pipeline analysis.</p>
+            <span class="sec-card2__meta">Jan 2026 &middot; 15 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 03 - ANALYSIS ════════ -->
+<section class="sec" id="analysis">
+  <div class="cont">
+    <div class="sec-header reveal">
+      <div class="sec-header__left">
+        <span class="sec-header__num">03</span>
+        <h2 class="sec-header__title">Analysis</h2>
+      </div>
+      <a href="analysis.html" class="sec-header__link">View all &rarr;</a>
+    </div>
+    <div class="sec-grid sec-grid--v2">
+      <a href="analysis.html" class="sec-card2 sec-card2--featured reveal">
+        <div class="sec-card2__img-wrap">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=500&fit=crop&q=75" alt="North Bangalore luxury housing" class="sec-card2__img">
+        </div>
+        <div class="sec-card2__body">
+          <span class="sec-card2__cat">EXPERT ANALYSIS</span>
+          <h3 class="sec-card2__title">Why North Bangalore Is Becoming a Luxury Housing Hub</h3>
+          <p class="sec-card2__excerpt">Infrastructure-led growth, Devanahalli Airport proximity and premium project launches are redrawing Bangalore's luxury real estate map northward.</p>
+          <span class="sec-card2__meta">Mar 2026 &middot; 10 min read</span>
+          <span class="sec-card2__arrow">&rarr;</span>
+        </div>
+      </a>
+      <div class="sec-side2">
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">02</span>
+            <span class="sec-card2__cat">LUXURY</span>
+            <h3 class="sec-card2__title">The Rise of Branded Residences in India</h3>
+            <p class="sec-card2__excerpt">How hotel brands are reshaping India's luxury residential market with premium pricing and global service standards.</p>
+            <span class="sec-card2__meta">Feb 2026 &middot; 9 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">03</span>
+            <span class="sec-card2__cat">MUMBAI</span>
+            <h3 class="sec-card2__title">Mumbai Redevelopment - The Next Big Opportunity</h3>
+            <p class="sec-card2__excerpt">SRA, CRZ and cluster redevelopment are unlocking the next major supply wave in Mumbai's constrained residential market.</p>
+            <span class="sec-card2__meta">Jan 2026 &middot; 11 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 04 - MARKET ════════ -->
+<section class="sec sec--alt" id="market">
+  <div class="cont">
+    <div class="sec-header reveal">
+      <div class="sec-header__left">
+        <span class="sec-header__num">04</span>
+        <h2 class="sec-header__title">Market</h2>
+      </div>
+      <a href="market.html" class="sec-header__link">View all &rarr;</a>
+    </div>
+    <div class="sec-grid sec-grid--v2">
+      <a href="market.html" class="sec-card2 sec-card2--featured reveal">
+        <div class="sec-card2__img-wrap">
+          <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=500&fit=crop&q=75" alt="India real estate market outlook" class="sec-card2__img">
+        </div>
+        <div class="sec-card2__body">
+          <span class="sec-card2__cat">MARKET OUTLOOK</span>
+          <h3 class="sec-card2__title">India Real Estate Market Outlook 2025</h3>
+          <p class="sec-card2__excerpt">Demand fundamentals remain strong across premium segments. HNI buyer confidence at a multi-year high as supply tightens in marquee locations.</p>
+          <span class="sec-card2__meta">Mar 2026 &middot; 14 min read</span>
+          <span class="sec-card2__arrow">&rarr;</span>
+        </div>
+      </a>
+      <div class="sec-side2">
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">02</span>
+            <span class="sec-card2__cat">MUMBAI PRICES</span>
+            <h3 class="sec-card2__title">Mumbai Real Estate Price Trends Q1 2026</h3>
+            <p class="sec-card2__excerpt">Western suburbs and Thane corridors see sustained appreciation driven by infrastructure and demand compression.</p>
+            <span class="sec-card2__meta">Mar 2026 &middot; 7 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">03</span>
+            <span class="sec-card2__cat">BANGALORE VILLAS</span>
+            <h3 class="sec-card2__title">Bangalore Luxury Villa Market Trends</h3>
+            <p class="sec-card2__excerpt">North corridor commanding 40% premium over other Bangalore zones, led by Devanahalli and Hebbal micro-markets.</p>
+            <span class="sec-card2__meta">Feb 2026 &middot; 8 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 05 - INFRASTRUCTURE ════════ -->
+<section class="sec" id="infrastructure">
+  <div class="cont">
+    <div class="sec-header reveal">
+      <div class="sec-header__left">
+        <span class="sec-header__num">05</span>
+        <h2 class="sec-header__title">Infrastructure</h2>
+      </div>
+      <a href="infrastructure.html" class="sec-header__link">View all &rarr;</a>
+    </div>
+    <div class="sec-grid sec-grid--v2">
+      <a href="infrastructure.html" class="sec-card2 sec-card2--featured reveal">
+        <div class="sec-card2__img-wrap">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=500&fit=crop&q=75" alt="Bangalore metro expansion" class="sec-card2__img">
+        </div>
+        <div class="sec-card2__body">
+          <span class="sec-card2__cat">INFRASTRUCTURE</span>
+          <h3 class="sec-card2__title">Bangalore Metro Expansion Impact on Real Estate</h3>
+          <p class="sec-card2__excerpt">How the expanding metro network is reshaping property values along new corridors and creating investment hotspots across Bangalore.</p>
+          <span class="sec-card2__meta">Mar 2026 &middot; 11 min read</span>
+          <span class="sec-card2__arrow">&rarr;</span>
+        </div>
+      </a>
+      <div class="sec-side2">
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">02</span>
+            <span class="sec-card2__cat">NAVI MUMBAI</span>
+            <h3 class="sec-card2__title">Navi Mumbai Airport Effect on Property Markets</h3>
+            <p class="sec-card2__excerpt">MTHL and airport acting as double catalyst for residential and commercial real estate in the Navi Mumbai corridor.</p>
+            <span class="sec-card2__meta">Feb 2026 &middot; 9 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">03</span>
+            <span class="sec-card2__cat">MUMBAI</span>
+            <h3 class="sec-card2__title">Mumbai Coastal Road Impact on Property Prices</h3>
+            <p class="sec-card2__excerpt">Sea-link to Worli corridor analysis tracking how coastal road connectivity is lifting property values in western suburbs.</p>
+            <span class="sec-card2__meta">Jan 2026 &middot; 8 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 06 - INVESTMENT ════════ -->
+<section class="sec sec--alt" id="investment">
+  <div class="cont">
+    <div class="sec-header reveal">
+      <div class="sec-header__left">
+        <span class="sec-header__num">06</span>
+        <h2 class="sec-header__title">Investment</h2>
+      </div>
+      <a href="investment.html" class="sec-header__link">View all &rarr;</a>
+    </div>
+    <div class="sec-grid sec-grid--v2">
+      <a href="investment.html" class="sec-card2 sec-card2--featured reveal">
+        <div class="sec-card2__img-wrap">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop&q=75" alt="Real estate investment in India" class="sec-card2__img">
+        </div>
+        <div class="sec-card2__body">
+          <span class="sec-card2__cat">INVESTMENT GUIDE</span>
+          <h3 class="sec-card2__title">Best Cities for Real Estate Investment in India</h3>
+          <p class="sec-card2__excerpt">Data-driven city rankings by ROI potential, infrastructure momentum and demand-supply dynamics for serious property investors.</p>
+          <span class="sec-card2__meta">Mar 2026 &middot; 13 min read</span>
+          <span class="sec-card2__arrow">&rarr;</span>
+        </div>
+      </a>
+      <div class="sec-side2">
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">02</span>
+            <span class="sec-card2__cat">RENTAL YIELD</span>
+            <h3 class="sec-card2__title">Rental Yield Guide: How to Maximize Returns</h3>
+            <p class="sec-card2__excerpt">Yield optimization strategies across property types, cities and tenant profiles for maximum rental income.</p>
+            <span class="sec-card2__meta">Feb 2026 &middot; 10 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">03</span>
+            <span class="sec-card2__cat">NRI DESK</span>
+            <h3 class="sec-card2__title">NRI Property Buying Guide for India</h3>
+            <p class="sec-card2__excerpt">FEMA, RERA and tax framework explained for non-resident Indians investing in Indian residential real estate.</p>
+            <span class="sec-card2__meta">Jan 2026 &middot; 12 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 07 - LEGAL ════════ -->
+<section class="sec" id="legal">
+  <div class="cont">
+    <div class="sec-header reveal">
+      <div class="sec-header__left">
+        <span class="sec-header__num">07</span>
+        <h2 class="sec-header__title">Legal</h2>
+      </div>
+      <a href="legal.html" class="sec-header__link">View all &rarr;</a>
+    </div>
+    <div class="sec-grid sec-grid--v2">
+      <a href="legal.html" class="sec-card2 sec-card2--featured reveal">
+        <div class="sec-card2__img-wrap">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=500&fit=crop&q=75" alt="RERA and property law in India" class="sec-card2__img">
+        </div>
+        <div class="sec-card2__body">
+          <span class="sec-card2__cat">LEGAL GUIDE</span>
+          <h3 class="sec-card2__title">What Is RERA and How It Protects Buyers</h3>
+          <p class="sec-card2__excerpt">India's Real Estate Regulation and Development Act explained - mandates, compliance verification and the complaint process for homebuyers.</p>
+          <span class="sec-card2__meta">Mar 2026 &middot; 9 min read</span>
+          <span class="sec-card2__arrow">&rarr;</span>
+        </div>
+      </a>
+      <div class="sec-side2">
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">02</span>
+            <span class="sec-card2__cat">DUE DILIGENCE</span>
+            <h3 class="sec-card2__title">Property Title Verification: A Complete Checklist</h3>
+            <p class="sec-card2__excerpt">Due diligence steps covering encumbrances, chain of ownership, litigation checks and document verification.</p>
+            <span class="sec-card2__meta">Feb 2026 &middot; 7 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="sec-card2 sec-card2--text reveal">
+          <div class="sec-card2__body">
+            <span class="sec-card2__num">03</span>
+            <span class="sec-card2__cat">STAMP DUTY</span>
+            <h3 class="sec-card2__title">Stamp Duty and Registration Charges by State</h3>
+            <p class="sec-card2__excerpt">State-wise comparison guide covering stamp duty rates, registration fees and payment processes across India.</p>
+            <span class="sec-card2__meta">Jan 2026 &middot; 6 min</span>
+            <span class="sec-card2__arrow">&rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ NEWSLETTER ════════ -->
+<section class="nl-sec reveal" id="newsletter">
+  <div class="cont">
+    <div class="nl-wrap">
+      <div class="nl-left">
+        <span class="nl-eyebrow">Intelligence Briefing</span>
+        <h2 class="nl-title">Stay Ahead of India's<br>Property Markets</h2>
+        <p class="nl-body">Weekly briefings on luxury real estate, infrastructure corridors and investment opportunities - curated for serious buyers and investors.</p>
+        <ul class="nl-bullets">
+          <li><span class="nlb-dot">·</span> Weekly luxury market digest</li>
+          <li><span class="nlb-dot">·</span> Exclusive ranking updates</li>
+          <li><span class="nlb-dot">·</span> Infrastructure corridor alerts</li>
+          <li><span class="nlb-dot">·</span> NRI investment insights</li>
+        </ul>
+      </div>
+      <div class="nl-right">
+        <form class="nl-form" id="nlForm" novalidate>
+          <input type="text"  class="nl-inp" placeholder="Your name"           autocomplete="name"  required>
+          <input type="email" class="nl-inp" placeholder="Your email address"  autocomplete="email" required id="nlEmailField">
+          <button type="submit" class="nl-btn" id="nlBtn">Subscribe to Intelligence Briefing</button>
+          <p class="nl-note">No spam. Unsubscribe anytime.</p>
+        </form>
+        <div class="nl-ok" id="nlOk" hidden>
+          <div class="nl-ok-icon">✓</div>
+          <p>You're subscribed. Welcome to the intelligence community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <div class="ft-logo">GHAR<span class="ft-logo-tld">.tv</span></div>
+        <p class="ft-tagline">India's AI-Native Real Estate Intelligence</p>
+      </div>
+      <nav class="ft-nav">
+        <a href="intelligence.html">Intelligence</a>
+        <a href="ranking.html">Rankings</a>
+        <a href="reports.html">Reports</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="market.html">Market</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
+      <div class="ft-bot-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════
+     JAVASCRIPT - inline at end of body
+════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Nav scroll ── */
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  /* ── Hamburger / mobile menu ── */
+  var btn  = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('mobMenu');
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    btn.classList.toggle('active', open);
+    btn.setAttribute('aria-expanded', open);
+    menu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      menu.classList.remove('open');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ── Smooth scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      var target = id.length > 1 && document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  /* ── Intersection Observer reveal ── */
+  var reveals = document.querySelectorAll('.reveal, .reveal-item');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('revealed'); });
+  }
+
+  /* ── Lazy-load reCAPTCHA only when user touches the form ── */
+  var rcLoaded = false;
+  function loadRC () {
+    if (rcLoaded) return;
+    rcLoaded = true;
+    var s = document.createElement('script');
+    s.src  = 'https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY';
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
+  var nlEmailField = document.getElementById('nlEmailField');
+  if (nlEmailField) nlEmailField.addEventListener('focus', loadRC, { once: true });
+
+  /* ── Newsletter submit ── */
+  var nlForm = document.getElementById('nlForm');
+  var nlBtn  = document.getElementById('nlBtn');
+  var nlOk   = document.getElementById('nlOk');
+  if (nlForm) {
+    nlForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      nlBtn.textContent = 'Subscribing…';
+      nlBtn.disabled = true;
+      /* Replace with real API call */
+      setTimeout(function () {
+        nlForm.hidden = true;
+        nlOk.hidden = false;
+      }, 900);
+    });
+  }
+
+  /* ── Debounced resize ── */
+  var resizeT;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeT);
+    resizeT = setTimeout(function () { /* handle if needed */ }, 250);
+  }, { passive: true });
+
+  /* ── Animated Counters ── */
+  var countersAnimated = false;
+  function animateCounters() {
+    if (countersAnimated) return;
+    countersAnimated = true;
+    document.querySelectorAll('.hero-counter__num[data-target]').forEach(function(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var steps = 40;
+      var stepTime = 40; /* ~1.6s total */
+      var current = 0;
+      var increment = target / steps;
+      var timer = setInterval(function() {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target + suffix;
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+      }, stepTime);
+    });
+  }
+  /* Trigger on scroll into view or immediately if visible */
+  var counterSection = document.querySelector('.hero-counters');
+  if (counterSection && 'IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { animateCounters(); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.05 });
+    cio.observe(counterSection);
+  }
+  /* Fallback: animate after short delay */
+  if (counterSection) {
+    setTimeout(function() { animateCounters(); }, 500);
+  }
+
+  /* ── Font-ready class ── */
+  if ('fonts' in document) {
+    document.fonts.ready.then(function () { document.documentElement.classList.add('fonts-ready'); });
+  }
+})();
+</script>
+
+</body>
+</html>

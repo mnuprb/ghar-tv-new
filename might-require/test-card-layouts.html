@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Layout Test - GHAR.tv</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="detail-v2.css">
+
+  <style>
+    @font-face {
+      font-family: 'Gazpacho';
+      src: url('fonts/Gazpacho-Bold.woff2') format('woff2'),
+           url('fonts/Gazpacho-Bold.otf') format('opentype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    :root {
+      --bg: #ffffff; --ink: #111111; --ink2: #4b5563; --faint: #9ca3af;
+      --rule: #e8e8e8; --accent: #ee324b; --light: #f7f7f7; --white: #fff;
+      --border-md: rgba(17,17,17,.15);
+      --ff-display: 'Gazpacho', Georgia, serif;
+      --ff-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --ease: cubic-bezier(.4,0,.2,1); --maxw: 1280px;
+      --sh-sm: 0 1px 3px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.04);
+      --sh-md: 0 4px 20px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--ff-sans); background: var(--bg); color: var(--ink);
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .test-header {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: 48px 32px 0;
+    }
+    .test-header h1 {
+      font-family: var(--ff-display); font-size: 36px; font-weight: 700;
+      letter-spacing: -.025em; color: var(--ink); margin-bottom: 8px;
+    }
+    .test-header p {
+      font-size: 15px; line-height: 1.75; color: var(--ink2); max-width: 700px;
+      margin-bottom: 48px;
+    }
+
+    .test-section {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: 0 32px 48px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 48px;
+    }
+    .test-section:last-child { border-bottom: none; }
+    .test-label {
+      font-family: var(--ff-sans); font-size: 10px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--faint);
+      margin-bottom: 8px;
+    }
+    .test-title {
+      font-family: var(--ff-display); font-size: 24px; font-weight: 700;
+      letter-spacing: -.025em; color: var(--ink); margin-bottom: 32px;
+    }
+
+    @media (max-width: 743px) {
+      .test-header { padding: 32px 20px 0; }
+      .test-header h1 { font-size: 28px; }
+      .test-section { padding: 0 20px 32px; margin-bottom: 32px; }
+      .test-title { font-size: 20px; margin-bottom: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="test-header">
+    <h1>Card Layout Test</h1>
+    <p>Comparing two card variants using the same .prop-card structure. People get a 100px square image. Properties get a large 4:3 rectangular image. Same layout, same design system.</p>
+  </div>
+
+
+  <!-- ═══════════════════════════════════
+       SECTION 1: PEOPLE CARDS (100px image)
+  ═══════════════════════════════════ -->
+  <div class="test-section">
+    <div class="test-label">People Layout</div>
+    <h2 class="test-title">Top Developers in Bangalore</h2>
+
+    <div class="prop-list">
+
+      <div class="prop-card prop-card--person">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop&q=80" alt="Prestige Group" loading="lazy">
+          <div class="prop-rank gold">1</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-eyebrow">Est. 1986 &middot; Irfan Razack</div>
+          <h3 class="prop-name">Prestige Group</h3>
+          <div class="prop-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Bangalore, India
+          </div>
+          <p class="prop-desc">India's most diversified real estate company with a portfolio spanning residential, commercial, retail, and hospitality across 12 cities.</p>
+          <div class="prop-stats">
+            <div class="prop-stat"><span class="prop-stat__value">250+</span><span class="prop-stat__label">Projects</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">180M+</span><span class="prop-stat__label">Sqft Delivered</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">&#8377;48,000 Cr</span><span class="prop-stat__label">Portfolio</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">4.5/5</span><span class="prop-stat__label">RERA Score</span></div>
+          </div>
+          <div class="prop-tags">
+            <span class="prop-tag">Luxury</span>
+            <span class="prop-tag">Townships</span>
+            <span class="prop-tag">Commercial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prop-card prop-card--person">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=200&h=200&fit=crop&q=80" alt="Brigade Group" loading="lazy">
+          <div class="prop-rank silver">2</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-eyebrow">Est. 1986 &middot; M.R. Jaishankar</div>
+          <h3 class="prop-name">Brigade Group</h3>
+          <div class="prop-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Bangalore, India
+          </div>
+          <p class="prop-desc">One of South India's leading property developers with an integrated portfolio of residential, commercial, retail, and hospitality properties.</p>
+          <div class="prop-stats">
+            <div class="prop-stat"><span class="prop-stat__value">200+</span><span class="prop-stat__label">Projects</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">85M+</span><span class="prop-stat__label">Sqft Delivered</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">&#8377;22,000 Cr</span><span class="prop-stat__label">Portfolio</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">4.3/5</span><span class="prop-stat__label">RERA Score</span></div>
+          </div>
+          <div class="prop-tags">
+            <span class="prop-tag">Residential</span>
+            <span class="prop-tag">Townships</span>
+            <span class="prop-tag">Hospitality</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prop-card prop-card--person">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80" alt="Priyanka Shah" loading="lazy">
+          <div class="prop-rank bronze">3</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-eyebrow">Influencer &middot; Mega 1M+</div>
+          <h3 class="prop-name">Priyanka Shah</h3>
+          <div class="prop-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Mumbai, India
+          </div>
+          <p class="prop-desc">Luxury real estate content focusing on Mumbai's premium properties, interior transformations, and high-end lifestyle content.</p>
+          <div class="prop-stats">
+            <div class="prop-stat"><span class="prop-stat__value">1.2M</span><span class="prop-stat__label">Followers</span></div>
+            <div class="prop-stat"><span class="prop-stat__value prop-stat__value--up">4.8%</span><span class="prop-stat__label">Engagement</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">5-6/wk</span><span class="prop-stat__label">Post Frequency</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">Mega</span><span class="prop-stat__label">Tier</span></div>
+          </div>
+          <div class="prop-tags">
+            <span class="prop-tag">Luxury Homes</span>
+            <span class="prop-tag">Mumbai</span>
+            <span class="prop-tag">Interior Design</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════
+       SECTION 2: PROPERTY CARDS (large image)
+  ═══════════════════════════════════ -->
+  <div class="test-section">
+    <div class="test-label">Property Layout</div>
+    <h2 class="test-title">Top Luxury Villas in Bangalore</h2>
+
+    <div class="prop-list">
+
+      <div class="prop-card">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=450&fit=crop&q=80" alt="Prestige Golfshire" loading="lazy">
+          <div class="prop-rank gold">1</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-eyebrow">Prestige Group &middot; Devanahalli</div>
+          <h3 class="prop-name">Prestige Golfshire</h3>
+          <div class="prop-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Devanahalli, Bangalore
+          </div>
+          <p class="prop-desc">A 275-acre golf-course community offering expansive villa plots surrounded by championship greens, mature landscaping, and world-class clubhouse amenities.</p>
+          <div class="prop-stats">
+            <div class="prop-stat"><span class="prop-stat__value">2,400-10,000</span><span class="prop-stat__label">Plot Size (sqft)</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">&#8377;4.5 Cr+</span><span class="prop-stat__label">Starting Price</span></div>
+            <div class="prop-stat"><span class="prop-stat__value prop-stat__value--up">+32%</span><span class="prop-stat__label">3Y CAGR</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">94/100</span><span class="prop-stat__label">Score</span></div>
+          </div>
+          <div class="prop-tags">
+            <span class="prop-tag">Golf Course</span>
+            <span class="prop-tag">Gated Community</span>
+            <span class="prop-tag">Airport Proximity</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prop-card">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop&q=80" alt="Total Environment" loading="lazy">
+          <div class="prop-rank silver">2</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-eyebrow">Total Environment &middot; Whitefield</div>
+          <h3 class="prop-name">Pursuit of a Radical Rhapsody</h3>
+          <div class="prop-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Whitefield, Bangalore
+          </div>
+          <p class="prop-desc">Architectural masterpiece blending indoor and outdoor living with lush landscaping, natural materials, and signature Total Environment craftsmanship.</p>
+          <div class="prop-stats">
+            <div class="prop-stat"><span class="prop-stat__value">3,000-6,000</span><span class="prop-stat__label">Plot Size (sqft)</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">&#8377;6 Cr+</span><span class="prop-stat__label">Starting Price</span></div>
+            <div class="prop-stat"><span class="prop-stat__value prop-stat__value--up">+28%</span><span class="prop-stat__label">3Y CAGR</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">92/100</span><span class="prop-stat__label">Score</span></div>
+          </div>
+          <div class="prop-tags">
+            <span class="prop-tag">Architect-Led</span>
+            <span class="prop-tag">Green Living</span>
+            <span class="prop-tag">IT Corridor</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prop-card">
+        <div class="prop-img">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=450&fit=crop&q=80" alt="Embassy Springs" loading="lazy">
+          <div class="prop-rank bronze">3</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-eyebrow">Embassy Group &middot; Devanahalli</div>
+          <h3 class="prop-name">Embassy Springs</h3>
+          <div class="prop-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Devanahalli, Bangalore
+          </div>
+          <p class="prop-desc">288-acre integrated township featuring luxury villas, a championship golf course, international schools, and a curated retail village.</p>
+          <div class="prop-stats">
+            <div class="prop-stat"><span class="prop-stat__value">2,400-4,500</span><span class="prop-stat__label">Plot Size (sqft)</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">&#8377;3.8 Cr+</span><span class="prop-stat__label">Starting Price</span></div>
+            <div class="prop-stat"><span class="prop-stat__value prop-stat__value--up">+26%</span><span class="prop-stat__label">3Y CAGR</span></div>
+            <div class="prop-stat"><span class="prop-stat__value">90/100</span><span class="prop-stat__label">Score</span></div>
+          </div>
+          <div class="prop-tags">
+            <span class="prop-tag">Township</span>
+            <span class="prop-tag">Golf Course</span>
+            <span class="prop-tag">International School</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
