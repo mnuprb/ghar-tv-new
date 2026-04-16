@@ -1,187 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Brand Connect - GHAR.tv</title>
 <meta name="description" content="Content-driven brand partnerships that place your brand inside the home-buying journey. Reach India's most engaged real estate audience.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.onload=null;this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+<meta name="theme-color" content="#ee324b">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet"></noscript>
 <style>
-@font-face{font-family:'Gazpacho';src:url('community/fonts/Gazpacho-Bold.woff2') format('woff2'),url('community/fonts/Gazpacho-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
 :root{
-  --bg:#fff;--ink:#222;--ink2:#717171;--ink3:#b0b0b0;
-  --accent:#ff385c;--accent-soft:rgba(255,56,92,.08);--accent-border:rgba(255,56,92,.2);
-  --surface:#f7f7f7;--surface2:#ebebeb;
-  --ff-d:'Gazpacho',Georgia,serif;
-  --ff:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --r:12px;--rl:16px;--rx:24px;
-  --mw:1280px;--ph:clamp(24px,5vw,80px);
-  --sh-s:0 1px 2px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.1);
-  --sh-m:0 6px 20px rgba(0,0,0,.08);
-  --sh-l:0 12px 40px rgba(0,0,0,.12);
-  --ease:cubic-bezier(.2,0,0,1);
+  --bg:#fff;--ink:#162233;--ink2:#374151;--ink3:#4b5563;--faint:#9ca3af;
+  --accent:#ee324b;--accent-soft:rgba(238,50,75,.06);--accent-hover:#dc2f45;
+  --border:#e5e7eb;--surface:#f9fafb;--surface2:#f3f4f6;
+  --ff:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--ff);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:64px}
+body{font-family:var(--ff);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:70px}
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
-.c{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
+
+/* ── CONTAINER — matches home page ── */
+.cw{max-width:100%;margin:0 8%;padding:0}
+@media(max-width:1479px){.cw{margin:0 auto;max-width:1200px;padding:0 24px}}
+@media(max-width:767px){.cw{padding:0 16px}}
 
 /* ── NAV ── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--surface2);padding:0 var(--ph);will-change:transform}
-.nav-i{max-width:var(--mw);margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-logo{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.nav-logo img{height:26px;width:auto}
-.nav-logo-tag{font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1030;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:.75rem 0;transition:all .3s ease}
+.nav-inner{max-width:100%;margin:0 8%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+@media(max-width:1479px){.nav-inner{margin:0 auto;max-width:1200px;padding:0 24px}}
+@media(max-width:767px){.nav-inner{padding:0 16px}}
+.nav-brand{font-size:1.3rem;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.nav-brand em{color:var(--accent);font-style:normal}
+.nav-brand img{height:30px;width:auto}
+.nav-brand-tag{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:12px}
 .nav-links{display:none;align-items:center;gap:4px;list-style:none}
-.nav-links a{font-size:14px;font-weight:500;color:var(--ink2);padding:8px 14px;border-radius:var(--r);transition:background .15s,color .15s}
-.nav-links a:hover,.nav-links a.active{background:var(--surface);color:var(--ink)}
+.nav-links a{font-size:.9375rem;font-weight:500;color:var(--ink2);padding:.5rem 1rem;border-radius:.5rem;transition:color .3s}
+.nav-links a:hover{color:var(--accent)}
 .nav-r{display:none;align-items:center;gap:8px}
-.nav-btn{font-size:14px;font-weight:600;color:var(--bg);padding:10px 20px;border-radius:var(--r);background:var(--ink);border:none;transition:transform .15s,box-shadow .15s}
-.nav-btn:hover{transform:scale(1.03);box-shadow:var(--sh-m)}
-.ham{display:flex;flex-direction:column;gap:5px;padding:8px;background:none;border:1px solid var(--surface2);border-radius:var(--r);z-index:901}
-.ham span{display:block;width:16px;height:1.5px;background:var(--ink);transition:transform .25s var(--ease),opacity .25s}
-.ham.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.mob{position:fixed;inset:0;background:var(--bg);z-index:850;transform:translateX(100%);transition:transform .35s var(--ease);padding:88px 24px 48px}
-.mob.open{transform:translateX(0)}.mob ul{list-style:none}.mob li+li{border-top:1px solid var(--surface2)}
-.mob a{display:block;padding:16px 0;font-size:18px;font-weight:600;color:var(--ink)}.mob .ma{color:var(--accent)}
+.nav-cta{font-size:.875rem;font-weight:600;color:#fff;padding:.5rem 1.25rem;border-radius:.5rem;background:var(--accent);border:none;transition:all .3s ease}
+.nav-cta:hover{background:var(--accent-hover);transform:scale(1.05);box-shadow:0 4px 12px rgba(238,50,75,.25)}
+.ham{display:flex;flex-direction:column;gap:5px;padding:8px;background:none;border:none;z-index:1031}
+.ham span{display:block;width:20px;height:2px;background:var(--ink);border-radius:1px;transition:transform .3s var(--ease),opacity .3s}
+.ham.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob{position:fixed;inset:0;background:var(--bg);z-index:1020;transform:translateX(100%);transition:transform .35s var(--ease);padding:90px 24px 48px}
+.mob.open{transform:translateX(0)}.mob ul{list-style:none}
+.mob li{border-bottom:1px solid var(--surface2)}
+.mob a{display:block;padding:1rem 0;font-size:1rem;font-weight:500;color:var(--ink)}.mob .ma{color:var(--accent);font-weight:600}
 
 /* ── HERO ── */
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px);align-items:center;padding:clamp(60px,8vw,120px) 0 clamp(48px,6vw,80px)}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
-.hero-eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.hero h1{font-family:var(--ff-d);font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);align-items:center;padding:clamp(48px,6vw,100px) 0 clamp(40px,5vw,72px)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--border);border-radius:50px;font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);padding:.4rem .9rem;margin-bottom:24px}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;line-height:1.1;color:var(--ink);letter-spacing:-.02em;margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{font-size:clamp(16px,1.5vw,18px);color:var(--ink2);line-height:1.7;max-width:520px;margin-bottom:32px}
-.hero-cta{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--bg);background:var(--accent);padding:14px 32px;border-radius:var(--r);border:none;transition:all .2s;cursor:pointer}
-.hero-cta:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,56,92,.25)}
-.hero-cta svg{width:16px;height:16px}
+.hero-sub{font-size:clamp(.95rem,1.2vw,1.125rem);font-weight:400;color:var(--ink3);line-height:1.6;max-width:520px;margin-bottom:32px}
+.hero-btn{display:inline-flex;align-items:center;gap:8px;font-size:.9375rem;font-weight:600;color:#fff;background:var(--accent);padding:.875rem 2rem;border-radius:.75rem;border:none;letter-spacing:.02em;transition:all .3s ease}
+.hero-btn:hover{background:var(--accent-hover);transform:scale(1.02);box-shadow:0 10px 25px rgba(238,50,75,.3)}
+.hero-btn svg{width:16px;height:16px}
 .hero-visual{display:flex;align-items:center;justify-content:center}
-.hero-visual img{width:100%;max-width:480px;height:auto}
+.hero-visual img{width:100%;max-width:500px;height:auto}
 
 /* ── DIVIDER ── */
-.divider{height:1px;background:var(--surface2)}
+.divider{height:1px;background:var(--border)}
 
-/* ── SECTION COMMON ── */
-.section{padding:clamp(56px,7vw,96px) 0}
-.sec-eyebrow{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;text-align:center}
-.sec-title{font-family:var(--ff-d);font-size:clamp(26px,3.5vw,36px);font-weight:700;color:var(--ink);text-align:center;margin-bottom:clamp(36px,4vw,56px);line-height:1.15}
+/* ── SECTION ── */
+.section{padding:clamp(48px,6vw,80px) 0}
+.sec-eyebrow{display:inline-block;background:var(--bg);border:1px solid var(--border);border-radius:50px;font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);padding:.35rem .85rem;margin-bottom:12px}
+.sec-title{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:var(--ink);margin-bottom:clamp(32px,4vw,48px);line-height:1.15;letter-spacing:-.01em}
+.sec-center{text-align:center}
+.sec-center .sec-eyebrow{margin-left:auto;margin-right:auto}
 
-/* ── VALUE PROPS — 3 column ── */
+/* ── VALUE PROPS ── */
 .props{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.prop{padding:clamp(28px,3vw,40px);background:var(--surface);border-radius:var(--rl);transition:transform .2s var(--ease)}
-.prop:hover{transform:translateY(-4px)}
-.prop-icon{width:48px;height:48px;border-radius:var(--r);background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--accent)}
-.prop-icon svg{width:24px;height:24px}
-.prop h3{font-family:var(--ff-d);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px}
-.prop p{font-size:14px;color:var(--ink2);line-height:1.7}
+.prop{padding:clamp(28px,3vw,36px);background:var(--surface);border:1px solid var(--border);border-radius:1rem;transition:all .3s ease}
+.prop:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(238,50,75,.08);transform:translateY(-4px)}
+.prop-icon{width:44px;height:44px;border-radius:.625rem;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--accent)}
+.prop-icon svg{width:22px;height:22px}
+.prop h3{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+.prop p{font-size:.875rem;font-weight:400;color:var(--ink3);line-height:1.65}
 
-/* ── PARTNERSHIP FORMATS — 4 cards ── */
+/* ── FORMATS — numbered cards ── */
 .formats{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.format{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(28px,3vw,40px);background:var(--bg);transition:all .25s var(--ease)}
-.format:hover{border-color:transparent;box-shadow:var(--sh-l);transform:translateY(-4px)}
-.format-num{font-family:var(--ff-d);font-size:48px;font-weight:700;color:var(--surface2);line-height:1;margin-bottom:16px;transition:color .25s}
-.format:hover .format-num{color:var(--accent-border)}
-.format h3{font-family:var(--ff-d);font-size:clamp(18px,2vw,22px);font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.2}
-.format p{font-size:14px;color:var(--ink2);line-height:1.7}
+.format{border:1px solid var(--border);border-radius:1rem;padding:clamp(28px,3vw,36px);background:var(--bg);transition:all .3s ease}
+.format:hover{border-color:var(--accent);box-shadow:0 8px 32px rgba(238,50,75,.1);transform:translateY(-4px)}
+.format-num{font-size:2.5rem;font-weight:700;color:var(--surface2);line-height:1;margin-bottom:14px;transition:color .3s}
+.format:hover .format-num{color:rgba(238,50,75,.2)}
+.format h3{font-size:clamp(1rem,1.3vw,1.15rem);font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.25}
+.format p{font-size:.875rem;font-weight:400;color:var(--ink3);line-height:1.65}
 
-/* ── PARTNERS STRIP ── */
-.partners-section{padding:clamp(48px,6vw,72px) 0;text-align:center}
-.partners-label{font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:20px}
+/* ── PARTNERS ── */
+.partners{padding:clamp(40px,5vw,64px) 0;text-align:center}
+.partners-label{font-size:.9375rem;font-weight:600;color:var(--ink2);margin-bottom:20px}
 .partners-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.partner-pill{font-size:13px;font-weight:600;color:var(--ink);background:var(--surface);padding:10px 20px;border-radius:24px;transition:all .15s}
-.partner-pill:hover{background:var(--accent-soft);color:var(--accent)}
+.partner-pill{font-size:.8125rem;font-weight:500;color:var(--ink2);background:var(--bg);border:1px solid var(--border);padding:.5rem 1.125rem;border-radius:50px;transition:all .2s}
+.partner-pill:hover{background:var(--accent-soft);border-color:rgba(238,50,75,.2);color:var(--accent)}
 
 /* ── CTA ── */
-.cta-block{background:var(--ink);border-radius:var(--rx);padding:clamp(48px,6vw,80px);text-align:center;margin:clamp(40px,5vw,56px) 0}
-.cta-block h2{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--bg);margin-bottom:12px}
-.cta-block p{font-size:16px;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 32px}
-.cta-form{display:flex;gap:10px;max-width:480px;margin:0 auto}
-.cta-inp{flex:1;font-family:var(--ff);font-size:14px;padding:14px 18px;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;transition:border-color .2s}
+.cta-block{background:var(--ink);border-radius:1rem;padding:clamp(40px,5vw,72px);text-align:center;margin:clamp(40px,5vw,56px) 0}
+.cta-block::before{content:'';display:block;width:48px;height:3px;background:var(--accent);border-radius:2px;margin:0 auto 24px}
+.cta-block h2{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-.01em}
+.cta-block p{font-size:1rem;font-weight:400;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 32px;line-height:1.6}
+.cta-form{display:flex;gap:10px;max-width:500px;margin:0 auto}
+.cta-inp{flex:1;font-family:var(--ff);font-size:.875rem;padding:.8rem 1.125rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;transition:border-color .3s}
 .cta-inp::placeholder{color:rgba(255,255,255,.35)}
 .cta-inp:focus{outline:none;border-color:rgba(255,255,255,.3)}
-.cta-sub{font-family:var(--ff);font-size:14px;font-weight:600;color:var(--ink);background:#fff;padding:14px 28px;border-radius:var(--r);border:none;cursor:pointer;white-space:nowrap;transition:all .2s}
-.cta-sub:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
-.cta-note{font-size:12px;color:rgba(255,255,255,.3);padding-top:14px}
-.cta-ok{padding:12px 0}.cta-ok p{font-size:15px;color:rgba(255,255,255,.7)}
+.cta-sub{font-family:var(--ff);font-size:.875rem;font-weight:600;color:var(--ink);background:#fff;padding:.8rem 1.75rem;border-radius:.5rem;border:none;cursor:pointer;white-space:nowrap;transition:all .3s}
+.cta-sub:hover{background:var(--accent);color:#fff;transform:scale(1.02);box-shadow:0 4px 12px rgba(238,50,75,.25)}
+.cta-note{font-size:.75rem;color:rgba(255,255,255,.3);padding-top:14px}
+.cta-ok{padding:12px 0}.cta-ok p{font-size:.9375rem;color:rgba(255,255,255,.7)}
 
 /* ── FOOTER ── */
-.ft{border-top:1px solid var(--surface2);padding:32px 0}
-.ft-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:flex;justify-content:space-between;align-items:center}
-.ft-c{font-size:12px;color:var(--ink3)}
-.ft-links{display:flex;gap:20px}.ft-links a{font-size:12px;color:var(--ink3)}.ft-links a:hover{color:var(--ink)}
+.ft{border-top:1px solid var(--border);padding:24px 0}
+.ft-inner{max-width:100%;margin:0 8%;display:flex;justify-content:space-between;align-items:center}
+@media(max-width:1479px){.ft-inner{margin:0 auto;max-width:1200px;padding:0 24px}}
+@media(max-width:767px){.ft-inner{padding:0 16px}}
+.ft-c{font-size:.75rem;color:var(--faint)}
+.ft-links{display:flex;gap:20px}.ft-links a{font-size:.75rem;color:var(--faint);transition:color .2s}.ft-links a:hover{color:var(--ink)}
 
 /* ── RESPONSIVE ── */
-@media(min-width:1024px){.nav-links{display:flex}.nav-r{display:flex}.ham{display:none}}
+@media(min-width:1200px){.nav-links{display:flex}.nav-r{display:flex}.ham{display:none}}
 
-@media(max-width:1024px){
+@media(max-width:1199px){
   .hero{grid-template-columns:1fr;gap:32px;text-align:center}
   .hero-sub{margin-left:auto;margin-right:auto}
   .hero-visual{order:-1}
-  .hero-visual img{max-width:360px}
+  .hero-visual img{max-width:380px}
   .props{grid-template-columns:1fr}
   .formats{grid-template-columns:1fr}
-  .ft-i{flex-direction:column;gap:16px;text-align:center}
+  .ft-inner{flex-direction:column;gap:16px;text-align:center}
   .ft-links{flex-wrap:wrap;justify-content:center}
 }
 
-@media(max-width:600px){
-  body{padding-top:56px}
-  .nav-i{height:56px}
-  .nav-logo img{height:22px}
-  .hero{padding:40px 0}
-  .hero h1{font-size:28px}
-  .hero-visual img{max-width:280px}
+@media(max-width:575px){
+  body{padding-top:60px}
+  .hero{padding:32px 0}
+  .hero h1{font-size:1.75rem}
+  .hero-visual img{max-width:260px}
+  .hero-eyebrow{font-size:.6rem}
   .prop{padding:24px}
   .format{padding:24px}
-  .format-num{font-size:36px}
+  .format-num{font-size:2rem}
   .partners-pills{gap:8px}
-  .partner-pill{font-size:12px;padding:8px 16px}
-  .cta-block{padding:36px 20px;border-radius:var(--rl)}
+  .partner-pill{font-size:.75rem;padding:.4rem .875rem}
+  .cta-block{padding:32px 20px;border-radius:.75rem}
   .cta-form{flex-direction:column}
-  .mob{padding:72px 20px 40px}
+  .mob{padding:80px 16px 40px}
 }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="nav"><div class="nav-i">
-  <a href="/" class="nav-logo"><img src="community/logo.svg" alt="GHAR.tv"><span class="nav-logo-tag">Brand Connect</span></a>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-brand"><img src="community/logo.svg" alt="GHAR.tv" onerror="this.outerHTML='<span class=nav-brand>Ghar<em>.</em>tv</span>'"><span class="nav-brand-tag">Brand Connect</span></a>
   <ul class="nav-links" role="list"><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li></ul>
-  <div class="nav-r"><button class="nav-btn" onclick="location.href='/join'">Join Now</button></div>
+  <div class="nav-r"><button class="nav-cta" onclick="location.href='/join'">Join Now</button></div>
   <button class="ham" id="hBtn" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="mob" id="mob" aria-hidden="true"><ul><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li><li><a href="/join" class="ma">Join Now &rarr;</a></li></ul></div>
 
 
-<!-- ═══════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════ -->
-<div class="c"><section class="hero">
+<!-- HERO -->
+<div class="cw"><section class="hero">
   <div>
     <div class="hero-eyebrow">Brand Connect</div>
     <h1>Your brand, where <em>decisions</em> happen.</h1>
     <p class="hero-sub">Content-driven partnerships that place your brand inside the home-buying journey &mdash; not beside it. Reach an audience that's actively researching, calculating, and deciding.</p>
-    <button class="hero-cta" onclick="document.getElementById('ctaForm').scrollIntoView({behavior:'smooth'})">Partner With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    <button class="hero-btn" onclick="document.getElementById('ctaForm').scrollIntoView({behavior:'smooth'})">Partner With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
   </div>
   <div class="hero-visual">
     <img src="brand-connect.svg" alt="Brand Connect">
   </div>
 </section></div>
 
-<div class="c"><hr class="divider"></div>
+<div class="cw"><hr class="divider"></div>
 
 
-<!-- ═══════════════════════════════════════════
-     VALUE PROPOSITIONS
-     ═══════════════════════════════════════════ -->
-<div class="c"><section class="section">
-  <div class="sec-eyebrow">Why GHAR.tv</div>
-  <h2 class="sec-title">Built for brands that want to matter</h2>
+<!-- VALUE PROPS -->
+<div class="cw"><section class="section">
+  <div class="sec-center">
+    <span class="sec-eyebrow">Why GHAR.tv</span>
+    <h2 class="sec-title">Built for brands that want to matter</h2>
+  </div>
 
   <div class="props">
     <div class="prop">
@@ -202,15 +204,15 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
   </div>
 </section></div>
 
-<div class="c"><hr class="divider"></div>
+<div class="cw"><hr class="divider"></div>
 
 
-<!-- ═══════════════════════════════════════════
-     PARTNERSHIP FORMATS
-     ═══════════════════════════════════════════ -->
-<div class="c"><section class="section">
-  <div class="sec-eyebrow">Formats</div>
-  <h2 class="sec-title">Ways to work together</h2>
+<!-- PARTNERSHIP FORMATS -->
+<div class="cw"><section class="section">
+  <div class="sec-center">
+    <span class="sec-eyebrow">Formats</span>
+    <h2 class="sec-title">Ways to work together</h2>
+  </div>
 
   <div class="formats">
     <div class="format">
@@ -236,19 +238,17 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
   </div>
 </section></div>
 
-<div class="c"><hr class="divider"></div>
+<div class="cw"><hr class="divider"></div>
 
 
-<!-- ═══════════════════════════════════════════
-     WE PARTNER WITH
-     ═══════════════════════════════════════════ -->
-<div class="c"><section class="partners-section">
+<!-- PARTNERS -->
+<div class="cw"><section class="partners">
   <div class="partners-label">We partner with</div>
   <div class="partners-pills">
     <span class="partner-pill">Home Loan Providers</span>
     <span class="partner-pill">Interior Design Firms</span>
     <span class="partner-pill">Building Materials</span>
-    <span class="partner-pill">Furniture & D&eacute;cor</span>
+    <span class="partner-pill">Furniture &amp; D&eacute;cor</span>
     <span class="partner-pill">Smart Home Tech</span>
     <span class="partner-pill">Home Insurance</span>
     <span class="partner-pill">Legal Services</span>
@@ -257,10 +257,8 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 </section></div>
 
 
-<!-- ═══════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════ -->
-<div class="c"><div class="cta-block" id="ctaForm">
+<!-- CTA -->
+<div class="cw"><div class="cta-block" id="ctaForm">
   <h2>Let's build something together</h2>
   <p>Tell us about your brand and we'll share how GHAR.tv can put you in front of India's most engaged home-buying audience.</p>
   <form class="cta-form" id="nlF" novalidate>
@@ -273,24 +271,18 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 </div></div>
 
 
-<!-- ═══════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════ -->
-<footer class="ft"><div class="ft-i">
+<!-- FOOTER -->
+<footer class="ft"><div class="ft-inner">
   <p class="ft-c">&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
   <div class="ft-links"><a href="/intelligence">Intelligence</a><a href="/design">Design</a><a href="/community">Community</a><a href="/ghartalks">GharTalks</a><a href="#">Privacy</a><a href="#">Terms</a></div>
 </div></footer>
 
 
-<!-- JS -->
 <script>
 (function(){
-  // Hamburger
   var btn=document.getElementById('hBtn'),mob=document.getElementById('mob');
   btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('active',o);btn.setAttribute('aria-expanded',o);mob.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''});
   mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');mob.setAttribute('aria-hidden','true');document.body.style.overflow=''})});
-
-  // Form
   var nf=document.getElementById('nlF'),nb=document.getElementById('nlB'),no=document.getElementById('nlO');
   if(nf)nf.addEventListener('submit',function(e){e.preventDefault();nb.disabled=true;nb.textContent='Sending\u2026';setTimeout(function(){nf.style.display='none';no.hidden=false},800)});
 })();
