@@ -61,9 +61,6 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .hero-cta svg{width:16px;height:16px}
 .hero-visual{display:flex;align-items:center;justify-content:center;background:var(--surface);border-radius:var(--rx);padding:clamp(24px,3vw,40px);overflow:hidden}
 .hero-svg{width:100%;max-width:500px;height:auto}
-.bc-up{opacity:0;transform:translateY(20px);animation:bcUp .6s var(--ease) forwards}
-.bc-d1{animation-delay:.2s}.bc-d2{animation-delay:.4s}.bc-d3{animation-delay:.6s}.bc-d4{animation-delay:.8s}.bc-d5{animation-delay:1s}
-@keyframes bcUp{to{opacity:1;transform:translateY(0)}}
 @keyframes bcFloat1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes bcFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes bcFloat3{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -179,7 +176,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
     <svg class="hero-svg" viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
 
       <!-- Background grid lines -->
-      <g class="bc-up bc-d1" opacity=".5">
+      <g opacity=".5">
         <line x1="0" y1="80" x2="460" y2="80" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
         <line x1="0" y1="170" x2="460" y2="170" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
         <line x1="0" y1="260" x2="460" y2="260" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
@@ -190,7 +187,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
       </g>
 
       <!-- Card 1 — Editorial article (back, left) -->
-      <g class="bc-up bc-d2 bc-fl1">
+      <g class="bc-fl1">
         <rect x="20" y="40" width="200" height="150" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
         <rect x="36" y="56" width="168" height="68" rx="6" fill="#f7f7f7"/>
         <rect x="36" y="138" width="100" height="8" rx="4" fill="#ebebeb"/>
@@ -205,7 +202,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
       </g>
 
       <!-- Card 2 — Analytics dashboard (mid, right) -->
-      <g class="bc-up bc-d3 bc-fl2">
+      <g class="bc-fl2">
         <rect x="240" y="90" width="200" height="160" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
         <!-- Mini bar chart -->
         <rect x="260" y="155" width="16" height="40" rx="3" fill="rgba(255,56,92,.12)"/>
@@ -225,7 +222,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
       </g>
 
       <!-- Card 3 — Creator profile card (front, left) -->
-      <g class="bc-up bc-d4 bc-fl3">
+      <g class="bc-fl3">
         <rect x="50" y="225" width="180" height="120" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
         <!-- Avatar -->
         <circle cx="86" cy="270" r="20" fill="#f7f7f7" stroke="#ebebeb" stroke-width="1"/>
@@ -244,7 +241,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
       </g>
 
       <!-- Card 4 — Event badge (front, right) -->
-      <g class="bc-up bc-d5 bc-fl1">
+      <g class="bc-fl1">
         <rect x="265" y="280" width="175" height="110" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
         <rect x="281" y="296" width="44" height="44" rx="8" fill="#222"/>
         <text x="303" y="316" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="Inter,sans-serif">24</text>
@@ -261,10 +258,10 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
       </g>
 
       <!-- Decorative accents -->
-      <circle cx="12" cy="130" r="4" fill="#ff385c" opacity=".08" class="bc-up bc-d3"/>
-      <circle cx="450" cy="70" r="5" fill="#8b5cf6" opacity=".06" class="bc-up bc-d4"/>
-      <circle cx="25" cy="380" r="3" fill="#10b981" opacity=".07" class="bc-up bc-d5"/>
-      <rect x="442" y="320" width="8" height="8" rx="2" fill="#f59e0b" opacity=".06" class="bc-up bc-d5"/>
+      <circle cx="12" cy="130" r="4" fill="#ff385c" opacity=".08"/>
+      <circle cx="450" cy="70" r="5" fill="#8b5cf6" opacity=".06"/>
+      <circle cx="25" cy="380" r="3" fill="#10b981" opacity=".07"/>
+      <rect x="442" y="320" width="8" height="8" rx="2" fill="#f59e0b" opacity=".06"/>
 
       <!-- Shadow filter -->
       <defs>
