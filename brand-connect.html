@@ -59,7 +59,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .hero-cta{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--bg);background:var(--accent);padding:14px 32px;border-radius:var(--r);border:none;transition:all .2s;cursor:pointer}
 .hero-cta:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,56,92,.25)}
 .hero-cta svg{width:16px;height:16px}
-.hero-visual{display:flex;align-items:center;justify-content:center}
+.hero-visual{display:flex;align-items:center;justify-content:center;background:var(--surface);border-radius:var(--rx);padding:clamp(24px,3vw,40px);overflow:hidden}
 .hero-svg{width:100%;max-width:500px;height:auto}
 .bc-up{opacity:0;transform:translateY(20px);animation:bcUp .6s var(--ease) forwards}
 .bc-d1{animation-delay:.2s}.bc-d2{animation-delay:.4s}.bc-d3{animation-delay:.6s}.bc-d4{animation-delay:.8s}.bc-d5{animation-delay:1s}
@@ -179,19 +179,19 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
     <svg class="hero-svg" viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
 
       <!-- Background grid lines -->
-      <g class="bc-up bc-d1" opacity=".4">
-        <line x1="0" y1="80" x2="460" y2="80" stroke="#f3f4f6" stroke-width=".5"/>
-        <line x1="0" y1="170" x2="460" y2="170" stroke="#f3f4f6" stroke-width=".5"/>
-        <line x1="0" y1="260" x2="460" y2="260" stroke="#f3f4f6" stroke-width=".5"/>
-        <line x1="0" y1="350" x2="460" y2="350" stroke="#f3f4f6" stroke-width=".5"/>
-        <line x1="115" y1="0" x2="115" y2="420" stroke="#f3f4f6" stroke-width=".5"/>
-        <line x1="230" y1="0" x2="230" y2="420" stroke="#f3f4f6" stroke-width=".5"/>
-        <line x1="345" y1="0" x2="345" y2="420" stroke="#f3f4f6" stroke-width=".5"/>
+      <g class="bc-up bc-d1" opacity=".5">
+        <line x1="0" y1="80" x2="460" y2="80" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
+        <line x1="0" y1="170" x2="460" y2="170" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
+        <line x1="0" y1="260" x2="460" y2="260" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
+        <line x1="0" y1="350" x2="460" y2="350" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
+        <line x1="115" y1="0" x2="115" y2="420" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
+        <line x1="230" y1="0" x2="230" y2="420" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
+        <line x1="345" y1="0" x2="345" y2="420" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
       </g>
 
       <!-- Card 1 — Editorial article (back, left) -->
       <g class="bc-up bc-d2 bc-fl1">
-        <rect x="20" y="40" width="200" height="150" rx="12" fill="#fff" stroke="#ebebeb" stroke-width="1"/>
+        <rect x="20" y="40" width="200" height="150" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
         <rect x="36" y="56" width="168" height="68" rx="6" fill="#f7f7f7"/>
         <rect x="36" y="138" width="100" height="8" rx="4" fill="#ebebeb"/>
         <rect x="36" y="154" width="140" height="6" rx="3" fill="#f3f4f6"/>
@@ -206,7 +206,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
       <!-- Card 2 — Analytics dashboard (mid, right) -->
       <g class="bc-up bc-d3 bc-fl2">
-        <rect x="240" y="90" width="200" height="160" rx="12" fill="#fff" stroke="#ebebeb" stroke-width="1"/>
+        <rect x="240" y="90" width="200" height="160" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
         <!-- Mini bar chart -->
         <rect x="260" y="155" width="16" height="40" rx="3" fill="rgba(255,56,92,.12)"/>
         <rect x="284" y="135" width="16" height="60" rx="3" fill="rgba(255,56,92,.2)"/>
@@ -226,7 +226,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
       <!-- Card 3 — Creator profile card (front, left) -->
       <g class="bc-up bc-d4 bc-fl3">
-        <rect x="50" y="225" width="180" height="120" rx="12" fill="#fff" stroke="#ebebeb" stroke-width="1" filter="url(#bcShadow)"/>
+        <rect x="50" y="225" width="180" height="120" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
         <!-- Avatar -->
         <circle cx="86" cy="270" r="20" fill="#f7f7f7" stroke="#ebebeb" stroke-width="1"/>
         <circle cx="86" cy="265" r="7" fill="none" stroke="#717171" stroke-width="1.2"/>
@@ -245,7 +245,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
       <!-- Card 4 — Event badge (front, right) -->
       <g class="bc-up bc-d5 bc-fl1">
-        <rect x="265" y="280" width="175" height="110" rx="12" fill="#fff" stroke="#ebebeb" stroke-width="1" filter="url(#bcShadow)"/>
+        <rect x="265" y="280" width="175" height="110" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
         <rect x="281" y="296" width="44" height="44" rx="8" fill="#222"/>
         <text x="303" y="316" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="Inter,sans-serif">24</text>
         <text x="303" y="330" text-anchor="middle" font-size="7" font-weight="600" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif">APR</text>
@@ -268,8 +268,8 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
       <!-- Shadow filter -->
       <defs>
-        <filter id="bcShadow" x="-4%" y="-4%" width="108%" height="116%">
-          <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity=".06"/>
+        <filter id="bcShadow" x="-8%" y="-8%" width="116%" height="124%">
+          <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity=".1"/>
         </filter>
       </defs>
     </svg>
