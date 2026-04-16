@@ -105,7 +105,9 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .cta-block{background:var(--ink);border-radius:var(--rx);padding:clamp(48px,6vw,80px);text-align:center;margin:clamp(40px,5vw,56px) 0}
 .cta-block h2{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--bg);margin-bottom:12px}
 .cta-block p{font-size:16px;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 32px}
-.cta-form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap}
+.cta-form{display:flex;flex-direction:column;gap:12px;max-width:480px;margin:0 auto}
+.cta-row{display:flex;gap:10px}
+.cta-row .cta-inp{flex:1}
 .cta-inp{flex:1;font-family:var(--ff);font-size:14px;padding:14px 18px;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;transition:border-color .2s}
 .cta-inp::placeholder{color:rgba(255,255,255,.35)}
 .cta-inp:focus{outline:none;border-color:rgba(255,255,255,.3)}
@@ -131,9 +133,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
   .props{grid-template-columns:1fr}
   .formats{grid-template-columns:1fr}
   .partners-grid{grid-template-columns:repeat(2,1fr)}
-  .cta-form{flex-direction:column}
-  .cta-inp{width:100%}
-  .cta-sub{width:100%}
+  .cta-row{flex-direction:column}
   .cta-block{padding:clamp(36px,5vw,60px) clamp(20px,4vw,48px);border-radius:var(--rl)}
   .ft-i{flex-direction:column;gap:16px;text-align:center}
   .ft-links{flex-wrap:wrap;justify-content:center}
@@ -152,7 +152,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
   .partners-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .p-card{padding:20px 12px}
   .cta-block{padding:36px 20px;border-radius:var(--rl)}
-  .cta-form{flex-direction:column}
+  .cta-row{flex-direction:column}
   .mob{padding:72px 20px 40px}
 }
 </style>
@@ -396,8 +396,10 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
   <h2>Let's build something together</h2>
   <p>Tell us about your brand and we'll share how GHAR.tv can put you in front of India's most engaged home-buying audience.</p>
   <form class="cta-form" id="nlF" novalidate>
-    <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required>
-    <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required>
+    <div class="cta-row">
+      <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required>
+      <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required>
+    </div>
     <button type="submit" class="cta-sub" id="nlB">Get in touch</button>
   </form>
   <p class="cta-note">We'll respond within 24 hours. No spam, ever.</p>
