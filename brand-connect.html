@@ -61,7 +61,9 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .hero{background:var(--dark);color:#fff;padding:clamp(140px,18vw,220px) 0 clamp(80px,10vw,140px);text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,56,92,.08),transparent 70%)}
 .hero-inner{max-width:800px;margin:0 auto;padding:0 var(--ph);position:relative;z-index:1}
-.hero-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:24px;opacity:.9}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;padding:8px 20px;border:1px solid rgba(255,56,92,.2);border-radius:24px;background:rgba(255,56,92,.06)}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:dotPulse 2s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
 .hero h1{font-family:var(--ff-d);font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.05;letter-spacing:-.03em;margin-bottom:24px}
 .hero-sub{font-size:clamp(16px,1.5vw,20px);color:rgba(255,255,255,.6);line-height:1.6;max-width:560px;margin:0 auto 40px}
 .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -79,7 +81,8 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
 /* ── SECTION ── */
 .sec{padding:clamp(64px,8vw,100px) 0}
-.sec-tag{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.sec-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .sec-h{font-family:var(--ff-d);font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:16px;letter-spacing:-.02em}
 .sec-p{font-size:clamp(15px,1.3vw,17px);color:var(--ink2);line-height:1.7;max-width:560px;margin-bottom:clamp(36px,4vw,52px)}
 .sec-center{text-align:center}.sec-center .sec-p{margin-left:auto;margin-right:auto}
@@ -125,24 +128,43 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .live-card p{font-size:13px;color:var(--ink2);line-height:1.5}
 .live-tag{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.04em;margin-top:12px;display:inline-block}
 
-/* ── CTA — accent bg ── */
-.cta-sec{background:var(--dark);padding:clamp(72px,9vw,120px) 0;text-align:center}
-.cta-sec h2{font-family:var(--ff-d);font-size:clamp(32px,4.5vw,52px);font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-.02em}
-.cta-sec>p{font-size:17px;color:rgba(255,255,255,.5);max-width:520px;margin:0 auto 40px;line-height:1.6}
-.cta-form{display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto}
-.cta-row{display:flex;gap:10px}.cta-row .cta-inp{flex:1}
-.cta-inp{font-family:var(--ff);font-size:14px;padding:15px 18px;border-radius:var(--r);border:none;background:rgba(255,255,255,.2);color:#fff;transition:background .2s}
-.cta-inp::placeholder{color:rgba(255,255,255,.35)}.cta-inp:focus{outline:none;background:rgba(255,255,255,.12)}
-.cta-sub{font-family:var(--ff);font-size:15px;font-weight:700;color:#fff;background:var(--accent);padding:16px;border-radius:var(--r);border:none;cursor:pointer;width:100%;transition:all .2s;letter-spacing:.02em}
-.cta-sub:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,56,92,.3)}
-.cta-note{font-size:12px;color:rgba(255,255,255,.45);padding-top:14px}
-.cta-ok{padding:16px 0}.cta-ok p{font-size:16px;color:#fff}
+/* ── CTA — matches Intelligence page ── */
+.cta-sec{position:relative;overflow:hidden;padding:clamp(64px,8vw,100px) 0;background:#111}
+.cta-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 30% 50%,rgba(255,56,92,.08),transparent 70%),radial-gradient(ellipse 40% 40% at 80% 60%,rgba(59,130,246,.06),transparent 70%)}
+.cta-inner{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:1}
+@media(min-width:900px){.cta-inner{grid-template-columns:1fr 1fr;gap:64px;align-items:center}}
+.cta-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.cta-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:dotPulse 2s ease-in-out infinite}
+.cta-sec h2{font-family:var(--ff-d);font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:16px}
+.cta-desc{font-size:15px;line-height:1.75;color:rgba(255,255,255,.55);margin-bottom:28px;max-width:480px}
+.cta-feats{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+.cta-feat{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
+.cta-feat svg{color:var(--accent);flex-shrink:0}
+.cta-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:clamp(28px,4vw,40px)}
+.cta-form{display:flex;flex-direction:column;gap:14px}
+.cta-row{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:500px){.cta-row{grid-template-columns:1fr 1fr}}
+.cta-inp{font-family:var(--ff);font-size:14px;padding:14px 18px;border-radius:10px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#fff;transition:border-color .2s}
+.cta-inp::placeholder{color:rgba(255,255,255,.3)}.cta-inp:focus{outline:none;border-color:rgba(255,255,255,.25)}
+.cta-sub{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ff);font-size:15px;font-weight:600;color:#111;background:#fff;padding:15px 28px;border-radius:10px;border:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+.cta-sub:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,56,92,.25)}
+.cta-note{font-size:11.5px;color:rgba(255,255,255,.3);text-align:center}
+.cta-ok{text-align:center;padding:20px 0}.cta-ok p{font-size:15px;color:rgba(255,255,255,.7)}
 
-/* ── FOOTER ── */
-.ft{padding:32px 0;border-top:1px solid var(--surface2)}
-.ft-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:flex;justify-content:space-between;align-items:center}
-.ft-c{font-size:12px;color:var(--ink3)}
-.ft-links{display:flex;gap:20px}.ft-links a{font-size:12px;color:var(--ink3)}.ft-links a:hover{color:var(--ink)}
+/* ── FOOTER — matches Intelligence page ── */
+.ft{background:#111;padding:36px 0}
+.ft-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
+.ft-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ft-logo{height:28px;width:auto;filter:brightness(0) invert(1)}
+.ft-tagline{font-size:12px;color:rgba(255,255,255,.35);margin-top:4px}
+.ft-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.ft-nav a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:all .2s}
+.ft-nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-bot p{font-size:11px;color:rgba(255,255,255,.22)}
+.ft-bot-links{display:flex;gap:18px}
+.ft-bot-links a{font-size:11.5px;color:rgba(255,255,255,.25);transition:color .2s}
+.ft-bot-links a:hover{color:rgba(255,255,255,.5)}
 
 /* RESPONSIVE */
 @media(min-width:1024px){.nav-links{display:flex}.nav-r{display:flex}.ham{display:none}}
@@ -154,9 +176,8 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
   .live-grid{grid-template-columns:1fr}
   .stats-strip{grid-template-columns:repeat(2,1fr)}
   .stat-s:nth-child(2){border-right:none}
-  .cta-row{flex-direction:column}
-  .ft-i{flex-direction:column;gap:16px;text-align:center}
-  .ft-links{flex-wrap:wrap;justify-content:center}
+  .ft-top{flex-direction:column;align-items:flex-start}
+  .ft-bot{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:600px){
   .hero{padding:120px 0 72px}.hero h1{font-size:32px}
@@ -183,7 +204,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 <!-- HERO — full-bleed dark -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">BrandConnect</div>
+    <div class="hero-tag"><span class="hero-tag-dot"></span> BrandConnect</div>
     <h1>Your brand, where decisions happen.</h1>
     <p class="hero-sub">Content-driven partnerships that place your brand inside India's home-buying journey. Not beside it. Not above it. Inside it.</p>
     <div class="hero-ctas">
@@ -344,29 +365,58 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 </section></div>
 
 
-<!-- CTA — accent background -->
+<!-- CTA -->
 <section class="cta-sec" id="ctaBlock">
-  <div class="c">
-    <h2>Your brand belongs in the journey.</h2>
-    <p>Tell us about your brand. We'll show you how BrandConnect puts you in front of India's most engaged real estate audience.</p>
-    <form class="cta-form" id="nlF" novalidate>
-      <div class="cta-row">
-        <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required aria-label="Your name">
-        <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required aria-label="Work email">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <div>
+      <span class="cta-tag">Partner With Us</span>
+      <h2>Your Brand Belongs in the Journey</h2>
+      <p class="cta-desc">Tell us about your brand. We'll show you how BrandConnect puts you in front of India's most engaged real estate audience &mdash; through content, not ads.</p>
+      <div class="cta-feats">
+        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Native content</span>
+        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Creator campaigns</span>
+        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Event partnerships</span>
+        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> &#8377;50K&ndash;5L/month</span>
       </div>
-      <input type="text" class="cta-inp" placeholder="Company name" required aria-label="Company name">
-      <button type="submit" class="cta-sub" id="nlB">Partner With Us</button>
-    </form>
-    <p class="cta-note">Campaigns from &#8377;50K/month &middot; We respond within 24 hours</p>
-    <div class="cta-ok" id="nlO" hidden><p>&#10003; Thanks! We'll be in touch shortly.</p></div>
+    </div>
+    <div class="cta-form-wrap">
+      <form class="cta-form" id="nlF" novalidate>
+        <div class="cta-row">
+          <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required aria-label="Your name">
+          <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required aria-label="Work email">
+        </div>
+        <input type="text" class="cta-inp" placeholder="Company name" required aria-label="Company name">
+        <button type="submit" class="cta-sub" id="nlB"><span>Partner With Us</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        <p class="cta-note">We respond within 24 hours. No spam, ever.</p>
+      </form>
+      <div class="cta-ok" id="nlO" hidden><p style="font-size:36px;color:#22c55e;margin-bottom:12px">&check;</p><p>Thanks! We'll be in touch shortly.</p></div>
+    </div>
   </div>
 </section>
 
 
 <!-- FOOTER -->
 <footer class="ft"><div class="ft-i">
-  <p class="ft-c">&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
-  <div class="ft-links"><a href="/intelligence">Intelligence</a><a href="/design">Design</a><a href="/community">Community</a><a href="/ghartalks">GharTalks</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  <div class="ft-top">
+    <div>
+      <img src="community/logo.svg" alt="GHAR.tv" class="ft-logo">
+      <p class="ft-tagline">India's AI-Native Real Estate Intelligence</p>
+    </div>
+    <nav class="ft-nav">
+      <a href="/intelligence">Intelligence</a>
+      <a href="/design">Design</a>
+      <a href="/community">Community</a>
+      <a href="/ghartalks">GharTalks</a>
+      <a href="/videoworks">VideoWorks</a>
+      <a href="/gharevents">GharEvents</a>
+      <a href="/industry-voices">Industry Voices</a>
+    </nav>
+  </div>
+  <div class="ft-bot">
+    <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
+    <div class="ft-bot-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
 </div></footer>
 
 
