@@ -49,12 +49,11 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .nav-cta:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
 .nav.scrolled .nav-cta{background:var(--ink);color:#fff}
 .nav.scrolled .nav-cta:hover{background:var(--accent)}
-.ham{display:flex;flex-direction:column;gap:5px;padding:8px;background:none;border:1px solid rgba(255,255,255,.2);border-radius:var(--r);z-index:901}
-.ham span{display:block;width:16px;height:1.5px;background:#fff;transition:transform .25s var(--ease),opacity .25s,background .3s}
-.nav.scrolled .ham{border-color:var(--surface2)}.nav.scrolled .ham span{background:var(--ink)}
+.ham{display:flex;flex-direction:column;gap:5px;padding:6px;background:none;border:none;z-index:901}
+.ham span{display:block;width:20px;height:1.5px;background:#fff;transition:transform .3s var(--ease),opacity .3s var(--ease),background .3s}
+.nav.scrolled .ham span{background:var(--ink)}
 .ham.active span{background:var(--ink)!important}
 .ham.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.ham.active{border-color:var(--surface2)!important}
 .mob{position:fixed;inset:0;background:var(--bg);z-index:850;transform:translateX(100%);transition:transform .35s var(--ease);padding:96px 24px 48px}
 .mob.open{transform:translateX(0)}.mob ul{list-style:none}.mob li+li{border-top:1px solid var(--surface2)}
 .mob a{display:block;padding:16px 0;font-size:18px;font-weight:600;color:var(--ink)}.mob .ma{color:var(--accent)}
