@@ -90,8 +90,9 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
 /* ── SPLIT — alternating image+text ── */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,80px);align-items:center;padding:clamp(48px,6vw,80px) 0}
-.split-img{border-radius:var(--rx);overflow:hidden;background:var(--surface);aspect-ratio:4/3}
+.split-img{border-radius:var(--rx);overflow:hidden;background:var(--surface);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:clamp(24px,3vw,40px)}
 .split-img img{width:100%;height:100%;object-fit:cover}
+.split-svg{width:100%;max-width:360px;height:auto}
 .split-text .sec-tag{margin-bottom:12px}
 .split-text h2{font-family:var(--ff-d);font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:16px}
 .split-text p{font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:16px}
@@ -227,7 +228,44 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
 <!-- WHAT IS IT — split -->
 <div class="c"><div class="split">
-  <div class="split-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&q=80" alt="Content partnership" loading="eager"></div>
+  <div class="split-img">
+    <svg class="split-svg" viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Central document -->
+      <g style="animation:bcFloat2 6s ease-in-out infinite">
+        <rect x="80" y="30" width="160" height="200" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+        <!-- Header bar -->
+        <rect x="96" y="46" width="128" height="10" rx="5" fill="#ff385c" opacity=".12"/>
+        <!-- Text lines -->
+        <rect x="96" y="70" width="128" height="6" rx="3" fill="#e5e7eb"/>
+        <rect x="96" y="84" width="108" height="6" rx="3" fill="#e5e7eb"/>
+        <rect x="96" y="98" width="120" height="6" rx="3" fill="#e5e7eb"/>
+        <!-- Image placeholder -->
+        <rect x="96" y="116" width="128" height="56" rx="6" fill="#f7f7f7"/>
+        <circle cx="160" cy="144" r="12" fill="#ff385c" opacity=".15"/>
+        <polygon points="156,138 168,144 156,150" fill="#ff385c" opacity=".6"/>
+        <!-- Bottom lines -->
+        <rect x="96" y="184" width="88" height="6" rx="3" fill="#e5e7eb"/>
+        <rect x="96" y="198" width="68" height="6" rx="3" fill="#f3f4f6"/>
+        <!-- Sponsored badge -->
+        <rect x="96" y="212" width="56" height="14" rx="7" fill="#ff385c" opacity=".08"/>
+        <text x="124" y="222" text-anchor="middle" font-size="7" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">SPONSORED</text>
+      </g>
+      <!-- Floating metric card -->
+      <g style="animation:bcFloat1 5s ease-in-out infinite">
+        <rect x="200" y="8" width="100" height="52" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+        <text x="220" y="32" font-size="18" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">34%</text>
+        <text x="220" y="46" font-size="7" font-weight="500" fill="#b0b0b0" font-family="Inter,sans-serif">Engagement</text>
+        <polyline points="256,42 264,36 272,38 280,30 288,32" stroke="#ff385c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- Floating brand pill -->
+      <g style="animation:bcFloat3 7s ease-in-out infinite .5s">
+        <rect x="20" y="120" width="52" height="52" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="30" y="130" width="32" height="32" rx="6" fill="#f7f7f7"/>
+        <path d="M42 140l4-3h6l4 3v6l-4 3h-6l-4-3z" stroke="#ff385c" stroke-width="1" fill="none"/>
+        <text x="46" y="166" text-anchor="middle" font-size="5" font-weight="600" fill="#b0b0b0" font-family="Inter,sans-serif">BRAND</text>
+      </g>
+    </svg>
+  </div>
   <div class="split-text">
     <div class="sec-tag">What is BrandConnect</div>
     <h2>Content partnerships for allied businesses</h2>
@@ -239,7 +277,53 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
 <!-- WHY — split reversed -->
 <div class="c"><div class="split" style="direction:rtl">
-  <div class="split-img" style="direction:ltr"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&q=80" alt="High intent audience" loading="lazy"></div>
+  <div class="split-img" style="direction:ltr">
+    <svg class="split-svg" viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Funnel -->
+      <g style="animation:bcFloat2 6s ease-in-out infinite 1s">
+        <!-- Top bar — awareness -->
+        <rect x="40" y="40" width="240" height="36" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="52" y="50" width="80" height="6" rx="3" fill="#ff385c" opacity=".15"/>
+        <rect x="52" y="60" width="56" height="4" rx="2" fill="#e5e7eb"/>
+        <circle cx="252" cy="58" r="10" fill="#ff385c" opacity=".06"/>
+        <text x="252" y="62" text-anchor="middle" font-size="8" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">50K</text>
+        <!-- Mid bar — research -->
+        <rect x="70" y="92" width="180" height="36" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="82" y="102" width="64" height="6" rx="3" fill="#ff385c" opacity=".25"/>
+        <rect x="82" y="112" width="48" height="4" rx="2" fill="#e5e7eb"/>
+        <circle cx="222" cy="110" r="10" fill="#ff385c" opacity=".1"/>
+        <text x="222" y="114" text-anchor="middle" font-size="8" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">12K</text>
+        <!-- Bottom bar — conversion -->
+        <rect x="100" y="144" width="120" height="36" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+        <rect x="112" y="154" width="48" height="6" rx="3" fill="#ff385c" opacity=".5"/>
+        <rect x="112" y="164" width="36" height="4" rx="2" fill="#e5e7eb"/>
+        <circle cx="192" cy="162" r="10" fill="#ff385c" opacity=".15"/>
+        <text x="192" y="166" text-anchor="middle" font-size="8" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">3.2K</text>
+        <!-- Labels -->
+        <text x="160" y="34" text-anchor="middle" font-size="7" font-weight="600" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".06em">AWARENESS</text>
+        <text x="160" y="86" text-anchor="middle" font-size="7" font-weight="600" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".06em">RESEARCH</text>
+        <text x="160" y="138" text-anchor="middle" font-size="7" font-weight="600" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".06em">CONVERSION</text>
+        <!-- Arrow lines -->
+        <line x1="160" y1="76" x2="160" y2="82" stroke="#e5e7eb" stroke-width="1.5"/>
+        <line x1="160" y1="128" x2="160" y2="134" stroke="#e5e7eb" stroke-width="1.5"/>
+      </g>
+      <!-- Bottom result card -->
+      <g style="animation:bcFloat1 5s ease-in-out infinite">
+        <rect x="90" y="196" width="140" height="44" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+        <circle cx="114" cy="218" r="12" fill="#ff385c" opacity=".08"/>
+        <text x="114" y="222" text-anchor="middle" font-size="10" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">&#10003;</text>
+        <text x="138" y="214" font-size="9" font-weight="700" fill="#222" font-family="Inter,sans-serif">High-Intent</text>
+        <text x="138" y="226" font-size="7" font-weight="500" fill="#b0b0b0" font-family="Inter,sans-serif">Not casual browsers</text>
+      </g>
+      <!-- Floating people dots -->
+      <g style="animation:bcFloat3 7s ease-in-out infinite .3s">
+        <circle cx="36" cy="56" r="6" fill="#ff385c" opacity=".08"/>
+        <circle cx="286" cy="108" r="5" fill="#ff385c" opacity=".06"/>
+        <circle cx="46" cy="156" r="4" fill="#ff385c" opacity=".05"/>
+        <circle cx="276" cy="170" r="7" fill="#ff385c" opacity=".04"/>
+      </g>
+    </svg>
+  </div>
   <div class="split-text" style="direction:ltr">
     <div class="sec-tag">The Audience</div>
     <h2>High-intent buyers, not casual browsers</h2>
