@@ -85,13 +85,19 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .sec-p{font-size:clamp(15px,1.3vw,17px);color:var(--ink2);line-height:1.7;max-width:560px;margin-bottom:clamp(36px,4vw,52px)}
 .sec-center{text-align:center}.sec-center .sec-p{margin-left:auto;margin-right:auto}
 
-/* ── SPLIT — alternating image+text ── */
-/* ── TWO-COL INFO ── */
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);padding:clamp(48px,6vw,80px) 0}
-.info-block .sec-tag{margin-bottom:12px}
-.info-block h2{font-family:var(--ff-d);font-size:clamp(22px,2.5vw,30px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:16px}
-.info-block p{font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:14px}
-.info-block p:last-child{margin-bottom:0}
+/* ── TWO-COL INFO CARDS ── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:clamp(48px,6vw,80px) 0}
+.info-card{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(28px,3vw,40px);background:var(--bg);transition:all .25s var(--ease);display:flex;flex-direction:column;gap:0}
+.info-card:hover{border-color:transparent;box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-3px)}
+.info-card-visual{border-radius:var(--r);background:var(--surface);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:clamp(16px,2vw,24px);margin-bottom:clamp(20px,2.5vw,28px);overflow:hidden}
+.info-card-visual svg{width:100%;max-width:320px;height:auto}
+.info-card .sec-tag{margin-bottom:12px}
+.info-card h2{font-family:var(--ff-d);font-size:clamp(20px,2.2vw,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:14px}
+.info-card p{font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:12px}
+.info-card p:last-child{margin-bottom:0}
+@keyframes bcFloat1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes bcFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes bcFloat3{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
 /* ── FORMAT CARDS — 3 col ── */
 .fmt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -291,20 +297,92 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 </div>
 
 
-<!-- WHAT IS IT + THE AUDIENCE — side by side -->
+<!-- WHAT IS IT + THE AUDIENCE — side by side cards -->
 <div class="c"><div class="info-grid">
-  <div class="info-block">
+
+  <!-- Card 1 — BrandConnect content partnership visual -->
+  <div class="info-card">
+    <div class="info-card-visual">
+      <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Main article card -->
+        <g style="animation:bcFloat2 6s ease-in-out infinite">
+          <rect x="60" y="24" width="200" height="132" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <rect x="76" y="40" width="168" height="44" rx="6" fill="#f3f4f6"/>
+          <circle cx="160" cy="62" r="12" fill="#ee324b" opacity=".15"/>
+          <polygon points="156,56 168,62 156,68" fill="#ee324b" opacity=".55"/>
+          <rect x="76" y="96" width="110" height="6" rx="3" fill="#e5e7eb"/>
+          <rect x="76" y="110" width="140" height="5" rx="2.5" fill="#f3f4f6"/>
+          <rect x="76" y="122" width="90" height="5" rx="2.5" fill="#f3f4f6"/>
+          <rect x="76" y="136" width="56" height="12" rx="6" fill="#ee324b" opacity=".08"/>
+          <text x="104" y="145" text-anchor="middle" font-size="6.5" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">SPONSORED</text>
+        </g>
+        <!-- Floating metric badge -->
+        <g style="animation:bcFloat1 5s ease-in-out infinite">
+          <rect x="220" y="8" width="86" height="44" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <text x="232" y="28" font-size="15" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">34%</text>
+          <text x="232" y="40" font-size="6.5" font-weight="500" fill="#b0b0b0" font-family="Inter,sans-serif">engagement</text>
+          <polyline points="270,36 278,30 286,32 294,26" stroke="#ee324b" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        </g>
+        <!-- Brand logo pill -->
+        <g style="animation:bcFloat3 7s ease-in-out infinite .5s">
+          <rect x="14" y="116" width="52" height="48" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <rect x="24" y="126" width="32" height="22" rx="4" fill="#f3f4f6"/>
+          <path d="M34 132l3-2h6l3 2v8l-3 2h-6l-3-2z" stroke="#ee324b" stroke-width="1" fill="none"/>
+          <text x="40" y="158" text-anchor="middle" font-size="5" font-weight="700" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".06em">BRAND</text>
+        </g>
+      </svg>
+    </div>
     <div class="sec-tag">What is BrandConnect</div>
     <h2>Content partnerships for allied businesses</h2>
     <p>BrandConnect is GHAR.tv's content partnership platform &mdash; the third B2B offering alongside <strong>Developer Mandate</strong> and <strong>SuperPro</strong>. It's for allied businesses that want access to India's high-intent property audience.</p>
     <p>Not a self-serve ad platform. Not display advertising. Not for developers or brokers. Content and partnerships &mdash; campaigns priced at &#8377;50K&ndash;5L/month.</p>
   </div>
-  <div class="info-block">
+
+  <!-- Card 2 — Audience funnel visual -->
+  <div class="info-card">
+    <div class="info-card-visual">
+      <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Funnel bars -->
+        <g style="animation:bcFloat2 6s ease-in-out infinite 1s">
+          <!-- Awareness -->
+          <rect x="30" y="18" width="260" height="32" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <rect x="42" y="28" width="80" height="5" rx="2.5" fill="#ee324b" opacity=".18"/>
+          <rect x="42" y="38" width="56" height="4" rx="2" fill="#e5e7eb"/>
+          <text x="160" y="12" text-anchor="middle" font-size="6.5" font-weight="700" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".06em">AWARENESS</text>
+          <rect x="240" y="26" width="40" height="16" rx="8" fill="#ee324b" opacity=".08"/>
+          <text x="260" y="37" text-anchor="middle" font-size="8" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">50K</text>
+          <!-- Research -->
+          <rect x="60" y="62" width="200" height="32" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <rect x="72" y="72" width="60" height="5" rx="2.5" fill="#ee324b" opacity=".3"/>
+          <rect x="72" y="82" width="44" height="4" rx="2" fill="#e5e7eb"/>
+          <text x="160" y="108" text-anchor="middle" font-size="6.5" font-weight="700" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".06em">RESEARCH</text>
+          <rect x="212" y="70" width="40" height="16" rx="8" fill="#ee324b" opacity=".12"/>
+          <text x="232" y="81" text-anchor="middle" font-size="8" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">12K</text>
+          <!-- Conversion -->
+          <rect x="100" y="118" width="120" height="32" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <rect x="112" y="128" width="44" height="5" rx="2.5" fill="#ee324b" opacity=".55"/>
+          <rect x="112" y="138" width="30" height="4" rx="2" fill="#e5e7eb"/>
+          <text x="160" y="164" text-anchor="middle" font-size="6.5" font-weight="700" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".06em">CONVERSION</text>
+          <rect x="172" y="126" width="40" height="16" rx="8" fill="#ee324b" opacity=".2"/>
+          <text x="192" y="137" text-anchor="middle" font-size="8" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">3.2K</text>
+          <!-- Connecting lines -->
+          <line x1="160" y1="50" x2="160" y2="58" stroke="#e5e7eb" stroke-width="1.5"/>
+          <line x1="160" y1="94" x2="160" y2="114" stroke="#e5e7eb" stroke-width="1.5"/>
+        </g>
+        <!-- Decorative high-intent dot -->
+        <g style="animation:bcFloat3 7s ease-in-out infinite .3s">
+          <circle cx="16" cy="96" r="4" fill="#ee324b" opacity=".12"/>
+          <circle cx="302" cy="108" r="3" fill="#ee324b" opacity=".08"/>
+          <circle cx="20" cy="48" r="3" fill="#ee324b" opacity=".06"/>
+        </g>
+      </svg>
+    </div>
     <div class="sec-tag">The Audience</div>
     <h2>High-intent buyers, not casual browsers</h2>
     <p>Every piece of content GHAR.tv produces grows an audience that is actively researching property decisions &mdash; calculating EMIs, reading reports, comparing projects.</p>
     <p>BrandConnect monetises this audience through content, not ads. Your brand earns attention inside Editorial, Intelligence, Design, Videos, and Events &mdash; across the full buying funnel.</p>
   </div>
+
 </div></div>
 
 <div class="c"><hr class="divider"></div>
