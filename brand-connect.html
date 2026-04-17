@@ -51,12 +51,16 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .mob.open{transform:translateX(0)}.mob ul{list-style:none}.mob li+li{border-top:1px solid var(--surface2)}
 .mob a{display:block;padding:16px 0;font-size:18px;font-weight:600;color:var(--ink)}.mob .ma{color:var(--accent)}
 
-/* ── HERO — white with side SVGs ── */
-.hero{background:var(--bg);color:var(--ink);padding:clamp(100px,14vw,180px) 0 clamp(64px,8vw,100px);text-align:center;position:relative;overflow:hidden}
+/* ── HERO ── */
+.hero{background:var(--surface);color:var(--ink);padding:clamp(100px,14vw,180px) 0 clamp(64px,8vw,100px);text-align:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.hero-bg .hero-svg-l{position:absolute;left:-60px;top:50%;transform:translateY(-50%);width:320px;height:320px;opacity:.1}
-.hero-bg .hero-svg-r{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:280px;height:280px;opacity:.08}
-.hero-inner{max-width:700px;margin:0 auto;padding:0 var(--ph);position:relative;z-index:1}
+.hero-bg .hero-svg-l{position:absolute;left:clamp(-20px,3vw,60px);top:50%;transform:translateY(-50%);width:clamp(200px,22vw,340px);height:auto}
+.hero-bg .hero-svg-r{position:absolute;right:clamp(-20px,3vw,60px);top:50%;transform:translateY(-50%);width:clamp(180px,20vw,300px);height:auto}
+@keyframes heroFloat1{0%,100%{transform:translateY(-50%)}50%{transform:translateY(calc(-50% - 12px))}}
+@keyframes heroFloat2{0%,100%{transform:translateY(-50%)}50%{transform:translateY(calc(-50% + 10px))}}
+.hero-bg .hero-svg-l{animation:heroFloat1 8s ease-in-out infinite}
+.hero-bg .hero-svg-r{animation:heroFloat2 9s ease-in-out infinite 1s}
+.hero-inner{max-width:680px;margin:0 auto;padding:0 var(--ph);position:relative;z-index:1}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-bottom:24px;padding:8px 20px;border:1px solid var(--surface2);border-radius:24px;background:var(--surface)}
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .hero h1{font-family:var(--ff-d);font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:24px}
@@ -200,43 +204,66 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <!-- Left side SVG — content/document motif -->
-    <svg class="hero-svg-l" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="40" y="20" width="140" height="180" rx="12" stroke="#222" stroke-width="1.2" fill="none"/>
-      <rect x="60" y="44" width="100" height="8" rx="4" stroke="#222" stroke-width=".8" fill="none"/>
-      <rect x="60" y="64" width="80" height="6" rx="3" stroke="#222" stroke-width=".6" fill="none"/>
-      <rect x="60" y="80" width="90" height="6" rx="3" stroke="#222" stroke-width=".6" fill="none"/>
-      <rect x="60" y="96" width="70" height="6" rx="3" stroke="#222" stroke-width=".6" fill="none"/>
-      <rect x="60" y="120" width="100" height="48" rx="6" stroke="#222" stroke-width=".8" fill="none"/>
-      <circle cx="110" cy="144" r="12" stroke="#222" stroke-width=".8" fill="none"/>
-      <polygon points="106,138 118,144 106,150" stroke="#222" stroke-width=".6" fill="none"/>
-      <circle cx="220" cy="80" r="32" stroke="#222" stroke-width="1" stroke-dasharray="3 4" fill="none"/>
-      <path d="M208 76l6-4h10l6 4v8l-6 4h-10l-6-4z" stroke="#222" stroke-width=".8" fill="none"/>
-      <line x1="180" y1="80" x2="188" y2="80" stroke="#222" stroke-width=".6"/>
-      <circle cx="80" cy="240" r="24" stroke="#222" stroke-width=".8" stroke-dasharray="2 3" fill="none"/>
-      <rect x="68" y="230" width="24" height="18" rx="3" stroke="#222" stroke-width=".7" fill="none"/>
-      <line x1="104" y1="240" x2="160" y2="240" stroke="#222" stroke-width=".5" stroke-dasharray="4 4"/>
-      <rect x="164" y="228" width="72" height="24" rx="6" stroke="#222" stroke-width=".7" fill="none"/>
-      <rect x="176" y="236" width="40" height="6" rx="3" stroke="#222" stroke-width=".5" fill="none"/>
+    <!-- Left — editorial + video cards stacked -->
+    <svg class="hero-svg-l" viewBox="0 0 280 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Article card -->
+      <rect x="20" y="10" width="200" height="160" rx="16" fill="#fff" stroke="#ddd" stroke-width="1"/>
+      <rect x="40" y="30" width="160" height="60" rx="8" fill="#ebebeb"/>
+      <circle cx="120" cy="60" r="16" fill="#ff385c" opacity=".2"/>
+      <polygon points="115,52 130,60 115,68" fill="#ff385c" opacity=".5"/>
+      <rect x="40" y="104" width="100" height="8" rx="4" fill="#ddd"/>
+      <rect x="40" y="120" width="140" height="6" rx="3" fill="#ebebeb"/>
+      <rect x="40" y="134" width="80" height="6" rx="3" fill="#ebebeb"/>
+      <rect x="40" y="150" width="56" height="12" rx="6" fill="#ff385c" opacity=".08"/>
+      <!-- Metric badge floating -->
+      <rect x="160" y="140" width="80" height="44" rx="10" fill="#fff" stroke="#ddd" stroke-width="1"/>
+      <text x="180" y="162" font-size="16" font-weight="700" fill="#222" font-family="Inter,sans-serif">34%</text>
+      <text x="180" y="176" font-size="7" fill="#b0b0b0" font-family="Inter,sans-serif">engagement</text>
+      <!-- Creator card -->
+      <rect x="40" y="200" width="180" height="70" rx="14" fill="#fff" stroke="#ddd" stroke-width="1"/>
+      <circle cx="76" cy="235" r="18" fill="#ebebeb"/>
+      <circle cx="76" cy="230" r="6" fill="#ddd"/>
+      <path d="M66 245a10 10 0 0120 0" fill="#ddd"/>
+      <rect x="104" y="222" width="80" height="8" rx="4" fill="#ddd"/>
+      <rect x="104" y="236" width="56" height="6" rx="3" fill="#ebebeb"/>
+      <rect x="104" y="250" width="40" height="12" rx="6" fill="#ff385c" opacity=".08"/>
+      <!-- Small badge -->
+      <rect x="60" y="300" width="120" height="48" rx="12" fill="#fff" stroke="#ddd" stroke-width="1"/>
+      <rect x="76" y="314" width="28" height="20" rx="4" fill="#222"/>
+      <text x="90" y="327" text-anchor="middle" font-size="9" font-weight="700" fill="#fff" font-family="Inter,sans-serif">24</text>
+      <text x="90" y="331" text-anchor="middle" font-size="5" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif">APR</text>
+      <rect x="112" y="316" width="52" height="6" rx="3" fill="#ddd"/>
+      <rect x="112" y="328" width="36" height="5" rx="2.5" fill="#ebebeb"/>
     </svg>
-    <!-- Right side SVG — analytics/chart motif -->
-    <svg class="hero-svg-r" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="20" y="30" width="160" height="120" rx="12" stroke="#222" stroke-width="1" fill="none"/>
-      <rect x="40" y="100" width="14" height="30" rx="3" stroke="#222" stroke-width=".7" fill="none"/>
-      <rect x="62" y="80" width="14" height="50" rx="3" stroke="#222" stroke-width=".7" fill="none"/>
-      <rect x="84" y="90" width="14" height="40" rx="3" stroke="#222" stroke-width=".7" fill="none"/>
-      <rect x="106" y="65" width="14" height="65" rx="3" stroke="#222" stroke-width=".8" fill="none"/>
-      <rect x="128" y="85" width="14" height="45" rx="3" stroke="#222" stroke-width=".7" fill="none"/>
-      <polyline points="40,95 62,75 84,85 106,60 128,80 150,70" stroke="#222" stroke-width=".8" fill="none" stroke-linecap="round"/>
-      <circle cx="210" cy="60" r="28" stroke="#222" stroke-width=".8" stroke-dasharray="3 4" fill="none"/>
-      <path d="M210 40v20h16" stroke="#222" stroke-width=".7" fill="none" stroke-linecap="round"/>
-      <circle cx="60" cy="200" r="20" stroke="#222" stroke-width=".7" fill="none"/>
-      <circle cx="60" cy="195" r="6" stroke="#222" stroke-width=".6" fill="none"/>
-      <path d="M52 208a8 8 0 0116 0" stroke="#222" stroke-width=".6" fill="none" stroke-linecap="round"/>
-      <line x1="80" y1="200" x2="140" y2="200" stroke="#222" stroke-width=".5" stroke-dasharray="4 4"/>
-      <circle cx="160" cy="200" r="20" stroke="#222" stroke-width=".7" fill="none"/>
-      <circle cx="160" cy="195" r="6" stroke="#222" stroke-width=".6" fill="none"/>
-      <path d="M152 208a8 8 0 0116 0" stroke="#222" stroke-width=".6" fill="none" stroke-linecap="round"/>
+    <!-- Right — analytics dashboard -->
+    <svg class="hero-svg-r" viewBox="0 0 260 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Dashboard card -->
+      <rect x="10" y="20" width="200" height="170" rx="16" fill="#fff" stroke="#ddd" stroke-width="1"/>
+      <!-- Stats row -->
+      <rect x="30" y="40" width="56" height="24" rx="6" fill="#f7f7f7"/>
+      <text x="58" y="56" text-anchor="middle" font-size="11" font-weight="700" fill="#222" font-family="Inter,sans-serif">12.4K</text>
+      <rect x="96" y="40" width="56" height="24" rx="6" fill="#f7f7f7"/>
+      <text x="124" y="56" text-anchor="middle" font-size="11" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">+34%</text>
+      <!-- Bar chart -->
+      <rect x="30" y="130" width="18" height="36" rx="4" fill="#ebebeb"/>
+      <rect x="56" y="110" width="18" height="56" rx="4" fill="#ddd"/>
+      <rect x="82" y="120" width="18" height="46" rx="4" fill="#ebebeb"/>
+      <rect x="108" y="90" width="18" height="76" rx="4" fill="#222" opacity=".15"/>
+      <rect x="134" y="105" width="18" height="61" rx="4" fill="#ebebeb"/>
+      <rect x="160" y="115" width="18" height="51" rx="4" fill="#ddd"/>
+      <!-- Trend line -->
+      <polyline points="39,125 65,105 91,115 117,85 143,100 169,110" stroke="#ff385c" stroke-width="2" fill="none" stroke-linecap="round" opacity=".35"/>
+      <text x="30" y="178" font-size="6.5" font-weight="600" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".04em">AUDIENCE ENGAGEMENT</text>
+      <!-- Network card below -->
+      <rect x="30" y="216" width="180" height="56" rx="12" fill="#fff" stroke="#ddd" stroke-width="1"/>
+      <circle cx="60" cy="244" r="14" fill="#ebebeb"/>
+      <circle cx="82" cy="244" r="14" fill="#ddd" stroke="#fff" stroke-width="2"/>
+      <circle cx="104" cy="244" r="14" fill="#ebebeb" stroke="#fff" stroke-width="2"/>
+      <rect x="126" y="236" width="64" height="16" rx="8" fill="#ff385c" opacity=".08"/>
+      <text x="158" y="247" text-anchor="middle" font-size="8" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">+2.4K</text>
+      <!-- Donut -->
+      <circle cx="190" y="330" r="28" stroke="#ebebeb" stroke-width="6" fill="none"/>
+      <circle cx="190" cy="330" r="28" stroke="#222" stroke-width="6" fill="none" stroke-dasharray="60 116" stroke-linecap="round" opacity=".12"/>
     </svg>
   </div>
   <div class="hero-inner">
