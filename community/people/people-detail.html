@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="pageTitle">People - GHAR.tv</title>
 <meta name="description" id="pageMeta" content="">
+<meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.onload=null;this.media='all'">
@@ -318,8 +319,8 @@ window.__PERSON = {
 <nav class="nav"><div class="nav-i">
   <a href="/" class="nav-logo"><img src="../logo.svg" alt="GHAR.tv"><span class="nav-logo-tag">People</span></a>
   <ul class="nav-links" role="list"><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community" class="active">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li></ul>
-  <div class="nav-r"><button class="nav-btn" onclick="location.href='/join'">Join Now</button></div>
-  <button class="ham" id="hBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-r"><a href="/join" class="nav-btn">Join Now</a></div>
+  <button class="ham" id="hBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="mob" id="mob" aria-hidden="true"><ul><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community" class="ma">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li><li><a href="/join" class="ma">Join Now &rarr;</a></li></ul></div>
 
@@ -401,7 +402,7 @@ window.__PERSON = {
   <h2>Stay in the loop</h2>
   <p>Weekly profiles, leadership moves, and insights from India's top real estate professionals.</p>
   <form class="cta-form" id="nlF" novalidate>
-    <input type="email" class="cta-inp" placeholder="Enter your email" autocomplete="email" required>
+    <input type="email" class="cta-inp" placeholder="Enter your email" autocomplete="email" required aria-label="Email address">
     <button type="submit" class="cta-sub" id="nlB">Subscribe</button>
   </form>
   <p class="cta-note">Free. No spam. Unsubscribe anytime.</p>
@@ -430,7 +431,7 @@ window.__PERSON = {
 
   // Photo
   var ph=$('J_photo');
-  if(d.img)ph.innerHTML='<img src="'+d.img+'" alt="'+d.n+'">';
+  if(d.img)ph.innerHTML='<img src="'+d.img+'" alt="'+d.n+'" loading="eager">';
 
   // Badge
   h($('J_badge'),'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> '+d.cat);

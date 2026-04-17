@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BrandConnect - GHAR.tv</title>
 <meta name="description" content="Reach India's most engaged real estate audience through content and campaigns. Content-driven brand partnerships for allied businesses in the home-buying ecosystem.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BrandConnect - GHAR.tv">
+<meta property="og:description" content="Reach India's most engaged real estate audience through content and campaigns. Content-driven brand partnerships for allied businesses.">
+<meta property="og:url" content="https://ghar.tv/brandconnect">
+<meta property="og:site_name" content="GHAR.tv">
+<link rel="canonical" href="https://ghar.tv/brandconnect">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.onload=null;this.media='all'">
@@ -185,8 +192,8 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 <nav class="nav"><div class="nav-i">
   <a href="/" class="nav-logo"><img src="community/logo.svg" alt="GHAR.tv"><span class="nav-logo-tag">BrandConnect</span></a>
   <ul class="nav-links" role="list"><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li></ul>
-  <div class="nav-r"><button class="nav-btn" onclick="location.href='/join'">Join Now</button></div>
-  <button class="ham" id="hBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-r"><a href="/join" class="nav-btn">Join Now</a></div>
+  <button class="ham" id="hBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="mob" id="mob" aria-hidden="true"><ul><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li><li><a href="/join" class="ma">Join Now &rarr;</a></li></ul></div>
 
@@ -404,10 +411,10 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
   <p>Tell us about your brand. We'll share how BrandConnect can put you in front of India's most engaged real estate audience &mdash; through content, not ads.</p>
   <form class="cta-form" id="nlF" novalidate>
     <div class="cta-row">
-      <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required>
-      <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required>
+      <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required aria-label="Your name">
+      <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required aria-label="Work email">
     </div>
-    <input type="text" class="cta-inp" placeholder="Company name" required>
+    <input type="text" class="cta-inp" placeholder="Company name" required aria-label="Company name">
     <button type="submit" class="cta-sub" id="nlB">Get in touch</button>
   </form>
   <p class="cta-note">Campaigns from &#8377;50K/month. We'll respond within 24 hours.</p>
