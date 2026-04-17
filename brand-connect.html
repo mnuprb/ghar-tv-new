@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand Connect - GHAR.tv</title>
-<meta name="description" content="Content-driven brand partnerships that place your brand inside the home-buying journey. Reach India's most engaged real estate audience.">
+<title>BrandConnect - GHAR.tv</title>
+<meta name="description" content="Reach India's most engaged real estate audience through content and campaigns. Content-driven brand partnerships for allied businesses in the home-buying ecosystem.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.onload=null;this.media='all'">
@@ -30,11 +30,10 @@ body{font-family:var(--ff);background:var(--bg);color:var(--ink);line-height:1.6
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 .c{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
 
-/* ── NAV ── */
+/* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--surface2);will-change:transform}
 .nav-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-logo{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.nav-logo img{height:26px;width:auto}
+.nav-logo{display:flex;align-items:center;gap:8px;flex-shrink:0}.nav-logo img{height:26px;width:auto}
 .nav-logo-tag{font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}
 .nav-links{display:none;align-items:center;gap:4px;list-style:none}
 .nav-links a{font-size:14px;font-weight:500;color:var(--ink2);padding:8px 14px;border-radius:var(--r);transition:background .15s,color .15s}
@@ -49,129 +48,129 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 .mob.open{transform:translateX(0)}.mob ul{list-style:none}.mob li+li{border-top:1px solid var(--surface2)}
 .mob a{display:block;padding:16px 0;font-size:18px;font-weight:600;color:var(--ink)}.mob .ma{color:var(--accent)}
 
-/* ── HERO ── */
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px);align-items:center;padding:clamp(60px,8vw,120px) 0 clamp(48px,6vw,80px)}
+/* HERO */
+.hero{padding:clamp(56px,8vw,100px) 0 clamp(48px,6vw,72px);max-width:800px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
 .hero-eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.hero h1{font-family:var(--ff-d);font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{font-size:clamp(16px,1.5vw,18px);color:var(--ink2);line-height:1.7;max-width:520px;margin-bottom:32px}
-.hero-cta{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--bg);background:var(--accent);padding:14px 32px;border-radius:var(--r);border:none;transition:all .2s;cursor:pointer}
-.hero-cta:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,56,92,.25)}
-.hero-cta svg{width:16px;height:16px}
-.hero-visual{display:flex;align-items:center;justify-content:center}
-.hero-svg{width:100%;max-width:500px;height:auto}
-@keyframes bcFloat1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes bcFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes bcFloat3{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.bc-fl1{animation:bcFloat1 5s ease-in-out infinite}.bc-fl2{animation:bcFloat2 6s ease-in-out infinite 1s}.bc-fl3{animation:bcFloat3 7s ease-in-out infinite .5s}
+.hero h1{font-family:var(--ff-d);font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px}
+.hero-sub{font-size:clamp(16px,1.4vw,18px);color:var(--ink2);line-height:1.7;margin-bottom:12px}
+.hero-note{font-size:14px;color:var(--ink3);line-height:1.6;margin-bottom:32px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--bg);background:var(--accent);padding:14px 32px;border-radius:var(--r);border:none;transition:all .2s;cursor:pointer}
+.btn-primary:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,56,92,.25)}
+.btn-primary svg{width:16px;height:16px}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink);background:var(--bg);padding:13px 28px;border-radius:var(--r);border:1px solid var(--surface2);transition:all .2s;cursor:pointer}
+.btn-outline:hover{border-color:var(--ink);background:var(--surface)}
 
-/* ── DIVIDER ── */
+/* DIVIDER */
 .divider{height:1px;background:var(--surface2)}
 
-/* ── SECTION COMMON ── */
-.section{padding:clamp(56px,7vw,96px) 0}
-.sec-eyebrow{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;text-align:center}
-.sec-title{font-family:var(--ff-d);font-size:clamp(26px,3.5vw,36px);font-weight:700;color:var(--ink);text-align:center;margin-bottom:clamp(36px,4vw,56px);line-height:1.15}
+/* SECTION */
+.section{padding:clamp(56px,7vw,80px) 0}
+.sec-eyebrow{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.sec-title{font-family:var(--ff-d);font-size:clamp(26px,3.5vw,36px);font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.15}
+.sec-desc{font-size:15px;color:var(--ink2);line-height:1.7;max-width:640px;margin-bottom:clamp(32px,4vw,48px)}
+.sec-center{text-align:center}.sec-center .sec-desc{margin-left:auto;margin-right:auto}
 
-/* ── VALUE PROPS — 3 column ── */
-.props{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.prop{padding:clamp(28px,3vw,40px);background:var(--surface);border-radius:var(--rl);transition:transform .2s var(--ease)}
-.prop:hover{transform:translateY(-4px)}
-.prop-icon{width:48px;height:48px;border-radius:var(--r);background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--accent)}
-.prop-icon svg{width:24px;height:24px}
-.prop h3{font-family:var(--ff-d);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px}
-.prop p{font-size:14px;color:var(--ink2);line-height:1.7}
+/* AUDIENCE — 3 column */
+.audience{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.aud-card{padding:clamp(28px,3vw,36px);background:var(--surface);border-radius:var(--rl);transition:transform .2s var(--ease)}
+.aud-card:hover{transform:translateY(-4px)}
+.aud-icon{width:48px;height:48px;border-radius:var(--r);background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--accent)}
+.aud-icon svg{width:24px;height:24px}
+.aud-card h3{font-family:var(--ff-d);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.aud-card p{font-size:14px;color:var(--ink2);line-height:1.7}
 
-/* ── PARTNERSHIP FORMATS — 4 cards ── */
+/* FORMATS — numbered cards */
 .formats{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.format{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(28px,3vw,40px);background:var(--bg);transition:all .25s var(--ease)}
-.format:hover{border-color:transparent;box-shadow:var(--sh-l);transform:translateY(-4px)}
-.format-num{font-family:var(--ff-d);font-size:48px;font-weight:700;color:var(--surface2);line-height:1;margin-bottom:16px;transition:color .25s}
-.format:hover .format-num{color:var(--accent-border)}
-.format h3{font-family:var(--ff-d);font-size:clamp(18px,2vw,22px);font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.2}
-.format p{font-size:14px;color:var(--ink2);line-height:1.7}
+.fmt{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(28px,3vw,36px);background:var(--bg);transition:all .25s var(--ease)}
+.fmt:hover{border-color:transparent;box-shadow:var(--sh-l);transform:translateY(-4px)}
+.fmt-num{font-family:var(--ff-d);font-size:44px;font-weight:700;color:var(--surface2);line-height:1;margin-bottom:14px;transition:color .25s}
+.fmt:hover .fmt-num{color:var(--accent-border)}
+.fmt h3{font-family:var(--ff-d);font-size:clamp(17px,1.8vw,20px);font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.25}
+.fmt p{font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:10px}
+.fmt-price{font-size:13px;font-weight:600;color:var(--accent)}
 
-/* ── PARTNERS STRIP ── */
-.partners-section{padding:clamp(56px,7vw,96px) 0}
-.partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:clamp(32px,4vw,48px)}
-.p-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:clamp(24px,3vw,32px) 16px;border:1px solid var(--surface2);border-radius:var(--rl);background:var(--bg);transition:all .25s var(--ease)}
-.p-card:hover{border-color:transparent;box-shadow:var(--sh-m);transform:translateY(-4px)}
-.p-card-icon{width:48px;height:48px;border-radius:var(--r);display:flex;align-items:center;justify-content:center}
-.p-card-icon svg{width:24px;height:24px}
-.p-card h4{font-family:var(--ff-d);font-size:14px;font-weight:700;color:var(--ink);line-height:1.3}
+/* CATEGORIES — icon grid */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:clamp(20px,2.5vw,28px) 12px;border:1px solid var(--surface2);border-radius:var(--rl);background:var(--bg);transition:all .25s var(--ease)}
+.cat-card:hover{border-color:transparent;box-shadow:var(--sh-m);transform:translateY(-3px)}
+.cat-icon{width:44px;height:44px;border-radius:var(--r);display:flex;align-items:center;justify-content:center}
+.cat-icon svg{width:22px;height:22px}
+.cat-card h4{font-size:13px;font-weight:700;color:var(--ink);line-height:1.3}
 
-/* ── SAMPLES ── */
-.samples{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:clamp(32px,4vw,48px)}
+/* SAMPLES */
+.samples{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .sample{border-radius:var(--rl);overflow:hidden;border:1px solid var(--surface2);background:var(--bg);transition:all .25s var(--ease)}
 .sample:hover{border-color:transparent;box-shadow:var(--sh-l);transform:translateY(-4px)}
 .sample-img{aspect-ratio:16/10;background:var(--surface);overflow:hidden;position:relative}
 .sample-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
 .sample:hover .sample-img img{transform:scale(1.04)}
-.sample-badge{position:absolute;top:12px;left:12px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:20px;line-height:1.2}
+.sample-badge{position:absolute;top:12px;left:12px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:20px}
 .sample-body{padding:20px 24px}
 .sample-type{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-.sample h3{font-family:var(--ff-d);font-size:clamp(16px,1.5vw,18px);font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:8px}
+.sample h3{font-family:var(--ff-d);font-size:clamp(15px,1.4vw,17px);font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:8px}
 .sample p{font-size:13px;color:var(--ink2);line-height:1.6}
 .sample-brand{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--surface2)}
 .sample-brand-logo{width:28px;height:28px;border-radius:6px;object-fit:contain;background:var(--surface);padding:3px}
 .sample-brand-name{font-size:12px;font-weight:600;color:var(--ink)}
 .sample-brand-cat{font-size:11px;color:var(--ink3)}
 
-/* ── CTA ── */
+/* ECOSYSTEM */
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.eco-card{display:flex;align-items:flex-start;gap:16px;padding:24px;border:1px solid var(--surface2);border-radius:var(--rl);transition:all .2s var(--ease)}
+.eco-card:hover{border-color:transparent;box-shadow:var(--sh-m)}
+.eco-icon{width:40px;height:40px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent)}
+.eco-icon svg{width:20px;height:20px}
+.eco-card h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.eco-card p{font-size:13px;color:var(--ink2);line-height:1.5}
+
+/* EXISTING PARTNERS */
+.partners-strip{display:flex;justify-content:center;gap:clamp(32px,4vw,64px);flex-wrap:wrap;padding:clamp(32px,4vw,48px) 0}
+.partner-item{text-align:center}
+.partner-item-name{font-family:var(--ff-d);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.partner-item-cat{font-size:12px;color:var(--ink3)}
+
+/* CTA */
 .cta-block{background:var(--ink);border-radius:var(--rx);padding:clamp(48px,6vw,80px);text-align:center;margin:clamp(40px,5vw,56px) 0}
 .cta-block h2{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--bg);margin-bottom:12px}
-.cta-block p{font-size:16px;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 32px}
-.cta-form{display:flex;flex-direction:column;gap:12px;max-width:480px;margin:0 auto}
-.cta-row{display:flex;gap:10px}
-.cta-row .cta-inp{flex:1}
-.cta-inp{flex:1;font-family:var(--ff);font-size:14px;padding:14px 18px;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;transition:border-color .2s}
-.cta-inp::placeholder{color:rgba(255,255,255,.35)}
-.cta-inp:focus{outline:none;border-color:rgba(255,255,255,.3)}
-.cta-sub{font-family:var(--ff);font-size:14px;font-weight:600;color:var(--ink);background:#fff;padding:14px 28px;border-radius:var(--r);border:none;cursor:pointer;white-space:nowrap;transition:all .2s}
+.cta-block>p{font-size:16px;color:rgba(255,255,255,.55);max-width:520px;margin:0 auto 32px;line-height:1.6}
+.cta-form{display:flex;flex-direction:column;gap:12px;max-width:500px;margin:0 auto}
+.cta-row{display:flex;gap:10px}.cta-row .cta-inp{flex:1}
+.cta-inp{font-family:var(--ff);font-size:14px;padding:14px 18px;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;transition:border-color .2s}
+.cta-inp::placeholder{color:rgba(255,255,255,.35)}.cta-inp:focus{outline:none;border-color:rgba(255,255,255,.3)}
+.cta-sub{font-family:var(--ff);font-size:14px;font-weight:600;color:var(--ink);background:#fff;padding:14px 28px;border-radius:var(--r);border:none;cursor:pointer;transition:all .2s;width:100%}
 .cta-sub:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
 .cta-note{font-size:12px;color:rgba(255,255,255,.3);padding-top:14px}
 .cta-ok{padding:12px 0}.cta-ok p{font-size:15px;color:rgba(255,255,255,.7)}
 
-/* ── FOOTER ── */
+/* FOOTER */
 .ft{border-top:1px solid var(--surface2);padding:32px 0}
 .ft-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:flex;justify-content:space-between;align-items:center}
 .ft-c{font-size:12px;color:var(--ink3)}
 .ft-links{display:flex;gap:20px}.ft-links a{font-size:12px;color:var(--ink3)}.ft-links a:hover{color:var(--ink)}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(min-width:1200px){.nav-links{display:flex}.nav-r{display:flex}.ham{display:none}}
-
 @media(max-width:1199px){
-  .hero{grid-template-columns:1fr;gap:32px;text-align:center}
-  .hero-sub{margin-left:auto;margin-right:auto}
-  .hero-visual{order:0}
-  .hero-svg{max-width:360px}
-  .props{grid-template-columns:1fr}
-  .formats{grid-template-columns:1fr}
-  .partners-grid{grid-template-columns:repeat(2,1fr)}
-  .samples{grid-template-columns:1fr}
+  .audience{grid-template-columns:1fr}.formats{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}.samples{grid-template-columns:1fr}
+  .eco-grid{grid-template-columns:1fr}
   .cta-row{flex-direction:column}
   .cta-block{padding:clamp(36px,5vw,60px) clamp(20px,4vw,48px);border-radius:var(--rl)}
   .ft-i{flex-direction:column;gap:16px;text-align:center}
   .ft-links{flex-wrap:wrap;justify-content:center}
 }
-
 @media(max-width:600px){
-  body{padding-top:56px}
-  .nav-i{height:56px}
-  .nav-logo img{height:22px}
-  .hero{padding:40px 0}
-  .hero h1{font-size:28px}
-  .hero-svg{max-width:280px}
-  .prop{padding:24px}
-  .format{padding:24px}
-  .format-num{font-size:36px}
-  .partners-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .p-card{padding:20px 12px}
-  .cta-block{padding:36px 20px;border-radius:var(--rl)}
+  body{padding-top:56px}.nav-i{height:56px}.nav-logo img{height:22px}
+  .hero{padding:40px 0}.hero h1{font-size:28px}
+  .cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}.cat-card{padding:16px 8px}
+  .fmt{padding:24px}.fmt-num{font-size:32px}
+  .sample-body{padding:16px 18px}
+  .cta-block{padding:32px 20px;border-radius:var(--rl)}
   .cta-row{flex-direction:column}
   .mob{padding:72px 20px 40px}
+  .partners-strip{gap:24px}
 }
 </style>
 </head>
@@ -179,7 +178,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 
 <!-- NAV -->
 <nav class="nav"><div class="nav-i">
-  <a href="/" class="nav-logo"><img src="community/logo.svg" alt="GHAR.tv"><span class="nav-logo-tag">Brand Connect</span></a>
+  <a href="/" class="nav-logo"><img src="community/logo.svg" alt="GHAR.tv"><span class="nav-logo-tag">BrandConnect</span></a>
   <ul class="nav-links" role="list"><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li></ul>
   <div class="nav-r"><button class="nav-btn" onclick="location.href='/join'">Join Now</button></div>
   <button class="ham" id="hBtn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -187,142 +186,42 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 <div class="mob" id="mob" aria-hidden="true"><ul><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li><li><a href="/join" class="ma">Join Now &rarr;</a></li></ul></div>
 
 
-<!-- ═══════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════ -->
+<!-- ═══ HERO ═══ -->
 <div class="c"><section class="hero">
-  <div>
-    <div class="hero-eyebrow">Brand Connect</div>
-    <h1>Your brand, where <em>decisions</em> happen.</h1>
-    <p class="hero-sub">Content-driven partnerships that place your brand inside the home-buying journey &mdash; not beside it. Reach an audience that's actively researching, calculating, and deciding.</p>
-    <button class="hero-cta" onclick="document.getElementById('ctaForm').scrollIntoView({behavior:'smooth'})">Partner With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-  </div>
-  <div class="hero-visual">
-    <svg class="hero-svg" viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-      <!-- Background grid lines -->
-      <g opacity=".5">
-        <line x1="0" y1="80" x2="460" y2="80" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
-        <line x1="0" y1="170" x2="460" y2="170" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
-        <line x1="0" y1="260" x2="460" y2="260" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
-        <line x1="0" y1="350" x2="460" y2="350" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
-        <line x1="115" y1="0" x2="115" y2="420" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
-        <line x1="230" y1="0" x2="230" y2="420" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
-        <line x1="345" y1="0" x2="345" y2="420" stroke="#e0e0e0" stroke-width=".5" stroke-dasharray="4 4"/>
-      </g>
-
-      <!-- Card 1 — Editorial article (back, left) -->
-      <g class="bc-fl1">
-        <rect x="20" y="40" width="200" height="150" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
-        <rect x="36" y="56" width="168" height="68" rx="6" fill="#f7f7f7"/>
-        <rect x="36" y="138" width="100" height="8" rx="4" fill="#ebebeb"/>
-        <rect x="36" y="154" width="140" height="6" rx="3" fill="#f3f4f6"/>
-        <rect x="36" y="166" width="120" height="6" rx="3" fill="#f3f4f6"/>
-        <!-- Play icon overlay -->
-        <circle cx="120" cy="90" r="16" fill="rgba(255,56,92,.9)"/>
-        <polygon points="115,82 130,90 115,98" fill="#fff"/>
-        <!-- Badge -->
-        <rect x="42" y="62" width="52" height="16" rx="8" fill="#ff385c" opacity=".1"/>
-        <text x="68" y="73" text-anchor="middle" font-size="7" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">SPONSORED</text>
-      </g>
-
-      <!-- Card 2 — Analytics dashboard (mid, right) -->
-      <g class="bc-fl2">
-        <rect x="240" y="90" width="200" height="160" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
-        <!-- Mini bar chart -->
-        <rect x="260" y="155" width="16" height="40" rx="3" fill="rgba(255,56,92,.12)"/>
-        <rect x="284" y="135" width="16" height="60" rx="3" fill="rgba(255,56,92,.2)"/>
-        <rect x="308" y="145" width="16" height="50" rx="3" fill="rgba(255,56,92,.15)"/>
-        <rect x="332" y="120" width="16" height="75" rx="3" fill="#ff385c" opacity=".85"/>
-        <rect x="356" y="140" width="16" height="55" rx="3" fill="rgba(255,56,92,.18)"/>
-        <!-- Top stats row -->
-        <rect x="260" y="108" width="48" height="18" rx="4" fill="#f7f7f7"/>
-        <text x="284" y="120" text-anchor="middle" font-size="8" font-weight="700" fill="#222" font-family="Inter,sans-serif">12.4K</text>
-        <rect x="316" y="108" width="48" height="18" rx="4" fill="#f7f7f7"/>
-        <text x="340" y="120" text-anchor="middle" font-size="8" font-weight="700" fill="#ff385c" font-family="Inter,sans-serif">+34%</text>
-        <!-- Trend line -->
-        <polyline points="260,215 285,210 308,218 332,205 356,208 380,200" stroke="#ff385c" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Label -->
-        <text x="260" y="240" font-size="7" font-weight="600" fill="#b0b0b0" font-family="Inter,sans-serif">AUDIENCE ENGAGEMENT</text>
-      </g>
-
-      <!-- Card 3 — Creator profile card (front, left) -->
-      <g class="bc-fl3">
-        <rect x="50" y="225" width="180" height="120" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
-        <!-- Avatar -->
-        <circle cx="86" cy="270" r="20" fill="#f7f7f7" stroke="#ebebeb" stroke-width="1"/>
-        <circle cx="86" cy="265" r="7" fill="none" stroke="#717171" stroke-width="1.2"/>
-        <path d="M75 283a11 11 0 0122 0" stroke="#717171" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-        <!-- Text lines -->
-        <rect x="116" y="258" width="80" height="8" rx="4" fill="#222"/>
-        <rect x="116" y="272" width="60" height="6" rx="3" fill="#b0b0b0"/>
-        <!-- Tags -->
-        <rect x="66" y="306" width="52" height="18" rx="9" fill="#ff385c" opacity=".08" stroke="rgba(255,56,92,.15)" stroke-width=".5"/>
-        <text x="92" y="318" text-anchor="middle" font-size="7" font-weight="600" fill="#ff385c" font-family="Inter,sans-serif">Creator</text>
-        <rect x="124" y="306" width="56" height="18" rx="9" fill="#f7f7f7" stroke="#ebebeb" stroke-width=".5"/>
-        <text x="152" y="318" text-anchor="middle" font-size="7" font-weight="600" fill="#717171" font-family="Inter,sans-serif">Mumbai</text>
-        <rect x="186" y="306" width="32" height="18" rx="9" fill="#f7f7f7" stroke="#ebebeb" stroke-width=".5"/>
-        <text x="202" y="318" text-anchor="middle" font-size="7" font-weight="600" fill="#717171" font-family="Inter,sans-serif">45K</text>
-      </g>
-
-      <!-- Card 4 — Event badge (front, right) -->
-      <g class="bc-fl1">
-        <rect x="265" y="280" width="175" height="110" rx="12" fill="#fff" stroke="#ddd" stroke-width="1" filter="url(#bcShadow)"/>
-        <rect x="281" y="296" width="44" height="44" rx="8" fill="#222"/>
-        <text x="303" y="316" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="Inter,sans-serif">24</text>
-        <text x="303" y="330" text-anchor="middle" font-size="7" font-weight="600" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif">APR</text>
-        <rect x="337" y="298" width="88" height="8" rx="4" fill="#222"/>
-        <rect x="337" y="312" width="64" height="6" rx="3" fill="#b0b0b0"/>
-        <!-- Attendee dots -->
-        <circle cx="337" cy="340" r="8" fill="#f7f7f7" stroke="#fff" stroke-width="1.5"/>
-        <circle cx="349" cy="340" r="8" fill="#f3f4f6" stroke="#fff" stroke-width="1.5"/>
-        <circle cx="361" cy="340" r="8" fill="#ebebeb" stroke="#fff" stroke-width="1.5"/>
-        <rect x="375" y="334" width="48" height="14" rx="7" fill="#ff385c" opacity=".08"/>
-        <text x="399" y="344" text-anchor="middle" font-size="7" font-weight="600" fill="#ff385c" font-family="Inter,sans-serif">+240</text>
-        <text x="281" y="374" font-size="6.5" font-weight="600" fill="#b0b0b0" font-family="Inter,sans-serif" letter-spacing=".05em">INDIA PROPERTY SHOW</text>
-      </g>
-
-      <!-- Decorative accents -->
-      <circle cx="12" cy="130" r="4" fill="#ff385c" opacity=".08"/>
-      <circle cx="450" cy="70" r="5" fill="#8b5cf6" opacity=".06"/>
-      <circle cx="25" cy="380" r="3" fill="#10b981" opacity=".07"/>
-      <rect x="442" y="320" width="8" height="8" rx="2" fill="#f59e0b" opacity=".06"/>
-
-      <!-- Shadow filter -->
-      <defs>
-        <filter id="bcShadow" x="-8%" y="-8%" width="116%" height="124%">
-          <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity=".1"/>
-        </filter>
-      </defs>
-    </svg>
+  <div class="hero-eyebrow">BrandConnect</div>
+  <h1>Reach India's most engaged real estate audience through content, not ads.</h1>
+  <p class="hero-sub">Content-driven partnerships that place your brand inside the home-buying journey &mdash; not beside it. Your brand belongs where decisions happen.</p>
+  <p class="hero-note">BrandConnect is GHAR.tv's advertising and content partnership platform for allied businesses &mdash; brands that want access to India's high-intent property audience through native content, sponsored campaigns, and creator-driven marketing. This is not banner advertising. It's content and partnerships.</p>
+  <div class="hero-ctas">
+    <button class="btn-primary" onclick="document.getElementById('ctaForm').scrollIntoView({behavior:'smooth'})">Partner With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    <button class="btn-outline" onclick="document.getElementById('formats').scrollIntoView({behavior:'smooth'})">See Formats</button>
   </div>
 </section></div>
 
 <div class="c"><hr class="divider"></div>
 
 
-<!-- ═══════════════════════════════════════════
-     VALUE PROPOSITIONS
-     ═══════════════════════════════════════════ -->
+<!-- ═══ THE AUDIENCE ═══ -->
 <div class="c"><section class="section">
-  <div class="sec-eyebrow">Why GHAR.tv</div>
-  <h2 class="sec-title">Built for brands that want to matter</h2>
+  <div class="sec-eyebrow">The Audience</div>
+  <h2 class="sec-title">Why brands choose GHAR.tv</h2>
+  <p class="sec-desc">Every piece of content GHAR.tv produces grows an audience that is actively researching property decisions &mdash; calculating EMIs, reading reports, comparing projects. Not casual browsers. High-intent buyers.</p>
 
-  <div class="props">
-    <div class="prop">
-      <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></div>
+  <div class="audience">
+    <div class="aud-card">
+      <div class="aud-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></div>
       <h3>High-Intent Audience</h3>
-      <p>People actively researching property decisions &mdash; calculating EMIs, reading reports, comparing projects. Not casual browsers.</p>
+      <p>People actively researching property decisions &mdash; calculating EMIs, reading reports, comparing projects. Far more valuable than generic digital advertising.</p>
     </div>
-    <div class="prop">
-      <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.375 2.625a2.121 2.121 0 113 3L12 15l-4 1 1-4z"/></svg></div>
+    <div class="aud-card">
+      <div class="aud-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.375 2.625a2.121 2.121 0 113 3L12 15l-4 1 1-4z"/></svg></div>
       <h3>Native, Not Ads</h3>
-      <p>Content integrations placed inside editorial, intelligence, and design &mdash; not in a banner zone. Your brand earns attention.</p>
+      <p>Content integrations placed inside Editorial, Intelligence, and Design &mdash; not in a banner zone. Your brand earns attention within the editorial ecosystem.</p>
     </div>
-    <div class="prop">
-      <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+    <div class="aud-card">
+      <div class="aud-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
       <h3>Full Funnel</h3>
-      <p>From editorial awareness through tools to services conversion &mdash; a complete journey, not a single touchpoint.</p>
+      <p>From editorial awareness through tools to services conversion &mdash; a complete journey, not a single touchpoint. Content that converts across the buying cycle.</p>
     </div>
   </div>
 </section></div>
@@ -330,33 +229,36 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 <div class="c"><hr class="divider"></div>
 
 
-<!-- ═══════════════════════════════════════════
-     PARTNERSHIP FORMATS
-     ═══════════════════════════════════════════ -->
-<div class="c"><section class="section">
-  <div class="sec-eyebrow">Formats</div>
-  <h2 class="sec-title">Ways to work together</h2>
+<!-- ═══ CONTENT FORMATS ═══ -->
+<div class="c"><section class="section" id="formats">
+  <div class="sec-eyebrow">Content Formats</div>
+  <h2 class="sec-title">Four ways to reach our audience</h2>
+  <p class="sec-desc">Every format is designed to integrate your brand naturally within GHAR.tv's content ecosystem. No separate sponsored zones. Your story, told in our voice, to our audience.</p>
 
   <div class="formats">
-    <div class="format">
-      <div class="format-num">01</div>
-      <h3>Sponsored Content</h3>
-      <p>Editorially styled features that live within Intelligence, Design, and Editorial &mdash; not in a separate sponsored zone. Your story, told in our voice, to our audience.</p>
+    <div class="fmt">
+      <div class="fmt-num">01</div>
+      <h3>Sponsored Content &amp; Native Articles</h3>
+      <p>Editorially styled articles, guides, and features that integrate your brand naturally within GHAR.tv's content verticals. An Asian Paints feature within Design Guides. A home loan explainer within Intelligence. Content that lives within the editorial ecosystem &mdash; not in a sponsored ghetto.</p>
+      <div class="fmt-price">&lpar;&#8377;30K &ndash; 5L per campaign&rpar;</div>
     </div>
-    <div class="format">
-      <div class="format-num">02</div>
-      <h3>VideoWorks Production</h3>
-      <p>Branded content videos produced by our in-house studio and distributed across the GHAR.tv ecosystem. From property walkthroughs to expert interviews.</p>
+    <div class="fmt">
+      <div class="fmt-num">02</div>
+      <h3>Builder Campaigns</h3>
+      <p>Co-branded content campaigns where an allied brand partners with a developer for a specific project or launch. HDFC Home Loans co-branded with a Lodha project launch. Your brand embedded directly in the project marketing ecosystem.</p>
+      <div class="fmt-price">Custom pricing</div>
     </div>
-    <div class="format">
-      <div class="format-num">03</div>
-      <h3>Creator Campaigns</h3>
-      <p>Influencer-driven content through our curated Creator Network &mdash; with property-specific metrics, not vanity numbers. Real reach, real results.</p>
+    <div class="fmt">
+      <div class="fmt-num">03</div>
+      <h3>Creator Network &amp; Influencer Campaigns</h3>
+      <p>GHAR.tv's creator programme connects your brand with real estate content creators and micro-influencers across Instagram, YouTube, LinkedIn, and regional platforms. Campaign tracking includes property-specific metrics &mdash; site visits, bookings &mdash; not vanity numbers.</p>
+      <div class="fmt-price">Performance-based</div>
     </div>
-    <div class="format">
-      <div class="format-num">04</div>
+    <div class="fmt">
+      <div class="fmt-num">04</div>
       <h3>Event Partnerships</h3>
-      <p>Exhibition, sponsorship, and co-branded presence at India Property Show and GHAR.tv's signature industry events.</p>
+      <p>Exhibition, sponsorship, and co-branded presence at India Property Show and GHAR.tv's signature industry events. Allied brands exhibit alongside developers, reaching buyers at the point of decision.</p>
+      <div class="fmt-price">Sponsorship packages available</div>
     </div>
   </div>
 </section></div>
@@ -364,148 +266,204 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{fon
 <div class="c"><hr class="divider"></div>
 
 
-<!-- ═══════════════════════════════════════════
-     WE PARTNER WITH
-     ═══════════════════════════════════════════ -->
-<div class="c"><section class="partners-section">
-  <div class="sec-eyebrow">Partners</div>
-  <h2 class="sec-title">We partner with</h2>
-  <div class="partners-grid">
-    <div class="p-card">
-      <div class="p-card-icon" style="background:rgba(59,130,246,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg></div>
+<!-- ═══ WHO WE WORK WITH ═══ -->
+<div class="c"><section class="section">
+  <div class="sec-eyebrow">Partner Categories</div>
+  <h2 class="sec-title">Who BrandConnect is for</h2>
+  <p class="sec-desc">Allied businesses in the home-buying ecosystem &mdash; not developers or brokers (they have their own dedicated platforms). BrandConnect is for every brand adjacent to the property journey.</p>
+
+  <div class="cat-grid">
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(59,130,246,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg></div>
       <h4>Home Loan Providers</h4>
     </div>
-    <div class="p-card">
-      <div class="p-card-icon" style="background:rgba(236,72,153,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-      <h4>Interior Design Firms</h4>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(236,72,153,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+      <h4>Interior Design &amp; Architecture</h4>
     </div>
-    <div class="p-card">
-      <div class="p-card-icon" style="background:rgba(249,115,22,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(249,115,22,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
       <h4>Building Materials</h4>
     </div>
-    <div class="p-card">
-      <div class="p-card-icon" style="background:rgba(139,92,246,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 01-2 2H6a2 2 0 01-2-2V9"/><path d="M9 22V12h6v10"/><path d="M2 10.6L12 2l10 8.6"/></svg></div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(139,92,246,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 01-2 2H6a2 2 0 01-2-2V9"/><path d="M9 22V12h6v10"/><path d="M2 10.6L12 2l10 8.6"/></svg></div>
       <h4>Furniture &amp; D&eacute;cor</h4>
     </div>
-    <div class="p-card">
-      <div class="p-card-icon" style="background:rgba(6,182,212,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1"/></svg></div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(6,182,212,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1"/></svg></div>
       <h4>Smart Home Tech</h4>
     </div>
-    <div class="p-card">
-      <div class="p-card-icon" style="background:rgba(16,185,129,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(16,185,129,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <h4>Home Insurance</h4>
     </div>
-    <div class="p-card">
-      <div class="p-card-icon" style="background:rgba(245,158,11,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-      <h4>Legal Services</h4>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(245,158,11,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h4>Legal &amp; Documentation</h4>
     </div>
-    <div class="p-card">
-      <div class="p-card-icon" style="background:rgba(255,56,92,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#ff385c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l2-6h4l2 6"/><path d="M7 12h10"/><path d="M9 16h6"/></svg></div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(255,56,92,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#ff385c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2-6h4l2 6M7 12h10M9 16h6"/></svg></div>
       <h4>Paint Companies</h4>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(99,102,241,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="22" height="12" rx="2"/><path d="M1 10h22"/></svg></div>
+      <h4>RE Finance &amp; Investment</h4>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(234,88,12,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+      <h4>Packers &amp; Movers</h4>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(14,165,233,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+      <h4>Vastu &amp; Consultation</h4>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon" style="background:rgba(168,85,247,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 106 0 3 3 0 00-6 0"/><path d="M12.5 2.1a1 1 0 00-1 0l-8 4.6a1 1 0 00-.5.9v8.8a1 1 0 00.5.9l8 4.6a1 1 0 001 0l8-4.6a1 1 0 00.5-.9V7.6a1 1 0 00-.5-.9z"/></svg></div>
+      <h4>Property Management</h4>
     </div>
   </div>
 </section></div>
 
-
-<!-- ═══════════════════════════════════════════
-     BRAND CONNECT SAMPLES
-     ═══════════════════════════════════════════ -->
 <div class="c"><hr class="divider"></div>
+
+
+<!-- ═══ IN ACTION ═══ -->
 <div class="c"><section class="section">
   <div class="sec-eyebrow">In Action</div>
-  <h2 class="sec-title">Brand Connect Samples</h2>
+  <h2 class="sec-title">BrandConnect samples</h2>
+  <p class="sec-desc">Here's what brand partnerships look like inside the GHAR.tv ecosystem. Native, editorial, and measurable.</p>
 
   <div class="samples">
-    <!-- Sample 1 — Sponsored Content -->
     <div class="sample">
       <div class="sample-img">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=380&fit=crop&q=80" alt="Luxury project feature" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=380&fit=crop&q=80" alt="Sponsored feature" loading="lazy">
         <span class="sample-badge" style="background:rgba(255,56,92,.9);color:#fff">Sponsored</span>
       </div>
       <div class="sample-body">
         <div class="sample-type">Sponsored Content</div>
         <h3>Why Ultra-Luxury Homes in Mumbai Are Betting on Italian Marble</h3>
-        <p>An editorial feature exploring premium material trends in India's luxury real estate segment, integrated within GHAR.tv Intelligence.</p>
+        <p>An editorial feature within GHAR.tv Intelligence, reaching 45K high-intent readers in 6 weeks.</p>
         <div class="sample-brand">
-          <img class="sample-brand-logo" src="community/brands/godrej-properties-logo.png" alt="Brand logo">
+          <img class="sample-brand-logo" src="community/brands/godrej-properties-logo.png" alt="Brand">
           <div><div class="sample-brand-name">Italian Marble Co.</div><div class="sample-brand-cat">Building Materials</div></div>
         </div>
       </div>
     </div>
-
-    <!-- Sample 2 — VideoWorks -->
     <div class="sample">
       <div class="sample-img">
         <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=380&fit=crop&q=80" alt="Property walkthrough" loading="lazy">
         <span class="sample-badge" style="background:rgba(139,92,246,.9);color:#fff">VideoWorks</span>
       </div>
       <div class="sample-body">
-        <div class="sample-type">VideoWorks Production</div>
-        <h3>Inside Godrej Trees: A Cinematic Property Walkthrough</h3>
-        <p>A studio-produced video tour distributed across GHAR.tv, YouTube, and social channels — 2.4M views in 3 months.</p>
+        <div class="sample-type">Builder Campaign</div>
+        <h3>HDFC Home Loans &times; Lodha: Making Luxury Affordable</h3>
+        <p>Co-branded content campaign for a project launch &mdash; editorial + video + creator content. 2.4M total reach.</p>
         <div class="sample-brand">
-          <img class="sample-brand-logo" src="community/brands/godrej-properties-logo.png" alt="Godrej Properties">
-          <div><div class="sample-brand-name">Godrej Properties</div><div class="sample-brand-cat">Developer</div></div>
+          <img class="sample-brand-logo" src="community/brands/godrej-properties-logo.png" alt="HDFC">
+          <div><div class="sample-brand-name">HDFC Home Loans</div><div class="sample-brand-cat">Home Loan Provider</div></div>
         </div>
       </div>
     </div>
-
-    <!-- Sample 3 — Creator Campaign -->
     <div class="sample">
       <div class="sample-img">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=380&fit=crop&q=80" alt="Interior transformation" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=380&fit=crop&q=80" alt="Home makeover" loading="lazy">
         <span class="sample-badge" style="background:rgba(16,185,129,.9);color:#fff">Creator</span>
       </div>
       <div class="sample-body">
         <div class="sample-type">Creator Campaign</div>
         <h3>Home Makeover Series: 5 Creators Transform Spaces with Asian Paints</h3>
-        <p>A multi-creator campaign showcasing real home transformations — 850K reach with 12% engagement rate.</p>
+        <p>Multi-creator campaign across Instagram &amp; YouTube &mdash; 850K reach, 12% engagement, 3,200 site visits tracked.</p>
         <div class="sample-brand">
           <img class="sample-brand-logo" src="community/brands/asian-paints-logo.avif" alt="Asian Paints">
-          <div><div class="sample-brand-name">Asian Paints</div><div class="sample-brand-cat">Paints & Home Decor</div></div>
+          <div><div class="sample-brand-name">Asian Paints</div><div class="sample-brand-cat">Paints &amp; Home Decor</div></div>
         </div>
       </div>
     </div>
   </div>
 </section></div>
 
+<div class="c"><hr class="divider"></div>
 
-<!-- ═══════════════════════════════════════════
-     CTA
-     ═══════════════════════════════════════════ -->
+
+<!-- ═══ ECOSYSTEM ═══ -->
+<div class="c"><section class="section">
+  <div class="sec-eyebrow">Ecosystem</div>
+  <h2 class="sec-title">Where your brand lives on GHAR.tv</h2>
+  <p class="sec-desc">BrandConnect isn't a standalone ad product. Your brand integrates across the entire GHAR.tv content ecosystem.</p>
+
+  <div class="eco-grid">
+    <div class="eco-card">
+      <div class="eco-icon" style="background:var(--accent-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div><h4>Editorial &amp; Intelligence</h4><p>Sponsored articles live as native content within editorial verticals</p></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-icon" style="background:rgba(139,92,246,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div><h4>VideoWorks</h4><p>Branded content videos produced and distributed by our studio</p></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-icon" style="background:rgba(16,185,129,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div><h4>Creator Network</h4><p>Influencer campaigns with property-specific metrics</p></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-icon" style="background:rgba(236,72,153,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+      <div><h4>Design &amp; Interiors</h4><p>Brand features within design guides and interior showcases</p></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-icon" style="background:rgba(245,158,11,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div><h4>Events &amp; TIPS</h4><p>Allied brand exhibition at India Property Show and GHAR.tv events</p></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-icon" style="background:rgba(59,130,246,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg></div>
+      <div><h4>Services Marketplace</h4><p>Embedded as a service provider in the GHAR.tv services ecosystem</p></div>
+    </div>
+  </div>
+</section></div>
+
+<div class="c"><hr class="divider"></div>
+
+
+<!-- ═══ EXISTING PARTNERS ═══ -->
+<div class="c"><section class="section sec-center">
+  <div class="sec-eyebrow">Already Live</div>
+  <h2 class="sec-title">BrandConnect partnerships in action</h2>
+  <p class="sec-desc">Co-branded service verticals where allied businesses are embedded partners within the GHAR.tv ecosystem.</p>
+
+  <div class="partners-strip">
+    <div class="partner-item"><div class="partner-item-name">Ghar Finance</div><div class="partner-item-cat">Property Loan</div></div>
+    <div class="partner-item"><div class="partner-item-name">Ghar Move</div><div class="partner-item-cat">Packers &amp; Movers</div></div>
+    <div class="partner-item"><div class="partner-item-name">Ghar Design</div><div class="partner-item-cat">Interior &amp; Architecture</div></div>
+  </div>
+</section></div>
+
+
+<!-- ═══ CTA ═══ -->
 <div class="c"><div class="cta-block" id="ctaForm">
-  <h2>Let's build something together</h2>
-  <p>Tell us about your brand and we'll share how GHAR.tv can put you in front of India's most engaged home-buying audience.</p>
+  <h2>Your brand belongs in the home-buying journey</h2>
+  <p>Tell us about your brand. We'll share how BrandConnect can put you in front of India's most engaged real estate audience &mdash; through content, not ads.</p>
   <form class="cta-form" id="nlF" novalidate>
     <div class="cta-row">
       <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required>
       <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required>
     </div>
+    <input type="text" class="cta-inp" placeholder="Company name" required>
     <button type="submit" class="cta-sub" id="nlB">Get in touch</button>
   </form>
-  <p class="cta-note">We'll respond within 24 hours. No spam, ever.</p>
+  <p class="cta-note">Campaigns from &#8377;50K/month. We'll respond within 24 hours.</p>
   <div class="cta-ok" id="nlO" hidden><p>&#10003; Thanks! We'll be in touch shortly.</p></div>
 </div></div>
 
 
-<!-- ═══════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer class="ft"><div class="ft-i">
   <p class="ft-c">&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
   <div class="ft-links"><a href="/intelligence">Intelligence</a><a href="/design">Design</a><a href="/community">Community</a><a href="/ghartalks">GharTalks</a><a href="#">Privacy</a><a href="#">Terms</a></div>
 </div></footer>
 
-
-<!-- JS -->
 <script>
 (function(){
-  // Hamburger
   var btn=document.getElementById('hBtn'),mob=document.getElementById('mob');
   btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('active',o);btn.setAttribute('aria-expanded',o);mob.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''});
   mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');mob.setAttribute('aria-hidden','true');document.body.style.overflow=''})});
-
-  // Form
   var nf=document.getElementById('nlF'),nb=document.getElementById('nlB'),no=document.getElementById('nlO');
   if(nf)nf.addEventListener('submit',function(e){e.preventDefault();nb.disabled=true;nb.textContent='Sending\u2026';setTimeout(function(){nf.style.display='none';no.hidden=false},800)});
 })();
