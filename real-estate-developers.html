@@ -1,617 +1,1193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Developer Mandate - GHAR.tv</title>
-<meta name="description" content="Project Mandates for India's leading developers. Hand-picked premium projects featured across GHAR.tv's editorial, intelligence, video, and event ecosystem.">
-<meta name="theme-color" content="#ffffff">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Developer Mandate - GHAR.tv">
-<meta property="og:description" content="Project Mandates for India's leading developers. Premium projects featured across GHAR.tv's ecosystem.">
-<meta property="og:url" content="https://ghar.tv/real-estate-developers">
-<meta property="og:site_name" content="GHAR.tv">
-<link rel="canonical" href="https://ghar.tv/real-estate-developers">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.onload=null;this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
-<style>
-@font-face{font-family:'Gazpacho';src:url('community/fonts/Gazpacho-Bold.woff2') format('woff2'),url('community/fonts/Gazpacho-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
-:root{
-  --bg:#fff;--ink:#222;--ink2:#717171;--ink3:#b0b0b0;
-  --accent:#ee324b;--accent-soft:rgba(238,50,75,.06);
-  --surface:#f7f7f7;--surface2:#ebebeb;--dark:#222;
-  --ff-d:'Gazpacho',Georgia,serif;
-  --ff:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --r:12px;--rl:16px;--rx:24px;
-  --mw:1600px;--ph:clamp(24px,3vw,80px);
-  --ease:cubic-bezier(.2,0,0,1);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--ff);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:56px}
-img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
-.c{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Real Estate Developers - GHAR.tv</title>
+  <meta name="description" content="India's leading real estate developers — explore top developers across Mumbai, Delhi NCR, Bengaluru, Pune, Hyderabad, Chennai and beyond.">
+  <link rel="canonical" href="https://ghar.tv/real-estate-developers">
 
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--surface2);box-shadow:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.04)}
-.nav-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-logo img{height:28px;width:auto}
-.nav-links{display:none;align-items:center;justify-content:center;gap:2px;list-style:none;flex:1}
-.nav-links a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:6px 11px;border-radius:7px;transition:background .16s,color .16s}
-.nav-links a:hover{background:var(--surface);color:var(--ink)}
-.nav-r{display:none;align-items:center;gap:8px}
-.nav-cta{font-size:13px;font-weight:600;color:#fff;background:var(--ink);padding:8px 20px;border-radius:8px;border:none;display:inline-flex;align-items:center;transition:background .18s,transform .18s}
-.nav-cta:hover{background:var(--accent);transform:translateY(-1px)}
-.ham{display:flex;flex-direction:column;gap:5px;padding:6px;background:none;border:none;z-index:901}
-.ham span{display:block;width:20px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease),opacity .3s var(--ease)}
-.ham.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.mob{position:fixed;inset:0;background:var(--bg);z-index:850;transform:translateX(100%);transition:transform .35s var(--ease);padding:80px 24px 48px}
-.mob.open{transform:translateX(0)}.mob ul{list-style:none}.mob li+li{border-top:1px solid var(--surface2)}
-.mob a{display:block;padding:16px 0;font-size:18px;font-weight:600;color:var(--ink)}.mob .ma{color:var(--accent)}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 
-/* HERO */
-.hero{background:var(--bg);color:var(--ink);padding:clamp(48px,6vw,80px) 0 clamp(40px,5vw,64px)}
-.hero-grid{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px);align-items:center}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ee324b;margin-bottom:20px;padding:8px 20px;border:1px solid rgba(238,50,75,.15);border-radius:24px;background:rgba(238,50,75,.04)}
-.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#ee324b;animation:dotPulse 2s ease-in-out infinite}
-@keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-family:var(--ff-d);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px}
-.hero-sub{font-size:clamp(15px,1.3vw,18px);color:var(--ink2);line-height:1.7;max-width:480px;margin-bottom:32px}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.btn-dark{font-size:15px;font-weight:600;color:#fff;background:var(--ink);padding:14px 32px;border-radius:8px;border:none;transition:all .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-.btn-dark:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(238,50,75,.2)}
-.btn-outline{font-size:15px;font-weight:600;color:var(--ink2);background:transparent;padding:13px 32px;border-radius:8px;border:1px solid var(--surface2);transition:all .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-.btn-outline:hover{border-color:var(--ink);color:var(--ink);background:var(--surface)}
-.hero-visual{display:flex;align-items:center;justify-content:center}
-.hero-svg{width:100%;max-width:480px;height:auto}
-@keyframes hFloat1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes hFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes hFloat3{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hf1{animation:hFloat1 5s ease-in-out infinite}.hf2{animation:hFloat2 6s ease-in-out infinite 1s}.hf3{animation:hFloat3 7s ease-in-out infinite .5s}
+  <style>
+    @font-face{font-family:'Gazpacho';src:url('community/fonts/Gazpacho-Bold.woff2') format('woff2'),url('community/fonts/Gazpacho-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
 
-/* STATS */
-.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);max-width:var(--mw);margin:0 auto;border-top:1px solid var(--surface2);border-bottom:1px solid var(--surface2)}
-.stat-s{text-align:center;padding:clamp(32px,4vw,48px) 16px;border-right:1px solid var(--surface2)}
-.stat-s:last-child{border-right:none}
-.stat-n{font-family:var(--ff-d);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);line-height:1}
-.stat-l{font-size:13px;color:var(--ink2);margin-top:8px;font-weight:500}
+    :root{--bg:#ffffff;--ink:#111111;--ink2:#4b5563;--faint:#9ca3af;--rule:#e8e8e8;--accent:#ee324b;--surface:#f7f7f7;--ff-display:'Gazpacho',Georgia,serif;--ff-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--max-w:1600px;--pad-h:clamp(24px,3vw,80px);--pad-v:clamp(80px,9vw,120px);--sh-sm:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.04)}
 
-/* DIVIDER */
-.divider{height:1px;background:#e5e7eb;border:none;opacity:.5}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:var(--ff-sans);background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+    .cont{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h)}
 
-/* SECTION */
-.sec{padding:clamp(48px,6vw,80px) 0}
-.sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ee324b;margin-bottom:16px}
-.sec-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#ee324b}
-.sec-h{font-family:var(--ff-d);font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:16px;letter-spacing:-.02em}
-.sec-p{font-size:clamp(15px,1.3vw,17px);color:var(--ink2);line-height:1.7;max-width:560px;margin-bottom:clamp(36px,4vw,52px)}
-.sec-center{text-align:center}.sec-center .sec-p{margin-left:auto;margin-right:auto}
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--rule);box-shadow:var(--sh-sm)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h);height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav-logo{display:flex;align-items:baseline;flex-shrink:0}.nav-logo-img{height:28px;width:auto}
+    .nav-logo-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-left:10px}
+    .nav-links{display:none;align-items:center;justify-content:center;gap:2px;list-style:none;flex:1}
+    .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:6px 11px;border-radius:7px;transition:background .16s,color .16s}
+    .nav-links a:hover{background:var(--surface);color:var(--ink)}.nav-links a.active{background:var(--surface);color:var(--ink);font-weight:600}
+    .nav-right{display:none;align-items:center;gap:8px;flex-shrink:0}
+    .nav-btn-join{font-size:13px;font-weight:600;color:#fff;padding:8px 20px;border-radius:8px;background:var(--ink);display:inline-flex;align-items:center;transition:background .18s,transform .18s}
+    .nav-btn-join:hover{background:var(--accent);transform:translateY(-1px)}
+    .nav-hamburger{display:flex;flex-direction:column;gap:5px;padding:6px;background:none;border:none;z-index:901}
+    .nav-hamburger span{display:block;width:20px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease),opacity .3s var(--ease)}
+    .nav-hamburger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .nav-hamburger.active span:nth-child(2){opacity:0}
+    .nav-hamburger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    .mob-menu{position:fixed;inset:0;background:var(--bg);z-index:850;transform:translateX(100%);transition:transform .42s var(--ease);padding:88px 28px 48px}
+    .mob-menu.open{transform:translateX(0)}
+    .mob-links{list-style:none}.mob-links li{border-bottom:1px solid var(--rule)}
+    .mob-links a{display:block;padding:15px 0;font-family:var(--ff-display);font-size:24px;font-weight:700;color:var(--ink)}
+    .mob-links .mob-accent{color:var(--accent)}
 
-/* TWO-COL INFO CARDS */
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:clamp(48px,6vw,80px) 0}
-.info-card{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(28px,3vw,40px);background:var(--bg);transition:all .25s var(--ease);display:flex;flex-direction:column;gap:0}
-.info-card:hover{border-color:transparent;box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-3px)}
-.info-card-visual{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:clamp(12px,1.5vw,20px);margin-bottom:clamp(20px,2.5vw,28px);overflow:hidden}
-.info-card-visual svg{width:100%;max-width:320px;height:auto}
-.info-card .sec-tag{margin-bottom:12px}
-.info-card h2{font-family:var(--ff-d);font-size:clamp(20px,2.2vw,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:14px}
-.info-card p{font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:12px}
-.info-card p:last-child{margin-bottom:0}
+    /* HERO */
+    .hero{position:relative;overflow:hidden;min-height:75vh;display:flex;align-items:center}
+    .hero-bg{position:absolute;inset:0;pointer-events:none;background:var(--bg)}
+    .hero-grid{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+    .hero-grid::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(17,17,17,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(17,17,17,.02) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%)}
+    .hero-split{display:grid;grid-template-columns:1fr;gap:40px;max-width:var(--max-w);margin:0 auto;padding:clamp(40px,5vw,60px) var(--pad-h);width:100%;position:relative;z-index:2;align-items:center}
+    @media(min-width:900px){.hero-split{grid-template-columns:1fr 1fr;gap:64px}}
+    .hero-left{text-align:center}
+    @media(min-width:900px){.hero-left{text-align:left}}
+    .hero-eyebrow,.hero-title,.hero-sub,.hero-ctas{opacity:0;transform:translateY(24px);animation:dvFadeUp .8s var(--ease) forwards}
+    .hero-eyebrow{animation-delay:.1s}.hero-title{animation-delay:.25s}.hero-sub{animation-delay:.4s}.hero-ctas{animation-delay:.55s}
+    @keyframes dvFadeUp{to{opacity:1;transform:none}}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;padding:8px 20px;border:1px solid rgba(238,50,75,.15);border-radius:24px;background:rgba(238,50,75,.04)}
+    .hero-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:dvDotPulse 2s ease-in-out infinite}
+    @keyframes dvDotPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(238,50,75,.3)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(238,50,75,0)}}
+    .hero-title{font-family:var(--ff-display);font-size:clamp(40px,6vw,76px);font-weight:700;line-height:.98;letter-spacing:-.04em;color:var(--ink);margin-bottom:20px}
+    .hero-title span{display:block}
+    .hero-sub{font-size:clamp(15px,1.3vw,18px);line-height:1.75;color:var(--ink2);max-width:480px;margin-bottom:36px}
+    @media(min-width:900px){.hero-sub{margin-left:0;margin-right:auto}}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    @media(min-width:900px){.hero-ctas{justify-content:flex-start}}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:16px 32px;border-radius:10px;font-size:15px;font-weight:600;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(17,17,17,.2)}
+    .btn-primary::after{content:'';position:absolute;inset:0;background:var(--accent);opacity:0;transition:opacity .25s}
+    .btn-primary:hover::after{opacity:1}
+    .btn-primary span{position:relative;z-index:1}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--rule);color:var(--ink);padding:16px 32px;border-radius:10px;font-size:15px;font-weight:500;background:none;transition:border-color .25s,background .25s}
+    .btn-outline:hover{border-color:var(--ink);background:var(--surface)}
 
-/* DELIVERABLE CARDS */
-.fmt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.fmt{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(24px,3vw,32px);background:var(--bg);transition:all .25s var(--ease);text-align:center}
-.fmt:hover{border-color:transparent;box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px)}
-.fmt-icon{width:48px;height:48px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.fmt-icon svg{width:24px;height:24px}
-.fmt h3{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
-.fmt p{font-size:13px;color:var(--ink2);line-height:1.65}
+    /* Hero right SVG */
+    .hero-right{display:flex;align-items:center;justify-content:center;position:relative;min-height:340px;opacity:0;animation:dvFadeUp 1s .3s forwards}
+    .hero-svg{width:100%;max-width:460px;height:auto}
+    .dv-fade{opacity:0;animation:dvFillIn .5s ease-out forwards}
+    .dv-1{animation-delay:.5s}.dv-2{animation-delay:.7s}.dv-3{animation-delay:.9s}.dv-4{animation-delay:1.1s}.dv-5{animation-delay:1.3s}.dv-6{animation-delay:1.5s}
+    @keyframes dvFillIn{to{opacity:1}}
+    @media(max-width:900px){.hero-right{min-height:280px}}
+    @media(max-width:480px){.hero-ctas{flex-direction:column}.btn-primary,.btn-outline{width:100%;justify-content:center}}
 
-/* PROCESS STEPS */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
-.step{position:relative;padding:24px;border:1px solid var(--surface2);border-radius:var(--rl);transition:all .25s var(--ease)}
-.step:hover{border-color:var(--accent);transform:translateY(-3px)}
-.step-num{font-family:var(--ff-d);font-size:36px;font-weight:700;color:#ee324b;opacity:.2;line-height:1;margin-bottom:12px;transition:opacity .25s}
-.step:hover .step-num{opacity:.5}
-.step h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px}
-.step p{font-size:13px;color:var(--ink2);line-height:1.6}
+    /* BREADCRUMB */
+    .bc{padding:14px 0 16px;display:flex;align-items:center;gap:8px}
+    .bc a{font-size:12px;color:var(--faint);font-weight:500}.bc a:hover{color:var(--ink)}
+    .bc-sep{font-size:11px;color:var(--faint)}.bc-cur{font-size:12px;color:var(--ink);font-weight:600}
 
-/* TIERS / PLANS */
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tier{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(28px,3vw,36px);background:var(--bg);position:relative;transition:all .25s var(--ease)}
-.tier:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-3px)}
-.tier.featured{border-color:var(--ink);background:var(--ink);color:#fff}
-.tier.featured h3,.tier.featured .tier-price,.tier.featured .tier-feat{color:#fff}
-.tier.featured .tier-feat svg{color:var(--accent)}
-.tier-badge{position:absolute;top:-12px;right:24px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
-.tier h3{font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
-.tier-price{font-family:var(--ff-d);font-size:36px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:6px}
-.tier-period{font-size:13px;color:var(--ink3);margin-bottom:24px}
-.tier.featured .tier-period{color:rgba(255,255,255,.5)}
-.tier-feats{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.tier-feat{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink2);line-height:1.5}
-.tier-feat svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:1px}
-.tier-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:14px;font-weight:600;padding:12px 20px;border-radius:8px;transition:all .2s;border:1px solid var(--surface2);background:var(--bg);color:var(--ink)}
-.tier-cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.tier.featured .tier-cta{background:var(--accent);color:#fff;border-color:var(--accent)}
-.tier.featured .tier-cta:hover{background:#fff;color:var(--ink);border-color:#fff}
+    /* FILTERS */
+    .filters{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:40px;position:sticky;top:56px;z-index:880;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:16px 0;margin-left:calc(var(--pad-h) * -1);margin-right:calc(var(--pad-h) * -1);padding-left:var(--pad-h);padding-right:var(--pad-h);border-bottom:1px solid transparent;transition:border-color .2s}
+    .filters.stuck{border-bottom-color:var(--rule)}
+    .filter-group{display:flex;flex-direction:column}
+    .filter-select-wrap{position:relative;display:inline-flex}
+    .filter-select{font-family:var(--ff-sans);font-size:13.5px;font-weight:500;color:var(--ink);background:var(--bg);padding:10px 36px 10px 16px;border-radius:8px;border:1.5px solid var(--rule);appearance:none;-webkit-appearance:none;cursor:pointer;min-width:200px;transition:border-color .18s}
+    .filter-select:hover{border-color:rgba(17,17,17,.25)}
+    .filter-select:focus{outline:none;border-color:var(--ink)}
+    .filter-select-arrow{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:10px;height:10px;color:var(--faint);pointer-events:none}
+    .filter-reset{font-family:var(--ff-sans);font-size:12.5px;font-weight:600;color:var(--accent);background:none;border:none;cursor:pointer;padding:10px 0;white-space:nowrap;transition:opacity .18s}
+    .filter-reset:hover{opacity:.7}
+    @media(max-width:520px){.filters{gap:10px}.filter-group{flex:1;min-width:0}.filter-select{width:100%;min-width:0;font-size:12px;padding:9px 30px 9px 12px}.filter-reset{flex-basis:100%;text-align:center}}
 
-/* TESTIMONIAL */
-.testimonial{background:var(--surface);border-radius:var(--rx);padding:clamp(40px,5vw,72px);text-align:center;margin:clamp(40px,5vw,64px) 0}
-.testimonial p{font-family:var(--ff-d);font-size:clamp(20px,2.5vw,28px);font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:24px;letter-spacing:-.01em;max-width:780px;margin-left:auto;margin-right:auto}
-.testimonial-author{font-size:14px;color:var(--ink2);font-weight:500}
-.testimonial-author strong{color:var(--ink);font-weight:700}
+    /* SECTION */
+    .sec{padding:80px 0;position:relative}
+    .sec-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;gap:16px;flex-wrap:wrap}
+    .sec-header__title{font-family:var(--ff-display);font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.15;color:var(--ink)}
+    .sec-header__count{font-size:13px;color:var(--faint);font-weight:500}
 
-/* FAQ */
-.faqs{max-width:780px;margin:0 auto}
-.faq{border-bottom:1px solid var(--surface2);padding:20px 0}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;color:var(--ink);padding:6px 0}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';font-size:24px;font-weight:300;color:var(--ink2);transition:transform .25s}
-.faq[open] summary::after{content:'\2212'}
-.faq p{font-size:14px;color:var(--ink2);line-height:1.7;padding:12px 0 4px;max-width:640px}
+    /* DEVELOPER GRID */
+    .dev-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    @media(min-width:520px){.dev-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.dev-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:1200px){.dev-grid{grid-template-columns:repeat(4,1fr)}}
 
-/* CTA */
-.cta-sec{position:relative;overflow:hidden;padding:clamp(64px,8vw,100px) 0;background:#111}
-.cta-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 30% 50%,rgba(238,50,75,.08),transparent 70%),radial-gradient(ellipse 40% 40% at 80% 60%,rgba(59,130,246,.06),transparent 70%)}
-.cta-inner{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:1}
-@media(min-width:900px){.cta-inner{grid-template-columns:1fr 1fr;gap:64px;align-items:center}}
-.cta-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-.cta-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:dotPulse 2s ease-in-out infinite}
-.cta-sec h2{font-family:var(--ff-d);font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:16px}
-.cta-desc{font-size:15px;line-height:1.75;color:rgba(255,255,255,.55);margin-bottom:28px;max-width:480px}
-.cta-feats{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
-.cta-feat{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
-.cta-feat svg{color:var(--accent);flex-shrink:0}
-.cta-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:clamp(28px,4vw,40px)}
-.cta-form{display:flex;flex-direction:column;gap:14px}
-.cta-row{display:grid;grid-template-columns:1fr;gap:12px}
-@media(min-width:500px){.cta-row{grid-template-columns:1fr 1fr}}
-.cta-inp{font-family:var(--ff);font-size:14px;padding:14px 18px;border-radius:10px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#fff;transition:border-color .2s}
-.cta-inp::placeholder{color:rgba(255,255,255,.3)}.cta-inp:focus{outline:none;border-color:rgba(255,255,255,.25)}
-.cta-sub{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ff);font-size:15px;font-weight:600;color:#111;background:#fff;padding:14px 28px;border-radius:8px;border:none;cursor:pointer;transition:all .2s}
-.cta-sub:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(238,50,75,.25)}
-.cta-note{font-size:11.5px;color:rgba(255,255,255,.3);text-align:center}
-.cta-ok{text-align:center;padding:20px 0}.cta-ok p{font-size:15px;color:rgba(255,255,255,.7)}
+    /* DEVELOPER CARD */
+    .dev-card{display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--rule);border-radius:16px;overflow:hidden;transition:border-color .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+    .dev-card:hover{border-color:rgba(17,17,17,.18);box-shadow:0 8px 32px rgba(0,0,0,.08),0 2px 8px rgba(0,0,0,.04);transform:translateY(-3px)}
+    .dev-card__logo-wrap{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:var(--surface);display:flex;align-items:center;justify-content:center}
+    .dev-card__logo{max-width:60%;max-height:50%;object-fit:contain;transition:transform .4s var(--ease)}
+    .dev-card:hover .dev-card__logo{transform:scale(1.06)}
+    .dev-card__tier-badge{position:absolute;top:12px;left:12px;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:5px 10px;border-radius:6px;line-height:1.2;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .dev-card__tier-badge.tier-luxury{background:rgba(17,17,17,.78)}
+    .dev-card__tier-badge.tier-premium{background:rgba(238,50,75,.85)}
+    .dev-card__tier-badge.tier-mid{background:rgba(59,130,246,.85)}
+    .dev-card__tier-badge.tier-listed{background:rgba(16,185,129,.85)}
+    .dev-card__body{padding:20px;display:flex;flex-direction:column;flex:1}
+    .dev-card__name{font-family:var(--ff-display);font-size:18px;font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:4px}
+    .dev-card__type{font-size:13px;font-weight:500;color:var(--ink2);line-height:1.5;margin-bottom:12px}
+    .dev-card__meta{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--faint);font-weight:500;margin-top:auto}
+    .dev-card__meta-icon{width:13px;height:13px;flex-shrink:0;color:var(--faint)}
+    .dev-card__arrow{margin-left:auto;color:var(--rule);transition:color .2s,transform .2s}
+    .dev-card:hover .dev-card__arrow{color:var(--ink);transform:translateX(3px)}
 
-/* FOOTER */
-.ft{background:#111;padding:36px 0}
-.ft-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
-.ft-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid rgba(255,255,255,.08)}
-.ft-logo{height:28px;width:auto;filter:brightness(0) invert(1)}
-.ft-tagline{font-size:12px;color:rgba(255,255,255,.35);margin-top:4px}
-.ft-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
-.ft-nav a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:all .2s}
-.ft-nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
-.ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.ft-bot p{font-size:11px;color:rgba(255,255,255,.22)}
-.ft-bot-links{display:flex;gap:18px}
-.ft-bot-links a{font-size:11.5px;color:rgba(255,255,255,.25);transition:color .2s}
-.ft-bot-links a:hover{color:rgba(255,255,255,.5)}
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.revealed{opacity:1;transform:none}
+    .reveal-item{opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+    .reveal-item.revealed{opacity:1;transform:none}
+    .reveal-item:nth-child(2).revealed{transition-delay:.06s}
+    .reveal-item:nth-child(3).revealed{transition-delay:.12s}
+    .reveal-item:nth-child(4).revealed{transition-delay:.18s}
+    .reveal-item:nth-child(5).revealed{transition-delay:.24s}
+    .reveal-item:nth-child(6).revealed{transition-delay:.30s}
+    .reveal-item:nth-child(7).revealed{transition-delay:.36s}
+    .reveal-item:nth-child(8).revealed{transition-delay:.42s}
 
-/* RESPONSIVE */
-@media(min-width:1024px){.nav-i{padding:0 32px;height:62px;gap:32px}.nav-links{display:flex}.nav-r{display:flex}.ham{display:none}}
-@media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;gap:32px}
-  .hero-visual{display:none}
-  .fmt-grid{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .tiers{grid-template-columns:1fr}
-  .stats-strip{grid-template-columns:repeat(2,1fr)}
-  .stat-s:nth-child(2){border-right:none}
-  .ft-top{flex-direction:column;align-items:flex-start}
-  .ft-bot{flex-direction:column;align-items:flex-start}
-}
-@media(max-width:600px){
-  .hero h1{font-size:32px}
-  .info-grid{grid-template-columns:1fr}
-  .fmt-grid{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
-  .stats-strip{grid-template-columns:repeat(2,1fr)}.stat-s{padding:24px 12px}
-  .stat-n{font-size:28px}
-  .mob{padding:80px 16px 40px}
-  .cta-row{flex-direction:column}
-}
-</style>
+    /* EMPTY STATE */
+    .empty{text-align:center;padding:64px 24px;display:none}
+    .empty.show{display:block}
+    .empty p{font-size:15px;color:var(--ink2);margin-bottom:16px}
+
+    /* CTA MODERN */
+    .cta-modern{position:relative;overflow:hidden;padding:clamp(64px,8vw,100px) 0;background:#111}
+    .cta-modern__bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 30% 50%,rgba(238,50,75,.08),transparent 70%),radial-gradient(ellipse 40% 40% at 80% 60%,rgba(59,130,246,.06),transparent 70%)}
+    .cta-modern__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h);display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:1}
+    @media(min-width:900px){.cta-modern__inner{grid-template-columns:1fr 1fr;gap:64px;align-items:center}}
+    .cta-modern__eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ee324b;margin-bottom:20px}
+    .cta-modern__eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#ee324b}
+    .cta-modern__title{font-family:var(--ff-display);font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:16px}
+    .cta-modern__desc{font-size:15px;line-height:1.75;color:rgba(255,255,255,.55);margin-bottom:28px;max-width:480px}
+    .cta-modern__features{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+    .cta-modern__feature{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
+    .cta-modern__feature svg{color:#ee324b;flex-shrink:0}
+    .cta-modern__form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:clamp(28px,4vw,40px)}
+    .cta-modern__form{display:flex;flex-direction:column;gap:14px}
+    .cta-modern__input-row{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:500px){.cta-modern__input-row{grid-template-columns:1fr 1fr}}
+    .cta-modern__inp{font-family:var(--ff-sans);font-size:14px;padding:14px 18px;border-radius:10px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#fff;transition:border-color .2s}
+    .cta-modern__inp::placeholder{color:rgba(255,255,255,.3)}
+    .cta-modern__inp:focus{outline:none;border-color:rgba(255,255,255,.25)}
+    .cta-modern__btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ff-sans);font-size:15px;font-weight:600;color:#111;background:#fff;padding:15px 28px;border-radius:10px;border:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+    .cta-modern__btn:hover{background:#ee324b;color:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(238,50,75,.25)}
+    .cta-modern__note{font-size:11.5px;color:rgba(255,255,255,.3);text-align:center}
+    .cta-modern__ok{text-align:center;padding:20px 0}
+    .cta-modern__ok-icon{font-size:36px;color:#22c55e;margin-bottom:12px}
+    .cta-modern__ok p{font-size:15px;color:rgba(255,255,255,.7)}
+
+    /* FOOTER */
+    .footer{background:#111;border-top:none;padding:36px 0}
+    .ft-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h)}
+    .ft-top{display:flex;flex-direction:column;gap:24px;padding-bottom:32px;border-bottom:1px solid #1a1a1a;margin-bottom:24px}
+    @media(min-width:744px){.ft-top{flex-direction:row;align-items:flex-start;justify-content:space-between}}
+    .ft-logo-img{height:24px;width:auto;margin-bottom:8px;filter:brightness(0) invert(1)}
+    .ft-tag{font-size:12px;color:rgba(255,255,255,.3)}
+    .ft-nav{display:flex;gap:24px;flex-wrap:wrap}.ft-nav a{font-size:13px;font-weight:500;color:rgba(255,255,255,.45)}.ft-nav a:hover{color:#fff}
+    .ft-bot{display:flex;flex-direction:column;gap:8px;font-size:12px;color:rgba(255,255,255,.2)}
+    @media(min-width:744px){.ft-bot{flex-direction:row;justify-content:space-between}}
+    .ft-bot-links{display:flex;gap:16px}.ft-bot-links a{font-size:12px;color:rgba(255,255,255,.2)}.ft-bot-links a:hover{color:rgba(255,255,255,.6)}
+
+    @media(min-width:1024px){.nav-inner{padding:0 32px;height:62px;gap:32px}.nav-links{display:flex}.nav-right{display:flex}.nav-hamburger{display:none}.filters{top:62px}}
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav class="nav"><div class="nav-i">
-  <a href="/" class="nav-logo"><img src="community/logo.svg" alt="GHAR.tv"></a>
-  <ul class="nav-links" role="list"><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li></ul>
-  <div class="nav-r"><a href="#ctaBlock" class="nav-cta">Request a Mandate</a></div>
-  <button class="ham" id="hBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</div></nav>
-<div class="mob" id="mob" aria-hidden="true"><ul><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li><li><a href="#ctaBlock" class="ma">Request a Mandate &rarr;</a></li></ul></div>
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="community/logo.svg" alt="GHAR.tv" class="nav-logo-img"><span class="nav-logo-tag">Developers</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="/intelligence">Intelligence</a></li>
+      <li><a href="/design">Design</a></li>
+      <li><a href="/community">Community</a></li>
+      <li><a href="/ghartalks">GharTalks</a></li>
+      <li><a href="/videoworks">VideoWorks</a></li>
+      <li><a href="/gharevents">GharEvents</a></li>
+      <li><a href="/industry-voices">Industry Voices</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/join" class="nav-btn-join">Join Now</a>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <ul class="mob-links">
+    <li><a href="/intelligence">Intelligence</a></li>
+    <li><a href="/design">Design</a></li>
+    <li><a href="/community">Community</a></li>
+    <li><a href="/ghartalks">GharTalks</a></li>
+    <li><a href="/videoworks">VideoWorks</a></li>
+    <li><a href="/gharevents">GharEvents</a></li>
+    <li><a href="/industry-voices">Industry Voices</a></li>
+    <li><a href="/join" class="mob-accent">Join Now &rarr;</a></li>
+  </ul>
+</div>
+
+
+<!-- Breadcrumb -->
+<div class="cont" style="padding-top:72px;">
+  <nav class="bc" aria-label="Breadcrumb">
+    <a href="/">GHAR.tv</a>
+    <span class="bc-sep">&rsaquo;</span>
+    <span class="bc-cur">Real Estate Developers</span>
+  </nav>
+</div>
 
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-tag"><span class="hero-tag-dot"></span> Developer Mandate</div>
-      <h1>For developers building the future of Indian real estate.</h1>
-      <p class="hero-sub">Project Mandates that place your launches at the centre of GHAR.tv's editorial, intelligence, video, and event ecosystem &mdash; reaching India's most engaged property buyers and investors.</p>
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="hero-split">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span> Real Estate Developers</div>
+      <h1 class="hero-title">India's Top<span>Real Estate Developers</span></h1>
+      <p class="hero-sub">From Mumbai's luxury skyline to Bengaluru's tech corridors &mdash; explore India's leading developers shaping how millions live, work, and invest.</p>
       <div class="hero-ctas">
-        <a href="#ctaBlock" class="btn-dark">Request a Mandate <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        <a href="#deliverables" class="btn-outline">See Deliverables <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
+        <a href="#dev-listing" class="btn-primary"><span>Explore Developers &rarr;</span></a>
+        <a href="/community/brands.html" class="btn-outline">All Brands</a>
       </div>
     </div>
-    <div class="hero-visual">
+
+    <div class="hero-right">
       <svg class="hero-svg" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Project listing card -->
-        <g class="hf1">
-          <rect x="40" y="10" width="220" height="160" rx="16" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-          <rect x="60" y="30" width="180" height="80" rx="8" fill="#f3f4f6"/>
-          <rect x="68" y="40" width="50" height="14" rx="7" fill="#ee324b" opacity=".15"/>
-          <text x="93" y="50" text-anchor="middle" font-size="7" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">FEATURED</text>
-          <!-- Project building lines -->
-          <path d="M70 100h60V80h-30V70h-30z" fill="#fff" stroke="#d1d5db" stroke-width=".8" opacity=".5"/>
-          <path d="M150 100h70V72h-35V62h-35z" fill="#fff" stroke="#d1d5db" stroke-width=".8" opacity=".7"/>
-          <rect x="60" y="124" width="120" height="8" rx="4" fill="#e5e7eb"/>
-          <rect x="60" y="140" width="80" height="6" rx="3" fill="#f3f4f6"/>
-          <rect x="60" y="152" width="100" height="6" rx="3" fill="#f3f4f6"/>
+        <!-- City skyline base -->
+        <g class="dv-fade dv-1">
+          <line x1="40" y1="290" x2="380" y2="290" stroke="#e5e7eb" stroke-width="1"/>
         </g>
 
-        <!-- Stats card -->
-        <g class="hf2">
-          <rect x="270" y="20" width="140" height="100" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-          <text x="290" y="50" font-size="24" font-weight="700" fill="#222" font-family="Inter,sans-serif">2.4M</text>
-          <text x="290" y="64" font-size="8" fill="#b0b0b0" font-family="Inter,sans-serif">project views</text>
-          <polyline points="290,90 305,82 320,86 335,75 350,80 365,72 380,76 395,68" stroke="#ee324b" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
-          <rect x="290" y="100" width="60" height="10" rx="5" fill="#ee324b" opacity=".08"/>
+        <!-- Tall tower 1 -->
+        <g class="dv-fade dv-2">
+          <rect x="60" y="120" width="40" height="170" rx="2" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+          <rect x="68" y="132" width="6" height="8" fill="#ee324b" opacity=".25"/>
+          <rect x="78" y="132" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="88" y="132" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="68" y="148" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="78" y="148" width="6" height="8" fill="#ee324b" opacity=".18"/>
+          <rect x="88" y="148" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="68" y="164" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="78" y="164" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="88" y="164" width="6" height="8" fill="#ee324b" opacity=".22"/>
+          <rect x="68" y="180" width="6" height="8" fill="#ee324b" opacity=".15"/>
+          <rect x="78" y="180" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="88" y="180" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="68" y="196" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="78" y="196" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="88" y="196" width="6" height="8" fill="#ee324b" opacity=".18"/>
+          <rect x="68" y="212" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="78" y="212" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="88" y="212" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="68" y="228" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="78" y="228" width="6" height="8" fill="#ee324b" opacity=".12"/>
+          <rect x="88" y="228" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="68" y="244" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="78" y="244" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="88" y="244" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="68" y="260" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="78" y="260" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="88" y="260" width="6" height="8" fill="#ee324b" opacity=".15"/>
+          <rect x="68" y="276" width="24" height="6" fill="#222" opacity=".1"/>
         </g>
 
-        <!-- Lead card -->
-        <g class="hf3">
-          <rect x="20" y="200" width="200" height="80" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-          <circle cx="56" cy="240" r="20" fill="#f3f4f6"/>
-          <circle cx="56" cy="234" r="7" fill="#e5e7eb"/>
-          <path d="M44 252a12 12 0 0124 0" fill="#e5e7eb"/>
-          <rect x="86" y="226" width="100" height="8" rx="4" fill="#d1d5db"/>
-          <rect x="86" y="240" width="70" height="6" rx="3" fill="#e5e7eb"/>
-          <rect x="86" y="254" width="50" height="14" rx="7" fill="#16a34a" opacity=".12"/>
-          <text x="111" y="263" text-anchor="middle" font-size="7" font-weight="700" fill="#16a34a" font-family="Inter,sans-serif">QUALIFIED</text>
+        <!-- Mid tower -->
+        <g class="dv-fade dv-3">
+          <rect x="120" y="170" width="50" height="120" rx="2" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+          <rect x="130" y="184" width="8" height="8" fill="#3b82f6" opacity=".22"/>
+          <rect x="142" y="184" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="154" y="184" width="8" height="8" fill="#3b82f6" opacity=".15"/>
+          <rect x="130" y="200" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="142" y="200" width="8" height="8" fill="#3b82f6" opacity=".18"/>
+          <rect x="154" y="200" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="130" y="216" width="8" height="8" fill="#3b82f6" opacity=".15"/>
+          <rect x="142" y="216" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="154" y="216" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="130" y="232" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="142" y="232" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="154" y="232" width="8" height="8" fill="#3b82f6" opacity=".22"/>
+          <rect x="130" y="248" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="142" y="248" width="8" height="8" fill="#3b82f6" opacity=".15"/>
+          <rect x="154" y="248" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="130" y="264" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="142" y="264" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="154" y="264" width="8" height="8" fill="#3b82f6" opacity=".18"/>
         </g>
 
-        <!-- Video preview -->
-        <g class="hf1">
-          <rect x="240" y="220" width="160" height="100" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-          <rect x="256" y="236" width="128" height="56" rx="8" fill="#222"/>
-          <circle cx="320" cy="264" r="14" fill="#fff"/>
-          <polygon points="316,258 328,264 316,270" fill="#222"/>
-          <rect x="256" y="300" width="80" height="6" rx="3" fill="#d1d5db"/>
-          <rect x="346" y="298" width="40" height="10" rx="5" fill="#ee324b" opacity=".1"/>
+        <!-- Tallest tower (centerpiece) -->
+        <g class="dv-fade dv-2">
+          <polygon points="210,80 232,80 232,290 188,290 188,80" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+          <line x1="210" y1="80" x2="210" y2="80" stroke="#d1d5db" stroke-width="1"/>
+          <rect x="194" y="98" width="8" height="8" fill="#ee324b" opacity=".25"/>
+          <rect x="206" y="98" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="218" y="98" width="8" height="8" fill="#ee324b" opacity=".18"/>
+          <rect x="194" y="114" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="206" y="114" width="8" height="8" fill="#ee324b" opacity=".22"/>
+          <rect x="218" y="114" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="194" y="130" width="8" height="8" fill="#ee324b" opacity=".18"/>
+          <rect x="206" y="130" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="218" y="130" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="194" y="146" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="206" y="146" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="218" y="146" width="8" height="8" fill="#ee324b" opacity=".15"/>
+          <rect x="194" y="162" width="8" height="8" fill="#ee324b" opacity=".22"/>
+          <rect x="206" y="162" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="218" y="162" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="194" y="178" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="206" y="178" width="8" height="8" fill="#ee324b" opacity=".18"/>
+          <rect x="218" y="178" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="194" y="194" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="206" y="194" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="218" y="194" width="8" height="8" fill="#ee324b" opacity=".18"/>
+          <rect x="194" y="210" width="8" height="8" fill="#ee324b" opacity=".15"/>
+          <rect x="206" y="210" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="218" y="210" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="194" y="226" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="206" y="226" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="218" y="226" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="194" y="242" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="206" y="242" width="8" height="8" fill="#ee324b" opacity=".22"/>
+          <rect x="218" y="242" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="194" y="258" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="206" y="258" width="8" height="8" fill="#e5e7eb"/>
+          <rect x="218" y="258" width="8" height="8" fill="#e5e7eb"/>
+          <!-- crown -->
+          <line x1="210" y1="80" x2="210" y2="60" stroke="#ee324b" stroke-width="1.5" opacity=".5"/>
+          <circle cx="210" cy="58" r="3" fill="#ee324b" opacity=".5"/>
         </g>
 
-        <!-- Award badge -->
-        <g class="hf2">
-          <rect x="80" y="310" width="140" height="56" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-          <circle cx="106" cy="338" r="14" fill="#ee324b" opacity=".08"/>
-          <path d="M99 336l5 5 9-9" stroke="#ee324b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="128" y="328" width="76" height="7" rx="3.5" fill="#222"/>
-          <rect x="128" y="342" width="60" height="5" rx="2.5" fill="#b0b0b0"/>
+        <!-- Right tower -->
+        <g class="dv-fade dv-4">
+          <rect x="252" y="150" width="44" height="140" rx="2" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+          <rect x="262" y="166" width="6" height="8" fill="#10b981" opacity=".22"/>
+          <rect x="272" y="166" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="282" y="166" width="6" height="8" fill="#10b981" opacity=".15"/>
+          <rect x="262" y="182" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="272" y="182" width="6" height="8" fill="#10b981" opacity=".18"/>
+          <rect x="282" y="182" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="262" y="198" width="6" height="8" fill="#10b981" opacity=".15"/>
+          <rect x="272" y="198" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="282" y="198" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="262" y="214" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="272" y="214" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="282" y="214" width="6" height="8" fill="#10b981" opacity=".22"/>
+          <rect x="262" y="230" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="272" y="230" width="6" height="8" fill="#10b981" opacity=".15"/>
+          <rect x="282" y="230" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="262" y="246" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="272" y="246" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="282" y="246" width="6" height="8" fill="#10b981" opacity=".18"/>
+          <rect x="262" y="262" width="6" height="8" fill="#10b981" opacity=".15"/>
+          <rect x="272" y="262" width="6" height="8" fill="#e5e7eb"/>
+          <rect x="282" y="262" width="6" height="8" fill="#e5e7eb"/>
         </g>
 
-        <!-- Connecting dots -->
-        <circle cx="226" cy="190" r="3" fill="#e5e7eb"/>
-        <circle cx="265" cy="180" r="2" fill="#d1d5db"/>
+        <!-- Far right small tower -->
+        <g class="dv-fade dv-5">
+          <rect x="310" y="200" width="40" height="90" rx="2" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+          <rect x="318" y="214" width="6" height="6" fill="#8b5cf6" opacity=".22"/>
+          <rect x="328" y="214" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="338" y="214" width="6" height="6" fill="#8b5cf6" opacity=".15"/>
+          <rect x="318" y="226" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="328" y="226" width="6" height="6" fill="#8b5cf6" opacity=".18"/>
+          <rect x="338" y="226" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="318" y="238" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="328" y="238" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="338" y="238" width="6" height="6" fill="#8b5cf6" opacity=".22"/>
+          <rect x="318" y="250" width="6" height="6" fill="#8b5cf6" opacity=".15"/>
+          <rect x="328" y="250" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="338" y="250" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="318" y="262" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="328" y="262" width="6" height="6" fill="#e5e7eb"/>
+          <rect x="338" y="262" width="6" height="6" fill="#e5e7eb"/>
+        </g>
+
+        <!-- Construction crane (decorative) -->
+        <g class="dv-fade dv-6">
+          <line x1="40" y1="290" x2="40" y2="100" stroke="#9ca3af" stroke-width="1.2"/>
+          <line x1="40" y1="100" x2="80" y2="100" stroke="#9ca3af" stroke-width="1.2"/>
+          <line x1="40" y1="100" x2="20" y2="115" stroke="#9ca3af" stroke-width=".8"/>
+          <line x1="60" y1="100" x2="60" y2="118" stroke="#9ca3af" stroke-width=".6"/>
+          <rect x="56" y="118" width="8" height="6" stroke="#9ca3af" stroke-width=".7" fill="none"/>
+        </g>
+
+        <!-- Floating stat badge -->
+        <g class="dv-fade dv-6">
+          <rect x="282" y="38" width="106" height="48" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <text x="294" y="58" font-size="14" font-weight="700" fill="#222" font-family="Inter,sans-serif">100+</text>
+          <text x="294" y="72" font-size="7" fill="#b0b0b0" font-family="Inter,sans-serif">Top Developers</text>
+          <circle cx="370" cy="62" r="10" fill="#ee324b" opacity=".1"/>
+          <path d="M365 62l3 3 6-6" stroke="#ee324b" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Cloud accents -->
+        <g opacity=".25" class="dv-fade dv-6">
+          <ellipse cx="120" cy="60" rx="22" ry="6" fill="#e5e7eb"/>
+          <ellipse cx="350" cy="120" rx="18" ry="5" fill="#e5e7eb"/>
+        </g>
       </svg>
     </div>
   </div>
 </section>
 
 
-<!-- STATS -->
-<div class="stats-strip">
-  <div class="stat-s"><div class="stat-n">100+</div><div class="stat-l">Active mandates</div></div>
-  <div class="stat-s"><div class="stat-n">15</div><div class="stat-l">Cities covered</div></div>
-  <div class="stat-s"><div class="stat-n">2.4M</div><div class="stat-l">Monthly project views</div></div>
-  <div class="stat-s"><div class="stat-n">8.2K</div><div class="stat-l">Qualified leads/yr</div></div>
-</div>
-
-
-<!-- WHAT IS IT + WHY GHAR.tv — side by side cards -->
-<div class="c"><div class="info-grid">
-
-  <div class="info-card">
-    <div class="info-card-visual">
-      <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Project mandate visual -->
-        <g style="animation:hFloat2 6s ease-in-out infinite">
-          <rect x="60" y="20" width="200" height="140" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-          <rect x="76" y="36" width="168" height="56" rx="6" fill="#f3f4f6"/>
-          <rect x="84" y="46" width="48" height="14" rx="7" fill="#ee324b" opacity=".12"/>
-          <text x="108" y="56" text-anchor="middle" font-size="7" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">MANDATE</text>
-          <path d="M84 80h32V64h-16V58h-16z" stroke="#d1d5db" stroke-width="1" fill="none"/>
-          <path d="M124 80h44V58h-22V50h-22z" stroke="#d1d5db" stroke-width="1" fill="none"/>
-          <path d="M176 80h60V46h-30V36h-30z" stroke="#d1d5db" stroke-width="1" fill="none"/>
-          <rect x="76" y="104" width="120" height="6" rx="3" fill="#e5e7eb"/>
-          <rect x="76" y="118" width="80" height="5" rx="2.5" fill="#f3f4f6"/>
-          <rect x="76" y="132" width="100" height="5" rx="2.5" fill="#f3f4f6"/>
-        </g>
-        <g style="animation:hFloat1 5s ease-in-out infinite">
-          <rect x="220" y="6" width="86" height="40" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-          <text x="232" y="24" font-size="14" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">3-12mo</text>
-          <text x="232" y="34" font-size="6" fill="#b0b0b0" font-family="Inter,sans-serif">campaign</text>
-        </g>
-      </svg>
-    </div>
-    <div class="sec-tag">What is Developer Mandate</div>
-    <h2>End-to-end project marketing, embedded in editorial</h2>
-    <p>Developer Mandate is a curated programme for India's leading developers. Each mandate is a 3&ndash;12 month engagement that places your project at the centre of GHAR.tv's editorial, intelligence, video, and event coverage.</p>
-    <p>Not display advertising. Not paid listings. A premium media partnership where your project is featured the way GHAR.tv covers any other landmark development.</p>
-  </div>
-
-  <div class="info-card">
-    <div class="info-card-visual">
-      <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g style="animation:hFloat2 6s ease-in-out infinite 1s">
-          <rect x="20" y="20" width="280" height="140" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-          <text x="40" y="50" font-size="22" font-weight="700" fill="#222" font-family="Inter,sans-serif">8.2K</text>
-          <text x="40" y="62" font-size="7" fill="#b0b0b0" font-family="Inter,sans-serif">qualified leads/yr</text>
-          <rect x="40" y="76" width="40" height="8" rx="4" fill="#16a34a" opacity=".15"/>
-          <text x="60" y="83" text-anchor="middle" font-size="6.5" font-weight="700" fill="#16a34a" font-family="Inter,sans-serif">+34%</text>
-
-          <text x="160" y="50" font-size="22" font-weight="700" fill="#222" font-family="Inter,sans-serif">2.4M</text>
-          <text x="160" y="62" font-size="7" fill="#b0b0b0" font-family="Inter,sans-serif">project views</text>
-          <rect x="160" y="76" width="40" height="8" rx="4" fill="#ee324b" opacity=".12"/>
-          <text x="180" y="83" text-anchor="middle" font-size="6.5" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">+62%</text>
-
-          <!-- Bar chart -->
-          <rect x="40" y="120" width="14" height="22" rx="3" fill="#e5e7eb"/>
-          <rect x="62" y="110" width="14" height="32" rx="3" fill="#d1d5db"/>
-          <rect x="84" y="100" width="14" height="42" rx="3" fill="#ee324b" opacity=".25"/>
-          <rect x="106" y="92" width="14" height="50" rx="3" fill="#ee324b" opacity=".4"/>
-          <rect x="128" y="86" width="14" height="56" rx="3" fill="#ee324b" opacity=".55"/>
-          <polyline points="46,118 70,108 92,98 114,90 136,84 160,80 184,76 208,80 232,84 256,80 278,76" stroke="#ee324b" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".4"/>
-        </g>
-      </svg>
-    </div>
-    <div class="sec-tag">Why GHAR.tv</div>
-    <h2>India's most engaged real estate audience</h2>
-    <p>GHAR.tv readers are actively researching property decisions &mdash; comparing projects, calculating EMIs, reading rankings. Not casual browsers. Not generic property portal traffic.</p>
-    <p>Every Developer Mandate compounds: editorial discovery + intelligence rankings + video walkthroughs + GharTalks interviews + event presence &mdash; across the full buying funnel.</p>
-  </div>
-
-</div></div>
-
-
-<!-- WHAT YOU GET / DELIVERABLES -->
-<div class="c"><section class="sec sec-center" id="deliverables">
-  <div class="sec-tag">Deliverables</div>
-  <h2 class="sec-h">What's included in every mandate</h2>
-  <p class="sec-p">Each mandate combines content, video, intelligence, and events into a single cohesive engagement.</p>
-
-  <div class="fmt-grid">
-    <div class="fmt">
-      <div class="fmt-icon" style="background:rgba(238,50,75,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#ee324b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-      <h3>Project Editorial</h3>
-      <p>In-depth editorial features within Intelligence, Design, and Editorial &mdash; covering positioning, architecture, location intel.</p>
-    </div>
-    <div class="fmt">
-      <div class="fmt-icon" style="background:rgba(139,92,246,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-      <h3>VideoWorks Production</h3>
-      <p>In-house produced project walkthroughs, drone footage, and developer interviews distributed across the GHAR.tv ecosystem.</p>
-    </div>
-    <div class="fmt">
-      <div class="fmt-icon" style="background:rgba(59,130,246,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <h3>Intelligence Rankings</h3>
-      <p>Eligibility for inclusion in city-level rankings, sector reports, and infrastructure intelligence briefings.</p>
-    </div>
-    <div class="fmt">
-      <div class="fmt-icon" style="background:rgba(16,185,129,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 9h.01M15 9h.01M9.5 15a3.5 3.5 0 005 0"/></svg></div>
-      <h3>GharTalks Interviews</h3>
-      <p>Long-form podcast and video interview slots with the founder, MD, or design head &mdash; distributed across audio &amp; video platforms.</p>
-    </div>
-    <div class="fmt">
-      <div class="fmt-icon" style="background:rgba(245,158,11,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-      <h3>Event Inclusion</h3>
-      <p>Featured presence at India Property Show, Luxury Show, and signature GHAR.tv events &mdash; reaching buyers at decision moments.</p>
-    </div>
-    <div class="fmt">
-      <div class="fmt-icon" style="background:rgba(234,88,12,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
-      <h3>Lead Pipeline</h3>
-      <p>High-intent buyer enquiries delivered directly &mdash; with property-specific qualification, not vanity numbers.</p>
-    </div>
-  </div>
-</section></div>
-
-<div class="c"><hr class="divider"></div>
-
-
-<!-- HOW IT WORKS -->
-<div class="c"><section class="sec sec-center">
-  <div class="sec-tag">Process</div>
-  <h2 class="sec-h">How a mandate works</h2>
-  <p class="sec-p">From first conversation to live coverage in under 30 days.</p>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <h4>Discovery</h4>
-      <p>We meet your team to understand the project, audience, and launch timeline.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <h4>Mandate Brief</h4>
-      <p>Custom programme built around your project &mdash; editorial, video, events, leads.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <h4>Production</h4>
-      <p>Our editorial and video teams produce content. Distribution across the ecosystem begins.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <h4>Pipeline</h4>
-      <p>Qualified leads &amp; engagement metrics delivered weekly through your dedicated dashboard.</p>
-    </div>
-  </div>
-</section></div>
-
-<div class="c"><hr class="divider"></div>
-
-
-<!-- TIERS -->
-<div class="c"><section class="sec sec-center">
-  <div class="sec-tag">Engagement Tiers</div>
-  <h2 class="sec-h">Pick the mandate that fits your launch</h2>
-  <p class="sec-p">Three tiers, each scaling content depth, video volume, event presence, and lead pipeline.</p>
-
-  <div class="tiers">
-    <div class="tier">
-      <h3>Project Mandate</h3>
-      <div class="tier-price">&#8377;5L<span style="font-size:14px;color:var(--ink3);font-weight:400">/mo</span></div>
-      <div class="tier-period">3-month minimum &middot; ideal for single launches</div>
-      <div class="tier-feats">
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 2 editorial features</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1 VideoWorks production</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Intelligence inclusion</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lead pipeline access</div>
+<!-- DEVELOPERS LISTING -->
+<section class="sec" id="dev-listing">
+  <div class="cont">
+    <div class="sec-header reveal">
+      <div>
+        <h2 class="sec-header__title">Developer Directory</h2>
       </div>
-      <a href="#ctaBlock" class="tier-cta">Request a Mandate</a>
+      <div class="sec-header__count" id="resultCount">36 developers across India</div>
     </div>
 
-    <div class="tier featured">
-      <span class="tier-badge">Most Popular</span>
-      <h3>Portfolio Mandate</h3>
-      <div class="tier-price">&#8377;15L<span style="font-size:14px;color:rgba(255,255,255,.5);font-weight:400">/mo</span></div>
-      <div class="tier-period">6-month minimum &middot; for multi-project portfolios</div>
-      <div class="tier-feats">
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 6 editorial features</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 VideoWorks productions</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> GharTalks interview slot</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Event sponsorship inclusion</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority lead pipeline</div>
+    <!-- Filters -->
+    <div class="filters" id="filtersBar">
+      <div class="filter-group">
+        <div class="filter-select-wrap">
+          <select class="filter-select" id="filterTier">
+            <option value="all">All Tiers</option>
+            <option value="luxury">Luxury</option>
+            <option value="premium">Premium</option>
+            <option value="mid">Mid-Market</option>
+            <option value="listed">Listed (BSE/NSE)</option>
+          </select>
+          <svg class="filter-select-arrow" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
       </div>
-      <a href="#ctaBlock" class="tier-cta">Request a Mandate</a>
+      <div class="filter-group">
+        <div class="filter-select-wrap">
+          <select class="filter-select" id="filterCity">
+            <option value="all">All Cities</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="delhi">Delhi NCR</option>
+            <option value="bengaluru">Bengaluru</option>
+            <option value="pune">Pune</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="chennai">Chennai</option>
+            <option value="kolkata">Kolkata</option>
+            <option value="ahmedabad">Ahmedabad</option>
+            <option value="pan-india">Pan India</option>
+          </select>
+          <svg class="filter-select-arrow" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <button class="filter-reset" id="filterReset" hidden>Clear filters</button>
     </div>
 
-    <div class="tier">
-      <h3>Enterprise</h3>
-      <div class="tier-price">Custom</div>
-      <div class="tier-period">12-month engagement &middot; for national developers</div>
-      <div class="tier-feats">
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unlimited editorial</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dedicated VideoWorks team</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Co-produced events</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom intelligence reports</div>
-        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dedicated account team</div>
-      </div>
-      <a href="#ctaBlock" class="tier-cta">Talk to Us</a>
+    <!-- Developer Grid -->
+    <div class="dev-grid" id="devGrid">
+
+      <!-- Mumbai -->
+      <a href="community/brands/godrej-properties.html" class="dev-card reveal-item" data-tier="listed" data-city="mumbai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/godrejproperties.com" alt="Godrej Properties" loading="lazy">
+          <span class="dev-card__tier-badge tier-listed">Listed</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Godrej Properties</h3>
+          <p class="dev-card__type">Premium Residential &middot; Townships</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Mumbai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="mumbai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/oberoirealty.com" alt="Oberoi Realty" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Oberoi Realty</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Mumbai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="mumbai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/lodhagroup.com" alt="Lodha Group" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Macrotech (Lodha)</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Townships</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Mumbai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="mumbai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/hiranandani.com" alt="Hiranandani" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Hiranandani Group</h3>
+          <p class="dev-card__type">Integrated Townships &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Mumbai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="mumbai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/rustomjee.com" alt="Rustomjee" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Rustomjee Group</h3>
+          <p class="dev-card__type">Premium Residential &middot; Suburbs</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Mumbai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="mumbai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/kalpataru.com" alt="Kalpataru" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Kalpataru Limited</h3>
+          <p class="dev-card__type">Residential &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Mumbai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Delhi NCR -->
+      <a href="#" class="dev-card reveal-item" data-tier="listed" data-city="delhi">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/dlf.in" alt="DLF" loading="lazy">
+          <span class="dev-card__tier-badge tier-listed">Listed</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">DLF Limited</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Delhi NCR
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="delhi">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/m3mindia.com" alt="M3M India" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">M3M India</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Gurugram</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Delhi NCR
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="delhi">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/sobha.com" alt="Sobha" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Sobha Limited</h3>
+          <p class="dev-card__type">Premium Residential &middot; Pan India</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Bengaluru
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="delhi">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/emaarindia.com" alt="Emaar India" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Emaar India</h3>
+          <p class="dev-card__type">Premium Residential &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Delhi NCR
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="delhi">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/sscgroup.in" alt="SSC Group" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Signature Global</h3>
+          <p class="dev-card__type">Affordable Premium &middot; Gurugram</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Delhi NCR
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="delhi">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/maxestates.in" alt="Max Estates" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Max Estates</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Noida</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Delhi NCR
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Bengaluru -->
+      <a href="#" class="dev-card reveal-item" data-tier="listed" data-city="bengaluru">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/prestigeconstructions.com" alt="Prestige" loading="lazy">
+          <span class="dev-card__tier-badge tier-listed">Listed</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Prestige Group</h3>
+          <p class="dev-card__type">Premium Residential &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Bengaluru
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="bengaluru">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/embassyindia.com" alt="Embassy" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Embassy Group</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Office Parks</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Bengaluru
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="bengaluru">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/brigadegroup.com" alt="Brigade" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Brigade Group</h3>
+          <p class="dev-card__type">Residential &middot; Hospitality &middot; Office</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Bengaluru
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="bengaluru">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/puravankara.com" alt="Puravankara" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Puravankara</h3>
+          <p class="dev-card__type">Residential &middot; Provident (Affordable)</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Bengaluru
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="mid" data-city="bengaluru">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/salarpuria.com" alt="Salarpuria Sattva" loading="lazy">
+          <span class="dev-card__tier-badge tier-mid">Mid-Market</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Salarpuria Sattva</h3>
+          <p class="dev-card__type">Residential &middot; IT Parks</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Bengaluru
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Pune -->
+      <a href="#" class="dev-card reveal-item" data-tier="listed" data-city="pune">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/kolte-patil.com" alt="Kolte-Patil" loading="lazy">
+          <span class="dev-card__tier-badge tier-listed">Listed</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Kolte-Patil Developers</h3>
+          <p class="dev-card__type">Residential &middot; Townships</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Pune
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="pune">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/panchshil.com" alt="Panchshil" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Panchshil Realty</h3>
+          <p class="dev-card__type">Premium Residential &middot; Hospitality</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Pune
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="mid" data-city="pune">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/marvelrealtors.com" alt="Marvel Realtors" loading="lazy">
+          <span class="dev-card__tier-badge tier-mid">Mid-Market</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Marvel Realtors</h3>
+          <p class="dev-card__type">Residential &middot; Hinjewadi</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Pune
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Hyderabad -->
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="hyderabad">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/myhomeconstructions.com" alt="My Home" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">My Home Group</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Cement</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Hyderabad
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="hyderabad">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/aparnaconstructions.com" alt="Aparna" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Aparna Constructions</h3>
+          <p class="dev-card__type">Premium Residential</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Hyderabad
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="hyderabad">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/rainbowestates.in" alt="Rainbow Estates" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Rainbow Estates</h3>
+          <p class="dev-card__type">Residential &middot; Kompally</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Hyderabad
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Chennai -->
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="chennai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/casagrand.co.in" alt="Casagrand" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Casagrand</h3>
+          <p class="dev-card__type">Premium Residential &middot; South India</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Chennai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="chennai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/rmzcorp.com" alt="RMZ Corp" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Mahindra Lifespaces</h3>
+          <p class="dev-card__type">Residential &middot; Industrial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Chennai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="mid" data-city="chennai">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/akshaya.com" alt="Akshaya" loading="lazy">
+          <span class="dev-card__tier-badge tier-mid">Mid-Market</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Akshaya Pvt Ltd</h3>
+          <p class="dev-card__type">Premium Residential</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Chennai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Kolkata -->
+      <a href="#" class="dev-card reveal-item" data-tier="listed" data-city="kolkata">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/merlingroup.com" alt="Merlin Group" loading="lazy">
+          <span class="dev-card__tier-badge tier-listed">Listed</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Merlin Group</h3>
+          <p class="dev-card__type">Residential &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Kolkata
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="kolkata">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/srijanrealty.com" alt="Srijan" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Srijan Realty</h3>
+          <p class="dev-card__type">Residential &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Kolkata
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ahmedabad -->
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="ahmedabad">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/adani.com" alt="Adani Realty" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Adani Realty</h3>
+          <p class="dev-card__type">Residential &middot; Commercial &middot; Pan India</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Ahmedabad
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="mid" data-city="ahmedabad">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/savvyinfra.com" alt="Savvy Infrastructures" loading="lazy">
+          <span class="dev-card__tier-badge tier-mid">Mid-Market</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Savvy Group</h3>
+          <p class="dev-card__type">Residential &middot; Commercial</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Ahmedabad
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Pan India -->
+      <a href="#" class="dev-card reveal-item" data-tier="listed" data-city="pan-india">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/tatahousing.in" alt="Tata Housing" loading="lazy">
+          <span class="dev-card__tier-badge tier-listed">Listed</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Tata Housing</h3>
+          <p class="dev-card__type">Premium Residential &middot; Townships</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Pan India
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="pan-india">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/k-raheja.com" alt="K Raheja Corp" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">K Raheja Corp</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Hospitality</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Pan India
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="pan-india">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/shapoorjipallonji.com" alt="Shapoorji Pallonji" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Shapoorji Pallonji RE</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Joyville</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Pan India
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="pan-india">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/mahindralifespaces.com" alt="Mahindra Lifespaces" loading="lazy">
+          <span class="dev-card__tier-badge tier-listed">Listed</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Mahindra Lifespaces</h3>
+          <p class="dev-card__type">Premium &middot; Industrial Parks</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Pan India
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="premium" data-city="pan-india">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/raymond.in" alt="Raymond Realty" loading="lazy">
+          <span class="dev-card__tier-badge tier-premium">Premium</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Raymond Realty</h3>
+          <p class="dev-card__type">Premium Residential &middot; Thane</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Mumbai
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="dev-card reveal-item" data-tier="luxury" data-city="pan-india">
+        <div class="dev-card__logo-wrap">
+          <img class="dev-card__logo" src="https://logo.clearbit.com/birlaestates.com" alt="Birla Estates" loading="lazy">
+          <span class="dev-card__tier-badge tier-luxury">Luxury</span>
+        </div>
+        <div class="dev-card__body">
+          <h3 class="dev-card__name">Birla Estates</h3>
+          <p class="dev-card__type">Luxury Residential &middot; Pan India</p>
+          <div class="dev-card__meta">
+            <svg class="dev-card__meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Pan India
+            <svg class="dev-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty" id="emptyState">
+      <p>No developers match the selected filters.</p>
+      <button class="btn-outline" id="emptyReset">Clear filters</button>
     </div>
   </div>
-</section></div>
-
-
-<!-- TESTIMONIAL -->
-<div class="c"><div class="testimonial">
-  <p>&ldquo;GHAR.tv didn't just give us reach &mdash; they gave us the right reach. Within four months, our Mumbai launch had the qualified pipeline we'd planned for the entire year.&rdquo;</p>
-  <p class="testimonial-author">&mdash; <strong>Marketing Head</strong>, Top-10 Indian Developer</p>
-</div></div>
-
-
-<!-- FAQ -->
-<div class="c"><section class="sec sec-center">
-  <div class="sec-tag">FAQs</div>
-  <h2 class="sec-h">Common questions</h2>
-
-  <div class="faqs">
-    <details class="faq">
-      <summary>Who is Developer Mandate for?</summary>
-      <p>Developer Mandate is for India's premium and top-tier real estate developers &mdash; those building landmark residential, commercial, or township projects. We work with developers who are looking for premium media partnerships, not display advertising.</p>
-    </details>
-    <details class="faq">
-      <summary>How is this different from listing on a property portal?</summary>
-      <p>Property portals are search-and-listing platforms. Developer Mandate is a content partnership where your project is editorially featured the same way GHAR.tv covers any landmark development &mdash; with full storytelling, video, intelligence inclusion, and event presence.</p>
-    </details>
-    <details class="faq">
-      <summary>What's the typical commitment length?</summary>
-      <p>Project Mandates start at a 3-month minimum. Portfolio Mandates are 6 months. Enterprise mandates are 12-month engagements. Most developers extend after the first cycle once they see the pipeline impact.</p>
-    </details>
-    <details class="faq">
-      <summary>Do you guarantee leads?</summary>
-      <p>We deliver qualified buyer enquiries with project-specific intent. We don't guarantee a fixed number &mdash; we deliver volume that scales with the audience the editorial creates. Past mandates have delivered 200&ndash;1,200 qualified leads per quarter.</p>
-    </details>
-    <details class="faq">
-      <summary>How quickly can a mandate go live?</summary>
-      <p>Most mandates go live within 3&ndash;4 weeks of signing. Editorial planning, video production, and event inclusion are all kicked off in parallel after the discovery phase.</p>
-    </details>
-    <details class="faq">
-      <summary>Can I see past examples?</summary>
-      <p>Yes. After your discovery call, we share a curated reference deck with anonymised case studies and metrics from comparable developer engagements.</p>
-    </details>
-  </div>
-</section></div>
+</section>
 
 
 <!-- CTA -->
-<section class="cta-sec" id="ctaBlock">
-  <div class="cta-bg" aria-hidden="true"></div>
-  <div class="cta-inner">
+<section class="cta-modern" id="newsletter">
+  <div class="cta-modern__bg" aria-hidden="true"></div>
+  <div class="cta-modern__inner">
     <div>
-      <span class="cta-tag">Request a Mandate</span>
-      <h2>Let's put your project at the centre of GHAR.tv</h2>
-      <p class="cta-desc">Tell us about your launch. We'll come back within 24 hours with a custom mandate brief tailored to your project, audience, and timeline.</p>
-      <div class="cta-feats">
-        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Editorial features</span>
-        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> VideoWorks production</span>
-        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lead pipeline</span>
-        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Event inclusion</span>
+      <span class="cta-modern__eyebrow"><span class="cta-modern__eyebrow-dot"></span> Are you a Developer?</span>
+      <h2 class="cta-modern__title">Get Featured on GHAR.tv</h2>
+      <p class="cta-modern__desc">Get your projects in front of India's most engaged real estate audience &mdash; through editorial features, video walkthroughs, and rankings.</p>
+      <div class="cta-modern__features">
+        <span class="cta-modern__feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Editorial coverage</span>
+        <span class="cta-modern__feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> VideoWorks production</span>
+        <span class="cta-modern__feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Project rankings</span>
+        <span class="cta-modern__feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Qualified leads</span>
       </div>
     </div>
-    <div class="cta-form-wrap">
-      <form class="cta-form" id="nlF" novalidate>
-        <div class="cta-row">
-          <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required aria-label="Your name">
-          <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required aria-label="Work email">
+    <div class="cta-modern__form-wrap">
+      <form class="cta-modern__form" id="nlForm" novalidate>
+        <div class="cta-modern__input-row">
+          <input type="text" class="cta-modern__inp" placeholder="Your name" autocomplete="name" required aria-label="Your name">
+          <input type="email" class="cta-modern__inp" placeholder="Work email" autocomplete="email" required id="nlEmailField" aria-label="Work email">
         </div>
-        <input type="text" class="cta-inp" placeholder="Company name" required aria-label="Company name">
-        <input type="text" class="cta-inp" placeholder="Project / launch (city)" aria-label="Project or launch">
-        <button type="submit" class="cta-sub" id="nlB"><span>Request a Mandate</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-        <p class="cta-note">We respond within 24 hours. Confidential.</p>
+        <input type="text" class="cta-modern__inp" placeholder="Developer / company name" required aria-label="Developer or company name">
+        <button type="submit" class="cta-modern__btn" id="nlBtn">
+          <span>Request a Mandate</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+        <p class="cta-modern__note">We respond within 24 hours. Confidential.</p>
       </form>
-      <div class="cta-ok" id="nlO" hidden><p style="font-size:36px;color:#22c55e;margin-bottom:12px">&check;</p><p>Thanks! We'll be in touch shortly.</p></div>
+      <div class="cta-modern__ok" id="nlOk" hidden>
+        <div class="cta-modern__ok-icon">&check;</div>
+        <p>Thanks! We'll be in touch shortly.</p>
+      </div>
     </div>
   </div>
 </section>
 
 
 <!-- FOOTER -->
-<footer class="ft"><div class="ft-i">
-  <div class="ft-top">
-    <div>
-      <img src="community/logo.svg" alt="GHAR.tv" class="ft-logo">
-      <p class="ft-tagline">India's AI-Native Real Estate Intelligence</p>
+<footer class="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div><img src="community/logo.svg" alt="GHAR.tv" class="ft-logo-img"><p class="ft-tag">India's AI-Native Real Estate Intelligence</p></div>
+      <nav class="ft-nav">
+        <a href="/intelligence">Intelligence</a>
+        <a href="/design">Design</a>
+        <a href="/community">Community</a>
+        <a href="/ghartalks">GharTalks</a>
+        <a href="/videoworks">VideoWorks</a>
+        <a href="/gharevents">GharEvents</a>
+        <a href="/industry-voices">Industry Voices</a>
+      </nav>
     </div>
-    <nav class="ft-nav">
-      <a href="/intelligence">Intelligence</a>
-      <a href="/design">Design</a>
-      <a href="/community">Community</a>
-      <a href="/ghartalks">GharTalks</a>
-      <a href="/videoworks">VideoWorks</a>
-      <a href="/gharevents">GharEvents</a>
-      <a href="/industry-voices">Industry Voices</a>
-    </nav>
+    <div class="ft-bot">
+      <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
+      <div class="ft-bot-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
   </div>
-  <div class="ft-bot">
-    <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
-    <div class="ft-bot-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
-  </div>
-</div></footer>
+</footer>
 
 
 <script>
 (function(){
-  var btn=document.getElementById('hBtn'),mob=document.getElementById('mob');
-  btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('active',o);btn.setAttribute('aria-expanded',o);mob.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''});
-  mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');mob.setAttribute('aria-hidden','true');document.body.style.overflow=''})});
-  var nf=document.getElementById('nlF'),nb=document.getElementById('nlB'),no=document.getElementById('nlO');
-  if(nf)nf.addEventListener('submit',function(e){e.preventDefault();nb.disabled=true;nb.querySelector('span').textContent='Sending\u2026';setTimeout(function(){nf.style.display='none';no.hidden=false},800)});
+  'use strict';
+
+  /* Hamburger */
+  var btn=document.getElementById('hamburgerBtn'),menu=document.getElementById('mobMenu');
+  btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.classList.toggle('active',o);btn.setAttribute('aria-expanded',o);menu.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');menu.setAttribute('aria-hidden','true');document.body.style.overflow=''})});
+
+  /* Smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');var t=id.length>1&&document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+
+  /* Reveal */
+  var reveals=document.querySelectorAll('.reveal,.reveal-item');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -32px 0px'});reveals.forEach(function(el){io.observe(el)})}else{reveals.forEach(function(el){el.classList.add('revealed')})}
+
+  /* Sticky filter bar */
+  var filtersBar=document.getElementById('filtersBar');
+  if(filtersBar&&'IntersectionObserver' in window){var sentinel=document.createElement('div');sentinel.style.height='1px';sentinel.style.marginBottom='-1px';filtersBar.parentNode.insertBefore(sentinel,filtersBar);var sio=new IntersectionObserver(function(entries){filtersBar.classList.toggle('stuck',!entries[0].isIntersecting)},{threshold:0});sio.observe(sentinel)}
+
+  /* Filters */
+  var tierSelect=document.getElementById('filterTier');
+  var citySelect=document.getElementById('filterCity');
+  var resetBtn=document.getElementById('filterReset');
+  var emptyResetBtn=document.getElementById('emptyReset');
+  var emptyState=document.getElementById('emptyState');
+  var resultCount=document.getElementById('resultCount');
+  var allCards=document.querySelectorAll('.dev-card');
+
+  function applyFilters(){
+    var tier=tierSelect.value;var city=citySelect.value;
+    var anyActive=tier!=='all'||city!=='all';
+    resetBtn.hidden=!anyActive;
+    var visible=0;
+    allCards.forEach(function(card){
+      var matchTier=tier==='all'||card.getAttribute('data-tier')===tier;
+      var matchCity=city==='all'||card.getAttribute('data-city')===city;
+      if(matchTier&&matchCity){card.style.display='';card.classList.add('revealed');visible++}else{card.style.display='none'}
+    });
+    if(visible===0){emptyState.classList.add('show')}else{emptyState.classList.remove('show')}
+    resultCount.textContent=visible+' developer'+(visible===1?'':'s')+(anyActive?' matching filters':' across India');
+  }
+  function resetFilters(){tierSelect.value='all';citySelect.value='all';applyFilters()}
+  tierSelect.addEventListener('change',applyFilters);
+  citySelect.addEventListener('change',applyFilters);
+  resetBtn.addEventListener('click',resetFilters);
+  emptyResetBtn.addEventListener('click',resetFilters);
+
+  /* Newsletter */
+  var nlForm=document.getElementById('nlForm');var nlBtn=document.getElementById('nlBtn');var nlOk=document.getElementById('nlOk');
+  if(nlForm){nlForm.addEventListener('submit',function(e){e.preventDefault();nlBtn.disabled=true;nlBtn.querySelector('span').textContent='Submitting\u2026';setTimeout(function(){nlForm.style.display='none';nlOk.hidden=false},800)})}
 })();
 </script>
 </body>
