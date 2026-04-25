@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Mandate - GHAR.tv</title>
+<meta name="description" content="Project Mandates for India's leading developers. Hand-picked premium projects featured across GHAR.tv's editorial, intelligence, video, and event ecosystem.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Developer Mandate - GHAR.tv">
+<meta property="og:description" content="Project Mandates for India's leading developers. Premium projects featured across GHAR.tv's ecosystem.">
+<meta property="og:url" content="https://ghar.tv/real-estate-developers">
+<meta property="og:site_name" content="GHAR.tv">
+<link rel="canonical" href="https://ghar.tv/real-estate-developers">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.onload=null;this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+<style>
+@font-face{font-family:'Gazpacho';src:url('community/fonts/Gazpacho-Bold.woff2') format('woff2'),url('community/fonts/Gazpacho-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+:root{
+  --bg:#fff;--ink:#222;--ink2:#717171;--ink3:#b0b0b0;
+  --accent:#ee324b;--accent-soft:rgba(238,50,75,.06);
+  --surface:#f7f7f7;--surface2:#ebebeb;--dark:#222;
+  --ff-d:'Gazpacho',Georgia,serif;
+  --ff:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --r:12px;--rl:16px;--rx:24px;
+  --mw:1600px;--ph:clamp(24px,3vw,80px);
+  --ease:cubic-bezier(.2,0,0,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--ff);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:56px}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+.c{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--surface2);box-shadow:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.04)}
+.nav-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo img{height:28px;width:auto}
+.nav-links{display:none;align-items:center;justify-content:center;gap:2px;list-style:none;flex:1}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:6px 11px;border-radius:7px;transition:background .16s,color .16s}
+.nav-links a:hover{background:var(--surface);color:var(--ink)}
+.nav-r{display:none;align-items:center;gap:8px}
+.nav-cta{font-size:13px;font-weight:600;color:#fff;background:var(--ink);padding:8px 20px;border-radius:8px;border:none;display:inline-flex;align-items:center;transition:background .18s,transform .18s}
+.nav-cta:hover{background:var(--accent);transform:translateY(-1px)}
+.ham{display:flex;flex-direction:column;gap:5px;padding:6px;background:none;border:none;z-index:901}
+.ham span{display:block;width:20px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.ham.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob{position:fixed;inset:0;background:var(--bg);z-index:850;transform:translateX(100%);transition:transform .35s var(--ease);padding:80px 24px 48px}
+.mob.open{transform:translateX(0)}.mob ul{list-style:none}.mob li+li{border-top:1px solid var(--surface2)}
+.mob a{display:block;padding:16px 0;font-size:18px;font-weight:600;color:var(--ink)}.mob .ma{color:var(--accent)}
+
+/* HERO */
+.hero{background:var(--bg);color:var(--ink);padding:clamp(48px,6vw,80px) 0 clamp(40px,5vw,64px)}
+.hero-grid{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px);align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ee324b;margin-bottom:20px;padding:8px 20px;border:1px solid rgba(238,50,75,.15);border-radius:24px;background:rgba(238,50,75,.04)}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#ee324b;animation:dotPulse 2s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:var(--ff-d);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px}
+.hero-sub{font-size:clamp(15px,1.3vw,18px);color:var(--ink2);line-height:1.7;max-width:480px;margin-bottom:32px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn-dark{font-size:15px;font-weight:600;color:#fff;background:var(--ink);padding:14px 32px;border-radius:8px;border:none;transition:all .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-dark:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(238,50,75,.2)}
+.btn-outline{font-size:15px;font-weight:600;color:var(--ink2);background:transparent;padding:13px 32px;border-radius:8px;border:1px solid var(--surface2);transition:all .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-outline:hover{border-color:var(--ink);color:var(--ink);background:var(--surface)}
+.hero-visual{display:flex;align-items:center;justify-content:center}
+.hero-svg{width:100%;max-width:480px;height:auto}
+@keyframes hFloat1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes hFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes hFloat3{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hf1{animation:hFloat1 5s ease-in-out infinite}.hf2{animation:hFloat2 6s ease-in-out infinite 1s}.hf3{animation:hFloat3 7s ease-in-out infinite .5s}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);max-width:var(--mw);margin:0 auto;border-top:1px solid var(--surface2);border-bottom:1px solid var(--surface2)}
+.stat-s{text-align:center;padding:clamp(32px,4vw,48px) 16px;border-right:1px solid var(--surface2)}
+.stat-s:last-child{border-right:none}
+.stat-n{font-family:var(--ff-d);font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--ink);line-height:1}
+.stat-l{font-size:13px;color:var(--ink2);margin-top:8px;font-weight:500}
+
+/* DIVIDER */
+.divider{height:1px;background:#e5e7eb;border:none;opacity:.5}
+
+/* SECTION */
+.sec{padding:clamp(48px,6vw,80px) 0}
+.sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ee324b;margin-bottom:16px}
+.sec-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#ee324b}
+.sec-h{font-family:var(--ff-d);font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:16px;letter-spacing:-.02em}
+.sec-p{font-size:clamp(15px,1.3vw,17px);color:var(--ink2);line-height:1.7;max-width:560px;margin-bottom:clamp(36px,4vw,52px)}
+.sec-center{text-align:center}.sec-center .sec-p{margin-left:auto;margin-right:auto}
+
+/* TWO-COL INFO CARDS */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:clamp(48px,6vw,80px) 0}
+.info-card{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(28px,3vw,40px);background:var(--bg);transition:all .25s var(--ease);display:flex;flex-direction:column;gap:0}
+.info-card:hover{border-color:transparent;box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-3px)}
+.info-card-visual{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:clamp(12px,1.5vw,20px);margin-bottom:clamp(20px,2.5vw,28px);overflow:hidden}
+.info-card-visual svg{width:100%;max-width:320px;height:auto}
+.info-card .sec-tag{margin-bottom:12px}
+.info-card h2{font-family:var(--ff-d);font-size:clamp(20px,2.2vw,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:14px}
+.info-card p{font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:12px}
+.info-card p:last-child{margin-bottom:0}
+
+/* DELIVERABLE CARDS */
+.fmt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fmt{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(24px,3vw,32px);background:var(--bg);transition:all .25s var(--ease);text-align:center}
+.fmt:hover{border-color:transparent;box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px)}
+.fmt-icon{width:48px;height:48px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.fmt-icon svg{width:24px;height:24px}
+.fmt h3{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.fmt p{font-size:13px;color:var(--ink2);line-height:1.65}
+
+/* PROCESS STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.step{position:relative;padding:24px;border:1px solid var(--surface2);border-radius:var(--rl);transition:all .25s var(--ease)}
+.step:hover{border-color:var(--accent);transform:translateY(-3px)}
+.step-num{font-family:var(--ff-d);font-size:36px;font-weight:700;color:#ee324b;opacity:.2;line-height:1;margin-bottom:12px;transition:opacity .25s}
+.step:hover .step-num{opacity:.5}
+.step h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.step p{font-size:13px;color:var(--ink2);line-height:1.6}
+
+/* TIERS / PLANS */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tier{border:1px solid var(--surface2);border-radius:var(--rl);padding:clamp(28px,3vw,36px);background:var(--bg);position:relative;transition:all .25s var(--ease)}
+.tier:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-3px)}
+.tier.featured{border-color:var(--ink);background:var(--ink);color:#fff}
+.tier.featured h3,.tier.featured .tier-price,.tier.featured .tier-feat{color:#fff}
+.tier.featured .tier-feat svg{color:var(--accent)}
+.tier-badge{position:absolute;top:-12px;right:24px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.tier h3{font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
+.tier-price{font-family:var(--ff-d);font-size:36px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:6px}
+.tier-period{font-size:13px;color:var(--ink3);margin-bottom:24px}
+.tier.featured .tier-period{color:rgba(255,255,255,.5)}
+.tier-feats{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.tier-feat{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink2);line-height:1.5}
+.tier-feat svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:1px}
+.tier-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:14px;font-weight:600;padding:12px 20px;border-radius:8px;transition:all .2s;border:1px solid var(--surface2);background:var(--bg);color:var(--ink)}
+.tier-cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tier.featured .tier-cta{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tier.featured .tier-cta:hover{background:#fff;color:var(--ink);border-color:#fff}
+
+/* TESTIMONIAL */
+.testimonial{background:var(--surface);border-radius:var(--rx);padding:clamp(40px,5vw,72px);text-align:center;margin:clamp(40px,5vw,64px) 0}
+.testimonial p{font-family:var(--ff-d);font-size:clamp(20px,2.5vw,28px);font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:24px;letter-spacing:-.01em;max-width:780px;margin-left:auto;margin-right:auto}
+.testimonial-author{font-size:14px;color:var(--ink2);font-weight:500}
+.testimonial-author strong{color:var(--ink);font-weight:700}
+
+/* FAQ */
+.faqs{max-width:780px;margin:0 auto}
+.faq{border-bottom:1px solid var(--surface2);padding:20px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;color:var(--ink);padding:6px 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:24px;font-weight:300;color:var(--ink2);transition:transform .25s}
+.faq[open] summary::after{content:'\2212'}
+.faq p{font-size:14px;color:var(--ink2);line-height:1.7;padding:12px 0 4px;max-width:640px}
+
+/* CTA */
+.cta-sec{position:relative;overflow:hidden;padding:clamp(64px,8vw,100px) 0;background:#111}
+.cta-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 30% 50%,rgba(238,50,75,.08),transparent 70%),radial-gradient(ellipse 40% 40% at 80% 60%,rgba(59,130,246,.06),transparent 70%)}
+.cta-inner{max-width:var(--mw);margin:0 auto;padding:0 var(--ph);display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:1}
+@media(min-width:900px){.cta-inner{grid-template-columns:1fr 1fr;gap:64px;align-items:center}}
+.cta-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.cta-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:dotPulse 2s ease-in-out infinite}
+.cta-sec h2{font-family:var(--ff-d);font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:16px}
+.cta-desc{font-size:15px;line-height:1.75;color:rgba(255,255,255,.55);margin-bottom:28px;max-width:480px}
+.cta-feats{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+.cta-feat{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
+.cta-feat svg{color:var(--accent);flex-shrink:0}
+.cta-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:clamp(28px,4vw,40px)}
+.cta-form{display:flex;flex-direction:column;gap:14px}
+.cta-row{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:500px){.cta-row{grid-template-columns:1fr 1fr}}
+.cta-inp{font-family:var(--ff);font-size:14px;padding:14px 18px;border-radius:10px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#fff;transition:border-color .2s}
+.cta-inp::placeholder{color:rgba(255,255,255,.3)}.cta-inp:focus{outline:none;border-color:rgba(255,255,255,.25)}
+.cta-sub{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ff);font-size:15px;font-weight:600;color:#111;background:#fff;padding:14px 28px;border-radius:8px;border:none;cursor:pointer;transition:all .2s}
+.cta-sub:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(238,50,75,.25)}
+.cta-note{font-size:11.5px;color:rgba(255,255,255,.3);text-align:center}
+.cta-ok{text-align:center;padding:20px 0}.cta-ok p{font-size:15px;color:rgba(255,255,255,.7)}
+
+/* FOOTER */
+.ft{background:#111;padding:36px 0}
+.ft-i{max-width:var(--mw);margin:0 auto;padding:0 var(--ph)}
+.ft-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ft-logo{height:28px;width:auto;filter:brightness(0) invert(1)}
+.ft-tagline{font-size:12px;color:rgba(255,255,255,.35);margin-top:4px}
+.ft-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.ft-nav a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:all .2s}
+.ft-nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-bot p{font-size:11px;color:rgba(255,255,255,.22)}
+.ft-bot-links{display:flex;gap:18px}
+.ft-bot-links a{font-size:11.5px;color:rgba(255,255,255,.25);transition:color .2s}
+.ft-bot-links a:hover{color:rgba(255,255,255,.5)}
+
+/* RESPONSIVE */
+@media(min-width:1024px){.nav-i{padding:0 32px;height:62px;gap:32px}.nav-links{display:flex}.nav-r{display:flex}.ham{display:none}}
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-visual{display:none}
+  .fmt-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .tiers{grid-template-columns:1fr}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+  .stat-s:nth-child(2){border-right:none}
+  .ft-top{flex-direction:column;align-items:flex-start}
+  .ft-bot{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+  .hero h1{font-size:32px}
+  .info-grid{grid-template-columns:1fr}
+  .fmt-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}.stat-s{padding:24px 12px}
+  .stat-n{font-size:28px}
+  .mob{padding:80px 16px 40px}
+  .cta-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"><div class="nav-i">
+  <a href="/" class="nav-logo"><img src="community/logo.svg" alt="GHAR.tv"></a>
+  <ul class="nav-links" role="list"><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li></ul>
+  <div class="nav-r"><a href="#ctaBlock" class="nav-cta">Request a Mandate</a></div>
+  <button class="ham" id="hBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mob" id="mob" aria-hidden="true"><ul><li><a href="/intelligence">Intelligence</a></li><li><a href="/design">Design</a></li><li><a href="/community">Community</a></li><li><a href="/ghartalks">GharTalks</a></li><li><a href="/videoworks">VideoWorks</a></li><li><a href="/gharevents">GharEvents</a></li><li><a href="/industry-voices">Industry Voices</a></li><li><a href="#ctaBlock" class="ma">Request a Mandate &rarr;</a></li></ul></div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-tag"><span class="hero-tag-dot"></span> Developer Mandate</div>
+      <h1>For developers building the future of Indian real estate.</h1>
+      <p class="hero-sub">Project Mandates that place your launches at the centre of GHAR.tv's editorial, intelligence, video, and event ecosystem &mdash; reaching India's most engaged property buyers and investors.</p>
+      <div class="hero-ctas">
+        <a href="#ctaBlock" class="btn-dark">Request a Mandate <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="#deliverables" class="btn-outline">See Deliverables <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="hero-svg" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Project listing card -->
+        <g class="hf1">
+          <rect x="40" y="10" width="220" height="160" rx="16" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <rect x="60" y="30" width="180" height="80" rx="8" fill="#f3f4f6"/>
+          <rect x="68" y="40" width="50" height="14" rx="7" fill="#ee324b" opacity=".15"/>
+          <text x="93" y="50" text-anchor="middle" font-size="7" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">FEATURED</text>
+          <!-- Project building lines -->
+          <path d="M70 100h60V80h-30V70h-30z" fill="#fff" stroke="#d1d5db" stroke-width=".8" opacity=".5"/>
+          <path d="M150 100h70V72h-35V62h-35z" fill="#fff" stroke="#d1d5db" stroke-width=".8" opacity=".7"/>
+          <rect x="60" y="124" width="120" height="8" rx="4" fill="#e5e7eb"/>
+          <rect x="60" y="140" width="80" height="6" rx="3" fill="#f3f4f6"/>
+          <rect x="60" y="152" width="100" height="6" rx="3" fill="#f3f4f6"/>
+        </g>
+
+        <!-- Stats card -->
+        <g class="hf2">
+          <rect x="270" y="20" width="140" height="100" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <text x="290" y="50" font-size="24" font-weight="700" fill="#222" font-family="Inter,sans-serif">2.4M</text>
+          <text x="290" y="64" font-size="8" fill="#b0b0b0" font-family="Inter,sans-serif">project views</text>
+          <polyline points="290,90 305,82 320,86 335,75 350,80 365,72 380,76 395,68" stroke="#ee324b" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
+          <rect x="290" y="100" width="60" height="10" rx="5" fill="#ee324b" opacity=".08"/>
+        </g>
+
+        <!-- Lead card -->
+        <g class="hf3">
+          <rect x="20" y="200" width="200" height="80" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <circle cx="56" cy="240" r="20" fill="#f3f4f6"/>
+          <circle cx="56" cy="234" r="7" fill="#e5e7eb"/>
+          <path d="M44 252a12 12 0 0124 0" fill="#e5e7eb"/>
+          <rect x="86" y="226" width="100" height="8" rx="4" fill="#d1d5db"/>
+          <rect x="86" y="240" width="70" height="6" rx="3" fill="#e5e7eb"/>
+          <rect x="86" y="254" width="50" height="14" rx="7" fill="#16a34a" opacity=".12"/>
+          <text x="111" y="263" text-anchor="middle" font-size="7" font-weight="700" fill="#16a34a" font-family="Inter,sans-serif">QUALIFIED</text>
+        </g>
+
+        <!-- Video preview -->
+        <g class="hf1">
+          <rect x="240" y="220" width="160" height="100" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <rect x="256" y="236" width="128" height="56" rx="8" fill="#222"/>
+          <circle cx="320" cy="264" r="14" fill="#fff"/>
+          <polygon points="316,258 328,264 316,270" fill="#222"/>
+          <rect x="256" y="300" width="80" height="6" rx="3" fill="#d1d5db"/>
+          <rect x="346" y="298" width="40" height="10" rx="5" fill="#ee324b" opacity=".1"/>
+        </g>
+
+        <!-- Award badge -->
+        <g class="hf2">
+          <rect x="80" y="310" width="140" height="56" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <circle cx="106" cy="338" r="14" fill="#ee324b" opacity=".08"/>
+          <path d="M99 336l5 5 9-9" stroke="#ee324b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="128" y="328" width="76" height="7" rx="3.5" fill="#222"/>
+          <rect x="128" y="342" width="60" height="5" rx="2.5" fill="#b0b0b0"/>
+        </g>
+
+        <!-- Connecting dots -->
+        <circle cx="226" cy="190" r="3" fill="#e5e7eb"/>
+        <circle cx="265" cy="180" r="2" fill="#d1d5db"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-s"><div class="stat-n">100+</div><div class="stat-l">Active mandates</div></div>
+  <div class="stat-s"><div class="stat-n">15</div><div class="stat-l">Cities covered</div></div>
+  <div class="stat-s"><div class="stat-n">2.4M</div><div class="stat-l">Monthly project views</div></div>
+  <div class="stat-s"><div class="stat-n">8.2K</div><div class="stat-l">Qualified leads/yr</div></div>
+</div>
+
+
+<!-- WHAT IS IT + WHY GHAR.tv — side by side cards -->
+<div class="c"><div class="info-grid">
+
+  <div class="info-card">
+    <div class="info-card-visual">
+      <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Project mandate visual -->
+        <g style="animation:hFloat2 6s ease-in-out infinite">
+          <rect x="60" y="20" width="200" height="140" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <rect x="76" y="36" width="168" height="56" rx="6" fill="#f3f4f6"/>
+          <rect x="84" y="46" width="48" height="14" rx="7" fill="#ee324b" opacity=".12"/>
+          <text x="108" y="56" text-anchor="middle" font-size="7" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">MANDATE</text>
+          <path d="M84 80h32V64h-16V58h-16z" stroke="#d1d5db" stroke-width="1" fill="none"/>
+          <path d="M124 80h44V58h-22V50h-22z" stroke="#d1d5db" stroke-width="1" fill="none"/>
+          <path d="M176 80h60V46h-30V36h-30z" stroke="#d1d5db" stroke-width="1" fill="none"/>
+          <rect x="76" y="104" width="120" height="6" rx="3" fill="#e5e7eb"/>
+          <rect x="76" y="118" width="80" height="5" rx="2.5" fill="#f3f4f6"/>
+          <rect x="76" y="132" width="100" height="5" rx="2.5" fill="#f3f4f6"/>
+        </g>
+        <g style="animation:hFloat1 5s ease-in-out infinite">
+          <rect x="220" y="6" width="86" height="40" rx="10" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <text x="232" y="24" font-size="14" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">3-12mo</text>
+          <text x="232" y="34" font-size="6" fill="#b0b0b0" font-family="Inter,sans-serif">campaign</text>
+        </g>
+      </svg>
+    </div>
+    <div class="sec-tag">What is Developer Mandate</div>
+    <h2>End-to-end project marketing, embedded in editorial</h2>
+    <p>Developer Mandate is a curated programme for India's leading developers. Each mandate is a 3&ndash;12 month engagement that places your project at the centre of GHAR.tv's editorial, intelligence, video, and event coverage.</p>
+    <p>Not display advertising. Not paid listings. A premium media partnership where your project is featured the way GHAR.tv covers any other landmark development.</p>
+  </div>
+
+  <div class="info-card">
+    <div class="info-card-visual">
+      <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g style="animation:hFloat2 6s ease-in-out infinite 1s">
+          <rect x="20" y="20" width="280" height="140" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+          <text x="40" y="50" font-size="22" font-weight="700" fill="#222" font-family="Inter,sans-serif">8.2K</text>
+          <text x="40" y="62" font-size="7" fill="#b0b0b0" font-family="Inter,sans-serif">qualified leads/yr</text>
+          <rect x="40" y="76" width="40" height="8" rx="4" fill="#16a34a" opacity=".15"/>
+          <text x="60" y="83" text-anchor="middle" font-size="6.5" font-weight="700" fill="#16a34a" font-family="Inter,sans-serif">+34%</text>
+
+          <text x="160" y="50" font-size="22" font-weight="700" fill="#222" font-family="Inter,sans-serif">2.4M</text>
+          <text x="160" y="62" font-size="7" fill="#b0b0b0" font-family="Inter,sans-serif">project views</text>
+          <rect x="160" y="76" width="40" height="8" rx="4" fill="#ee324b" opacity=".12"/>
+          <text x="180" y="83" text-anchor="middle" font-size="6.5" font-weight="700" fill="#ee324b" font-family="Inter,sans-serif">+62%</text>
+
+          <!-- Bar chart -->
+          <rect x="40" y="120" width="14" height="22" rx="3" fill="#e5e7eb"/>
+          <rect x="62" y="110" width="14" height="32" rx="3" fill="#d1d5db"/>
+          <rect x="84" y="100" width="14" height="42" rx="3" fill="#ee324b" opacity=".25"/>
+          <rect x="106" y="92" width="14" height="50" rx="3" fill="#ee324b" opacity=".4"/>
+          <rect x="128" y="86" width="14" height="56" rx="3" fill="#ee324b" opacity=".55"/>
+          <polyline points="46,118 70,108 92,98 114,90 136,84 160,80 184,76 208,80 232,84 256,80 278,76" stroke="#ee324b" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".4"/>
+        </g>
+      </svg>
+    </div>
+    <div class="sec-tag">Why GHAR.tv</div>
+    <h2>India's most engaged real estate audience</h2>
+    <p>GHAR.tv readers are actively researching property decisions &mdash; comparing projects, calculating EMIs, reading rankings. Not casual browsers. Not generic property portal traffic.</p>
+    <p>Every Developer Mandate compounds: editorial discovery + intelligence rankings + video walkthroughs + GharTalks interviews + event presence &mdash; across the full buying funnel.</p>
+  </div>
+
+</div></div>
+
+
+<!-- WHAT YOU GET / DELIVERABLES -->
+<div class="c"><section class="sec sec-center" id="deliverables">
+  <div class="sec-tag">Deliverables</div>
+  <h2 class="sec-h">What's included in every mandate</h2>
+  <p class="sec-p">Each mandate combines content, video, intelligence, and events into a single cohesive engagement.</p>
+
+  <div class="fmt-grid">
+    <div class="fmt">
+      <div class="fmt-icon" style="background:rgba(238,50,75,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#ee324b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <h3>Project Editorial</h3>
+      <p>In-depth editorial features within Intelligence, Design, and Editorial &mdash; covering positioning, architecture, location intel.</p>
+    </div>
+    <div class="fmt">
+      <div class="fmt-icon" style="background:rgba(139,92,246,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <h3>VideoWorks Production</h3>
+      <p>In-house produced project walkthroughs, drone footage, and developer interviews distributed across the GHAR.tv ecosystem.</p>
+    </div>
+    <div class="fmt">
+      <div class="fmt-icon" style="background:rgba(59,130,246,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>Intelligence Rankings</h3>
+      <p>Eligibility for inclusion in city-level rankings, sector reports, and infrastructure intelligence briefings.</p>
+    </div>
+    <div class="fmt">
+      <div class="fmt-icon" style="background:rgba(16,185,129,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 9h.01M15 9h.01M9.5 15a3.5 3.5 0 005 0"/></svg></div>
+      <h3>GharTalks Interviews</h3>
+      <p>Long-form podcast and video interview slots with the founder, MD, or design head &mdash; distributed across audio &amp; video platforms.</p>
+    </div>
+    <div class="fmt">
+      <div class="fmt-icon" style="background:rgba(245,158,11,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <h3>Event Inclusion</h3>
+      <p>Featured presence at India Property Show, Luxury Show, and signature GHAR.tv events &mdash; reaching buyers at decision moments.</p>
+    </div>
+    <div class="fmt">
+      <div class="fmt-icon" style="background:rgba(234,88,12,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
+      <h3>Lead Pipeline</h3>
+      <p>High-intent buyer enquiries delivered directly &mdash; with property-specific qualification, not vanity numbers.</p>
+    </div>
+  </div>
+</section></div>
+
+<div class="c"><hr class="divider"></div>
+
+
+<!-- HOW IT WORKS -->
+<div class="c"><section class="sec sec-center">
+  <div class="sec-tag">Process</div>
+  <h2 class="sec-h">How a mandate works</h2>
+  <p class="sec-p">From first conversation to live coverage in under 30 days.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>Discovery</h4>
+      <p>We meet your team to understand the project, audience, and launch timeline.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>Mandate Brief</h4>
+      <p>Custom programme built around your project &mdash; editorial, video, events, leads.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>Production</h4>
+      <p>Our editorial and video teams produce content. Distribution across the ecosystem begins.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>Pipeline</h4>
+      <p>Qualified leads &amp; engagement metrics delivered weekly through your dedicated dashboard.</p>
+    </div>
+  </div>
+</section></div>
+
+<div class="c"><hr class="divider"></div>
+
+
+<!-- TIERS -->
+<div class="c"><section class="sec sec-center">
+  <div class="sec-tag">Engagement Tiers</div>
+  <h2 class="sec-h">Pick the mandate that fits your launch</h2>
+  <p class="sec-p">Three tiers, each scaling content depth, video volume, event presence, and lead pipeline.</p>
+
+  <div class="tiers">
+    <div class="tier">
+      <h3>Project Mandate</h3>
+      <div class="tier-price">&#8377;5L<span style="font-size:14px;color:var(--ink3);font-weight:400">/mo</span></div>
+      <div class="tier-period">3-month minimum &middot; ideal for single launches</div>
+      <div class="tier-feats">
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 2 editorial features</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 1 VideoWorks production</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Intelligence inclusion</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lead pipeline access</div>
+      </div>
+      <a href="#ctaBlock" class="tier-cta">Request a Mandate</a>
+    </div>
+
+    <div class="tier featured">
+      <span class="tier-badge">Most Popular</span>
+      <h3>Portfolio Mandate</h3>
+      <div class="tier-price">&#8377;15L<span style="font-size:14px;color:rgba(255,255,255,.5);font-weight:400">/mo</span></div>
+      <div class="tier-period">6-month minimum &middot; for multi-project portfolios</div>
+      <div class="tier-feats">
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 6 editorial features</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 3 VideoWorks productions</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> GharTalks interview slot</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Event sponsorship inclusion</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Priority lead pipeline</div>
+      </div>
+      <a href="#ctaBlock" class="tier-cta">Request a Mandate</a>
+    </div>
+
+    <div class="tier">
+      <h3>Enterprise</h3>
+      <div class="tier-price">Custom</div>
+      <div class="tier-period">12-month engagement &middot; for national developers</div>
+      <div class="tier-feats">
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unlimited editorial</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dedicated VideoWorks team</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Co-produced events</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom intelligence reports</div>
+        <div class="tier-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Dedicated account team</div>
+      </div>
+      <a href="#ctaBlock" class="tier-cta">Talk to Us</a>
+    </div>
+  </div>
+</section></div>
+
+
+<!-- TESTIMONIAL -->
+<div class="c"><div class="testimonial">
+  <p>&ldquo;GHAR.tv didn't just give us reach &mdash; they gave us the right reach. Within four months, our Mumbai launch had the qualified pipeline we'd planned for the entire year.&rdquo;</p>
+  <p class="testimonial-author">&mdash; <strong>Marketing Head</strong>, Top-10 Indian Developer</p>
+</div></div>
+
+
+<!-- FAQ -->
+<div class="c"><section class="sec sec-center">
+  <div class="sec-tag">FAQs</div>
+  <h2 class="sec-h">Common questions</h2>
+
+  <div class="faqs">
+    <details class="faq">
+      <summary>Who is Developer Mandate for?</summary>
+      <p>Developer Mandate is for India's premium and top-tier real estate developers &mdash; those building landmark residential, commercial, or township projects. We work with developers who are looking for premium media partnerships, not display advertising.</p>
+    </details>
+    <details class="faq">
+      <summary>How is this different from listing on a property portal?</summary>
+      <p>Property portals are search-and-listing platforms. Developer Mandate is a content partnership where your project is editorially featured the same way GHAR.tv covers any landmark development &mdash; with full storytelling, video, intelligence inclusion, and event presence.</p>
+    </details>
+    <details class="faq">
+      <summary>What's the typical commitment length?</summary>
+      <p>Project Mandates start at a 3-month minimum. Portfolio Mandates are 6 months. Enterprise mandates are 12-month engagements. Most developers extend after the first cycle once they see the pipeline impact.</p>
+    </details>
+    <details class="faq">
+      <summary>Do you guarantee leads?</summary>
+      <p>We deliver qualified buyer enquiries with project-specific intent. We don't guarantee a fixed number &mdash; we deliver volume that scales with the audience the editorial creates. Past mandates have delivered 200&ndash;1,200 qualified leads per quarter.</p>
+    </details>
+    <details class="faq">
+      <summary>How quickly can a mandate go live?</summary>
+      <p>Most mandates go live within 3&ndash;4 weeks of signing. Editorial planning, video production, and event inclusion are all kicked off in parallel after the discovery phase.</p>
+    </details>
+    <details class="faq">
+      <summary>Can I see past examples?</summary>
+      <p>Yes. After your discovery call, we share a curated reference deck with anonymised case studies and metrics from comparable developer engagements.</p>
+    </details>
+  </div>
+</section></div>
+
+
+<!-- CTA -->
+<section class="cta-sec" id="ctaBlock">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="cta-inner">
+    <div>
+      <span class="cta-tag">Request a Mandate</span>
+      <h2>Let's put your project at the centre of GHAR.tv</h2>
+      <p class="cta-desc">Tell us about your launch. We'll come back within 24 hours with a custom mandate brief tailored to your project, audience, and timeline.</p>
+      <div class="cta-feats">
+        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Editorial features</span>
+        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> VideoWorks production</span>
+        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lead pipeline</span>
+        <span class="cta-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Event inclusion</span>
+      </div>
+    </div>
+    <div class="cta-form-wrap">
+      <form class="cta-form" id="nlF" novalidate>
+        <div class="cta-row">
+          <input type="text" class="cta-inp" placeholder="Your name" autocomplete="name" required aria-label="Your name">
+          <input type="email" class="cta-inp" placeholder="Work email" autocomplete="email" required aria-label="Work email">
+        </div>
+        <input type="text" class="cta-inp" placeholder="Company name" required aria-label="Company name">
+        <input type="text" class="cta-inp" placeholder="Project / launch (city)" aria-label="Project or launch">
+        <button type="submit" class="cta-sub" id="nlB"><span>Request a Mandate</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        <p class="cta-note">We respond within 24 hours. Confidential.</p>
+      </form>
+      <div class="cta-ok" id="nlO" hidden><p style="font-size:36px;color:#22c55e;margin-bottom:12px">&check;</p><p>Thanks! We'll be in touch shortly.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="ft"><div class="ft-i">
+  <div class="ft-top">
+    <div>
+      <img src="community/logo.svg" alt="GHAR.tv" class="ft-logo">
+      <p class="ft-tagline">India's AI-Native Real Estate Intelligence</p>
+    </div>
+    <nav class="ft-nav">
+      <a href="/intelligence">Intelligence</a>
+      <a href="/design">Design</a>
+      <a href="/community">Community</a>
+      <a href="/ghartalks">GharTalks</a>
+      <a href="/videoworks">VideoWorks</a>
+      <a href="/gharevents">GharEvents</a>
+      <a href="/industry-voices">Industry Voices</a>
+    </nav>
+  </div>
+  <div class="ft-bot">
+    <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
+    <div class="ft-bot-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</div></footer>
+
+
+<script>
+(function(){
+  var btn=document.getElementById('hBtn'),mob=document.getElementById('mob');
+  btn.addEventListener('click',function(){var o=mob.classList.toggle('open');btn.classList.toggle('active',o);btn.setAttribute('aria-expanded',o);mob.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''});
+  mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');mob.setAttribute('aria-hidden','true');document.body.style.overflow=''})});
+  var nf=document.getElementById('nlF'),nb=document.getElementById('nlB'),no=document.getElementById('nlO');
+  if(nf)nf.addEventListener('submit',function(e){e.preventDefault();nb.disabled=true;nb.querySelector('span').textContent='Sending\u2026';setTimeout(function(){nf.style.display='none';no.hidden=false},800)});
+})();
+</script>
+</body>
+</html>
