@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Raheja Universal — Real Estate Developer | GHAR.tv</title>
+  <meta name="description" content="Raheja Universal — Mumbai-based real estate developer with 40+ projects across MMR. Browse ongoing, ready-to-move and luxury projects.">
+  <link rel="canonical" href="https://ghar.tv/real-estate-developers/raheja-universal">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
+  <style>
+    @font-face{font-family:'Gazpacho';src:url('../community/fonts/Gazpacho-Bold.woff2') format('woff2'),url('../community/fonts/Gazpacho-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+
+    :root{--bg:#ffffff;--ink:#111111;--ink2:#4b5563;--faint:#9ca3af;--rule:#e8e8e8;--accent:#ee324b;--surface:#f7f7f7;--ff-display:'Gazpacho',Georgia,serif;--ff-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--max-w:1600px;--pad-h:clamp(24px,3vw,80px);--sh-sm:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.04)}
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:var(--ff-sans);background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+    .cont{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h)}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--rule);box-shadow:var(--sh-sm)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h);height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav-logo{display:flex;align-items:baseline;flex-shrink:0}.nav-logo-img{height:28px;width:auto}
+    .nav-logo-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-left:10px}
+    .nav-links{display:none;align-items:center;justify-content:center;gap:2px;list-style:none;flex:1}
+    .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:6px 11px;border-radius:7px;transition:background .16s,color .16s}
+    .nav-links a:hover{background:var(--surface);color:var(--ink)}
+    .nav-right{display:none;align-items:center;gap:8px;flex-shrink:0}
+    .nav-btn-join{font-size:13px;font-weight:600;color:#fff;padding:8px 20px;border-radius:8px;background:var(--ink);display:inline-flex;align-items:center;transition:background .18s,transform .18s}
+    .nav-btn-join:hover{background:var(--accent);transform:translateY(-1px)}
+    .nav-hamburger{display:flex;flex-direction:column;gap:5px;padding:6px;background:none;border:none;z-index:901}
+    .nav-hamburger span{display:block;width:20px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease),opacity .3s var(--ease)}
+    .nav-hamburger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .nav-hamburger.active span:nth-child(2){opacity:0}
+    .nav-hamburger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    .mob-menu{position:fixed;inset:0;background:var(--bg);z-index:850;transform:translateX(100%);transition:transform .42s var(--ease);padding:88px 28px 48px}
+    .mob-menu.open{transform:translateX(0)}
+    .mob-links{list-style:none}.mob-links li{border-bottom:1px solid var(--rule)}
+    .mob-links a{display:block;padding:15px 0;font-family:var(--ff-display);font-size:24px;font-weight:700;color:var(--ink)}
+    .mob-links .mob-accent{color:var(--accent)}
+
+    /* BREADCRUMB */
+    .bc{padding:14px 0 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .bc a{font-size:12px;color:var(--faint);font-weight:500}.bc a:hover{color:var(--ink)}
+    .bc-sep{font-size:11px;color:var(--faint)}.bc-cur{font-size:12px;color:var(--ink);font-weight:600}
+
+    /* PAGE LAYOUT — main + sidebar */
+    .page{display:grid;grid-template-columns:1fr;gap:32px;padding:8px 0 80px}
+    @media(min-width:992px){.page{grid-template-columns:minmax(0,1fr) 340px;gap:40px}}
+    @media(min-width:1280px){.page{grid-template-columns:minmax(0,1fr) 360px;gap:56px}}
+
+    /* ABOUT */
+    .about-h{font-family:var(--ff-display);font-size:clamp(26px,3.2vw,38px);font-weight:700;line-height:1.15;color:var(--ink);margin:8px 0 24px;letter-spacing:-.02em}
+    .about-block{display:flex;flex-direction:column;gap:24px;margin-bottom:48px}
+    @media(min-width:768px){.about-block{flex-direction:row;align-items:flex-start;gap:28px}}
+    .about-logo{flex-shrink:0;width:220px;height:120px;border:1px solid var(--rule);border-radius:14px;background:var(--surface);display:flex;align-items:center;justify-content:center;padding:18px 24px;box-shadow:var(--sh-sm)}
+    .about-logo img{max-width:100%;max-height:100%;object-fit:contain}
+    .about-text{flex:1;font-size:15px;line-height:1.85;color:var(--ink2)}
+    .about-text p+p{margin-top:14px}
+    .about-text.collapsed{max-height:200px;overflow:hidden;position:relative}
+    .about-text.collapsed::after{content:'';position:absolute;left:0;right:0;bottom:0;height:80px;background:linear-gradient(to bottom,transparent,#fff)}
+    .about-toggle{margin-top:8px;font-size:13px;font-weight:600;color:var(--accent);background:none;border:none;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+    .about-toggle:hover{text-decoration:underline}
+
+    /* DIVIDER + SECTION HEADER */
+    .pj-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:8px;border-top:1px solid var(--rule);padding-bottom:8px}
+    .pj-head-title{font-family:var(--ff-display);font-size:clamp(22px,2.5vw,28px);font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.015em;padding-top:24px}
+    .pj-head-count{font-size:12px;color:var(--faint);font-weight:500;padding-top:24px}
+
+    /* PROJECT FILTERS (chips) */
+    .pj-filters{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 28px}
+    .pj-filter{font-size:12.5px;font-weight:600;color:var(--ink2);padding:7px 14px;border:1.5px solid var(--rule);border-radius:24px;background:var(--bg);cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;gap:5px}
+    .pj-filter:hover{border-color:rgba(17,17,17,.25)}
+    .pj-filter.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .pj-filter .pj-filter-c{font-size:11px;color:var(--faint);font-weight:500}
+    .pj-filter.active .pj-filter-c{color:rgba(255,255,255,.55)}
+
+    /* PROJECT CARDS — simple grid */
+    .pj-list{display:grid;grid-template-columns:1fr;gap:20px}
+    @media(min-width:600px){.pj-list{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1280px){.pj-list{grid-template-columns:repeat(3,1fr)}}
+    .pj-card{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:16px;overflow:hidden;background:var(--bg);transition:border-color .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease);text-decoration:none;color:inherit}
+    .pj-card:hover{border-color:rgba(17,17,17,.18);box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-3px)}
+    .pj-img{aspect-ratio:16/11;overflow:hidden;background:var(--surface);position:relative}
+    .pj-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
+    .pj-card:hover .pj-img img{transform:scale(1.04)}
+
+    .pj-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+    .pj-name{font-family:var(--ff-display);font-size:17px;font-weight:700;line-height:1.25;color:var(--ink)}
+    .pj-config{font-size:12.5px;color:var(--ink2);font-weight:500;line-height:1.4}
+    .pj-loc{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--faint);font-weight:500}
+    .pj-loc svg{width:11px;height:11px;flex-shrink:0}
+    .pj-meta{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:12px;margin-top:6px;border-top:1px solid var(--rule)}
+    .pj-price{display:flex;flex-direction:column;gap:2px;min-width:0}
+    .pj-price-v{font-size:15px;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.005em}
+    .pj-price-l{font-size:10.5px;color:var(--faint);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+    .pj-area{display:flex;flex-direction:column;gap:2px;text-align:right;min-width:0}
+    .pj-area-v{font-size:13px;font-weight:600;color:var(--ink);line-height:1.2}
+    .pj-area-l{font-size:10.5px;color:var(--faint);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+
+    /* SIDEBAR */
+    .side{display:flex;flex-direction:column;gap:20px}
+    @media(min-width:992px){.side{position:sticky;top:80px;align-self:start;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:4px;scrollbar-width:thin}}
+    .side-card{border:1px solid var(--rule);border-radius:16px;background:var(--bg);overflow:hidden}
+    .side-card-h{padding:18px 22px;border-bottom:1px solid var(--rule);background:#fafafa}
+    .side-card-h h3{font-family:var(--ff-display);font-size:17px;font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.01em}
+    .side-card-h p{font-size:12.5px;color:var(--ink2);margin-top:4px;line-height:1.5}
+    .side-card-b{padding:20px 22px}
+
+    .side-form{display:flex;flex-direction:column;gap:12px}
+    .side-form input,.side-form textarea{font-family:var(--ff-sans);font-size:13.5px;padding:11px 14px;border-radius:9px;border:1.5px solid var(--rule);background:var(--bg);color:var(--ink);transition:border-color .18s;width:100%}
+    .side-form input:focus,.side-form textarea:focus{outline:none;border-color:var(--ink)}
+    .side-form textarea{resize:vertical;min-height:72px;line-height:1.5}
+    .side-form button{font-size:14px;font-weight:600;color:#fff;background:var(--ink);padding:12px 20px;border-radius:9px;border:none;cursor:pointer;transition:background .18s,transform .18s;display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:4px}
+    .side-form button:hover{background:var(--accent);transform:translateY(-1px)}
+    .side-note{font-size:11px;color:var(--faint);text-align:center;margin-top:6px;line-height:1.5}
+    .side-ok{padding:18px 4px;text-align:center}
+    .side-ok-i{font-size:30px;color:#22c55e;margin-bottom:8px}
+    .side-ok p{font-size:13px;color:var(--ink2);line-height:1.5}
+
+    .side-stats{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .side-stat{padding:14px 14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+    .side-stat:nth-child(2n){border-right:0}
+    .side-stat:nth-last-child(-n+2){border-bottom:0}
+    .side-stat-v{font-family:var(--ff-display);font-size:20px;font-weight:700;color:var(--ink);line-height:1.1}
+    .side-stat-l{font-size:11px;color:var(--faint);font-weight:500;letter-spacing:.04em;text-transform:uppercase;margin-top:3px}
+
+    .side-list{list-style:none;display:flex;flex-direction:column;gap:0}
+    .side-list li{padding:10px 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;font-size:13px}
+    .side-list li:last-child{border-bottom:0}
+    .side-list-k{color:var(--ink2);font-weight:500}
+    .side-list-v{color:var(--ink);font-weight:600}
+
+    /* FOOTER */
+    .footer{background:#111;padding:36px 0;margin-top:24px}
+    .ft-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h)}
+    .ft-top{display:flex;flex-direction:column;gap:24px;padding-bottom:32px;border-bottom:1px solid #1a1a1a;margin-bottom:24px}
+    @media(min-width:744px){.ft-top{flex-direction:row;align-items:flex-start;justify-content:space-between}}
+    .ft-logo-img{height:24px;width:auto;margin-bottom:8px;filter:brightness(0) invert(1)}
+    .ft-tag{font-size:12px;color:rgba(255,255,255,.3)}
+    .ft-nav{display:flex;gap:24px;flex-wrap:wrap}
+    .ft-nav a{font-size:13px;font-weight:500;color:rgba(255,255,255,.45)}.ft-nav a:hover{color:#fff}
+    .ft-bot{display:flex;flex-direction:column;gap:8px;font-size:12px;color:rgba(255,255,255,.2)}
+    @media(min-width:744px){.ft-bot{flex-direction:row;justify-content:space-between}}
+    .ft-bot-links{display:flex;gap:16px}.ft-bot-links a{font-size:12px;color:rgba(255,255,255,.2)}.ft-bot-links a:hover{color:rgba(255,255,255,.6)}
+
+    @media(min-width:1024px){.nav-inner{padding:0 32px;height:62px;gap:32px}.nav-links{display:flex}.nav-right{display:flex}.nav-hamburger{display:none}}
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="../community/logo.svg" alt="GHAR.tv" class="nav-logo-img"><span class="nav-logo-tag">Developers</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="/intelligence">Intelligence</a></li>
+      <li><a href="/design">Design</a></li>
+      <li><a href="/community">Community</a></li>
+      <li><a href="/ghartalks">GharTalks</a></li>
+      <li><a href="/videoworks">VideoWorks</a></li>
+      <li><a href="/gharevents">GharEvents</a></li>
+      <li><a href="/industry-voices">Industry Voices</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/join" class="nav-btn-join">Join Now</a>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <ul class="mob-links">
+    <li><a href="/intelligence">Intelligence</a></li>
+    <li><a href="/design">Design</a></li>
+    <li><a href="/community">Community</a></li>
+    <li><a href="/ghartalks">GharTalks</a></li>
+    <li><a href="/videoworks">VideoWorks</a></li>
+    <li><a href="/gharevents">GharEvents</a></li>
+    <li><a href="/industry-voices">Industry Voices</a></li>
+    <li><a href="/join" class="mob-accent">Join Now &rarr;</a></li>
+  </ul>
+</div>
+
+
+<!-- BREADCRUMB -->
+<div class="cont" style="padding-top:72px">
+  <nav class="bc" aria-label="Breadcrumb">
+    <a href="/">GHAR.tv</a><span class="bc-sep">&rsaquo;</span>
+    <a href="../real-estate-developers.html">Real Estate Developers</a><span class="bc-sep">&rsaquo;</span>
+    <span class="bc-cur">Raheja Universal</span>
+  </nav>
+</div>
+
+
+<!-- MAIN PAGE -->
+<div class="cont">
+  <div class="page">
+
+    <!-- LEFT — main content -->
+    <main>
+
+      <!-- ABOUT -->
+      <h1 class="about-h">About Raheja Universal</h1>
+      <div class="about-block">
+        <div class="about-logo">
+          <img src="https://logo.clearbit.com/rahejauniversal.com" alt="Raheja Universal" onerror="this.onerror=null;this.src='https://via.placeholder.com/140x140/f7f7f7/9ca3af?text=Raheja';">
+        </div>
+        <div>
+          <div class="about-text collapsed" id="aboutText">
+            <p>Raheja Universal Ltd, earlier known as <strong>K Raheja Company</strong>, has completed development of over <strong>4.95 million sq.ft.</strong> of real estate in the Mumbai Metropolitan Region across <strong>40 projects</strong>. Raheja Universal is known for its execution, planning, monitoring and control. It was chosen as a "Business Super Brand" in 2008 and "Consumer Super Brand" in 2009-10. The company has the ability to identify land and develop projects with strong potential for capital appreciation, and has been in the real estate business for over four decades.</p>
+            <p>By creating and delivering properties that are state-of-the-art, Raheja Universal intends to impact the real estate sector in Mumbai positively. This Mumbai-based developer is dedicated to offering high-quality settings that improve the present and look forward to the future. The company seeks to make its presence known by generating high-quality real estate projects that provide excellent value for money and the highest possible level of customer happiness.</p>
+            <p>In the competitive field of real estate in Mumbai, Raheja Universal is a major participant and is trying its best to bring quality and consistency to the table. As a real estate developer in Mumbai, this company is helping many home buyers and real estate investors achieve their dreams of owning their own homes. Every house is constructed with care, putting an emphasis on quality, practical details, and excellent value for money.</p>
+          </div>
+          <button type="button" class="about-toggle" id="aboutToggle" aria-expanded="false">
+            <span>Read more</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- PROJECTS HEADER -->
+      <div class="pj-head">
+        <h2 class="pj-head-title">Real Estate Projects of Raheja Universal</h2>
+        <span class="pj-head-count" id="pjCount">Displaying 1 - 12 of 12 results</span>
+      </div>
+
+      <!-- FILTERS -->
+      <div class="pj-filters" id="pjFilters">
+        <button class="pj-filter active" data-pj="all">All <span class="pj-filter-c">12</span></button>
+        <button class="pj-filter" data-pj="ready">Ready to Move <span class="pj-filter-c">5</span></button>
+        <button class="pj-filter" data-pj="under">Under Construction <span class="pj-filter-c">5</span></button>
+        <button class="pj-filter" data-pj="new">New Launch <span class="pj-filter-c">2</span></button>
+      </div>
+
+      <!-- PROJECT LIST -->
+      <div class="pj-list" id="pjList">
+
+        <a href="#" class="pj-card" data-status="under">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=420&fit=crop&q=80" alt="Raheja Imperia 2" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Imperia 2 &mdash; THE RIVIERE</h3>
+            <div class="pj-config">3, 4 &amp; 5 BHK Skyplex Residences</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Lower Parel, Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 8.23 Cr+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">1599 - 2486 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="ready">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=420&fit=crop&q=80" alt="One Altamount" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">One Altamount</h3>
+            <div class="pj-config">4, 6 &amp; 7 BHK</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Altamount Road, Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 70 Cr+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">650 - 12500 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="ready">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=420&fit=crop&q=80" alt="Raheja Chrysalis" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Chrysalis</h3>
+            <div class="pj-config">4 BHK Villas</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Carmona, South Goa
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">On Request</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">&mdash;</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="ready">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=420&fit=crop&q=80" alt="Raheja Winterwoods" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Winterwoods</h3>
+            <div class="pj-config">Premium Residences</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Sector 37, Chandigarh
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">On Request</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">&mdash;</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="under">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=420&fit=crop&q=80" alt="Raheja Lunaris 1 Callisto" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Lunaris 1 Callisto</h3>
+            <div class="pj-config">2 &amp; 3 BHK Flats</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Juinagar, Navi Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 1.12 Cr+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">452 - 725 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="new">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=600&h=420&fit=crop&q=80" alt="Raheja Solaris 3" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Solaris 3</h3>
+            <div class="pj-config">2, 3 &amp; 4 BHK Flats</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Juinagar, Navi Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 2 Cr+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">745 - 1646 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="under">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=420&fit=crop&q=80" alt="Raheja Prime One" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Prime One</h3>
+            <div class="pj-config">Office Space</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Juinagar, Navi Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 76 L+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">450 - 650 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="under">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=420&fit=crop&q=80" alt="Raheja Exotica Cyprus" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Exotica Cyprus</h3>
+            <div class="pj-config">2, 3 &amp; 4 BHK Flats</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Madh Island, Malad West, Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 3.25 Cr+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">897 - 1904 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="ready">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=420&fit=crop&q=80" alt="Raheja Reflections" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Reflections</h3>
+            <div class="pj-config">2 BHK Flats</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Kandivali East, Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">On Request</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">1103 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="under">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=420&fit=crop&q=80" alt="Raheja Souluxe" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Souluxe</h3>
+            <div class="pj-config">2, 3 &amp; 4 BHK Flats</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Juinagar, Navi Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 1.70 Cr+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">729 - 1550 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="ready">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=420&fit=crop&q=80" alt="Raheja Solaris 1" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Solaris 1</h3>
+            <div class="pj-config">Studio, 1 &amp; 2 BHK</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Juinagar, Navi Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 70 L+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">368 - 624 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="pj-card" data-status="new">
+          <div class="pj-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=420&fit=crop&q=80" alt="Raheja Tesla 2" loading="lazy"></div>
+          <div class="pj-body">
+            <h3 class="pj-name">Raheja Tesla 2</h3>
+            <div class="pj-config">Commercial Space</div>
+            <div class="pj-loc">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+              Juinagar, Navi Mumbai
+            </div>
+            <div class="pj-meta">
+              <div class="pj-price"><div class="pj-price-v">&#8377; 64 L+</div><div class="pj-price-l">Price</div></div>
+              <div class="pj-area"><div class="pj-area-v">521 - 833 sq.ft</div><div class="pj-area-l">Carpet Area</div></div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </main>
+
+
+    <!-- RIGHT — sidebar -->
+    <aside class="side">
+
+      <!-- Connect form -->
+      <div class="side-card">
+        <div class="side-card-h">
+          <h3>Connect with Raheja Universal</h3>
+          <p>Get project shortlists, brochures and site-visit support — no brokerage.</p>
+        </div>
+        <div class="side-card-b">
+          <form class="side-form" id="connectForm" novalidate>
+            <input type="text" placeholder="Your name" autocomplete="name" required aria-label="Your name">
+            <input type="email" placeholder="Your email address" autocomplete="email" required aria-label="Email">
+            <input type="tel" placeholder="Phone (with country code)" autocomplete="tel" required aria-label="Phone">
+            <textarea placeholder="Tell us what you're looking for (BHK, budget, city)" aria-label="Message"></textarea>
+            <button type="submit">
+              <span>Connect Now</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <p class="side-note">We respect your privacy. No spam, no broker calls.</p>
+          </form>
+          <div class="side-ok" id="connectOk" hidden>
+            <div class="side-ok-i">&check;</div>
+            <p>Thanks! Our specialist will reach out within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <img src="../community/logo.svg" alt="GHAR.tv" class="ft-logo-img">
+        <p class="ft-tag">India's AI-Native Real Estate Intelligence</p>
+      </div>
+      <nav class="ft-nav">
+        <a href="/intelligence">Intelligence</a>
+        <a href="/design">Design</a>
+        <a href="/community">Community</a>
+        <a href="/ghartalks">GharTalks</a>
+        <a href="/videoworks">VideoWorks</a>
+        <a href="/gharevents">GharEvents</a>
+        <a href="/industry-voices">Industry Voices</a>
+      </nav>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
+      <div class="ft-bot-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  // Hamburger
+  var btn = document.getElementById('hamburgerBtn'), mob = document.getElementById('mobMenu');
+  if(btn && mob){
+    btn.addEventListener('click', function(){
+      var o = mob.classList.toggle('open');
+      btn.classList.toggle('active', o);
+      btn.setAttribute('aria-expanded', o);
+      mob.setAttribute('aria-hidden', !o);
+      document.body.style.overflow = o ? 'hidden' : '';
+    });
+    mob.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mob.classList.remove('open'); btn.classList.remove('active');
+        btn.setAttribute('aria-expanded','false'); mob.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      });
+    });
+  }
+
+  // About — read more / less
+  var aboutText = document.getElementById('aboutText');
+  var aboutToggle = document.getElementById('aboutToggle');
+  if(aboutText && aboutToggle){
+    aboutToggle.addEventListener('click', function(){
+      var collapsed = aboutText.classList.toggle('collapsed');
+      var label = aboutToggle.querySelector('span');
+      var icon = aboutToggle.querySelector('svg');
+      if(collapsed){
+        label.textContent = 'Read more';
+        if(icon) icon.style.transform = '';
+        aboutToggle.setAttribute('aria-expanded','false');
+      } else {
+        label.textContent = 'Read less';
+        if(icon) icon.style.transform = 'rotate(180deg)';
+        aboutToggle.setAttribute('aria-expanded','true');
+      }
+    });
+  }
+
+  // Project filters
+  var filters = document.querySelectorAll('.pj-filter');
+  var cards = document.querySelectorAll('#pjList .pj-card');
+  var countEl = document.getElementById('pjCount');
+  filters.forEach(function(f){
+    f.addEventListener('click', function(){
+      filters.forEach(function(x){x.classList.remove('active')});
+      f.classList.add('active');
+      var key = f.dataset.pj;
+      var visible = 0;
+      cards.forEach(function(c){
+        var match = (key==='all') || c.dataset.status===key;
+        c.style.display = match ? '' : 'none';
+        if(match) visible++;
+      });
+      if(countEl) countEl.textContent = 'Displaying 1 - ' + visible + ' of ' + visible + ' results';
+    });
+  });
+
+  // Connect form
+  var cf = document.getElementById('connectForm'), co = document.getElementById('connectOk');
+  if(cf) cf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var b = cf.querySelector('button[type=submit]');
+    b.disabled = true;
+    b.innerHTML = '<span>Sending&hellip;</span>';
+    setTimeout(function(){cf.style.display='none'; co.hidden=false}, 800);
+  });
+
+})();
+</script>
+</body>
+</html>

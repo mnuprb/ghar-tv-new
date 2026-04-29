@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Oberoi Realty — Real Estate Developer | GHAR.tv</title>
+  <meta name="description" content="Oberoi Realty — luxury real estate developer based in Mumbai. Explore the brand, philosophy and key projects.">
+  <link rel="canonical" href="https://ghar.tv/real-estate-developers/oberoi-realty">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
+  <style>
+    @font-face{font-family:'Gazpacho';src:url('../community/fonts/Gazpacho-Bold.woff2') format('woff2'),url('../community/fonts/Gazpacho-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+
+    :root{--bg:#ffffff;--ink:#111111;--ink2:#4b5563;--faint:#9ca3af;--rule:#e8e8e8;--accent:#ee324b;--surface:#f7f7f7;--ff-display:'Gazpacho',Georgia,serif;--ff-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--max-w:1600px;--pad-h:clamp(24px,3vw,80px);--sh-sm:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.04)}
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:var(--ff-sans);background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+    .cont{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h)}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--rule);box-shadow:var(--sh-sm)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h);height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav-logo{display:flex;align-items:baseline;flex-shrink:0}.nav-logo-img{height:28px;width:auto}
+    .nav-logo-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-left:10px}
+    .nav-links{display:none;align-items:center;justify-content:center;gap:2px;list-style:none;flex:1}
+    .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink2);padding:6px 11px;border-radius:7px;transition:background .16s,color .16s}
+    .nav-links a:hover{background:var(--surface);color:var(--ink)}
+    .nav-right{display:none;align-items:center;gap:8px;flex-shrink:0}
+    .nav-btn-join{font-size:13px;font-weight:600;color:#fff;padding:8px 20px;border-radius:8px;background:var(--ink);display:inline-flex;align-items:center;transition:background .18s,transform .18s}
+    .nav-btn-join:hover{background:var(--accent);transform:translateY(-1px)}
+    .nav-hamburger{display:flex;flex-direction:column;gap:5px;padding:6px;background:none;border:none;z-index:901}
+    .nav-hamburger span{display:block;width:20px;height:1.5px;background:var(--ink);transition:transform .3s var(--ease),opacity .3s var(--ease)}
+    .nav-hamburger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .nav-hamburger.active span:nth-child(2){opacity:0}
+    .nav-hamburger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    .mob-menu{position:fixed;inset:0;background:var(--bg);z-index:850;transform:translateX(100%);transition:transform .42s var(--ease);padding:88px 28px 48px}
+    .mob-menu.open{transform:translateX(0)}
+    .mob-links{list-style:none}.mob-links li{border-bottom:1px solid var(--rule)}
+    .mob-links a{display:block;padding:15px 0;font-family:var(--ff-display);font-size:24px;font-weight:700;color:var(--ink)}
+    .mob-links .mob-accent{color:var(--accent)}
+
+    /* BREADCRUMB */
+    .bc{padding:14px 0 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .bc a{font-size:12px;color:var(--faint);font-weight:500}.bc a:hover{color:var(--ink)}
+    .bc-sep{font-size:11px;color:var(--faint)}.bc-cur{font-size:12px;color:var(--ink);font-weight:600}
+
+    /* HERO — compact, single column */
+    .hero{padding:clamp(32px,4vw,56px) 0 clamp(40px,5vw,64px);text-align:center;border-bottom:1px solid var(--rule)}
+    .hero-logo{width:128px;height:128px;margin:0 auto 24px;background:var(--surface);border:1px solid var(--rule);border-radius:24px;display:flex;align-items:center;justify-content:center;padding:22px;box-shadow:var(--sh-sm)}
+    .hero-logo img{max-width:100%;max-height:100%;object-fit:contain}
+    .hero-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
+    .badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:6px;line-height:1.2;display:inline-flex;align-items:center;gap:6px}
+    .badge-tier{background:rgba(17,17,17,.85);color:#fff}
+    .badge-loc{background:var(--surface);color:var(--ink2);border:1px solid var(--rule)}
+    .badge-loc svg{width:11px;height:11px}
+    .hero-title{font-family:var(--ff-display);font-size:clamp(36px,5.4vw,60px);font-weight:700;line-height:1.02;letter-spacing:-.035em;color:var(--ink);margin-bottom:18px}
+    .hero-intro{font-size:clamp(15px,1.3vw,18px);line-height:1.7;color:var(--ink2);max-width:680px;margin:0 auto 28px}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;transition:background .25s,transform .25s,box-shadow .25s}
+    .btn-primary:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 28px rgba(238,50,75,.25)}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--rule);color:var(--ink);padding:13px 24px;border-radius:10px;font-size:14px;font-weight:500;background:none;transition:border-color .25s,background .25s}
+    .btn-outline:hover{border-color:var(--ink);background:var(--surface)}
+
+    /* SECTIONS */
+    .sec{padding:clamp(56px,7vw,88px) 0;border-top:1px solid var(--rule)}
+    .sec:first-of-type{border-top:0}
+    .sec-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+    .sec-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+    .sec-title{font-family:var(--ff-display);font-size:clamp(26px,3.2vw,38px);font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:clamp(24px,3vw,36px);letter-spacing:-.02em;max-width:780px}
+
+    /* ABOUT */
+    .about-text{font-size:16px;line-height:1.85;color:var(--ink2);max-width:780px}
+    .about-text p+p{margin-top:18px}
+
+    /* PROJECT GRID */
+    .pj-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    @media(min-width:520px){.pj-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.pj-grid{grid-template-columns:repeat(3,1fr)}}
+    .pj{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:16px;overflow:hidden;background:var(--bg);transition:border-color .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+    .pj:hover{border-color:rgba(17,17,17,.18);box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
+    .pj-img{aspect-ratio:16/11;overflow:hidden;background:var(--surface)}
+    .pj-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
+    .pj:hover .pj-img img{transform:scale(1.04)}
+    .pj-body{padding:18px 20px;flex:1;display:flex;flex-direction:column;gap:6px}
+    .pj-name{font-family:var(--ff-display);font-size:18px;font-weight:700;line-height:1.25;color:var(--ink)}
+    .pj-loc{font-size:12.5px;color:var(--faint);font-weight:500;display:flex;align-items:center;gap:5px}
+    .pj-loc svg{width:11px;height:11px}
+    .pj-desc{font-size:13px;color:var(--ink2);line-height:1.55;margin-top:2px}
+
+    /* FOOTER */
+    .footer{background:#111;padding:36px 0;margin-top:0}
+    .ft-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-h)}
+    .ft-top{display:flex;flex-direction:column;gap:24px;padding-bottom:32px;border-bottom:1px solid #1a1a1a;margin-bottom:24px}
+    @media(min-width:744px){.ft-top{flex-direction:row;align-items:flex-start;justify-content:space-between}}
+    .ft-logo-img{height:24px;width:auto;margin-bottom:8px;filter:brightness(0) invert(1)}
+    .ft-tag{font-size:12px;color:rgba(255,255,255,.3)}
+    .ft-nav{display:flex;gap:24px;flex-wrap:wrap}
+    .ft-nav a{font-size:13px;font-weight:500;color:rgba(255,255,255,.45)}.ft-nav a:hover{color:#fff}
+    .ft-bot{display:flex;flex-direction:column;gap:8px;font-size:12px;color:rgba(255,255,255,.2)}
+    @media(min-width:744px){.ft-bot{flex-direction:row;justify-content:space-between}}
+    .ft-bot-links{display:flex;gap:16px}.ft-bot-links a{font-size:12px;color:rgba(255,255,255,.2)}.ft-bot-links a:hover{color:rgba(255,255,255,.6)}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.revealed{opacity:1;transform:none}
+
+    @media(min-width:1024px){.nav-inner{padding:0 32px;height:62px;gap:32px}.nav-links{display:flex}.nav-right{display:flex}.nav-hamburger{display:none}}
+    @media(max-width:480px){.hero-ctas{flex-direction:column}.btn-primary,.btn-outline{width:100%;justify-content:center}}
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="../community/logo.svg" alt="GHAR.tv" class="nav-logo-img"><span class="nav-logo-tag">Developers</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="/intelligence">Intelligence</a></li>
+      <li><a href="/design">Design</a></li>
+      <li><a href="/community">Community</a></li>
+      <li><a href="/ghartalks">GharTalks</a></li>
+      <li><a href="/videoworks">VideoWorks</a></li>
+      <li><a href="/gharevents">GharEvents</a></li>
+      <li><a href="/industry-voices">Industry Voices</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/join" class="nav-btn-join">Join Now</a>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <ul class="mob-links">
+    <li><a href="/intelligence">Intelligence</a></li>
+    <li><a href="/design">Design</a></li>
+    <li><a href="/community">Community</a></li>
+    <li><a href="/ghartalks">GharTalks</a></li>
+    <li><a href="/videoworks">VideoWorks</a></li>
+    <li><a href="/gharevents">GharEvents</a></li>
+    <li><a href="/industry-voices">Industry Voices</a></li>
+    <li><a href="/join" class="mob-accent">Join Now &rarr;</a></li>
+  </ul>
+</div>
+
+
+<!-- BREADCRUMB -->
+<div class="cont" style="padding-top:72px">
+  <nav class="bc" aria-label="Breadcrumb">
+    <a href="/">GHAR.tv</a><span class="bc-sep">&rsaquo;</span>
+    <a href="../real-estate-developers.html">Real Estate Developers</a><span class="bc-sep">&rsaquo;</span>
+    <span class="bc-cur">Oberoi Realty</span>
+  </nav>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="cont">
+    <div class="hero-logo"><img src="https://logo.clearbit.com/oberoirealty.com" alt="Oberoi Realty"></div>
+    <div class="hero-badges">
+      <span class="badge badge-tier">Luxury</span>
+      <span class="badge badge-loc">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+        Mumbai, Maharashtra
+      </span>
+    </div>
+    <h1 class="hero-title">Oberoi Realty</h1>
+    <p class="hero-intro">A Mumbai-headquartered luxury real estate developer behind some of the city's most recognised mixed-use addresses — known for design-led residences, retail destinations and premium commercial assets across western suburbs and the BKC belt.</p>
+    <div class="hero-ctas">
+      <a href="https://www.oberoirealty.com" target="_blank" rel="noopener" class="btn-primary">
+        <span>Visit Website</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+      <a href="#projects" class="btn-outline">View Projects</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="sec reveal">
+  <div class="cont">
+    <div class="sec-eyebrow">About</div>
+    <h2 class="sec-title">About the Developer</h2>
+    <div class="about-text">
+      <p>Oberoi Realty Limited is a publicly listed real estate developer (BSE: 533273, NSE: OBEROIRLTY) founded by Vikas Oberoi and based in Mumbai. The company is recognised for its sharp focus on design quality, branded retail collaborations and operationally excellent mixed-use destinations.</p>
+      <p>Its portfolio spans premium residential, large-format retail, hospitality and Grade-A commercial — anchored by landmark addresses in Goregaon, Andheri, Worli and Mulund. Oberoi Realty has consistently ranked among India's top-performing listed developers by sales velocity and balance sheet strength.</p>
+      <p>The company partners with global hospitality and design names — including Ritz-Carlton, Westin and St. Regis — to bring international standards of finish and service to Indian luxury living.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section class="sec reveal" id="projects">
+  <div class="cont">
+    <div class="sec-eyebrow">Portfolio</div>
+    <h2 class="sec-title">Projects by Oberoi Realty</h2>
+    <div class="pj-grid">
+      <a href="#" class="pj">
+        <div class="pj-img"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=420&fit=crop&q=80" alt="Oberoi Sky City" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-name">Oberoi Sky City</div>
+          <div class="pj-loc">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Borivali, Mumbai
+          </div>
+          <div class="pj-desc">Premium residential township &middot; 2/3/4 BHK across multiple towers with sky decks, landscaped podiums and clubhouses.</div>
+        </div>
+      </a>
+
+      <a href="#" class="pj">
+        <div class="pj-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=420&fit=crop&q=80" alt="Three Sixty West" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-name">Three Sixty West</div>
+          <div class="pj-loc">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Worli, Mumbai
+          </div>
+          <div class="pj-desc">Ultra-luxury twin-tower mixed-use development with Ritz-Carlton residences and signature city/sea views.</div>
+        </div>
+      </a>
+
+      <a href="#" class="pj">
+        <div class="pj-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=420&fit=crop&q=80" alt="Oberoi Garden City" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-name">Oberoi Garden City</div>
+          <div class="pj-loc">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Goregaon, Mumbai
+          </div>
+          <div class="pj-desc">100-acre integrated development &middot; residences, Westin hotel, schools, Oberoi Mall and Grade-A office towers.</div>
+        </div>
+      </a>
+
+      <a href="#" class="pj">
+        <div class="pj-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=420&fit=crop&q=80" alt="Oberoi Eternia & Enigma" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-name">Oberoi Eternia &amp; Enigma</div>
+          <div class="pj-loc">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Mulund, Mumbai
+          </div>
+          <div class="pj-desc">Twin-tower premium residential cluster with podium amenities, sky lounges and 3/4 BHK configurations.</div>
+        </div>
+      </a>
+
+      <a href="#" class="pj">
+        <div class="pj-img"><img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=420&fit=crop&q=80" alt="Oberoi Forestville" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-name">Oberoi Forestville</div>
+          <div class="pj-loc">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Thane, Maharashtra
+          </div>
+          <div class="pj-desc">Forest-themed residential community on the central spine of Thane &middot; landscape-led design with 2/3 BHK homes.</div>
+        </div>
+      </a>
+
+      <a href="#" class="pj">
+        <div class="pj-img"><img src="https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=600&h=420&fit=crop&q=80" alt="Commerz III" loading="lazy"></div>
+        <div class="pj-body">
+          <div class="pj-name">Commerz III</div>
+          <div class="pj-loc">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.33A4.67 4.67 0 0 0 3.33 6C3.33 9.5 8 14.67 8 14.67s4.67-5.17 4.67-8.67A4.67 4.67 0 0 0 8 1.33Zm0 6.34a1.67 1.67 0 1 1 0-3.34 1.67 1.67 0 0 1 0 3.34Z" fill="currentColor"/></svg>
+            Goregaon East, Mumbai
+          </div>
+          <div class="pj-desc">Grade-A LEED-certified commercial tower &middot; flexible floor plates and large-format MNC tenant ecosystem.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <img src="../community/logo.svg" alt="GHAR.tv" class="ft-logo-img">
+        <p class="ft-tag">India's AI-Native Real Estate Intelligence</p>
+      </div>
+      <nav class="ft-nav">
+        <a href="/intelligence">Intelligence</a>
+        <a href="/design">Design</a>
+        <a href="/community">Community</a>
+        <a href="/ghartalks">GharTalks</a>
+        <a href="/videoworks">VideoWorks</a>
+        <a href="/gharevents">GharEvents</a>
+        <a href="/industry-voices">Industry Voices</a>
+      </nav>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2026 Ghar.tv &middot; Zybeq Ventures Pvt Ltd</p>
+      <div class="ft-bot-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var btn=document.getElementById('hamburgerBtn'), mob=document.getElementById('mobMenu');
+  if(btn && mob){
+    btn.addEventListener('click',function(){
+      var o = mob.classList.toggle('open');
+      btn.classList.toggle('active', o);
+      btn.setAttribute('aria-expanded', o);
+      mob.setAttribute('aria-hidden', !o);
+      document.body.style.overflow = o ? 'hidden' : '';
+    });
+    mob.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        mob.classList.remove('open'); btn.classList.remove('active');
+        btn.setAttribute('aria-expanded','false'); mob.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      });
+    });
+  }
+
+  var rv = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('revealed'); io.unobserve(en.target)}
+      });
+    },{threshold:.08,rootMargin:'0px 0px -32px 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  } else rv.forEach(function(el){el.classList.add('revealed')});
+})();
+</script>
+</body>
+</html>
